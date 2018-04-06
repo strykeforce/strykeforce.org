@@ -1,0 +1,22 @@
+/*
+  You can use import statements to include partials:
+ */
+
+@import "imports/reset.css";
+/*
+  Or add your statements here:
+ */
+
+body {
+  font-family: system-ui;
+  font-size: 1em;
+  /* display: flex; */
+}
+
+section {
+  lost-utility: clearfix;
+}
+
+div {
+  lost-column: 1/2;
+}
