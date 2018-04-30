@@ -18,6 +18,11 @@ article {
 
 .social {
   text-align: center;
+  padding: 1em;
+}
+
+i.fab {
+  padding: 20rem;
 }
 
 .hero-image {
