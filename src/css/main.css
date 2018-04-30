@@ -16,6 +16,10 @@ article {
   margin: 1rem;
 }
 
+.social {
+  text-align: center;
+}
+
 .hero-image {
   background-image: url("/hero_image.jpg");
   height: 50%;
@@ -33,7 +37,7 @@ article {
   left: 5%;
 }
 
-.hero-text > h1 {
+.hero-text>h1 {
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: 0;
