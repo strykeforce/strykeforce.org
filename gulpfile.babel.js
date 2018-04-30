@@ -32,6 +32,7 @@ gulp.task('build-preview', gulp.parallel(css, js, fonts, (cb) => buildSite(cb, h
 // Compile CSS with PostCSS
 function css() {
   return gulp.src("./src/css/*.css")
+    .pipe(sourceMaps.init())
     .pipe(postcss([
       cssImport({
         from: "./src/css/main.css"
@@ -39,8 +40,8 @@ function css() {
       lost(),
       cssnext()
     ]))
-    .pipe(sourceMaps.write('./'))
-    .pipe(gulp.dest("./dist/css"))
+    .pipe(sourceMaps.write('.'))
+    .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream())
 }
 

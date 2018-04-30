@@ -3,20 +3,38 @@
  */
 
 @import "imports/reset.css";
-/*
-  Or add your statements here:
- */
-
 body {
   font-family: system-ui;
   font-size: 1em;
-  /* display: flex; */
 }
 
-section {
-  lost-utility: clearfix;
+body, html {
+  height: 100%;
 }
 
-div {
-  lost-column: 1/2;
+article {
+  margin: 1rem;
+}
+
+.hero-image {
+  background-image: url("/hero_image.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  color: rgba(255, 255, 255, 1.0);
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 5%;
+}
+
+.hero-text > h1 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
