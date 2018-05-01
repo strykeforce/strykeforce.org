@@ -1,0 +1,30 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "{{ .Site.BaseURL }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ .Site.Params.Name }}",
+    "url": "http://strykeforce.org/",
+    "sameAs": [
+      "https://twitter.com/{{ .Site.Params.TwitterID }}",
+      "https://facebook.com/{{ .Site.Params.FacebookID }}",
+      "https://github.com/{{ .Site.Params.GithubID }}",
+      "https://instagram.com/{{ .Site.Params.InstagramID }}"
+    ],
+    "logo": "{{ .Site.BaseURL }}{{ .Site.Params.ProfilePicture }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kalamazoo",
+      "addressRegion": "MI",
+      "addressCountry": "USA"
+    }
+  },
+  "description": "{{ .Site.Params.About }}",
+  "image": "{{ .Site.BaseURL }}{{ .Site.Params.ProfilePicture }}",
+  "thumbnailUrl": "{{ .Site.BaseURL }}{{ .Site.Params.ProfilePicture }}",
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "name": "{{ .Site.Params.Name }}"
+}
+</script>
