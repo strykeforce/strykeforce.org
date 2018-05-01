@@ -1,4 +1,4 @@
-BaseURL = "http://www.strykeforce.org/"
+baseURL = "http://www.strykeforce.org/"
 languageCode = "en-us"
 languageLang = "en"
 title = "Stryke Force"
