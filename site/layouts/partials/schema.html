@@ -1,3 +1,4 @@
+{{ if .IsHome }}
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
@@ -28,3 +29,46 @@
   "name": "{{ .Site.Params.Name }}"
 }
 </script>
+{{ else if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  {{ with .Params.tags -}}
+    "keywords": "{{ delimit . ", " }}",
+  {{- end }}
+  "wordcount": {{ .WordCount }},
+  "url": "{{ .Permalink }}",
+  {{ if not .PublishDate.IsZero -}}
+    "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}",
+  {{- else if not .Date.IsZero -}}
+    "datePublished": "{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}",
+  {{- end }}
+  {{ with .Lastmod -}}
+    "dateModified": "{{ .Format "2006-01-02T15:04:05-07:00" | safeHTML }}",
+  {{- end }}
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  {{ if .GitInfo }}
+  "author": {
+    "@type": "Person",
+    "name": "{{ .GitInfo.AuthorName }}"
+  },
+  {{- end }}
+  "description": "{{ .Description }}",
+  "image": "{{ .Site.BaseURL }}{{ .Site.Params.ProfilePicture }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Params.Name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.BaseURL }}{{ .Site.Params.ProfilePicture }}"
+    }
+  }
+}
+</script>
+{{end}}
