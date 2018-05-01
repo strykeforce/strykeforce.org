@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}/{{ end }}">
+  
   <title>{{ $.Site.Title }}</title>
   <link rel="stylesheet" href="css/main.css" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/brands.js" integrity="sha384-6jhVhr5a+Z1nLr9h+fd7ocMEo847wnGFelCHddaOOACUeZNoQwFXTxh4ysXVam8u" crossorigin="anonymous"></script>
