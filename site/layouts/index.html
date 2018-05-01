@@ -5,30 +5,16 @@
     <h1>Stryke Force</h1>A FIRST Robotics Team</div>
 </header>
 
-<article>
-  <header>
-    <h2>2018 Detroit World Champions</h2></header>
-  <p>Congratulations <strong>FRC Team 2767 Stryke Force</strong>, Kalamazoo, Michigan; <strong>Team 27 Team RUSH</strong>, Clarkston, Michigan, <strong>Team 2708 Lake Effects Robotics</strong>, Kingston, Ontario, Canada and <strong>Team 4027, Centre County 4-H Robotics</strong>,
-    State College, Pennsylvania for winning the 2018 Detroit World Championship!</p>
-</article>
-
-<article>
-  <header>
-    <h2>2018 Community Open Houses</h2></header>
-  <p>2018 World Champions Team 2767 Stryke Force invite you to their 2018 Community Open Houses from 6-8&nbsp;pm at their build space located in <a href="https://goo.gl/maps/9FEgKgfBeiS2">Midlink Business Park</a> on:</p>
-  <ul>
-    <li>Tuesday, May 8th</li>
-    <li>Thursday, May 10th</li>
-    <li>Monday, May 14th</li>
-    <li>Wednesday, May 16th</li>
-  </ul>
-</article>
-
-<article>
-  <header>
-    <h2>We're Refreshing our Web Site</h2></header>
-  <p>Be sure to stop by later for more information about our team and how to join!
-</article>
+<div class="foo">
+  {{ range .Data.Pages }}
+  <article>
+    <header>
+      <h2>{{ .Title }}</h2>
+    </header>
+    {{ .Content }}
+  </article>
+  {{end}}
+</div>
 
 <div class="social">
   <a href="https://facebook.com/{{ .Site.Params.FacebookID }}"><i class="fab fa-facebook-f fa-2x"  title="Facebook" style="color:black;padding-right: 2rem;"></i></a>
