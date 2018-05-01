@@ -34,7 +34,10 @@ i.fab {
 }
 
 .hero-image {
-  background-image: url("/hero_image.jpg");
+  background-image: url("/hero_image@0,5x.jpg");
+  @media (min-width: 768px) {
+    background-image: url("/hero_image.jpg");
+  }
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
