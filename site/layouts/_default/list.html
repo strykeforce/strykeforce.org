@@ -1,13 +1,15 @@
 {{ define "main" }}
 
-<header class="hero-image">
-  <div class="hero-text">
-    <h1>Stryke Force</h1>A FIRST Robotics Team</div>
-</header>
-
-<ul>
 {{ range .Paginator.Pages }}
-<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+<article class="blog">
+  <header>
+    <h2>{{ .Title }}</h2>
+  </header>
+  {{ .Summary }}
+  <footer>
+    <a href="{{ .Permalink }}">Read More</a>
+  </footer>
+</article>
 {{end}}
-</ul>
+
 {{end}}
