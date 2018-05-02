@@ -17,6 +17,10 @@ article {
   margin-right: 1rem;
 }
 
+article > footer {
+  padding-top: 0.5rem;
+}
+
 @media (min-width: 768px) {
   article {
     margin-left: 10rem;
