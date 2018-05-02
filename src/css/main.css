@@ -2,13 +2,10 @@
   You can use import statements to include partials:
  */
 
-@import "imports/reset.css";
-body {
-  font-family: system-ui;
-  font-size: 1em;
-}
+@import "imports/normalize.css";
 
 body, html {
+  font-family: Avenir Next, Calibri, Calibri Light, Segoe UI, Segoe UI Light, Myanmar Text, sans-serif;
   height: 100%;
 }
 

@@ -7,9 +7,7 @@ import gutil from "gulp-util";
 import flatten from "gulp-flatten";
 import postcss from "gulp-postcss";
 import sourceMaps from "gulp-sourcemaps";
-import cssImport from "postcss-import";
 import lost from "lost";
-import cssnext from "postcss-cssnext";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
@@ -34,11 +32,11 @@ function css() {
   return gulp.src("./src/css/*.css")
     .pipe(sourceMaps.init())
     .pipe(postcss([
-      cssImport({
+      require("postcss-import")({
         from: "./src/css/main.css"
       }),
-      lost(),
-      cssnext()
+      require("postcss-cssnext")(),
+      require("cssnano")({ autoprefixer: false })
     ]))
     .pipe(sourceMaps.write('.'))
     .pipe(gulp.dest('./dist/css'))
