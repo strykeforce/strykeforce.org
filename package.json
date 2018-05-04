@@ -9,7 +9,8 @@
     "build": "gulp build",
     "build-preview": "gulp build-preview",
     "start": "gulp server",
-    "lint": "eslint src"
+    "lint:css": "stylelint src/css/*.css",
+    "lint:js": "eslint src"
   },
   "author": "",
   "license": "MIT",
@@ -25,7 +26,6 @@
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.11.6",
     "browser-sync": "^2.24.1",
-    "caniuse-lite": "^1.0.30000832",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-plugin-import": "^2.11.0",
@@ -44,11 +44,22 @@
     "postcss-import": "^11.1.0",
     "postcss-normalize": "^4.0.0",
     "postcss-preset-env": "^4.1.0",
+    "stylelint": "^9.2.0",
+    "stylelint-no-unsupported-browser-features": "^3.0.0",
     "url-loader": "^0.6.2",
     "webpack": "3.10.0",
     "whatwg-fetch": "^2.0.4"
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "stylelint": {
+    "plugins": [
+      "stylelint-no-unsupported-browser-features"
+    ],
+    "rules": {
+      "plugin/no-unsupported-browser-features": true
+    },
+    "defaultSeverity": "warning"
+  }
 }
