@@ -3,7 +3,6 @@
  */
 
 @import "imports/normalize.css";
-
 body, html {
   font-family: Avenir Next, Calibri, Calibri Light, Segoe UI, Segoe UI Light, Myanmar Text, sans-serif;
   height: 100%;
@@ -14,7 +13,7 @@ article {
   margin-right: 1rem;
 }
 
-article > footer {
+article>footer {
   padding-top: 0.5rem;
 }
 

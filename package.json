@@ -14,8 +14,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "npm": "^6.0.0",
-    "whatwg-fetch": "^2.0.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
@@ -38,12 +36,14 @@
     "gulp-postcss": "^7.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-watch": "^5.0.0",
-    "hugo-bin": "^0.23.0",
+    "hugo-bin": "0.27",
     "imports-loader": "^0.8.0",
     "lost": "^8.2.1",
+    "npm": "^6.0.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
     "url-loader": "^0.6.2",
-    "webpack": "3.10.0"
+    "webpack": "3.10.0",
+    "whatwg-fetch": "^2.0.4"
   }
 }
