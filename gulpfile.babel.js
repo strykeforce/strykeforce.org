@@ -7,7 +7,6 @@ import gutil from "gulp-util";
 import flatten from "gulp-flatten";
 import postcss from "gulp-postcss";
 import sourceMaps from "gulp-sourcemaps";
-import lost from "lost";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
@@ -35,8 +34,14 @@ function css() {
       require("postcss-import")({
         from: "./src/css/main.css"
       }),
-      require("postcss-cssnext")(),
-      require("cssnano")({ autoprefixer: false })
+      require("postcss-normalize")(),
+      require("postcss-preset-env")({
+        stage: 3
+      }),
+      require("autoprefixer")(),
+      require("cssnano")({
+        autoprefixer: false
+      })
     ]))
     .pipe(sourceMaps.write('.'))
     .pipe(gulp.dest('./dist/css'))
