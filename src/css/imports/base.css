@@ -1,0 +1,10 @@
+@import-normalize;
+
+a, a:visited {
+  text-decoration: none;
+  color: rebeccapurple;
+}
+
+a:hover {
+  text-decoration: underline;
+}

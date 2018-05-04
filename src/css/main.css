@@ -1,4 +1,4 @@
-@import-normalize;
+@import "imports/base.css";
 
 body, html {
   font-family: Avenir Next, Calibri, Calibri Light, Segoe UI, Segoe UI Light, Myanmar Text, sans-serif;
