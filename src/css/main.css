@@ -1,8 +1,5 @@
-/*
-  You can use import statements to include partials:
- */
+@import-normalize;
 
-@import "imports/normalize.css";
 body, html {
   font-family: Avenir Next, Calibri, Calibri Light, Segoe UI, Segoe UI Light, Myanmar Text, sans-serif;
   height: 100%;
