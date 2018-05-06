@@ -1,9 +1,6 @@
 @import "imports/base.css";
+@import "imports/layout.css";
 
-body, html {
-  font-family: Avenir Next, Calibri, Calibri Light, Segoe UI, Segoe UI Light, Myanmar Text, sans-serif;
-  height: 100%;
-}
 
 article {
   margin-left: 1rem;
@@ -43,8 +40,8 @@ i.fab {
 }
 
 .hero-text {
-  color: rgba(255, 255, 255, 1.0);
-  background-color: rgba(0, 0, 0, 0.4);
+  color: var(--hero-text-color);
+  background-color: var(--hero-background-color);
   position: absolute;
   top: 0;
   left: 5%;
