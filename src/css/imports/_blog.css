@@ -1,0 +1,8 @@
+.blog {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @media (min-width: 768px) {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
