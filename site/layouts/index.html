@@ -1,16 +1,6 @@
 {{ define "main" }}
 
-<div class="blog">
-  {{ range .Data.Pages }}
-  <article class="blog">
-    <header>
-      <h2>{{ .Title }}</h2>
-    </header>
-    {{ .Content }}
-  </article>
-  {{end}}
-</div>
-
+{{ partial "blog" . }}
 {{ partial "social" . }}
 
 {{end}}

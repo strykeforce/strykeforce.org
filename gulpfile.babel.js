@@ -36,12 +36,12 @@ function css() {
       }),
       require("postcss-normalize")(),
       require("postcss-preset-env")({
-        stage: 3
+        stage: 1
       }),
       require("autoprefixer")(),
-      require("cssnano")({
-        autoprefixer: false
-      })
+      // require("cssnano")({
+      //   autoprefixer: false
+      // })
     ]))
     .pipe(sourceMaps.write('.'))
     .pipe(gulp.dest('./dist/css'))

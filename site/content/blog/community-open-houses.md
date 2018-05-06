@@ -2,6 +2,7 @@
 title: "2018 Community Open Houses"
 date: 2018-05-01T15:23:00-04:00
 draft: false
+weight: 1
 ---
 
 
