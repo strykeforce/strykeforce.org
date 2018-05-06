@@ -1,0 +1,11 @@
+.logo {
+  display: block;
+  padding: 1rem 1rem 0.25rem;
+}
+
+.logo__img {
+  /* normalize */
+  border-style: none;
+  /* styles */
+  width: 10rem;
+}

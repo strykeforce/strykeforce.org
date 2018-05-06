@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: var(--strykeforce);
+}
+
+.header__menu {
+  width: 100%
+}

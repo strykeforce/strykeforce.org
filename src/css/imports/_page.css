@@ -1,0 +1,14 @@
+html {
+  height: 100%;
+}
+
+.page {
+  /* normalize */
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  /* styles */
+  font-family: Avenir Next, Calibri, Calibri Light, Segoe UI, Segoe UI Light, Myanmar Text, sans-serif;
+  height: 100%;
+  margin: 0;
+}

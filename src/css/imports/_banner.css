@@ -1,0 +1,9 @@
+.banner {
+  width: 100%;
+  background-image: url(/hero_image.jpg);
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
