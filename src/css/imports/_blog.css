@@ -6,3 +6,15 @@
     margin-right: 10rem;
   }
 }
+
+.blog__post a {
+  /* normalize */
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  /* styles */
+  color: var(--link-text);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

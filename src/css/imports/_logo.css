@@ -9,3 +9,9 @@
   /* styles */
   width: 10rem;
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src*=".svg"] {
+    width: 55%;
+  }
+}
