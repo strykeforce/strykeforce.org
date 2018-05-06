@@ -10,6 +10,7 @@ import sourceMaps from "gulp-sourcemaps";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
+import csso from "gulp-csso";
 
 const browserSync = BrowserSync.create();
 
@@ -34,15 +35,16 @@ function css() {
       require("postcss-import")({
         from: "./src/css/main.css"
       }),
-      require("postcss-normalize")(),
       require("postcss-preset-env")({
         stage: 1
       }),
       require("autoprefixer")(),
-      // require("cssnano")({
-      //   autoprefixer: false
-      // })
     ]))
+    .pipe(csso({
+            restructure: true,
+            sourceMap: true,
+            debug: true
+        }))
     .pipe(sourceMaps.write('.'))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream())

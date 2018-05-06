@@ -1,54 +1,12 @@
-@import "imports/base.css";
-@import "imports/layout.css";
-
-
-article {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-article>footer {
-  padding-top: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  article {
-    margin-left: 10rem;
-    margin-right: 10rem;
-  }
-}
-
-.social {
-  text-align: center;
-  padding: 1em;
-}
+@import "./imports/_root.css";
+@import "./imports/_page.css";
+@import "./imports/_header.css";
+@import "./imports/_logo.css";
+@import "./imports/_social.css";
+@import "./imports/_nav-menu.css";
+@import "./imports/_banner.css";
+@import "./imports/_blog.css";
 
 i.fab {
   padding: 20rem;
-}
-
-.hero-image {
-  background-image: url("/hero_image@0,5x.jpg");
-  @media (min-width: 768px) {
-    background-image: url("/hero_image.jpg");
-  }
-  height: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.hero-text {
-  color: var(--hero-text-color);
-  background-color: var(--hero-background-color);
-  position: absolute;
-  top: 0;
-  left: 5%;
-}
-
-.hero-text>h1 {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: 0;
 }
