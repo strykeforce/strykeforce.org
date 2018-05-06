@@ -3,10 +3,5 @@
 @import "./imports/_header.css";
 @import "./imports/_logo.css";
 @import "./imports/_social.css";
-@import "./imports/_nav-menu.css";
 @import "./imports/_banner.css";
 @import "./imports/_blog.css";
-
-i.fab {
-  padding: 20rem;
-}
