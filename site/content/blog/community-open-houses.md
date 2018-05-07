@@ -1,10 +1,9 @@
----
-title: "2018 Community Open Houses"
-date: 2018-05-01T15:23:00-04:00
-draft: false
-weight: 1
----
-
++++
+date = "2018-05-01T15:23:00-04:00"
+draft = false
+title = "2018 Community Open Houses"
+weight = 1
++++
 
 Interested in learning more about Stryke Force Robotics? Come out and meet our students and mentors, tour our workspace, and see our robots in action!
 
