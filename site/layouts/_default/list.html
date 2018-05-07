@@ -1,15 +1,18 @@
 {{ define "main" }}
+<main>
+  {{ .Content }}
+  {{ range .Paginator.Pages }}
+  <article class="blog">
+    <header>
+      <h2>{{ .Title }}</h2>
+    </header>
+    {{ .Summary }}
+    <footer>
+      <a href="{{ .RelPermalink }}">Read More</a>
+    </footer>
+  </article>
+  {{end}}
 
-{{ range .Paginator.Pages }}
-<article class="blog">
-  <header>
-    <h2>{{ .Title }}</h2>
-  </header>
-  {{ .Summary }}
-  <footer>
-    <a href="{{ .RelPermalink }}">Read More</a>
-  </footer>
-</article>
-{{end}}
+</main>
 
 {{end}}
