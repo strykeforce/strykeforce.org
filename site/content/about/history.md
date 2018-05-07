@@ -1,8 +1,9 @@
-+++
-title = "Our History"
-date = "2018-05-07T09:15:34-04:00"
-draft = false
-+++
+---
+date: 2018-05-07T09:15:34-04:00
+draft: false
+title: Our History
+---
+
 Stryke Force’s rookie season was 2008-2009. The original team name was FLEET. It was a homeschool team with twelve students and no sponsor. Even though it was a learning year, the team’s efforts were recognized with the Rookie All Star Award, the Rookie Inspiration Award, and the Highest Rookie Seed Award.
 
 In 2009-2010 season, Stryker became a team sponsor. As a result, the team’s name was changed to Stryke Force to reflect our sponsor. That year, the team also became a community-wide team and had fifteen students from various schools in Kalamazoo, Battle Creek and surrounding areas. We ranked lower than 65th in the state.
