@@ -14,3 +14,7 @@
     text-decoration: underline;
   }
 }
+
+.blog__footer {
+  padding-top: 0.5rem;
+}
