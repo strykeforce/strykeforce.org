@@ -1,27 +1,20 @@
 .social {
   display: flex;
-  align-items: center;
+  height: 5rem;
+  flex-direction: row;
   justify-content: center;
-}
-
-.social__list {
-  display: flex;
+  align-items: center;
 }
 
 .social__item {
   list-style: none;
-  padding: 1rem;
+  width: 4rem;
 }
 
 .social__link {
-  /* normalize */
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-  /* styles */
   text-decoration: none;
 }
 
 .social__icon {
-  color: black;
   width: 2.5rem;
 }
