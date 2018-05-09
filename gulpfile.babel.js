@@ -35,16 +35,21 @@ function css() {
       require("postcss-import")({
         from: "./src/css/main.css"
       }),
+      require("postcss-normalize")({
+        forceImport: true
+      }),
       require("postcss-preset-env")({
         stage: 1
       }),
-      require("autoprefixer")(),
+      require("autoprefixer")({
+        grid: true
+      }),
     ]))
     .pipe(csso({
-            restructure: true,
-            sourceMap: true,
-            debug: true
-        }))
+      restructure: true,
+      sourceMap: true,
+      debug: false
+    }))
     .pipe(sourceMaps.write('.'))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream())

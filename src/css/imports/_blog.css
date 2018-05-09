@@ -8,10 +8,6 @@
 }
 
 .blog__post a {
-  /* normalize */
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-  /* styles */
   color: var(--link-text);
   text-decoration: none;
   &:hover {

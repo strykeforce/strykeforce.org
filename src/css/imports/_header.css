@@ -1,28 +1,29 @@
 .header {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
   background-color: var(--strykeforce);
 }
 
 .header__menu {
-  width: 100%
+  grid-column: 3 / 4;
+  align-self: center;
+  justify-self: end;
+  display: inline-block;
 }
 
 .nav-menu {
-  display: flex;
-  float: right;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-menu__item {
   list-style: none;
-  padding: 1rem 1rem 0;
+  display: inline;
+  padding: 1em;
 }
 
 .nav-menu__link {
-  /* normalize */
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-  /* styles */
   text-decoration: none;
   font-weight: bold;
   font-variant: small-caps;

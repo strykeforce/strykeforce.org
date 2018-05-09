@@ -4,10 +4,7 @@
 }
 
 .logo__img {
-  /* normalize */
-  border-style: none;
-  /* styles */
-  width: 10rem;
+  width: 8rem;
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
