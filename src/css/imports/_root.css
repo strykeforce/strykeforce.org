@@ -2,5 +2,10 @@
   /* Colors */
   --link-text: #1b75bb;
   --strykeforce: rgb(241, 186, 27);
-  /* --strykeforce: rebeccapurple; */
+  --black: #333;
+
+@custom-media --phone-only (max-width: 599px);
+@custom-media --tablet-portrait-up (min-width:600px);
+@custom-media --tablet-landscape-up (min-width:900px);
+@custom-media --desktop-up (min-width: 1200px);
 }
