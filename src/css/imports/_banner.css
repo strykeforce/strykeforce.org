@@ -1,9 +1,13 @@
 .banner {
   width: 100%;
-  background-image: url(/hero_image.jpg);
+  background-image: url(/hero_image@0,5x.jpg);
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+  @media (--tablet-portrait-up) {
+    background-image: url(/hero_image.jpg);
+  }
 }
