@@ -8,7 +8,20 @@ title = "Stryke Force"
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
-sectionPagesMenu = "main"
+# sectionPagesMenu = "main"
+
+[[menu.Main]]
+    	identifier = "about"
+    	name       = "About Us"
+    	url        = "/about/"
+    	weight     = 10
+
+[[menu.Main]]
+	identifier = "blog"
+	name       = "Blog"
+	url        = "/blog/"
+	weight     = 20
+
 
 [params]
   GithubID = "strykeforce"
