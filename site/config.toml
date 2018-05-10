@@ -8,6 +8,8 @@ title = "Stryke Force"
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
+sectionPagesMenu = "main"
+
 [params]
   GithubID = "strykeforce"
   TwitterID = "2767StrykeForce"
