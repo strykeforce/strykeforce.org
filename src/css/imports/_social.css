@@ -1,6 +1,6 @@
 .social {
   display: flex;
-  height: 5rem;
+  height: 6rem;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -11,10 +11,19 @@
   width: 4rem;
 }
 
+.social__item--larger {
+  width: 10rem;
+  text-align: center;
+}
+
 .social__link {
   text-decoration: none;
 }
 
 .social__icon {
   width: 2.5rem;
+}
+
+.social__icon--larger {
+  width: 8rem;
 }
