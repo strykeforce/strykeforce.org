@@ -5,7 +5,11 @@
     </a>
   </div>
   <ul class="nav__menu">
-    <li class="nav-menu__item"><a class="nav-menu__link" href="/about/">About</a></li>
-    <li class="nav-menu__item"><a class="nav-menu__link" href="/blog/">Blog</a></li>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+    <li class="nav-menu__item">
+      <a class="nav-menu__link{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} nav-menu__link--active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+    </li>
+    {{ end }}
   </ul>
 </header>

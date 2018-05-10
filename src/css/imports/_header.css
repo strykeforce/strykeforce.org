@@ -39,3 +39,7 @@
   font-size: 120%;
   color: var(--black);
 }
+
+.nav-menu__link--active {
+  color: white;
+}

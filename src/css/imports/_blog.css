@@ -7,12 +7,21 @@
   }
 }
 
+.blog__post {
+  display: flex;
+  flex-direction: column;
+}
+
 .blog__post a {
   color: var(--link-text);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
+}
+
+.blog > .instagram-media {
+margin-left: 1rem;
 }
 
 .blog__footer {

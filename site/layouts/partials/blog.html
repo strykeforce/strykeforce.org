@@ -1,10 +1,12 @@
 <div class="blog">
-  {{ range first 4 (where .Data.Pages "Type" "blog" )}}
+  {{ range first 4 (where .Data.Pages "Section" "blog" )}}
   <article class="blog__post">
     <header>
       <h2>{{ .Title }}</h2>
     </header>
-    {{ .Content }}
+    <div class="blog__content">
+      {{ .Content }}
+    </div>
   </article>
   {{end}}
 </div>
