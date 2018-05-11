@@ -12,7 +12,11 @@
   flex-direction: column;
 }
 
-.blog__post a {
+.blog_summary {
+  padding-bottom: 0em;
+}
+
+.blog__summary a, .blog__body a {
   color: var(--link-text);
   text-decoration: none;
   &:hover {
@@ -20,8 +24,28 @@
   }
 }
 
-.blog > .instagram-media {
-margin-left: 1rem;
+.blog__body img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog__read-more {
+  background-color: var(--readmore);
+  color: var(--black) !important;
+  padding: 4px 5px;
+  border-radius: 4px;
+  text-shadow: 1px 1px white;
+  text-decoration: none;
+  &:hover {
+    background-color: var(--readmore-hover);
+  }
+}
+
+.blog>.instagram-media {
+  margin-left: 1rem;
 }
 
 .blog__footer {

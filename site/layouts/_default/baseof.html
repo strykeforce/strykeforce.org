@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-{{ printf "<!-- Kind = %#v, Section = %#v -->" .Kind .Section | safeHTML }}
-{{ printf "<!-- Params = %#v -->" .Params | safeHTML }}
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
@@ -9,11 +7,11 @@
   <link rel="stylesheet" href="/css/main.css" />
   {{ partial "schema" . }}
 </head>
+
 <body class="page">
   {{ block "header" . }}{{ partial "header" . }}{{end}}
   {{ block "main" . }}{{end}}
   {{ block "footer" . }}{{ partial "footer" . }}{{end}}
   <script src="/app.js"></script>
 </body>
-
 </html>

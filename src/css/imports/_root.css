@@ -3,6 +3,9 @@
   --link-text: #1b75bb;
   --strykeforce: rgb(241, 186, 27);
   --black: #333;
+  /* --readmore: rgba(241, 186, 27, 0.6); */
+  --readmore: #e7e5e3;
+  --readmore-hover: #d7d5d3;
 
 @custom-media --phone-only (max-width: 599px);
 @custom-media --tablet-portrait-up (min-width:600px);

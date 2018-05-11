@@ -7,7 +7,10 @@ weight: 3
 
 Interested in learning more about Stryke Force Robotics? Come out and meet our students and mentors, tour our workspace, and see our robots in action!
 
-We have programs for students grades 5-12 from any school in the community - no previous experience is required. Family and friends are welcome and encouraged to attend. All you need to bring is interest and enthusiasm for robotics, CAD, programming, web design, marketing, strategy development, video games, and/or anything in between!
+We have programs for students grades 5-12 from any school in the community --- no previous experience is required. Family and friends are welcome and encouraged to attend. All you need to bring is interest and enthusiasm for robotics, CAD, programming, web design, marketing, strategy development, video games, and/or anything in between!
+<!--more-->
+
+{{< figure src="https://photos.smugmug.com/2018-Open-House/i-RWDmcST/0/1ee2880c/M/_MG_0016-M.jpg" >}}
 
 Open Houses are from 6-8 pm at our build space located in [Midlink Business Park](https://goo.gl/maps/9FEgKgfBeiS2) on:
 
