@@ -5,6 +5,7 @@ title: About
 menu:
   main:
     weight: 10
+foo: bar
 ---
 
 # About Stryke Force

@@ -1,14 +1,4 @@
-.logo {
-  display: block;
-  padding: 1rem 1rem 0.25rem;
-}
-
 .logo__img {
-  width: 8rem;
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  img[src*=".svg"] {
-    width: 55%;
-  }
+  padding: 1rem 1rem 0.25rem;
+  height: 3rem;
 }
