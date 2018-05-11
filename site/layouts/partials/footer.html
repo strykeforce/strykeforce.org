@@ -1,3 +1,26 @@
 <footer class="footer">
-  {{ partial "social" . }}
+  <ul class="social">
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/{{ .Site.Params.TwitterID }}">
+        <img src="/img/fa/twitter.svg" class="social__icon" alt="Twitter">
+      </a>
+    </li>
+    <li class="social__item">
+      <a class="social__link" href="https://facebook.com/{{ .Site.Params.FacebookID }}">
+        <img src="/img/fa/facebook.svg" class="social__icon" alt="Facebook">
+      </a>
+    </li>
+    <li class="social__item"><a class="social__link" href="https://instagram.com/{{ .Site.Params.InstagramID }}">
+        <img src="/img/fa/instagram.svg" class="social__icon" alt="Instagram">
+      </a>
+    </li>
+    <li class="social__item"><a class="social__link" href="https://github.com/{{ .Site.Params.GithubID }}">
+        <img src="/img/fa/github.svg" class="social__icon" alt="GitHub">
+      </a></li>
+  </ul>
+
+  <a class="footer__link" href="/">
+    <img class="footer__2767" src="/img/2767.svg" alt="2767 icon">
+  </a>
+
 </footer>

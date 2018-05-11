@@ -1,4 +1,17 @@
 .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--strykeforce);
   margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.footer__link {
+  text-decoration: none;
+}
+
+.footer__2767 {
+  height: 5rem;
 }

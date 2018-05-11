@@ -7,6 +7,7 @@ title = "Stryke Force"
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+enableGitInfo = true
 
 [params]
   GithubID = "strykeforce"
