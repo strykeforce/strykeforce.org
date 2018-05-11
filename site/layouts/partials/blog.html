@@ -1,12 +1,17 @@
 <div class="blog">
-  {{ range first 4 (where .Data.Pages "Section" "blog" )}}
+  {{ range . }}
   <article class="blog__post">
     <header>
       <h2>{{ .Title }}</h2>
     </header>
-    <div class="blog__content">
-      {{ .Content }}
+    <div class="blog_summary">
+      {{ .Summary }}
     </div>
+    <footer class="blog__footer">
+      {{ if .Truncated }}
+      <a href="{{ .RelPermalink }}" class="blog__read-more">Read More</a>
+      {{ end }}
+    </footer>
   </article>
   {{end}}
 </div>
