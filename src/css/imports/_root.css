@@ -5,10 +5,13 @@
   --readmore: #e7e5e3;
   --readmore-hover: #d7d5d3;
 
-@custom-media --phone-only (max-width: 599px);
-@custom-media --tablet-portrait-up (min-width:600px);
-@custom-media --tablet-landscape-up (min-width:900px);
-@custom-media --desktop-up (min-width: 1200px);
+  --spacing-small: 1em;
+  --spacing-medium: 1.618em;
+  --spacing-large: 2em;
 
-font-family: Avenir Next, Calibri, Calibri Light, Segoe UI, Segoe UI Light, Myanmar Text, sans-serif;
+  @custom-media --phone-only (max-width: 599px);
+  @custom-media --tablet-portrait-up (min-width: 600px);
+  @custom-media --tablet-landscape-up (min-width: 900px);
+  @custom-media --desktop-up (min-width: 1200px);
+  font-family: Avenir Next, Calibri, Calibri Light, Segoe UI, Segoe UI Light, Myanmar Text, sans-serif;
 }

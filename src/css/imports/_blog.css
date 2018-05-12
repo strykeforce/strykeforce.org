@@ -1,11 +1,17 @@
-.blog {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .blog__post {
   display: flex;
   flex-direction: column;
+  max-width: 40em;
+  margin: auto;
+}
+
+.blog__article {
+  max-width: 40em;
+  margin: auto;
+}
+
+.blog__header {
+  margin-bottom: 0;
 }
 
 .blog_summary {
@@ -29,14 +35,17 @@
 }
 
 .blog__read-more {
-  background-color: var(--readmore);
-  color: var(--black) !important;
-  padding: 4px 5px;
+  display: inline-block;
+  background-color: white;
+  color: var(--strykeforce);
+  padding: 5px 8px;
+  border: 1px solid var(--strykeforce);
   border-radius: 4px;
-  text-shadow: 1px 1px white;
   text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
   &:hover {
-    background-color: var(--readmore-hover);
+    transform: scale(1.05, 1.05);
   }
 }
 

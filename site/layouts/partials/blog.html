@@ -1,15 +1,17 @@
-<div class="blog">
+<div class="container">
   {{ range . }}
   <article class="blog__post">
     <header>
-      <h2>{{ .Title }}</h2>
+      <h2 class="blog__header">{{ .Title }}</h2>
     </header>
     <div class="blog_summary">
       {{ .Summary }}
     </div>
     <footer class="blog__footer">
       {{ if .Truncated }}
-      <a href="{{ .RelPermalink }}" class="blog__read-more">Read More</a>
+      <a href="{{ .RelPermalink }}">
+        <button class="blog__read-more">Read More</button>
+      </a>
       {{ end }}
     </footer>
   </article>
