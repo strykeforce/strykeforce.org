@@ -24,6 +24,11 @@ body {
   }
 }
 
+.container > p {
+  max-width: 40em;
+  margin: auto;
+}
+
 .container::after, .container::before {
   content: "";
   display: table;

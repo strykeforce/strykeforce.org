@@ -1,4 +1,6 @@
 {{ define "main" }}
-{{ .Content }}
-{{ partial "blog" .Paginator.Pages }}
+<div class="container">
+  {{ .Content }}
+  {{ partial "blog" .Paginator.Pages }}
+</div>
 {{end}}
