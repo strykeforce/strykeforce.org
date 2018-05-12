@@ -1,8 +1,7 @@
 @import "./imports/_root.css";
-@import "./imports/_page.css";
+@import "./imports/_layout.css";
 @import "./imports/_header.css";
 @import "./imports/_logo.css";
 @import "./imports/_social.css";
-@import "./imports/_banner.css";
 @import "./imports/_blog.css";
 @import "./imports/_footer.css";
