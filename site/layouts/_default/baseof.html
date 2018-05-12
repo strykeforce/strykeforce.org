@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -8,10 +9,30 @@
   {{ partial "schema" . }}
 </head>
 
-<body class="page">
-  {{ block "header" . }}{{ partial "header" . }}{{end}}
-  {{ block "main" . }}{{end}}
-  {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+<body>
+  <div class="layout">
+    <div class="layout__header">
+      {{ block "header" . }}{{ partial "header" . }}{{end}}
+    </div>
+
+    {{ if .IsHome }}
+      <div class="layout__banner banner"></div>
+    {{ end }}
+
+    <main class="layout__main">
+      {{ block "main" . }}{{end}}
+    </main>
+
+    <aside class="layout__aside">
+      {{ block "aside" . }}{{ end }}
+    </aside>
+
+    <div class="layout__footer">
+      {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+    </div>
+  </div>
+
   <script src="/app.js"></script>
 </body>
+
 </html>
