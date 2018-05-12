@@ -10,27 +10,17 @@
 </head>
 
 <body>
-  <div class="layout">
-    <div class="layout__header">
-      {{ block "header" . }}{{ partial "header" . }}{{end}}
-    </div>
+  <header class="header">
+    {{ block "header" . }}{{ partial "header" . }}{{end}}
+  </header>
 
-    {{ if .IsHome }}
-      <div class="layout__banner banner"></div>
-    {{ end }}
+  <main class="main">
+    {{ block "main" . }}{{end}}
+  </main>
 
-    <main class="layout__main">
-      {{ block "main" . }}{{end}}
-    </main>
-
-    <aside class="layout__aside">
-      {{ block "aside" . }}{{ end }}
-    </aside>
-
-    <div class="layout__footer">
-      {{ block "footer" . }}{{ partial "footer" . }}{{end}}
-    </div>
-  </div>
+  <footer class="footer">
+    {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+  </footer>
 
   <script src="/app.js"></script>
 </body>

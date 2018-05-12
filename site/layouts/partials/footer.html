@@ -1,26 +1,21 @@
-<footer class="footer">
-  <ul class="social">
-    <li class="social__item">
-      <a class="social__link" href="https://twitter.com/{{ .Site.Params.TwitterID }}">
-        <img src="/img/fa/twitter.svg" class="social__icon" alt="Twitter">
-      </a>
-    </li>
-    <li class="social__item">
-      <a class="social__link" href="https://facebook.com/{{ .Site.Params.FacebookID }}">
-        <img src="/img/fa/facebook.svg" class="social__icon" alt="Facebook">
-      </a>
-    </li>
-    <li class="social__item"><a class="social__link" href="https://instagram.com/{{ .Site.Params.InstagramID }}">
-        <img src="/img/fa/instagram.svg" class="social__icon" alt="Instagram">
-      </a>
-    </li>
-    <li class="social__item"><a class="social__link" href="https://github.com/{{ .Site.Params.GithubID }}">
-        <img src="/img/fa/github.svg" class="social__icon" alt="GitHub">
-      </a></li>
-  </ul>
-
+<div class="container">
+  <hr>
   <a class="footer__link" href="/">
     <img class="footer__2767" src="/img/2767.svg" alt="2767 icon">
   </a>
 
-</footer>
+  <ul class="footer__social">
+    {{ template "social" (dict "name" "Twitter" "url" "https://twitter.com/2767StrykeForce") }}
+    {{ template "social" (dict "name" "Facebook" "url" "https://facebook.com/2767strykeforce") }}
+    {{ template "social" (dict "name" "Instagram" "url" "https://instagram.com/2767strykeforce") }}
+    {{ template "social" (dict "name" "GitHub" "url" "https://github.com/strykeforce") }}
+  </ul>
+</container>
+
+{{ define "social" }}
+  <li class="footer__social-item">
+    <a class="footer__social-item-link" href="{{ .url }}">
+      <img src="/img/fa/{{ lower .name }}.svg" class="footer__social-icon" alt="{{ .name }}">
+    </a>
+  </li>
+{{ end }}
