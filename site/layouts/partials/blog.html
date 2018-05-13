@@ -9,9 +9,7 @@
     </div>
     <footer class="blog__footer">
       {{ if .Truncated }}
-      <a href="{{ .RelPermalink }}">
-        <button class="blog__read-more">Read More</button>
-      </a>
+        <a class="blog__read-more" href="{{ .RelPermalink }}">Read More</a>
       {{ end }}
     </footer>
   </article>
