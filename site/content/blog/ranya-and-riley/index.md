@@ -1,7 +1,7 @@
 ---
 title: "Ranya and Riley"
 date: 2018-05-12T18:23:49-04:00
-draft: true
+draft: false
 ---
 Team members Ranya and Riley take a moment to reflect on their first year as members of the Stryke Force team.
 <!--more-->
