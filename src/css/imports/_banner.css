@@ -1,12 +1,10 @@
 .banner {
-  width: 100%;
+  flex: 1 100%;
+  height: 40vh;
   background-image: url(/img/hero_image@0,5x.jpg);
-  height: 50%;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-
+  background-repeat: no-repeat;
   @media (--tablet-portrait-up) {
     background-image: url(/img/hero_image.jpg);
   }

@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-{{ printf "<!-- Kind = %#v, Section = %#v -->" .Kind .Section | safeHTML }}
-{{ printf "<!-- Params = %#v -->" .Params | safeHTML }}
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{{ $.Site.Title }}</title>
   <link rel="stylesheet" href="/css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
   {{ partial "schema" . }}
 </head>
-<body class="page">
-  {{ block "header" . }}{{ partial "header" . }}{{end}}
-  {{ block "main" . }}{{end}}
-  {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+
+<body>
+  <header class="header">
+    {{ block "header" . }}{{ partial "header" . }}{{end}}
+  </header>
+
+  <main class="main">
+    {{ block "main" . }}{{end}}
+  </main>
+
+  <footer class="footer">
+    {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+  </footer>
+
   <script src="/app.js"></script>
 </body>
 

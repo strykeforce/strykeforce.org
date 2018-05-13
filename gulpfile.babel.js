@@ -38,6 +38,7 @@ function css() {
       require("postcss-normalize")({
         forceImport: true
       }),
+      require('postcss-flexbugs-fixes')(),
       require("postcss-preset-env")({
         stage: 1
       }),
