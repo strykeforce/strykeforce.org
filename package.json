@@ -47,7 +47,7 @@
     "postcss-preset-env": "^5.0.0",
     "stylelint": "^9.2.0",
     "stylelint-no-unsupported-browser-features": "^3.0.0",
-    "webpack": "3.10.0",
+    "webpack": "^4.8.3",
     "whatwg-fetch": "^2.0.4"
   },
   "browserslist": [
