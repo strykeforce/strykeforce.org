@@ -1,6 +1,4 @@
 {{ define "main" }}
-
-{{ partial "carousel" . }}
-{{ partial "blog" . }}
-
+  {{ partial "banner" . }}
+  {{ partial "blog" (first 4 (where .Data.Pages "Section" "blog" )) }}
 {{end}}
