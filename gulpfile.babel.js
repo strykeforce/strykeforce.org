@@ -40,11 +40,8 @@ function css() {
       }),
       require('postcss-flexbugs-fixes')(),
       require("postcss-preset-env")({
-        stage: 1
-      }),
-      require("autoprefixer")({
-        grid: true
-      }),
+        stage: 0
+      })
     ]))
     .pipe(csso({
       restructure: true,
