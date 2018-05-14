@@ -13,7 +13,7 @@
   <ul class="gallery__list">
     {{ range .sponsors }}
     <li class="gallery__item">
-      <a href="{{ .url }}">
+      <a href="{{ .url }}" target="_blank">
         <img class="gallery__logo" src="{{ (($resources.GetMatch .logo).Fit $resample ).RelPermalink }}" alt="{{ .name }}">
       </a>
     </li>
