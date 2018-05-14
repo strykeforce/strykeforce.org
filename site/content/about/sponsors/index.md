@@ -20,7 +20,7 @@ sponsors = [
   { name = "Bauckham Sparks", url = "https://www.michigantownshiplaw.com/", logo = "img/bauckham_sparks.png"},
   { name = "CTS Telecom Inc", url = "https://www.ctstelecom.com/", logo = "img/cts.png" },
   { name = "Fabri-Kal", url = "http://www.fabri-kal.com", logo = "img/fabri_kal.png"},
-  { name = "Kalamazoo Water Jet", url = "https://www.facebook.com/KalamazooWaterjetServices/", logo = "img/water_jet.png" },
+  { name = "Kalamazoo Water Jet", url = "http://www.consort.com/kalamazoowaterjet/", logo = "img/water_jet.png" },
 ]
 [[levels]]
 name = "Silver"
