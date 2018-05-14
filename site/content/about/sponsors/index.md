@@ -4,6 +4,7 @@ description = "List of organizations that sponsor Stryke Force Robotics."
 date = 2018-05-12T18:47:14-04:00
 draft = false
 layout = "sponsors"
+more = true
 
 [[levels]]
 name = "Platinum"
@@ -41,6 +42,5 @@ sponsors = [
 ]
 +++
 
-# Stryke Force Sponsors
-
-We are grateful to the Stryke Force sponsors who have helped us make an impact on our students every year. The organizations listed below provide generous financial support, material and services to make our program possible.
+We are grateful to the Stryke Force sponsors who have helped us make an impact on our students every year. The organizations listed below provide generous financial support, materials and services to make our program possible.
+<!--more-->
