@@ -8,7 +8,7 @@
       {{ .Summary }}
     </div>
     <footer class="blog__footer">
-      {{ if .Truncated }}
+      {{ if (or .Truncated .Params.more ) }}
         <a class="blog__read-more" href="{{ .RelPermalink }}">Read More</a>
       {{ end }}
     </footer>

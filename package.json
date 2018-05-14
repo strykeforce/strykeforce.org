@@ -15,7 +15,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "autoprefixer": "^8.4.1",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
@@ -26,6 +25,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.11.6",
     "browser-sync": "^2.24.1",
+    "browserslist-ga": "^0.0.10",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-plugin-import": "^2.11.0",
@@ -41,18 +41,18 @@
     "hugo-bin": "^0.27.1",
     "imports-loader": "^0.8.0",
     "lost": "^8.2.1",
-    "npm": "^6.0.0",
+    "npm": "^6.0.1",
     "postcss-flexbugs-fixes": "^3.3.1",
     "postcss-import": "^11.1.0",
     "postcss-normalize": "^4.0.0",
-    "postcss-preset-env": "^4.1.0",
+    "postcss-preset-env": "^5.0.0",
     "stylelint": "^9.2.0",
     "stylelint-no-unsupported-browser-features": "^3.0.0",
-    "url-loader": "^0.6.2",
-    "webpack": "3.10.0",
+    "webpack": "^4.8.3",
     "whatwg-fetch": "^2.0.4"
   },
   "browserslist": [
+    "> 0.25% in my stats",
     "defaults"
   ],
   "stylelint": {
