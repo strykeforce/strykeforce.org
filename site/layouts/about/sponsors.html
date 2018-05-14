@@ -1,13 +1,25 @@
 {{ define "main" }}
-{{ .Content }}
+<section class="container">
+
+<div>
+  {{ .Content }}
+</div>
+
+{{ $resources := .Resources }}
 
 {{ range .Params.levels }}
-  <h2>{{ .name }}</h2>
-  <ul>
+{{ $resample := .resample }}
+  <h1 class="gallery__header">{{ .name }}</h1>
+  <ul class="gallery__list">
     {{ range .sponsors }}
-    <li><a href="{{ .url }}">{{ .name }}</a></li>
+    <li class="gallery__item">
+      <a href="{{ .url }}">
+        <img class="gallery__logo" src="{{ (($resources.GetMatch .logo).Fit $resample ).RelPermalink }}" alt="{{ .name }}">
+      </a>
+    </li>
     {{ end }}
   </ul>
 {{ end }}
 
+</section>
 {{ end }}
