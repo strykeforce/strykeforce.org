@@ -52,8 +52,8 @@
     "whatwg-fetch": "^2.0.4"
   },
   "browserslist": [
-    "defaults",
-    "> 0.5% in my stats"
+    "> 0.25% in my stats",
+    "defaults"
   ],
   "stylelint": {
     "plugins": [
