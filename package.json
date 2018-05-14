@@ -25,6 +25,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.11.6",
     "browser-sync": "^2.24.1",
+    "browserslist-ga": "^0.0.10",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-plugin-import": "^2.11.0",
@@ -51,7 +52,8 @@
     "whatwg-fetch": "^2.0.4"
   },
   "browserslist": [
-    "defaults"
+    "defaults",
+    "> 0.5% in my stats"
   ],
   "stylelint": {
     "plugins": [

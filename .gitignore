@@ -2,3 +2,4 @@ node_modules/
 dist/
 site/public/
 *.log
+browserslist-stats.json
