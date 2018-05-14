@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{ .Content }}
+
+{{ range .Params.levels }}
+  <h2>{{ .name }}</h2>
+  <ul>
+    {{ range .sponsors }}
+    <li><a href="{{ .url }}">{{ .name }}</a></li>
+    {{ end }}
+  </ul>
+{{ end }}
+
+{{ end }}
