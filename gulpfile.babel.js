@@ -10,8 +10,6 @@ import rename from 'gulp-rename';
 import BrowserSync from 'browser-sync';
 import webpack from 'webpack';
 import webpackConfig from './webpack.conf';
-import csso from 'gulp-csso';
-import log from 'fancy-log';
 
 const browserSync = BrowserSync.create();
 
@@ -61,10 +59,6 @@ function css() {
     }))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream())
-    .on('end', function() {
-      log('hi ' + process.env.NODE_ENV)
-    })
-
 }
 
 // Compile Javascript

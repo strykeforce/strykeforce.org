@@ -2436,13 +2436,6 @@ css-tokenize@^1.0.1:
     inherits "^2.0.1"
     readable-stream "^1.0.33"
 
-css-tree@1.0.0-alpha.27:
-  version "1.0.0-alpha.27"
-  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.0.0-alpha.27.tgz#f211526909c7dc940843d83b9376ed98ddb8de47"
-  dependencies:
-    mdn-data "^1.0.0"
-    source-map "^0.5.3"
-
 css@2.X, css@^2.2.1:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/css/-/css-2.2.3.tgz#f861f4ba61e79bedc962aa548e5780fd95cbc6be"
@@ -2496,12 +2489,6 @@ cssnano@^3.10.0:
     postcss-unique-selectors "^2.0.2"
     postcss-value-parser "^3.2.3"
     postcss-zindex "^2.0.1"
-
-csso@^3.0.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/csso/-/csso-3.5.0.tgz#acdbba5719e2c87bc801eadc032764b2e4b9d4e7"
-  dependencies:
-    css-tree "1.0.0-alpha.27"
 
 csso@~2.3.1:
   version "2.3.2"
@@ -4098,14 +4085,6 @@ gulp-cli@^2.0.0:
     semver-greatest-satisfied-range "^1.1.0"
     v8flags "^3.0.1"
     yargs "^7.1.0"
-
-gulp-csso@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/gulp-csso/-/gulp-csso-3.0.1.tgz#3c160364491e32f2ecefd5d531cf7724f1afb7f0"
-  dependencies:
-    csso "^3.0.0"
-    plugin-error "^0.1.2"
-    vinyl-sourcemaps-apply "^0.2.1"
 
 gulp-decompress@^1.2.0:
   version "1.2.0"
@@ -5721,10 +5700,6 @@ mdast-util-compact@^1.0.0:
   dependencies:
     unist-util-modify-children "^1.0.0"
     unist-util-visit "^1.1.0"
-
-mdn-data@^1.0.0:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-1.1.2.tgz#ceaa6a831b4de494352af984d301e3a8f2cad6e5"
 
 meant@~1.0.1:
   version "1.0.1"
