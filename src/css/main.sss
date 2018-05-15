@@ -1,0 +1,28 @@
+@import "layout.sss"
+@import "header.sss"
+@import "footer.sss"
+@import "logo.sss"
+@import "banner.sss"
+@import "section.sss"
+@import "blog.sss"
+@import "gallery.sss"
+@import "smugmug.sss"
+
+:root
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif, "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol"
+
+  --link-text: #1b75bb
+  --strykeforce: rgb(241, 186, 27)
+  --black: #333
+  --readmore: #e7e5e3
+  --readmore-hover: #d7d5d3
+  --spacing-small: 1em
+  --spacing-medium: 1.618em
+  --spacing-large: 2em
+
+  @custom-media --phone-only (max-width: 599px)
+  @custom-media --tablet-portrait-up (min-width: 600px)
+  @custom-media --tablet-landscape-up (min-width: 900px)
+  @custom-media --desktop-up (min-width: 1200px)
