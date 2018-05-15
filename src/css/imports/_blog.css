@@ -15,12 +15,14 @@
 }
 
 .blog_summary {
-  padding-bottom: 0em;
+  padding-bottom: 0;
 }
 
-.blog__summary a, .blog__body a {
+.blog__summary a,
+.blog__body a {
   color: var(--link-text);
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
@@ -49,6 +51,7 @@
   text-decoration: none;
   cursor: pointer;
   font-size: 1rem;
+
   &:hover {
     transform: scale(1.05, 1.05);
   }

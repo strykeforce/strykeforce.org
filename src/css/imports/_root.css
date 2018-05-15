@@ -4,7 +4,6 @@
   --black: #333;
   --readmore: #e7e5e3;
   --readmore-hover: #d7d5d3;
-
   --spacing-small: 1em;
   --spacing-medium: 1.618em;
   --spacing-large: 2em;
@@ -13,6 +12,6 @@
   @custom-media --tablet-portrait-up (min-width: 600px);
   @custom-media --tablet-landscape-up (min-width: 900px);
   @custom-media --desktop-up (min-width: 1200px);
-  
+
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
