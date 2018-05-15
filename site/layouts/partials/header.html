@@ -7,7 +7,7 @@
     <ul class="header__nav-menu">
       {{ $currentPage := . }} {{ range .Site.Menus.main }}
       <li class="header__nav-menu-item">
-        <a class="header__nav-menu-item-link{{if or ($currentPage.IsMenuCurrent " main " .) ($currentPage.HasMenuCurrent "main " .) }} header__nav-menu-item-link--active{{end}}" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
+        <a class="header__nav-menu-item-link{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} header__nav-menu-item-link--active{{end}}" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
       </li>
       {{ end }}
     </ul>
