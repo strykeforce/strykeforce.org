@@ -9,9 +9,9 @@
   background-image:
     linear-gradient(
       to right,
-      color-mod($hr_gradient alpha(0)),
-      color-mod($hr_gradient alpha(0.75)),
-      color-mod($hr_gradient alpha(0))
+      color-mod(var(--hr-gradient) alpha(0)),
+      color-mod(var(--hr-gradient) alpha(0.75)),
+      color-mod(var(--hr-gradient) alpha(0))
     )
 
 .footer__link
@@ -36,6 +36,6 @@
   text-decoration: none
 
 .footer__social-icon
-  height: $large_space
-  padding-left: $small_space
-  padding-right: $small_space
+  height: var(--large-space)
+  padding-left: var(--small-space)
+  padding-right: var(--small-space)

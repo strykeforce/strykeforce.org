@@ -1,13 +1,4 @@
-@import "variables.sss"
-@import "layout.sss"
-@import "header.sss"
-@import "footer.sss"
-@import "logo.sss"
-@import "banner.sss"
-@import "section.sss"
-@import "blog.sss"
-@import "gallery.sss"
-@import "smugmug.sss"
+@import "components/*"
 
 :root
   font-family:
@@ -26,3 +17,23 @@
   @custom-media --tablet-portrait-up (min-width: 600px)
   @custom-media --tablet-landscape-up (min-width: 900px)
   @custom-media --desktop-up (min-width: 1200px)
+
+  --strykeforce-blue: #1b75bb
+  --strykeforce-yellow: rgb(241, 186, 27)
+  --black: #333
+  --banner-color: var(--strykeforce-yellow)
+  --link-color: var(--strykeforce-blue)
+  --button-color: var(--strykeforce-yellow)
+  --button-background: white
+  --hr-gradient: var(--strykeforce-yellow)
+
+  --font-size: 1rem
+
+  --tiny-space: 0.39em
+  --extra-small-space: 0.618em
+  --small-space: 1em
+  --medium-space: 1.618em
+  --large-space: 2em
+  --container-width: 75rem
+  --content-width: 40em
+  --blog-image-width: 600px

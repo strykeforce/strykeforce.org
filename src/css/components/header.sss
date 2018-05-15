@@ -1,5 +1,5 @@
 .header
-  background-color: $banner_color
+  background-color: var(--banner-color)
 
 .header__nav
   display: flex
@@ -19,16 +19,16 @@
 
 .header__nav-menu-item
   list-style: none
-  padding: 0 0 $extra_small_space
+  padding: 0 0 var(--extra-small-space)
 
   @media (--tablet-portrait-up)
-    padding: 0 $small_space
+    padding: 0 var(--small-space)
 
 .header__nav-menu-item-link
   text-decoration: none
   font-weight: bold
   font-size: 120%
-  color: $black
+  color: var(--black)
 
 .header__nav-menu-item-link--active
   color: white
