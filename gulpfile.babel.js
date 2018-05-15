@@ -30,8 +30,7 @@ gulp.task('style', css);
 const postcssPlugins = [
   require('postcss-easy-import')({
     from: './src/css/main.sss',
-    extensions: '.sss',
-    prefix: 'imports/_'
+    extensions: '.sss'
   }),
   require('postcss-normalize')({
     forceImport: true
