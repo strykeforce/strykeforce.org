@@ -6,7 +6,11 @@ draft: false
 Team members Ranya and Riley take a moment to reflect on their first year as members of the Stryke Force team.
 <!--more-->
 
-{{< figure src="/blog/ranya-and-riley/ford_field.png" caption="Riley (left) and Ranya (right) show off their 2018 Detroit Championship medals with their mentor Jeff." >}}
+{{< figure class="blog__figure"
+    src="/blog/ranya-and-riley/ford_field.png"
+    link="https://strykeforce.smugmug.com/PowerUp/i-MMDZ5rr/A"
+    target="_blank"
+    caption="Riley (left) and Ranya (right) show off their 2018 Detroit Championship medals with their mentor Jeff." >}}
 
 ### Ranya
 

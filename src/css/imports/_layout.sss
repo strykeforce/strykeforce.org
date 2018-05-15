@@ -2,7 +2,7 @@ body
   padding: 0
   margin: 0
   position: relative
-  font-size: 1rem
+  font-size: $font_size
 
 .main
   background: white
@@ -10,18 +10,18 @@ body
 .container
   box-sizing: border-box
   position: relative
-  max-width: 75rem
-  padding: 0 var(--spacing-small)
+  max-width: $container_width
+  padding: 0 $small_space
   margin: 0 auto
 
   @media (--tablet-portrait-up)
-    padding: 0 var(--spacing-medium)
+    padding: 0 $medium_space
 
   @media (--tablet-landscape-up)
-    padding: 0 var(--spacing-large)
+    padding: 0 $large_space
 
   > p
-    max-width: 40em
+    max-width: $content_width
     margin: auto
 
   &::after,
