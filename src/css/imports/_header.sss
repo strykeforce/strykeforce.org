@@ -1,5 +1,5 @@
 .header
-  background-color: var(--strykeforce)
+  background-color: $banner_color
 
 .header__nav
   display: flex
@@ -20,17 +20,17 @@
 
 .header__nav-menu-item
   list-style: none
-  padding: 0 0 0.75rem
+  padding: 0 0 $extra_small_space
 
   @media (--tablet-portrait-up)
-    padding: 0 1rem
+    padding: 0 $small_space
   }
 
 .header__nav-menu-item-link
   text-decoration: none
   font-weight: bold
   font-size: 120%
-  color: var(--black)
+  color: $black
 
 .header__nav-menu-item-link--active
   color: white
