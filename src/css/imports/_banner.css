@@ -5,6 +5,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
   @media (--tablet-portrait-up) {
     background-image: url(/img/hero_image.jpg);
   }

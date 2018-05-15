@@ -19,6 +19,7 @@ body {
   @media (--tablet-portrait-up) {
     padding: 0 var(--spacing-medium);
   }
+
   @media (--tablet-landscape-up) {
     padding: 0 var(--spacing-large);
   }
@@ -29,7 +30,8 @@ body {
   margin: auto;
 }
 
-.container::after, .container::before {
+.container::after,
+.container::before {
   content: "";
   display: table;
   clear: both;
