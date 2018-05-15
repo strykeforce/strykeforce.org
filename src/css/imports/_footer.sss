@@ -7,10 +7,12 @@
   border: 0
   height: 1px
   background-image:
-    linear-gradient(to right,
-                    color-mod($hr_gradient alpha(0)),
-                    color-mod($hr_gradient alpha(0.75)),
-                    color-mod($hr_gradient alpha(0)))
+    linear-gradient(
+      to right,
+      color-mod($hr_gradient alpha(0)),
+      color-mod($hr_gradient alpha(0.75)),
+      color-mod($hr_gradient alpha(0))
+    )
 
 .footer__link
   text-decoration: none
@@ -34,6 +36,6 @@
   text-decoration: none
 
 .footer__social-icon
-  height: 2rem
-  padding-left: 1rem
-  padding-right: 1rem
+  height: $large_space
+  padding-left: $small_space
+  padding-right: $small_space
