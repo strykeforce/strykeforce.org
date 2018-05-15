@@ -1,0 +1,51 @@
+.blog__post
+  display: flex
+  flex-direction: column
+  max-width: 40em
+  margin: auto
+
+.blog__article
+  max-width: 40em
+  margin: auto
+
+.blog__header
+  margin-bottom: 0
+
+.blog_summary
+  padding-bottom: 0
+
+.blog__summary a,
+.blog__body a
+  color: var(--link-text)
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+.blog_summary p:last-child
+  margin-bottom: 0.25em
+
+.blog__body img
+  width: 100%
+  max-width: 600px
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+.blog__read-more
+  display: inline-block
+  background-color: white
+  color: var(--strykeforce)
+  padding: 0.3em 0.5em
+  margin-bottom: 0.25em
+  border: 1px solid var(--strykeforce)
+  border-radius: 4px
+  text-decoration: none
+  cursor: pointer
+  font-size: 1rem
+
+  &:hover
+    transform: scale(1.05, 1.05)
+
+.blog__footer
+  padding-top: 0.5rem
