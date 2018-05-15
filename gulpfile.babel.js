@@ -124,7 +124,7 @@ gulp.task('lint-css', function lintCssTask() {
   const gulpStylelint = require('gulp-stylelint');
 
   return gulp
-    .src('src/**/*.css')
+    .src('src/**/*.sss')
     .pipe(gulpStylelint({
       reporters: [{
         formatter: 'string',
