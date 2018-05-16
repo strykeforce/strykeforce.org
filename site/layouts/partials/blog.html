@@ -6,7 +6,7 @@
       <div class="body">
         {{ .Summary }}
       </div>
-      <footer class="footer">
+      <footer class="blog-item-footer">
         {{ if (or .Truncated .Params.more ) }}
         <a class="more" href="{{ .RelPermalink }}">Read More</a> {{ end }}
       </footer>
