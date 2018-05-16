@@ -1,17 +1,16 @@
-<div class="container">
-  {{ range . }}
-  <article class="blog__post">
-    <header>
-      <h2 class="blog__header">{{ .Title }}</h2>
-    </header>
-    <div class="blog_summary">
-      {{ .Summary }}
-    </div>
-    <footer class="blog__footer">
-      {{ if (or .Truncated .Params.more ) }}
-        <a class="blog__read-more" href="{{ .RelPermalink }}">Read More</a>
-      {{ end }}
-    </footer>
-  </article>
-  {{end}}
-</div>
+<section class="page-section">
+  <div class="blog-list">
+    {{ range . }}
+    <article class="blog-item">
+      <h2 class="header">{{ .Title }}</h2>
+      <div class="body">
+        {{ .Summary }}
+      </div>
+      <footer class="footer">
+        {{ if (or .Truncated .Params.more ) }}
+        <a class="more" href="{{ .RelPermalink }}">Read More</a> {{ end }}
+      </footer>
+    </article>
+    {{end}}
+  </div>
+</section>
