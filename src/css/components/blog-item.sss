@@ -2,12 +2,12 @@
   max-width: var(--content-width)
   margin: auto
 
-  > .footer
-    padding:
-      top: var(--tiny-space)
-      bottom: var(--extra-small-space)
+.blog-item-footer
+  padding:
+    top: var(--tiny-space)
+    bottom: var(--extra-small-space)
 
-  > .footer > .more
+  > .more
     display: inline-block
     background-color: var(--button-background)
     color: var(--button-color)
@@ -17,5 +17,5 @@
     text-decoration: none
     cursor: pointer
 
-  > .footer > .more:hover
-    transform: scale(1.05, 1.05)
+    &:hover
+      transform: scale(1.05, 1.05)
