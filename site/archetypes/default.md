@@ -8,7 +8,7 @@ Type summary here. This will display on the home page and blog index.
 
 Type rest of post here.
 
-{{< figure class="blog-figure"
+{{< figure class="blog-item-figure"
   src=""
   title=""
   caption=""
