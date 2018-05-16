@@ -1,16 +1,7 @@
-body
-  padding: 0
-  margin: 0
-  position: relative
-  font-size: var(--font-size)
-
-.main
-  background: white
-
-.container
+.page-section
   box-sizing: border-box
   position: relative
-  max-width: var(--container-width)
+  max-width: var(--page-section-width)
   padding: 0 var(--small-space)
   margin: 0 auto
 
@@ -19,10 +10,6 @@ body
 
   @media (--tablet-landscape-up)
     padding: 0 var(--large-space)
-
-  > p
-    max-width: var(--content-width)
-    margin: auto
 
   &::after,
   &::before

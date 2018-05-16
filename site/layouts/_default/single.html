@@ -1,13 +1,13 @@
 {{ define "main" }}
-<div class="container">
-  <article class="blog__article">
+<section class="page-section">
+  <article class="blog-item">
     <header>
       <h2>{{ .Title }}</h2>
     </header>
-    <div class="blog__body">
+    <div class="body">
     {{ .Content }}
   </div>
   </article>
-</div>
+</section>
 
 {{ end }}
