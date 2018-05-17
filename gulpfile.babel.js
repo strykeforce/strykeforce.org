@@ -48,7 +48,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // Compile CSS with PostCSS
 function css() {
-  return gulp.src('./src/css/*.sss')
+  return gulp.src('./src/css/main.sss')
     .pipe(postcss(postcssPlugins, {
       parser: require('sugarss'),
       map: process.env.NODE_ENV !== 'production'
