@@ -1,22 +1,22 @@
-<div class="container">
+<section class="page-section -center">
   <hr>
-  <a class="footer__link" href="/">
-    <img class="footer__2767" src="/img/2767.svg" alt="2767 icon">
+  <a href="/">
+    <img class="team2767" src="/img/2767.svg" alt="2767 icon">
   </a>
 
-  <ul class="footer__social">
+  <ul class="footer-social">
     {{ template "social" (dict "name" "Twitter" "url" "https://twitter.com/2767StrykeForce") }}
     {{ template "social" (dict "name" "Facebook" "url" "https://facebook.com/2767strykeforce") }}
     {{ template "social" (dict "name" "Instagram" "url" "https://instagram.com/2767strykeforce") }}
     {{ template "social" (dict "name" "GitHub" "url" "https://github.com/strykeforce") }}
   </ul>
   <p> <small>Stryke Force © 2018</small> </p>
-</div>
+</section>
 
 {{ define "social" }}
-  <li class="footer__social-item">
-    <a class="footer__social-item-link" href="{{ .url }}">
-      <img src="/img/fa/{{ lower .name }}.svg" class="footer__social-icon" alt="{{ .name }}">
+  <li class="footer-social-item">
+    <a class="link" href="{{ .url }}">
+      <img src="/img/fa/{{ lower .name }}.svg" class="icon" alt="{{ .name }}">
     </a>
   </li>
 {{ end }}

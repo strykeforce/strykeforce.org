@@ -6,7 +6,7 @@ draft: false
 Team members Ranya and Riley take a moment to reflect on their first year as members of the Stryke Force team.
 <!--more-->
 
-{{< figure class="blog__figure"
+{{< figure class="blog-item-figure"
     src="/blog/ranya-and-riley/ford_field.png"
     link="https://strykeforce.smugmug.com/PowerUp/i-MMDZ5rr/A"
     target="_blank"

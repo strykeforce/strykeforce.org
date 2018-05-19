@@ -1,15 +1,15 @@
-<div class="container">
-  <nav class="header__nav">
-    <a href="/" class="logo">
-        <img src="/img/logo.svg" alt="Stryke Force Logo" class="logo__img">
+<section class="page-section">
+  <nav class="header-nav">
+    <a href="/">
+        <img src="/img/logo.svg" alt="Stryke Force Logo" class="logo">
       </a>
 
-    <ul class="header__nav-menu">
+    <ul class="header-menu">
       {{ $currentPage := . }} {{ range .Site.Menus.main }}
-      <li class="header__nav-menu-item">
-        <a class="header__nav-menu-item-link{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} header__nav-menu-item-link--active{{end}}" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
+      <li class="item">
+        <a class="link{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} -active{{end}}" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
       </li>
       {{ end }}
     </ul>
   </nav>
-</div>
+</section>
