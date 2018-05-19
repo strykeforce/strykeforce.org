@@ -1,7 +1,7 @@
 @import "components/*"
 
 :root
-  font-family:
+  --font:
     Roboto,
     -apple-system,
     BlinkMacSystemFont,
@@ -12,6 +12,9 @@
     "Apple Color Emoji",
     "Segoe UI Emoji",
     "Segoe UI Symbol"
+
+  font-family: var(--font)
+
 
   @custom-media --phone-only (max-width: 599px)
   @custom-media --tablet-portrait-up (min-width: 600px)
@@ -26,6 +29,7 @@
   --button-color: var(--strykeforce-yellow)
   --button-background: white
   --hr-gradient: var(--strykeforce-yellow)
+  --form-color: color-mod(var(--strykeforce-blue) lightness(50%))
 
   --font-size: 1rem
 
@@ -48,5 +52,5 @@ a
   color: var(--link-color)
   text-decoration: none
 
-a:hover
-  text-decoration: underline
+  &:hover
+    text-decoration: underline
