@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+<section class="page-section">
+  <header>
+    <h2>{{ .Title }}</h2>
+  </header>
+
+  <form class="contact-form" name="contact-us" method="POST" action="{{ relref . "success.md" }}" netlify>
+    <input type="text" name="field1" placeholder="Your Name" />
+    <input type="email" name="field2" placeholder="Email Address" />
+    <textarea name="field3" placeholder="Type your Message"></textarea>
+    <input type="submit" value="Send" />
+  </form>
+</section>
+
+{{ end }}
