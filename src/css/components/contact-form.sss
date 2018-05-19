@@ -22,6 +22,9 @@
     color: white
     margin: -16px -16px 16px -16px
 
+    &.-yellow
+      background: var(--strykeforce-yellow)
+
   & input[type="text"],
   & input[type="date"],
   & input[type="datetime"],
@@ -66,5 +69,14 @@
       family: var(--font)
       size: 95%
 
+    &.-yellow
+      background: var(--strykeforce-yellow)
+      border:
+        bottom: 2px solid color-mod(var(--strykeforce-yellow) shade(20%))
+
+
     &:hover
       background: color-mod(var(--form-color) shade(20%))
+
+    &:hover.-yellow
+      background: color-mod(var(--strykeforce-yellow) shade(20%))
