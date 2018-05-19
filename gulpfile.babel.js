@@ -30,8 +30,7 @@ gulp.task('style', css);
 const postcssPlugins = [
   require('postcss-easy-import')({
     from: './src/css/main.sss',
-    extensions: '.sss',
-    prefix: 'imports/_'
+    extensions: '.sss'
   }),
   require('postcss-normalize')({
     forceImport: true
@@ -49,7 +48,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // Compile CSS with PostCSS
 function css() {
-  return gulp.src('./src/css/*.sss')
+  return gulp.src('./src/css/main.sss')
     .pipe(postcss(postcssPlugins, {
       parser: require('sugarss'),
       map: process.env.NODE_ENV !== 'production'
@@ -124,7 +123,7 @@ gulp.task('lint-css', function lintCssTask() {
   const gulpStylelint = require('gulp-stylelint');
 
   return gulp
-    .src('src/**/*.css')
+    .src('src/**/*.sss')
     .pipe(gulpStylelint({
       reporters: [{
         formatter: 'string',

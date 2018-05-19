@@ -1,0 +1,82 @@
+.contact-form-list
+  display: flex
+  width: 100%
+  flex-flow: row wrap
+  justify-content: space-around
+  align-items: flex-start
+  padding: 0
+  margin: 0
+
+.contact-form
+  max-width: 400px
+  margin: 10px auto
+  padding: 16px
+  background: #F7F7F7
+
+  > .header
+    background: var(--form-color)
+    padding: 20px 0
+    font-size: 140%
+    font-weight: 300
+    text-align: center
+    color: white
+    margin: -16px -16px 16px -16px
+
+    &.-yellow
+      background: var(--strykeforce-yellow)
+
+  & input[type="text"],
+  & input[type="date"],
+  & input[type="datetime"],
+  & input[type="email"],
+  & input[type="number"],
+  & input[type="search"],
+  & input[type="time"],
+  & input[type="url"],
+  & textarea,
+  & select
+    transition: all 0.30s ease-in-out
+    outline: none
+    box-sizing: border-box
+    width: 100%
+    background: #fff
+    margin-bottom: 4%
+    border: 1px solid #ccc
+    padding: 3%
+    color: #555
+    font:
+      family: var(--font)
+      size: 95%
+
+    &:focus
+      box-shadow: 0 0 5px var(--form-color)
+      border: 1px solid var(--form-color)
+      padding: 3%
+
+  & input[type="submit"],
+  & input[type="button"]
+    box-sizing: border-box
+    width: 100%
+    padding: 3%
+    background: var(--form-color)
+    border:
+      bottom: 2px solid color-mod(var(--form-color) shade(20%))
+      top-style: none
+      right-style: none
+      left-style: none
+    color: white
+    font:
+      family: var(--font)
+      size: 95%
+
+    &.-yellow
+      background: var(--strykeforce-yellow)
+      border:
+        bottom: 2px solid color-mod(var(--strykeforce-yellow) shade(20%))
+
+
+    &:hover
+      background: color-mod(var(--form-color) shade(20%))
+
+    &:hover.-yellow
+      background: color-mod(var(--strykeforce-yellow) shade(20%))
