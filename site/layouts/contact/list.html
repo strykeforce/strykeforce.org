@@ -9,9 +9,10 @@
 
   <div class="contact-form">
     <h1 class="header">Contact Us</h1>
-    <form name="Contact Us" method="POST" action="{{ relref . "success.md" }}" netlify>
+    <form name="Contact Us" method="POST" action="{{ relref . "success.md" }}" netlify-honeypot="subject" netlify>
       <input type="text" name="name" placeholder="Your Name" />
       <input type="email" name="email" placeholder="Email Address" />
+      <input class="-hidden" type="text" name="subject" />
       <textarea name="message" placeholder="Type your Message" rows=5></textarea>
       <input type="submit" value="Send" />
     </form>
@@ -19,7 +20,7 @@
 
   <div class="contact-form">
     <h1 class="header -yellow">New Members</h1>
-    <form name="New Members" method="POST" action="{{ relref . "success.md" }}" netlify>
+    <form name="New Members" method="POST" action="{{ relref . "success.md" }}" netlify-honeypot="subject" netlify>
       <input type="text" name="name" placeholder="Student Name" />
       <input type="email" name="email" placeholder="Student Email Address" />
       <input type="text" name="name" placeholder="Parent/Guardian Name" />
@@ -27,6 +28,7 @@
       <input type="text" name="grade" placeholder="Grade for Fall 2018"></input>
       <input type="text" name="school" placeholder="School"></input>
       <input type="text" name="referral" placeholder="How did you hear about us?"></input>
+      <input class="-hidden" type="text" name="subject" />
       <textarea name="message" placeholder="Optional Message"></textarea>
       <input class="-yellow" type="submit" value="Send" />
     </form>
