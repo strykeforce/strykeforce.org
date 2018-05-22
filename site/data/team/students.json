@@ -1,37 +1,37 @@
 [
   {
     "name": "Jack B.",
-    "team": "Build Team",
+    "school": "Comstock High School",
     "quote": "It is impossible to travel faster than the speed of light, and certainly not desirable, as one's hat keeps blowing off.",
     "photo": "jack_b.jpg"
   },
   {
     "name": "Taylor B.",
-    "team": "Software Team",
+    "school": "Kalamazoo Central High School",
     "quote": "I hear, I know. I see, I remember. I do, I understand.",
     "photo": "taylor_b.jpg"
   },
   {
     "name": "Jack B.",
-    "team": "Business Team",
+    "school": "Loy Norrix High School",
     "quote": "It's not that I'm so smart, it's just that I stay with problems longer.",
     "photo": "jack_b.jpg"
   },
   {
     "name": "Taylor B.",
-    "team": "Software Team",
+    "school": "Mattawan High School",
     "quote": "To succeed in life, you need three things: a wishbone, a backbone and a funny bone.",
     "photo": "taylor_b.jpg"
   },
   {
     "name": "Jack B.",
-    "team": "Build Team",
+    "school": "Portage Northern High School",
     "quote": "My fake plants died because I did not pretend to water them.",
     "photo": "jack_b.jpg"
   },
   {
     "name": "Taylor B.",
-    "team": "Software Team",
+    "school": "Portage Central High School",
     "quote": "Weather forecast for tonight: dark.",
     "photo": "taylor_b.jpg"
   }
