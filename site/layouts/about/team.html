@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="page-section">
+  <h1>{{ .Title }}</h1>
+  <div>
+    {{ .Content }}
+  </div>
+
+  {{ $resources := .Resources }}
+
+  <div class="image-gallery">
+    <ul class="list">
+      {{ range $.Site.Data.team.students }}
+      <li class="image-gallery-item">
+        <div class="team-card">
+          <img class="headshot" src="{{ printf "2018/%s" .photo }}" alt="{{ .name }}">
+          <div class="description">
+            <h2>{{ .name }}</h2>
+            <p class="team">{{ .team }}</p>
+            <p class="quote"><q>{{ .quote }}</q></p>
+          </div>
+      </div>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+
+</section>
+{{ end }}
