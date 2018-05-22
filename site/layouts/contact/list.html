@@ -21,16 +21,16 @@
   <div class="contact-form">
     <h1 class="header -yellow">New Members</h1>
     <form name="New Members" method="POST" action="{{ relref . "success.md" }}" netlify-honeypot="subject" netlify>
-      <input type="text" name="name" placeholder="Student Name" />
-      <input type="email" name="email" placeholder="Student Email Address" />
-      <input type="text" name="name" placeholder="Parent/Guardian Name" />
-      <input type="email" name="email" placeholder="Parent/Guardian Email Address" />
-      <input type="text" name="grade" placeholder="Grade for Fall 2018"></input>
-      <input type="text" name="school" placeholder="School"></input>
-      <input type="text" name="referral" placeholder="How did you hear about us?"></input>
-      <input class="-hidden" type="text" name="subject" />
+      <input type="text" name="student_name" placeholder="Student Name" required>
+      <input type="email" name="student_email" placeholder="Student Email Address" required>
+      <input type="text" name="parent_name" placeholder="Parent/Guardian Name" required>
+      <input type="email" name="parent_email" placeholder="Parent/Guardian Email Address" required>
+      <input type="text" name="grade" placeholder="Grade for Fall 2018">
+      <input type="text" name="school" placeholder="School">
+      <input type="text" name="referral" placeholder="How did you hear about us?">
+      <input class="-hidden" type="text" name="subject" >
       <textarea name="message" placeholder="Optional Message"></textarea>
-      <input class="-yellow" type="submit" value="Send" />
+      <input class="-yellow" type="submit" value="Send" >
     </form>
   </div>
 
