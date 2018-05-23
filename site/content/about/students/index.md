@@ -5,4 +5,6 @@ draft: false
 layout: team
 more: true
 ---
+
 Meet the team for the 2019 FRC season.
+<!--more-->
