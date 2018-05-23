@@ -15,7 +15,7 @@
     {{ block "header" . }}{{ partial "header" . }}{{end}}
   </header>
 
-  <main class="page-main">
+  <main class="page-main{{ if .Draft }} -draft{{ end }}">
     {{ block "main" . }}{{end}}
   </main>
 
