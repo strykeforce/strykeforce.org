@@ -5,7 +5,8 @@
       </a>
 
     <ul class="header-menu">
-      {{ $currentPage := . }} {{ range .Site.Menus.main }}
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
       <li class="item">
         <a class="link{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} -active{{end}}" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
       </li>
