@@ -10,11 +10,11 @@
   <div class="contact-form">
     <h1 class="header">Contact Us</h1>
     <form name="Contact Us" method="POST" action="{{ relref . "success.md" }}" netlify-honeypot="subject" netlify>
-      <input type="text" name="name" placeholder="Your Name" />
-      <input type="email" name="email" placeholder="Email Address" />
-      <input class="-hidden" type="text" name="subject" />
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input class="-hidden" type="text" name="subject">
       <textarea name="message" placeholder="Type your Message" rows=5></textarea>
-      <input type="submit" value="Send" />
+      <input type="submit" value="Send">
     </form>
   </div>
 
@@ -28,7 +28,7 @@
       <input type="text" name="grade" placeholder="Grade for Fall 2018">
       <input type="text" name="school" placeholder="School">
       <input type="text" name="referral" placeholder="How did you hear about us?">
-      <input class="-hidden" type="text" name="subject" >
+      <input class="-hidden" type="text" name="subject">
       <textarea name="message" placeholder="Optional Message"></textarea>
       <input class="-yellow" type="submit" value="Send" >
     </form>
