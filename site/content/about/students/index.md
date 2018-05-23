@@ -1,7 +1,7 @@
 ---
 title: Students
 date: 2018-05-22T11:02:35-04:00
-draft: false
+draft: true
 layout: team
 more: true
 ---
