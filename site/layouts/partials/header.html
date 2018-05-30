@@ -11,6 +11,7 @@
         <a class="link{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} -active{{end}}" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
       </li>
       {{ end }}
+      <li class="item"><img src="/img/donate.svg" alt="Donate"></li>
     </ul>
   </nav>
 </section>
