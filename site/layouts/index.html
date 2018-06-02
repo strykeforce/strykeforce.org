@@ -1,4 +1,0 @@
-{{ define "main" }}
-  {{ partial "banner" . }}
-  {{ partial "blog" (first 4 (where .Data.Pages "Section" "blog" )) }}
-{{end}}
