@@ -837,7 +837,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-router-dom@^4.2.2", "@types/react-router-dom@^4.2.5":
+"@types/react-router-dom@^4.2.2":
   version "4.2.7"
   resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.2.7.tgz#9d36bfe175f916dd8d7b6b0237feed6cce376b4c"
   dependencies:
@@ -4656,7 +4656,7 @@ gatsby-image@next:
     "@babel/runtime" "7.0.0-beta.47"
     prop-types "^15.6.1"
 
-gatsby-link@^1.6.38-15:
+gatsby-link@^1.6.38-15, gatsby-link@^1.6.44:
   version "1.6.44"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.44.tgz#31912e66d3b21632ce27e5b7310ec88d9a75eac3"
   dependencies:
@@ -4664,17 +4664,6 @@ gatsby-link@^1.6.38-15:
     "@types/react-router-dom" "^4.2.2"
     babel-runtime "^6.26.0"
     prop-types "^15.5.8"
-    ric "^1.3.0"
-
-gatsby-link@next:
-  version "1.6.38-15"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.38-15.tgz#f8d1cbd79818d3c057dca65e8c3472e00a59fb31"
-  dependencies:
-    "@babel/runtime" "7.0.0-beta.47"
-    "@types/history" "^4.6.2"
-    "@types/react-router-dom" "^4.2.5"
-    prop-types "^15.6.1"
-    react-lifecycles-compat "^3.0.2"
     ric "^1.3.0"
 
 gatsby-plugin-catch-links@next:
@@ -4695,13 +4684,12 @@ gatsby-plugin-google-analytics@^1.0.31:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-netlify@next:
-  version "1.0.19-14"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-1.0.19-14.tgz#8f564bca81aae73e0457d2a69879158026d5382d"
+gatsby-plugin-netlify@^1.0.21:
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-1.0.21.tgz#a4cd6631e2c73d73177f1ce8532f125601c8c426"
   dependencies:
-    "@babel/runtime" "7.0.0-beta.47"
+    babel-runtime "^6.26.0"
     fs-extra "^4.0.2"
-    kebab-hash "^0.1.2"
     lodash "^4.17.4"
     webpack-assets-manifest "^1.0.0"
 
@@ -4765,24 +4753,24 @@ gatsby-remark-images@next:
     slash "^1.0.0"
     unist-util-select "^1.5.0"
 
-gatsby-remark-responsive-iframe@next:
-  version "1.4.18-12"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-1.4.18-12.tgz#974920a5b6936423280db5833dc99fd070926a67"
+gatsby-remark-responsive-iframe@^1.4.19:
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-1.4.19.tgz#7d448b623c6f416e868faf801122a51f908a864b"
   dependencies:
-    "@babel/runtime" "7.0.0-beta.47"
+    babel-runtime "^6.26.0"
     bluebird "^3.5.0"
     cheerio "^1.0.0-rc.2"
     lodash "^4.17.4"
-    unist-util-visit "^1.3.0"
+    unist-util-visit "^1.1.1"
 
-gatsby-remark-smartypants@next:
-  version "1.4.12-13"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-1.4.12-13.tgz#4576fb6bb7dec1bde2e33da86b08b7002fcd2bea"
+gatsby-remark-smartypants@^1.4.12:
+  version "1.4.12"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-1.4.12.tgz#d783518b8bf0943aa78def717fdf2e9b9f893552"
   dependencies:
-    "@babel/runtime" "7.0.0-beta.47"
-    retext "^5.0.0"
-    retext-smartypants "^3.0.0"
-    unist-util-visit "^1.3.0"
+    babel-runtime "^6.26.0"
+    retext "^4.0.0"
+    retext-smartypants "^2.0.0"
+    unist-util-visit "^1.1.1"
 
 gatsby-source-filesystem@next:
   version "2.0.0-alpha.18"
@@ -7565,7 +7553,7 @@ on-headers@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/on-headers/-/on-headers-1.0.1.tgz#928f5d0f470d49342651ea6794b0857c100693f7"
 
-once@^1.3.0, once@^1.3.1, once@^1.4.0:
+once@^1.3.0, once@^1.3.1, once@^1.3.3, once@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
   dependencies:
@@ -7815,6 +7803,14 @@ parse-json@^4.0.0:
   dependencies:
     error-ex "^1.3.1"
     json-parse-better-errors "^1.0.1"
+
+parse-latin@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/parse-latin/-/parse-latin-3.2.0.tgz#cfe4b420982b1d20fc16c71dfb33f148de4f1d0b"
+  dependencies:
+    nlcst-to-string "^2.0.0"
+    unist-util-modify-children "^1.0.0"
+    unist-util-visit-children "^1.0.0"
 
 parse-latin@^4.0.0:
   version "4.1.1"
@@ -9131,33 +9127,33 @@ retext-english@^3.0.0:
     parse-english "^4.0.0"
     unherit "^1.0.4"
 
-retext-latin@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/retext-latin/-/retext-latin-2.0.0.tgz#b11bd6cae9113fa6293022a4527cd707221ac4b6"
+retext-latin@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/retext-latin/-/retext-latin-1.0.0.tgz#57f41257b4d857b6c6df631ca5788d10080d7051"
   dependencies:
-    parse-latin "^4.0.0"
+    parse-latin "^3.1.0"
     unherit "^1.0.4"
 
-retext-smartypants@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/retext-smartypants/-/retext-smartypants-3.0.1.tgz#53d718fde7178a9bc09f120159b0d76cc537fb6c"
+retext-smartypants@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/retext-smartypants/-/retext-smartypants-2.0.0.tgz#390897c500cbcb959b83a0772609e174b1dcf44c"
   dependencies:
     nlcst-to-string "^2.0.0"
     unist-util-visit "^1.0.0"
 
-retext-stringify@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/retext-stringify/-/retext-stringify-2.0.0.tgz#00238facc5491f5bcdc589703a4658db2e54415b"
+retext-stringify@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/retext-stringify/-/retext-stringify-1.0.0.tgz#0032e4be3254ea56b19242ef406515479a3346a9"
   dependencies:
     nlcst-to-string "^2.0.0"
 
-retext@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/retext/-/retext-5.0.0.tgz#5d9018c4a677d6103c142362d76f50eb1d398bf6"
+retext@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/retext/-/retext-4.0.0.tgz#db12d45fe758530175f779176a112f5f73d22638"
   dependencies:
-    retext-latin "^2.0.0"
-    retext-stringify "^2.0.0"
-    unified "^6.0.0"
+    retext-latin "^1.0.0"
+    retext-stringify "^1.0.0"
+    unified "^5.0.0"
 
 ric@^1.3.0:
   version "1.3.0"
@@ -10464,6 +10460,19 @@ unicode-property-aliases-ecmascript@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.0.4.tgz#5a533f31b4317ea76f17d807fa0d116546111dd0"
 
+unified@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/unified/-/unified-5.1.0.tgz#61268da9b91ce925be1f3d198c0278b0e9716094"
+  dependencies:
+    bail "^1.0.0"
+    extend "^3.0.0"
+    has "^1.0.1"
+    is-buffer "^1.1.4"
+    once "^1.3.3"
+    trough "^1.0.0"
+    vfile "^2.0.0"
+    x-is-string "^0.1.0"
+
 unified@^6.0.0, unified@^6.1.5:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/unified/-/unified-6.2.0.tgz#7fbd630f719126d67d40c644b7e3f617035f6dba"
@@ -10563,7 +10572,7 @@ unist-util-visit-children@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/unist-util-visit-children/-/unist-util-visit-children-1.1.2.tgz#bd78b53db9644b9c339ac502854f15471f964f5b"
 
-unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.3.0:
+unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.1, unist-util-visit@^1.3.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.3.1.tgz#c019ac9337a62486be58531bc27e7499ae7d55c7"
   dependencies:
