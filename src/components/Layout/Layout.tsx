@@ -49,7 +49,6 @@ export const Layout = ({ children, path }: LayoutProps) => (
           content: description,
           name: 'description',
         },
-        { name: 'keywords', content: 'FRC, robots' },
       ]}
     />
     <SEOOrganization />

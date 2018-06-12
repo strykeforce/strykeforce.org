@@ -1,3 +1,4 @@
+import * as path from 'path'
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout/Layout'
@@ -30,7 +31,12 @@ const AboutIndexPage = (props: any) => {
           <p>{partners}</p>
           <PostMoreButton to="/about/partners/" />
         </Post>
-        <PostIndex posts={posts} />
+        <PostIndex
+          posts={posts.filter(
+            ({ node }: any) =>
+              !path.basename(node.fileAbsolutePath).startsWith('_')
+          )}
+        />
       </Wrapper>
     </Layout>
   )
@@ -46,6 +52,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          fileAbsolutePath
           excerpt
           frontmatter {
             title
@@ -54,7 +61,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    about: file(relativePath: { eq: "about.md" }) {
+    about: file(relativePath: { eq: "about/_about.md" }) {
       childMarkdownRemark {
         html
       }
