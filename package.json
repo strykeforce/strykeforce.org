@@ -17,6 +17,7 @@
     "gatsby-link": "next",
     "gatsby-plugin-catch-links": "next",
     "gatsby-plugin-emotion": "next",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-netlify": "next",
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-sharp": "next",
