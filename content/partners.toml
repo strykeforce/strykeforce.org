@@ -1,0 +1,42 @@
+title = "Stryke Force Partners"
+description = "We are grateful to our Stryke Force partners who have helped us make an impact on our students every year. The organizations listed below provide generous financial support, materials and services to make our program possible."
+date = 2018-05-12T18:47:14-04:00
+
+[platinum]
+name = "Platinum"
+width = 450
+height = 150
+sponsors = [
+  { name = "Midlink Business Park", url = "http://midlinkbusinesspark.com/", logo = "./sponsor_images/midlink.jpg" },
+  { name = "Stryker", url = "https://www.stryker.com/", logo = "./sponsor_images/stryker.jpg" },
+]
+[gold]
+name = "Gold"
+width = 300
+height = 100
+sponsors = [
+  { name = "Bauckham Sparks", url = "https://www.michigantownshiplaw.com/", logo = "./sponsor_images/bauckham_sparks.jpg"},
+  { name = "CTS Telecom Inc", url = "https://www.ctstelecom.com/", logo = "./sponsor_images/cts.jpg" },
+  { name = "Fabri-Kal", url = "http://www.fabri-kal.com", logo = "./sponsor_images/fabri_kal.jpg"},
+  { name = "Kalamazoo Water Jet", url = "http://www.consort.com/kalamazoowaterjet/", logo = "./sponsor_images/water_jet.jpg" },
+]
+[silver]
+name = "Silver"
+width = 225
+height = 75
+sponsors = [
+  { name = "Allegra", url = "https://www.allegramarketingprint.com/locations/portage-mi/", logo = "./sponsor_images/allegra.jpg" },
+  { name = "EMA Design Automation", url = "https://www.ema-eda.com/", logo = "./sponsor_images/ema.jpg" },
+  { name = "The Mead Group at Merrill Lynch", url = "https://fa.ml.com/meadgroup/", logo = "./sponsor_images/ml.jpg" },
+  { name = "PTC", url = "https://www.ptc.com/", logo = "./sponsor_images/ptc.jpg" },
+]
+[bronze]
+name = "Bronze"
+width = 200
+height = 66
+sponsors = [
+  { name = "Kalamazoo County 4-H", url = "http://msue.anr.msu.edu/county/kalamazoo/kalamazoo_county_4_h_1", logo = "./sponsor_images/4h.jpg" },
+  { name = "KRESA EFE", url = "https://www.kresa.org/efe", logo = "./sponsor_images/efe.jpg" },
+  { name = "Old National Bank", url = "https://www.oldnational.com/", logo = "./sponsor_images/old_national.jpg" },
+  { name = "River Street Flowerland", url = "https://riverstreetflowerland.com/", logo = "./sponsor_images/riverstreet.jpg" },
+]
