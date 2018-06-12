@@ -1,98 +1,64 @@
 {
-  "name": "strykeforce.org",
+  "name": "stryke-force",
+  "description": "Stryke Force Website",
   "version": "1.0.0",
-  "description": "FRC Team 2767 Stryke Force",
-  "repository": "strykeforce/strykeforce.org",
-  "main": "index.js",
-  "scripts": {
-    "hugo": "gulp hugo",
-    "build": "gulp build",
-    "build-preview": "gulp build-preview",
-    "start": "gulp server",
-    "lint:css": "gulp lint-css",
-    "lint:js": "eslint src"
-  },
-  "author": "",
-  "license": "MIT",
+  "author": "Jeff Hutchison <jeff@j3ff.io>",
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
-    "babel-plugin-transform-class-properties": "^6.10.2",
-    "babel-plugin-transform-object-assign": "^6.8.0",
-    "babel-plugin-transform-object-rest-spread": "^6.8.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.11.6",
-    "browser-sync": "^2.24.1",
-    "css-loader": "^0.28.11",
-    "cssnano": "^3.10.0",
-    "exports-loader": "^0.7.0",
-    "file-loader": "^1.1.11",
-    "gulp": "^4.0.0",
-    "gulp-babel": "^7.0.1",
-    "gulp-flatten": "^0.4.0",
-    "gulp-postcss": "^7.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-watch": "^5.0.0",
-    "hugo-bin": "^0.27.1",
-    "imports-loader": "^0.8.0",
-    "npm": "^6.0.1",
-    "postcss": "^6.0.22",
-    "postcss-easy-import": "^3.0.0",
-    "postcss-flexbugs-fixes": "^3.3.1",
-    "postcss-import": "^11.1.0",
-    "postcss-nested-props": "^2.0.0",
-    "postcss-normalize": "^4.0.0",
-    "precss": "^3.1.2",
-    "sugarss": "^1.0.1",
-    "webpack": "^4.8.3",
-    "whatwg-fetch": "^2.0.4"
+    "@types/node": "^10.3.2",
+    "@types/react": "^16.3.17",
+    "@types/react-dom": "16.0.6",
+    "@types/react-helmet": "^5.0.6",
+    "babel-plugin-styled-components": "^1.5.1",
+    "emotion": "^9.2.1",
+    "emotion-server": "^9.2.1",
+    "es6-promise": "^4.2.4",
+    "gatsby": "next",
+    "gatsby-image": "next",
+    "gatsby-link": "next",
+    "gatsby-plugin-catch-links": "next",
+    "gatsby-plugin-emotion": "next",
+    "gatsby-plugin-netlify": "next",
+    "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-sharp": "next",
+    "gatsby-plugin-typescript": "next",
+    "gatsby-remark-images": "next",
+    "gatsby-remark-responsive-iframe": "next",
+    "gatsby-remark-smartypants": "next",
+    "gatsby-source-filesystem": "next",
+    "gatsby-transformer-remark": "next",
+    "gatsby-transformer-sharp": "next",
+    "gatsby-transformer-toml": "next",
+    "intersection-observer": "^0.5.0",
+    "object-fit-images": "^3.2.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-emotion": "^9.2.1",
+    "react-helmet": "^5.2.0",
+    "typescript": "^2.9.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.tsx' 'src/**/*.js'",
+    "type-check": "tsc --noEmit",
+    "lint": "tslint --project .",
+    "clean": "rm -rf .cache public"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "browserslist-ga": "^0.0.10",
     "eslint": "^4.19.1",
-    "eslint-plugin-import": "^2.11.0",
-    "gulp-stylelint": "^7.0.0",
-    "stylelint": "^9.2.0",
-    "stylelint-config-standard": "^18.2.0",
-    "stylelint-no-unsupported-browser-features": "^3.0.0"
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "prettier": "^1.12.0",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.13.0",
+    "tslint-react": "^3.6.0"
   },
-  "browserslist": [
-    "> 0.25% in my stats",
-    "defaults"
-  ],
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "plugins": [
-      "stylelint-no-unsupported-browser-features"
-    ],
-    "rules": {
-      "block-closing-brace-empty-line-before": null,
-      "block-closing-brace-newline-after": null,
-      "block-closing-brace-newline-before": null,
-      "block-closing-brace-space-before": null,
-      "block-opening-brace-newline-after": null,
-      "block-opening-brace-space-after": null,
-      "block-opening-brace-space-before": null,
-      "declaration-block-semicolon-newline-after": null,
-      "declaration-block-semicolon-space-after": null,
-      "declaration-block-semicolon-space-before": null,
-      "declaration-block-trailing-semicolon": null,
-      "plugin/no-unsupported-browser-features": [
-        true,
-        {
-          "browsers": [
-            "> 0.25% in my stats"
-          ],
-          "ignore": [
-            "rem",
-            "flexbox"
-          ]
-        }
-      ]
-    },
-    "defaultSeverity": "warning"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strykeforce/strykeforce.org"
   }
 }

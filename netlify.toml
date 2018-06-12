@@ -1,6 +1,7 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+publish = "public/"
 
-[context.deploy-preview]
-  command = "npm run build-preview"
+[build.environment]
+  NODE_VERSION = "8"
+  YARN_VERSION = "1.7.0"
+  YARN_FLAGS = "--pure-lockfile --verbose"
