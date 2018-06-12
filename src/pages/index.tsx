@@ -1,7 +1,9 @@
 import React from 'react'
+import styled from 'react-emotion'
 import { Banner } from '../components/Banner/Banner'
 import { Layout } from '../components/Layout/Layout'
 import { Wrapper } from '../components/Layout/Wrapper'
+import { LogoBand } from '../components/LogoBand/LogoBand'
 import { PostIndex } from '../components/Post/PostIndex'
 import { SEOWebSite } from '../components/SEO/SEOWebSite'
 
@@ -14,6 +16,21 @@ interface Data {
   }
 }
 
+const Blurb = styled.div`
+  font-size: 1.5em;
+  font-weight: 400;
+  max-width: 40rem;
+  margin: auto;
+  padding-top: 2em;
+`
+
+const NewsHeading = styled.h1`
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.2em;
+`
+
 const IndexPage = (props: any) => {
   const pathname: string = props.location.pathname
   const data: Data = props.data
@@ -23,6 +40,12 @@ const IndexPage = (props: any) => {
     <Layout path={pathname}>
       <Banner />
       <Wrapper>
+        <Blurb>
+          Stryke Force is a community <i>FIRST</i> robotics team based in
+          Kalamazoo, Michigan. We are FRC 2767, FTC 7228 and FTC 8553.
+        </Blurb>
+        <LogoBand />
+        <NewsHeading>Team News</NewsHeading>
         <PostIndex posts={posts.filter(post => !!post.node.frontmatter.date)} />
       </Wrapper>
       <SEOWebSite />

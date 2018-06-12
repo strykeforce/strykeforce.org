@@ -8,6 +8,11 @@ declare module '*.jpg' {
   export default content
 }
 
+declare module '*.png' {
+  const content: string
+  export default content
+}
+
 declare const graphql: (query: TemplateStringsArray) => void
 
 // prettier-ignore
