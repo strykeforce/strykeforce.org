@@ -9,6 +9,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-108186367-3',
+        head: false,
+      },
+    },
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-source-filesystem',
