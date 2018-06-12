@@ -53,7 +53,7 @@ export const FooterSocial = () => (
   <List>
     {data.map(s => (
       <Item key={s.name}>
-        <a href={s.url}>
+        <a href={s.url} target="_blank" rel="noopener noreferrer">
           <Icon src={s.img} alt={s.name} />
         </a>
       </Item>
