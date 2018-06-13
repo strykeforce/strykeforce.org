@@ -8,7 +8,7 @@ description: "FRC teams 2767 and 27 present on FIRST to the Michigan State Board
 Following the win at the FRC Detroit World Championships, teams 2767 and 27 were invited to present to the Michigan State Board of Education on the importance and value of FIRST Robotics.
 <!--more-->
 
-![Team members presenting to the Board](mi_edu.jpg "Team members Sierra Staunton and Kjerstin Lindbloom, alongside coach Kim Bruinwood, presenting to the Board.")
+<iframe src="https://strykeforce.smugmug.com/frame/slideshow?key=vpjK9r&autoStart=1&captions=0&navigation=0&playButton=0&randomize=1&speed=3&transition=fade&transitionSpeed=2" width="800" height="600" frameborder="no" scrolling="no"></iframe>
 
 Our team was able to present to the entire board about the importance of _FIRST_ not only on the team members but also in Kalamazoo County. Later both teams had a meet and greet with various other members of the Michigan Department of Education to talk about increased implementation of _FIRST_ directly into the school systems.
 
