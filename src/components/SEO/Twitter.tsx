@@ -18,7 +18,7 @@ export const Twitter = ({ frontmatter }: PostDetail) => {
           name: 'twitter:site',
         },
         {
-          content: `${src}`,
+          content: `https://www.strykeforce.org${src}`,
           name: 'twitter:image',
         },
         {
