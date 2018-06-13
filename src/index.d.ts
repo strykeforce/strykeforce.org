@@ -20,6 +20,7 @@ interface Frontmatter {
   date: string;
   path: string;
   title: string;
+  description: string;
   image: {
     childImageSharp: {
       original: {
