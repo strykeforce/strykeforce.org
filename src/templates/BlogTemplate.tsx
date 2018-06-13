@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout/Layout'
 import { Wrapper } from '../components/Layout/Wrapper'
 import { Post } from '../components/Post/Post'
+import { Facebook } from '../components/SEO/Facebook'
 import { Twitter } from '../components/SEO/Twitter'
 
 // prettier-ignore
@@ -25,6 +26,7 @@ const BlogTemplate = ({
       <Post post={post} />
     </Wrapper>
     <Twitter {...post} />
+    <Facebook {...post} />
   </Layout>
 )
 
