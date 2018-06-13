@@ -6,7 +6,7 @@ date: 2018-05-12T18:23:49-04:00
 Team members Ranya and Riley take a moment to reflect on their first year as members of the Stryke Force team.
 <!--more-->
 
-![Riley, Jeff and Ranya](ford_field.png)
+![Riley, Jeff and Ranya](ford_field.png "Riley, Jeff and Ranya")
 
 ### Ranya
 
@@ -17,3 +17,4 @@ As an introverted newcomer, I had my doubts about joining Stryke Force. I knew n
 I am Riley and this is my first year on Stryke Force and robotics in general. For most of my life I have always thought I was going to college for Pre Med and then go onto medical school to become a surgeon. However, I have changed my mind about pursuing a surgeon’s career. As a part of the programming team, I quickly became interested in programming the robot to move forward and turn. With the help and support of the mentors, I have learned so much about robots.
 
 I joined robotics because I knew some upperclassmen who were a part of Stryke Force and my friend Anna wanted to join. I decided joining Stryke Force would be an interesting experience since I knew nothing about computers or robots. I brought my other friend, Ranya, to join the experience. Ranya and I joined the programming team and Anna joined the build team. On the programming team, Ranya and I are known as the bickering old couple. While learning so many aspects of robotics, our friendship has also grown stronger.
+    
