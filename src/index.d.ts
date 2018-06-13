@@ -20,6 +20,12 @@ interface Frontmatter {
   date: string;
   path: string;
   title: string;
+  image: {
+    childImageSharp: {
+      original: {
+        src: string;
+      }
+    }
 }
 
 // prettier-ignore

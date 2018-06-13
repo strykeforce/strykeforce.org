@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout/Layout'
 import { Wrapper } from '../components/Layout/Wrapper'
 import { Post } from '../components/Post/Post'
+import { Twitter } from '../components/SEO/Twitter'
 
 // prettier-ignore
 interface BlogTemplateProps {
@@ -23,6 +24,7 @@ const BlogTemplate = ({
     <Wrapper>
       <Post post={post} />
     </Wrapper>
+    <Twitter {...post} />
   </Layout>
 )
 
@@ -36,6 +38,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        image {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
       }
     }
   }
