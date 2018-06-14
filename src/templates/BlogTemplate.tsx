@@ -45,6 +45,8 @@ export const pageQuery = graphql`
           childImageSharp {
             original {
               src
+              width
+              height
             }
           }
         }

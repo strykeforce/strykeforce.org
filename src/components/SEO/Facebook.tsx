@@ -7,7 +7,7 @@ export const Facebook = ({ frontmatter }: PostDetail) => {
   if (!frontmatter.image) {
     return null
   }
-  const src = frontmatter.image.childImageSharp.original.src
+  const original = frontmatter.image.childImageSharp.original
   return (
     <Helmet
       meta={[
@@ -20,8 +20,16 @@ export const Facebook = ({ frontmatter }: PostDetail) => {
           property: 'og:type',
         },
         {
-          content: `${BASE}${src}`,
+          content: `${BASE}${original.src}`,
           property: 'og:image',
+        },
+        {
+          content: original.width,
+          property: 'og:image:width',
+        },
+        {
+          content: original.height,
+          property: 'og:image:height',
         },
         {
           content: frontmatter.title,

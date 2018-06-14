@@ -25,6 +25,8 @@ interface Frontmatter {
     childImageSharp: {
       original: {
         src: string;
+        width: number;
+        height: number;
       }
     }
   }
