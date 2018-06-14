@@ -8,19 +8,15 @@ const Div = styled.div`
 
 const Date = styled.h2`
   color: #aaa;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: normal;
   margin-top: -0.75em;
 `
 
-interface PostProps {
-  post: PostDetail
-}
-
-export const Post = ({ post }: PostProps) => (
+export const Post = ({ frontmatter, html }: PostDetail) => (
   <Div>
-    <h1>{post.frontmatter.title}</h1>
-    <Date>{post.frontmatter.date}</Date>
-    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+    <h1>{frontmatter.title}</h1>
+    <Date>{frontmatter.date}</Date>
+    <div dangerouslySetInnerHTML={{ __html: html }} />
   </Div>
 )

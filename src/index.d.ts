@@ -27,6 +27,7 @@ interface Frontmatter {
         src: string;
       }
     }
+  }
 }
 
 // prettier-ignore
@@ -34,6 +35,10 @@ interface PostExcerpt {
   id: string;
   excerpt: string;
   frontmatter: Frontmatter;
+}
+
+interface PostExcerptNode {
+  node: PostExcerpt
 }
 
 // prettier-ignore

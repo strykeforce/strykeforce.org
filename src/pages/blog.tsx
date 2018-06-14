@@ -7,9 +7,7 @@ import { PostIndex } from '../components/Post/PostIndex'
 // prettier-ignore
 interface Data {
   allMarkdownRemark: {
-    edges: Array<{
-      node: PostExcerpt;
-    }>;
+    edges: PostExcerptNode[];
   }
 }
 

@@ -3,13 +3,11 @@ import React from 'react'
 import { PostLink } from './PostLink'
 
 interface PostIndexProps {
-  posts: Array<{
-    node: PostExcerpt
-  }>
+  posts: PostExcerptNode[]
 }
 
 export const PostIndex = ({ posts }: PostIndexProps) => {
-  const Posts = posts.map((post: any) => (
+  const Posts = posts.map((post: PostExcerptNode) => (
     <PostLink key={post.node.id} post={post.node} />
   ))
 

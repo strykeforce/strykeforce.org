@@ -10,9 +10,7 @@ import { SEOWebSite } from '../components/SEO/SEOWebSite'
 // prettier-ignore
 interface Data {
   allMarkdownRemark: {
-    edges: Array<{
-      node: PostExcerpt;
-    }>;
+    edges: PostExcerptNode[];
   }
 }
 

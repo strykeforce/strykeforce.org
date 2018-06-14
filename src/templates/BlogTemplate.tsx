@@ -23,7 +23,7 @@ const BlogTemplate = ({
   <Layout path={pathname}>
     <Helmet title={`${post.frontmatter.title} | Blog`} />
     <Wrapper>
-      <Post post={post} />
+      <Post {...post} />
     </Wrapper>
     <Twitter {...post} />
     <Facebook {...post} />
