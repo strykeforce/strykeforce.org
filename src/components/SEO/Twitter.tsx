@@ -25,10 +25,6 @@ export const Twitter = ({ frontmatter }: PostDetail) => {
           content: frontmatter.title,
           name: 'twitter:title',
         },
-        {
-          content: frontmatter.description,
-          name: 'twitter:description',
-        },
       ]}
     />
   )

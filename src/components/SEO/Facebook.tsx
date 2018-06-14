@@ -13,23 +13,23 @@ export const Facebook = ({ frontmatter }: PostDetail) => {
       meta={[
         {
           content: `${BASE}${frontmatter.path}`,
-          name: 'og:url',
+          property: 'og:url',
         },
         {
           content: 'article',
-          name: 'og:type',
+          property: 'og:type',
         },
         {
           content: `${BASE}${src}`,
-          name: 'og:image',
+          property: 'og:image',
         },
         {
           content: frontmatter.title,
-          name: 'og:title',
+          property: 'og:title',
         },
         {
           content: frontmatter.description,
-          name: 'og:description',
+          property: 'og:description',
         },
       ]}
     />
