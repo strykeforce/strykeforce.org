@@ -7,6 +7,7 @@ The Stryke Force web site.
     - Cropped to 1.91:1
     - Resized to 1200x630
 2. Fill out the following front matter fields
+    - `path: "/blog/blah/"`: should end with a trailing `/` to prevent server redirects. 
     - `image: "./social.jpg"`
     - `description: Stryke Force blah blah..`
 3. If desired, test at:

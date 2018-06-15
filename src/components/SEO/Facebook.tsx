@@ -39,6 +39,10 @@ export const Facebook = ({ frontmatter }: PostDetail) => {
           content: frontmatter.description,
           property: 'og:description',
         },
+        {
+          content: '2158973517669509',
+          property: 'fb:app_id',
+        },
       ]}
     />
   )
