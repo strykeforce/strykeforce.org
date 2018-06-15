@@ -1,18 +1,30 @@
 module.exports = {
-  extends: ['airbnb', 'prettier'],
-  rules: {
-    semi: 0,
-    'react/jsx-filename-extension': 0,
-    'import/no-extraneous-dependencies': 0,
-    'jsx-a11y/anchor-is-valid': 0,
-    'react/prop-types': [1, { ignore: ['children'] }],
-    'react/no-danger': 0,
-    'react/prop-types': 0,
-  },
-  env: {
-    browser: true,
-  },
-  globals: {
-    graphql: true,
-  },
-}
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ]
+    }
+};

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.strykeforce.org`,
+    siteUrl: 'https://www.strykeforce.org',
     title: 'Stryke Force',
     description:
       'This is the Stryke Force Web Site. Stryke Force is a community FIRST robotics team based in Kalamazoo, Michigan. We are FRC 2767, FTC 7228 and FTC 8553.',
@@ -10,7 +10,7 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-108186367-3',
         head: false,
@@ -25,7 +25,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         excerpt_separator: '<!--more-->',
         plugins: [
@@ -37,7 +37,7 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 640,
               showCaptions: true,
