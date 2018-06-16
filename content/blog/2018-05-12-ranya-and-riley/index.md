@@ -8,7 +8,7 @@ description: "Team members Ranya and Riley take a moment to reflect on their fir
 Team members Ranya and Riley take a moment to reflect on their first year as members of the Stryke Force team.
 <!--more-->
 
-![Riley, Jeff and Ranya](ford_field.png "Riley, Jeff and Ranya")
+![Riley, Jeff and Ranya](ford_field.png "Riley, Jeff and Ranya show off their medals at the 2018 Detroit World Championship.")
 
 ### Ranya
 

@@ -14,6 +14,6 @@ The Stryke Force web site.
     - **Facebook:** https://developers.facebook.com/tools/debug/sharing/
     - **Twitter:** https://cards-dev.twitter.com/validator
 4. Post link to
-    - **Twitter:** we don't use description, use 240 characters for this.
-    - **Facebook**
+    - **Twitter:** we don't use description, use 240 characters for this. Add `#omgrobots`, `#FIRSTinspires`
+    - **Facebook** use @2767Strykeforce in description as needed
     - **Google Business**

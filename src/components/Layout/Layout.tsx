@@ -33,6 +33,13 @@ a img{
 a:hover {
   text-decoration: underline;
 }
+
+.gatsby-resp-image-figcaption {
+  font-size: 0.875em;
+  color: #666;
+  line-height: 1.2em;
+  padding-top: 0.25em;
+}
 `
 
 const description = `Stryke Force is 
