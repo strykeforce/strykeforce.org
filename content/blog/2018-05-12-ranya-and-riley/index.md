@@ -10,11 +10,11 @@ Team members Ranya and Riley take a moment to reflect on their first year as mem
 
 ![Riley, Jeff and Ranya](ford_field.png "Riley, Jeff and Ranya show off their medals at the 2018 Detroit World Championship.")
 
-### Ranya
+### Ranya L.
 
 As an introverted newcomer, I had my doubts about joining Stryke Force. I knew nothing about robotics and the word "robot" was basically foreign to me. However, my doubts disappeared after the first day of attending Stryke Force. The environment was so welcoming and learning oriented that I was instantly made comfortable. The mentors are extremely knowledgeable and helpful, and the students are all very approachable. I truly feel like part of a family here. I have learned so much in the past few weeks that it is hard to put into words and my knowledge of programming and of robotics in general has grown immensely. To sum it up, I’m glad I took the opportunity to join Stryke Force because it is an experience like no other.
 
-### Riley
+### Riley C.
 
 I am Riley and this is my first year on Stryke Force and robotics in general. For most of my life I have always thought I was going to college for Pre Med and then go onto medical school to become a surgeon. However, I have changed my mind about pursuing a surgeon’s career. As a part of the programming team, I quickly became interested in programming the robot to move forward and turn. With the help and support of the mentors, I have learned so much about robots.
 
