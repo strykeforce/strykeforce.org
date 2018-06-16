@@ -663,6 +663,13 @@
     core-js "^2.5.3"
     regenerator-runtime "^0.11.1"
 
+"@babel/runtime@7.0.0-beta.51":
+  version "7.0.0-beta.51"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-beta.51.tgz#48b8ed18307034c6620f643514650ca2ccc0165a"
+  dependencies:
+    core-js "^2.5.7"
+    regenerator-runtime "^0.11.1"
+
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
@@ -853,8 +860,8 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^16.3.17":
-  version "16.3.17"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.17.tgz#d59d1a632570b0713946ed9c2949d994773633c5"
+  version "16.3.18"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.18.tgz#bf195aed4d77dc86f06e4c9bb760214a3b822b8d"
   dependencies:
     csstype "^2.2.0"
 
@@ -2840,7 +2847,7 @@ core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
-core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.3:
+core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.3, core-js@^2.5.7:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
 
@@ -3809,18 +3816,6 @@ escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-eslint-config-airbnb-base@^12.1.0:
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-12.1.0.tgz#386441e54a12ccd957b0a92564a4bafebd747944"
-  dependencies:
-    eslint-restricted-globals "^0.1.1"
-
-eslint-config-airbnb@^16.1.0:
-  version "16.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-16.1.0.tgz#2546bfb02cc9fe92284bf1723ccf2e87bc45ca46"
-  dependencies:
-    eslint-config-airbnb-base "^12.1.0"
-
 eslint-config-prettier@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-2.9.0.tgz#5ecd65174d486c22dff389fe036febf502d468a3"
@@ -3905,10 +3900,6 @@ eslint-plugin-react@^7.8.2:
     has "^1.0.2"
     jsx-ast-utils "^2.0.1"
     prop-types "^15.6.1"
-
-eslint-restricted-globals@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-restricted-globals/-/eslint-restricted-globals-0.1.1.tgz#35f0d5cbc64c2e3ed62e93b4b1a7af05ba7ed4d7"
 
 eslint-scope@^3.7.1, eslint-scope@~3.7.1:
   version "3.7.1"
@@ -4671,14 +4662,14 @@ gatsby-link@^1.6.38-15, gatsby-link@^1.6.44:
     ric "^1.3.0"
 
 gatsby-plugin-catch-links@next:
-  version "2.0.1-14"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.0.1-14.tgz#8fd7dcf9385bd4ef2e1fac7885f931922ba843b0"
+  version "2.0.2-alpha.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.0.2-alpha.1.tgz#e992ccd8221d69f2d1209004dc94b72c03d85b99"
   dependencies:
     "@babel/runtime" "7.0.0-beta.47"
 
 gatsby-plugin-emotion@next:
-  version "2.0.0-alpha.12"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-2.0.0-alpha.12.tgz#ac662dbef90ad2d2e69f99e65e96312daabd97a1"
+  version "2.0.0-alpha.13"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-2.0.0-alpha.13.tgz#15a4277c07b28c91a71821faf15e9f084a294bb9"
   dependencies:
     "@babel/runtime" "7.0.0-beta.47"
 
@@ -4689,8 +4680,8 @@ gatsby-plugin-google-analytics@^1.0.31:
     babel-runtime "^6.26.0"
 
 gatsby-plugin-netlify@next:
-  version "1.0.19-14"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-1.0.19-14.tgz#8f564bca81aae73e0457d2a69879158026d5382d"
+  version "2.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-2.0.0-alpha.1.tgz#0e32acea3c4400913c5fac0d173e8318673666e5"
   dependencies:
     "@babel/runtime" "7.0.0-beta.47"
     fs-extra "^4.0.2"
@@ -4711,14 +4702,14 @@ gatsby-plugin-page-creator@^1.0.2-0:
     slash "^1.0.0"
 
 gatsby-plugin-react-helmet@next:
-  version "2.0.12-9"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-2.0.12-9.tgz#c832f0f7a613a6fb749e59cbeaedf4ab2bb58602"
+  version "3.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.0.0-alpha.1.tgz#2ed02f0cc9f0f2d1a2c22b147258e1624bab2510"
   dependencies:
     "@babel/runtime" "7.0.0-beta.47"
 
 gatsby-plugin-sharp@next:
-  version "2.0.0-alpha.21"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.0-alpha.21.tgz#27c536ab0acddb41d21dc9cf535f9fc9ac0fde07"
+  version "2.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.0-alpha.22.tgz#f1a54a0a440913e37b97c935803c7c65f2b4dd76"
   dependencies:
     "@babel/runtime" "7.0.0-beta.47"
     async "^2.1.2"
@@ -5262,10 +5253,10 @@ graphql-request@^1.5.0:
     cross-fetch "2.0.0"
 
 graphql-skip-limit@^2.0.0-alpha.9:
-  version "2.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/graphql-skip-limit/-/graphql-skip-limit-2.0.0-alpha.9.tgz#8ef268d24efb2f9bf1958f92303516be6c889abe"
+  version "2.0.0-alpha.80a21f04"
+  resolved "https://registry.yarnpkg.com/graphql-skip-limit/-/graphql-skip-limit-2.0.0-alpha.80a21f04.tgz#874d61c29d4e5bb7947b4c6ae51663118c54bd30"
   dependencies:
-    "@babel/runtime" "7.0.0-beta.47"
+    "@babel/runtime" "7.0.0-beta.51"
 
 graphql-type-json@^0.2.1:
   version "0.2.1"
@@ -9122,8 +9113,8 @@ resolve-url@^0.2.1:
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
 
 resolve@^1.3.2, resolve@^1.5.0, resolve@^1.6.0:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.7.1.tgz#aadd656374fd298aee895bc026b8297418677fd3"
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.8.0.tgz#a7f2ac27b78480ecc09c83782741d9f26e4f0c3e"
   dependencies:
     path-parse "^1.0.5"
 
