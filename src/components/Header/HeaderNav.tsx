@@ -1,6 +1,6 @@
 import Link from 'gatsby-link'
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 
 import { HeaderProps } from './HeaderProps'
 import { PayPalButton } from './PayPalButton'
