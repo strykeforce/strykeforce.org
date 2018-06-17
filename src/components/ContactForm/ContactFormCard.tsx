@@ -77,11 +77,11 @@ const Submit = styled.input`
   font-size: 95%;
 `
 
-export const ContactFormCard = ({
+export const ContactFormCard: React.SFC<ContactFormProps> = ({
   title,
   color,
   children,
-}: ContactFormProps) => (
+}) => (
   <CardWrapper>
     <Wrapper>
       <Title formColor={color}>{title}</Title>

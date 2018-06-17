@@ -2,10 +2,6 @@ import Link from 'gatsby-link'
 import React from 'react'
 import styled from 'react-emotion'
 
-interface PostMoreButtonProps {
-  to: string
-}
-
 const Wrapper = styled.div`
   padding-top: 0.39em;
   padding-bottom: 0.618em;
@@ -26,7 +22,7 @@ const Button = styled(Link)`
   }
 `
 
-export const PostMoreButton = ({ to }: PostMoreButtonProps) => (
+export const PostMoreButton: React.SFC<{ to: string }> = ({ to }) => (
   <Wrapper>
     <Button to={to}>Read More</Button>
   </Wrapper>

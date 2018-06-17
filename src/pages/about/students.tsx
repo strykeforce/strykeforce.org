@@ -20,7 +20,10 @@ interface StudentsPageProps {
   }
 }
 
-const StudentsPage = ({ location: { pathname }, data }: StudentsPageProps) => {
+const StudentsPage: React.SFC<StudentsPageProps> = ({
+  location: { pathname },
+  data,
+}) => {
   const students = data.allTeamToml.edges[0].node.students
   return (
     <Layout path={pathname}>

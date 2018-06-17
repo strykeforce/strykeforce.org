@@ -9,7 +9,7 @@ const Logo = styled.img`
   height: 3rem;
 `
 
-export const HeaderLogo = () => (
+export const HeaderLogo: React.SFC<{}> = () => (
   <Link to="/">
     <Logo src={logo} alt="Stryke Force Logo" />
   </Link>

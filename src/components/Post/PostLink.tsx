@@ -2,10 +2,6 @@ import React from 'react'
 import styled from 'react-emotion'
 import { PostMoreButton } from './PostMoreButton'
 
-interface PostLinkProps {
-  post: PostExcerpt
-}
-
 export const Post = styled.article`
   max-width: 40em;
   margin: auto;
@@ -20,7 +16,7 @@ const Date = styled.p`
   margin-top: 0;
 `
 
-export const PostLink = ({ post }: PostLinkProps) => (
+export const PostLink: React.SFC<{ post: PostExcerpt }> = ({ post }) => (
   <Post>
     <Title>{post.frontmatter.title}</Title>
     <Date>

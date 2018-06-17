@@ -3,15 +3,13 @@ import styled from 'react-emotion'
 import { CardGallery } from '../CardGallery/CardGallery'
 import { PartnerCard } from './PartnerCard'
 
-interface PartnerGalleryProps {
-  level: SponsorLevel
-}
-
 const Gallery = styled.div`
   text-align: center;
 `
 
-export const PartnerGallery = ({ level }: PartnerGalleryProps) => (
+export const PartnerGallery: React.SFC<{ level: SponsorLevel }> = ({
+  level,
+}) => (
   <Gallery>
     <h1>{level.name}</h1>
     <CardGallery>

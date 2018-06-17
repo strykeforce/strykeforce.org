@@ -16,10 +16,10 @@ interface BlogTemplateProps {
   }
 }
 
-const BlogTemplate = ({
+const BlogTemplate: React.SFC<BlogTemplateProps> = ({
   location: { pathname },
   data: { post },
-}: BlogTemplateProps) => (
+}) => (
   <Layout path={pathname}>
     <Helmet title={`${post.frontmatter.title} | Blog`} />
     <Wrapper>

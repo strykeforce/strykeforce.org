@@ -2,7 +2,7 @@ import React from 'react'
 
 import button from './donate.svg'
 
-export const PayPalButton = () => (
+export const PayPalButton: React.SFC<{}> = () => (
   <form
     action="https://www.paypal.com/cgi-bin/webscr"
     method="post"

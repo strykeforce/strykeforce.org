@@ -35,7 +35,7 @@ export const ORGANIZATION = {
   url: URL,
 }
 
-export const SEOOrganization = () => (
+export const SEOOrganization: React.SFC<{}> = () => (
   <Helmet>
     <script type="application/ld+json">{JSON.stringify(ORGANIZATION)}</script>
   </Helmet>

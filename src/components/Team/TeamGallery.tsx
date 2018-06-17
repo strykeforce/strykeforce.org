@@ -2,11 +2,9 @@ import React from 'react'
 import { CardGallery } from '../CardGallery/CardGallery'
 import { TeamCard } from './TeamCard'
 
-interface TeamGalleryProps {
-  members: TeamMember[]
-}
-
-export const TeamGallery = ({ members }: TeamGalleryProps) => (
+export const TeamGallery: React.SFC<{ members: TeamMember[] }> = ({
+  members,
+}) => (
   <CardGallery>
     {members.map(s => <TeamCard key={s.id} member={s} />)}
   </CardGallery>

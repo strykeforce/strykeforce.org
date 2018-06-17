@@ -39,7 +39,7 @@ const ItemLink = styled(Link)`
     path.startsWith(menu, 1) ? '#fff' : '#333'};
 `
 
-export const HeaderNav = ({ path }: HeaderProps) => (
+export const HeaderNav: React.SFC<HeaderProps> = ({ path }) => (
   <List>
     {['about', 'blog', 'contact'].map(menu => (
       <Item key={menu}>

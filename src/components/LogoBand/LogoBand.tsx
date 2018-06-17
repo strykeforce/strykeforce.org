@@ -34,7 +34,7 @@ const Logo = styled.img`
   height: 10em;
 `
 
-export const LogoBand = () => (
+export const LogoBand: React.SFC<{}> = () => (
   <Wrapper>
     <Team>
       <TeamLabel>FRC 2767</TeamLabel>

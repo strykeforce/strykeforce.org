@@ -2,11 +2,9 @@ import React from 'react'
 
 import { PostLink } from './PostLink'
 
-interface PostIndexProps {
-  posts: PostExcerptNode[]
-}
-
-export const PostIndex = ({ posts }: PostIndexProps) => {
+export const PostIndex: React.SFC<{ posts: PostExcerptNode[] }> = ({
+  posts,
+}) => {
   const Posts = posts.map((post: PostExcerptNode) => (
     <PostLink key={post.node.id} post={post.node} />
   ))

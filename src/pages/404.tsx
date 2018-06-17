@@ -3,13 +3,15 @@ import React from 'react'
 import { Layout } from '../components/Layout/Layout'
 import { Wrapper } from '../components/Layout/Wrapper'
 
-interface PageProps {
+interface NotFoundPageProps {
   location: {
     pathname: string
   }
 }
 
-export default ({ location: { pathname } }: PageProps) => (
+const NotFoundPage: React.SFC<NotFoundPageProps> = ({
+  location: { pathname },
+}) => (
   <Layout path={pathname}>
     <Wrapper padding="2em">
       <h1>Page not found</h1>
@@ -17,3 +19,5 @@ export default ({ location: { pathname } }: PageProps) => (
     </Wrapper>
   </Layout>
 )
+
+export default NotFoundPage

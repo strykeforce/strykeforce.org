@@ -49,7 +49,7 @@ const Icon = styled.img`
   padding-right: 1em;
 `
 
-export const FooterSocial = () => (
+export const FooterSocial: React.SFC<{}> = () => (
   <List>
     {data.map(s => (
       <Item key={s.name}>

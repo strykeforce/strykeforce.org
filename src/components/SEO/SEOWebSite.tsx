@@ -19,7 +19,7 @@ const WEBSITE = {
   url: URL,
 }
 
-export const SEOWebSite = () => (
+export const SEOWebSite: React.SFC<{}> = () => (
   <Helmet>
     <script type="application/ld+json">{JSON.stringify(WEBSITE)}</script>
   </Helmet>

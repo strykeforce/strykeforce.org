@@ -15,7 +15,7 @@ const Navigation = styled.div`
   justify-content: space-between;
 `
 
-const Header = ({ path }: HeaderProps) => (
+const Header: React.SFC<HeaderProps> = ({ path }) => (
   <Background>
     <Navigation>
       <HeaderLogo />

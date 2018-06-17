@@ -13,7 +13,7 @@ const Date = styled.h2`
   margin-top: -0.75em;
 `
 
-export const Post = ({ frontmatter, html }: PostDetail) => (
+export const Post: React.SFC<PostDetail> = ({ frontmatter, html }) => (
   <Div>
     <h1>{frontmatter.title}</h1>
     <Date>{frontmatter.date}</Date>
