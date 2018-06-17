@@ -1,7 +1,6 @@
+import { Link } from 'gatsby'
 import * as React from 'react'
-import Link from 'gatsby-link'
 import styled from 'react-emotion'
-
 import frc2767 from './frc2767.svg'
 import ftc7228 from './ftc7228.svg'
 import ftc8553 from './ftc8553.svg'

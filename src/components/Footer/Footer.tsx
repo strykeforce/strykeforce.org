@@ -1,4 +1,4 @@
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'react-emotion'
 import logo from './2767.svg'
