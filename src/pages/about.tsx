@@ -7,11 +7,19 @@ import { PostIndex } from '../components/Post/PostIndex'
 import { Post, Title } from '../components/Post/PostLink'
 import { PostMoreButton } from '../components/Post/PostMoreButton'
 
-const AboutIndexPage = (props: any) => {
-  const pathname: string = props.location.pathname
-  const about: string = props.data.about.childMarkdownRemark.html
-  const partners: string = props.data.partners.childPartnersToml.description
-  const posts: any = props.data.allMarkdownRemark.edges
+// prettier-ignore
+interface AboutIndexPageProps {
+  location: { pathname: string }; // tslint:disable-line:semicolon
+  data: any
+}
+
+const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({
+  location: { pathname },
+  data,
+}) => {
+  const about: string = data.about.childMarkdownRemark.html
+  const partners: string = data.partners.childPartnersToml.description
+  const posts: any = data.allMarkdownRemark.edges
 
   return (
     <Layout path={pathname}>

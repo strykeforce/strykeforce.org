@@ -8,9 +8,12 @@ import { PostIndex } from '../components/Post/PostIndex'
 import { SEOWebSite } from '../components/SEO/SEOWebSite'
 
 // prettier-ignore
-interface Data {
-  allMarkdownRemark: {
-    edges: PostExcerptNode[];
+interface IndexPageProps {
+  location: { pathname: string }; // tslint:disable-line:semicolon
+  data: {
+    allMarkdownRemark: {
+      edges: PostExcerptNode[];
+    }
   }
 }
 
@@ -29,11 +32,12 @@ const NewsHeading = styled.h1`
   margin-top: 1.2em;
 `
 
-const IndexPage = (props: any) => {
-  const pathname: string = props.location.pathname
-  const data: Data = props.data
-  const posts = data.allMarkdownRemark.edges
-
+const IndexPage: React.SFC<IndexPageProps> = ({
+  location: { pathname },
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => {
   return (
     <Layout path={pathname}>
       <Banner />
@@ -44,7 +48,7 @@ const IndexPage = (props: any) => {
         </Blurb>
         <LogoBand />
         <NewsHeading>Team News</NewsHeading>
-        <PostIndex posts={posts.filter(post => !!post.node.frontmatter.date)} />
+        <PostIndex posts={edges.filter(post => !!post.node.frontmatter.date)} />
       </Wrapper>
       <SEOWebSite />
     </Layout>

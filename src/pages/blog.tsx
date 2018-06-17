@@ -5,21 +5,26 @@ import { Wrapper } from '../components/Layout/Wrapper'
 import { PostIndex } from '../components/Post/PostIndex'
 
 // prettier-ignore
-interface Data {
-  allMarkdownRemark: {
-    edges: PostExcerptNode[];
+interface BlogIndexPageProps {
+  location: { pathname: string }; // tslint:disable-line:semicolon
+  data: {
+    allMarkdownRemark: {
+      edges: PostExcerptNode[];
+    }
   }
 }
 
-const BlogIndexPage = (props: any) => {
-  const pathname: string = props.location.pathname
-  const data: Data = props.data
-  const posts = data.allMarkdownRemark.edges
+const BlogIndexPage: React.SFC<BlogIndexPageProps> = ({
+  location: { pathname },
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => {
   return (
     <Layout path={pathname}>
       <Helmet title="Blog" />
       <Wrapper>
-        <PostIndex posts={posts.filter(post => !!post.node.frontmatter.date)} />
+        <PostIndex posts={edges.filter(post => !!post.node.frontmatter.date)} />
       </Wrapper>
     </Layout>
   )

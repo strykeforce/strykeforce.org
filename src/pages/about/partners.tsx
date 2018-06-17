@@ -22,7 +22,10 @@ interface PartnerPageProps {
   }
 }
 
-const PartnerPage = ({ location: { pathname }, data }: PartnerPageProps) => {
+const PartnerPage: React.SFC<PartnerPageProps> = ({
+  location: { pathname },
+  data,
+}) => {
   const toml = data.partnersToml
   return (
     <Layout path={pathname}>

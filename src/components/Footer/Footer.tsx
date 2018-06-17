@@ -13,7 +13,7 @@ const CenteredWrapper = styled.div`
   text-align: center;
 `
 
-const Footer = () => (
+const Footer: React.SFC<{}> = () => (
   <CenteredWrapper>
     <Rule />
     <Link to="/">

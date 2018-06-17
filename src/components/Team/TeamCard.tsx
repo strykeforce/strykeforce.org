@@ -5,10 +5,6 @@ import { CardWrapper } from '../CardGallery/CardWrapper'
 import { TeamQuote } from './TeamQuote'
 import { TeamSchool } from './TeamSchool'
 
-interface TeamCardProps {
-  member: TeamMember
-}
-
 const Wrapper = styled.div`
   background: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -25,7 +21,7 @@ const Head = styled.h2`
   margin-bottom: 0.25em;
 `
 
-export const TeamCard = ({ member }: TeamCardProps) => (
+export const TeamCard: React.SFC<{ member: TeamMember }> = ({ member }) => (
   <CardWrapper>
     <Wrapper>
       <Img fixed={member.photo.childImageSharp.fixed} />

@@ -2,7 +2,7 @@ import React from 'react'
 import { CardGallery } from '../CardGallery/CardGallery'
 import { BLUE, ContactFormCard, YELLOW } from './ContactFormCard'
 
-export const ContactFormGallery = () => (
+export const ContactFormGallery: React.SFC<{}> = () => (
   <CardGallery css={{ alignItems: 'flex-start' }}>
     <ContactFormCard title="Contact Us" color={BLUE}>
       <input

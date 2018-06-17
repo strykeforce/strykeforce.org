@@ -1,6 +1,6 @@
 import Link from 'gatsby-link'
 import React from 'react'
-import styled from 'react-emotion'
+import styled, { css } from 'react-emotion'
 
 import { HeaderProps } from './HeaderProps'
 import { PayPalButton } from './PayPalButton'
@@ -39,7 +39,7 @@ const ItemLink = styled(Link)`
     path.startsWith(menu, 1) ? '#fff' : '#333'};
 `
 
-export const HeaderNav = ({ path }: HeaderProps) => (
+export const HeaderNav: React.SFC<HeaderProps> = ({ path }) => (
   <List>
     {['about', 'blog', 'contact'].map(menu => (
       <Item key={menu}>
