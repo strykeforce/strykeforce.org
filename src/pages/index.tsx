@@ -72,6 +72,13 @@ export const indexPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 640) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
           }
         }
       }

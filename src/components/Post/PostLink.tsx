@@ -1,3 +1,4 @@
+import Img from 'gatsby-image'
 import React from 'react'
 import styled from 'react-emotion'
 import { PostMoreButton } from './PostMoreButton'
@@ -22,6 +23,9 @@ export const PostLink: React.SFC<{ post: PostExcerpt }> = ({ post }) => (
     <Date>
       <small>{post.frontmatter.date}</small>
     </Date>
+    {post.frontmatter.image && (
+      <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
+    )}
     <p>{post.excerpt}</p>
     <PostMoreButton to={post.frontmatter.path} />
   </Post>
