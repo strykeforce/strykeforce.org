@@ -6,6 +6,7 @@ The Stryke Force web site.
 1. Create a social image in PhotoShop call `social.jpg`
     - Cropped to 1.91:1
     - Resized to 1200x630
+    - Export as 80% JPG
 2. Fill out the following front matter fields
     - `path: "/blog/blah/"`: should end with a trailing `/` to prevent server redirects. 
     - `image: "./social.jpg"`
