@@ -3,7 +3,8 @@ title: 2018 Chairman's Award Video
 path: /blog/2018-06-22-chairmans-video/
 date: 2018-06-22T12:23:48Z
 image: "./social.jpg"
-description: Every year, Stryke Force submits their Chairman's Award video. 
+description: Every year, Stryke Force submits their Chairman's Award video.
+author: "Ethan L."
 ---
 Every year, Stryke Force submits their Chairman's Award video. Thank you, Kayleigh B., for all the editing and work you've put into this!
 <!--more-->

@@ -21,7 +21,9 @@ export const PostLink: React.SFC<{ post: PostExcerpt }> = ({ post }) => (
   <Post>
     <Title>{post.frontmatter.title}</Title>
     <Date>
-      <small>{post.frontmatter.date}</small>
+      <small>
+        Posted on {post.frontmatter.date} by {post.frontmatter.author}
+      </small>
     </Date>
     {post.frontmatter.image && (
       <Img fluid={post.frontmatter.image.childImageSharp.fluid} />

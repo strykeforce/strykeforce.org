@@ -72,6 +72,7 @@ export const indexPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
+            author
             image {
               childImageSharp {
                 fluid(maxWidth: 640) {

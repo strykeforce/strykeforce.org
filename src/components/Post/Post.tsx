@@ -6,7 +6,7 @@ const Div = styled.div`
   margin: auto;
 `
 
-const Date = styled.h2`
+const Byline = styled.h2`
   color: #aaa;
   font-size: 1em;
   font-weight: normal;
@@ -16,7 +16,9 @@ const Date = styled.h2`
 export const Post: React.SFC<PostDetail> = ({ frontmatter, html }) => (
   <Div>
     <h1>{frontmatter.title}</h1>
-    <Date>{frontmatter.date}</Date>
+    <Byline>
+      Posted on {frontmatter.date} by {frontmatter.author}
+    </Byline>
     <div dangerouslySetInnerHTML={{ __html: html }} />
   </Div>
 )

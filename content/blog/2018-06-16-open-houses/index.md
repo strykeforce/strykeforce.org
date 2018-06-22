@@ -4,6 +4,7 @@ path: "/blog/2018-06-16-open-houses"
 date: 2018-06-16T11:20:23Z
 image: "./social.jpg"
 description: "Stryke Force hosted guests and new students at their 2018 Open House at Midlink Business Park."
+author: "Ethan L."
 ---
 I was really, really excited at the flood of people that came through the door of the build space on the first night of open houses! 
 <!--more-->

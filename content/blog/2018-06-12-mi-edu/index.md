@@ -4,6 +4,7 @@ path: "/blog/2018-06-12-mi-edu/"
 date: 2018-06-12T16:54:26Z
 image: "./social.jpg"
 description: "FRC teams 2767 and 27 present on FIRST Robotics to the Michigan State Board of Education."
+author: "Drew S."
 ---
 Following the win at the FRC Detroit World Championships, teams 2767 and 27 were invited to present to the Michigan State Board of Education on the importance and value of FIRST Robotics.
 <!--more-->

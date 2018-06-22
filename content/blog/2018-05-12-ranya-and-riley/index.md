@@ -4,6 +4,7 @@ path: "/blog/2018-05-12-ranya-and-riley/"
 date: 2018-05-12T18:23:49-04:00
 image: "./social.jpg"
 description: "Team members Ranya and Riley take a moment to reflect on their first year as members of the Stryke Force team."
+author: "Ranya L. and Riley C."
 ---
 Team members Ranya and Riley take a moment to reflect on their first year as members of the Stryke Force team.
 <!--more-->
