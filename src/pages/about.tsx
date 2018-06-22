@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby'
 import * as path from 'path'
 import React from 'react'
 import Helmet from 'react-helmet'

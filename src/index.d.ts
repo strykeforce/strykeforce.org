@@ -13,7 +13,7 @@ declare module '*.png' {
   export default content
 }
 
-declare const graphql: (query: TemplateStringsArray) => void
+// declare const graphql: (query: TemplateStringsArray) => void
 
 // prettier-ignore
 interface Frontmatter {
