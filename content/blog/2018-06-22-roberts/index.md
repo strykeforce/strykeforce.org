@@ -4,12 +4,15 @@ path: /blog/2018-06-22-roberts/
 date: 2018-06-22T13:33:07Z
 image: "./social.jpg"
 description: "The software developers have a busy summer planned, packed with new and exciting updates to the swerve drive, our use of sensors, and computer vision!"
+author: "Roberts K."
 ---
 
 Hi! My name is Roberts K. and I’m a member of the software development team.
 
-The software developers have a busy summer planned, packed with new and exciting updates to the swerve drive, our use of sensors, and computer vision! The team has three off-season tracks: new developers are getting acquainted with our workflow and programming languages with mentor Greg; mentor Marisa is working with students to reimplement the 2016 Stronghold robot while learning about software architecture; and lead mentor Jeff is leading research and development on sensors and computer vision.
+The software developers have a busy summer planned, packed with new and exciting updates to the swerve drive, our use of sensors, and computer vision!
 <!--more-->
+The team has three off-season tracks: new developers are getting acquainted with our workflow and programming languages with mentor Greg; mentor Marisa is working with students to reimplement the 2016 Stronghold robot while learning about software architecture; and lead mentor Jeff is leading research and development on sensors and computer vision.
+
 
 ![Roberts and Marisa](roberts_marisa.jpg "Roberts and Marisa discuss the robot's software durning the 2018 FRC World Championship in Detroit.")
 
