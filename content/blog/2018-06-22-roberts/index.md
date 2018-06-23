@@ -14,7 +14,7 @@ The software developers have a busy summer planned, packed with new and exciting
 The team has three off-season tracks: new developers are getting acquainted with our workflow and programming languages with mentor Greg; mentor Marisa is working with students to reimplement the 2016 Stronghold robot while learning about software architecture; and lead mentor Jeff is leading research and development on sensors and computer vision.
 
 
-![Roberts and Marisa](roberts_marisa.jpg "Roberts and Marisa discuss the robot's software durning the 2018 FRC World Championship in Detroit.")
+![Roberts and Marisa](roberts_marisa.jpg "Roberts and Marisa discuss the robot's software during the 2018 FRC World Championship in Detroit.")
 
 Currently, I’m working on modifying the swerve drive code in the Third Coast [repository](https://github.com/strykeforce/thirdcoast) to allow us to reposition the center of rotation anywhere relative to the center of the robot. I’m implementing swerve calculations from Ether’s [white papers](https://www.chiefdelphi.com/media/papers/2426) on Chief Delphi. We’re really looking for versatility in our design so we have a toolbox full of software tools ready for the upcoming season.
 
