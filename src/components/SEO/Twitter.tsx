@@ -5,7 +5,8 @@ export const Twitter: React.SFC<PostDetail> = ({ frontmatter }) => {
   if (!frontmatter.image) {
     return null
   }
-  const src = frontmatter.image.childImageSharp.original.src
+  const original: ImageSharpOriginal =
+    frontmatter.image.childImageSharp.original
   return (
     <Helmet
       meta={[
@@ -18,7 +19,7 @@ export const Twitter: React.SFC<PostDetail> = ({ frontmatter }) => {
           name: 'twitter:site',
         },
         {
-          content: `https://www.strykeforce.org${src}`,
+          content: `https://www.strykeforce.org${original.src}`,
           name: 'twitter:image',
         },
         {

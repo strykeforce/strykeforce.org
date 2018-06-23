@@ -13,6 +13,12 @@ declare module '*.png' {
   export default content
 }
 
+interface ImageSharpOriginal {
+  src: string
+  width: number
+  height: number
+}
+
 // declare const graphql: (query: TemplateStringsArray) => void
 
 // prettier-ignore
@@ -20,15 +26,10 @@ interface Frontmatter {
   date: string;
   path: string;
   title: string;
+  author: string;
   description: string;
   image: {
-    childImageSharp: {
-      original: {
-        src: string;
-        width: number;
-        height: number;
-      }
-    }
+    childImageSharp: { original: ImageSharpOriginal } | any;
   }
 }
 
