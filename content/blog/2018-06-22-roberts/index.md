@@ -8,7 +8,7 @@ description: "The software developers have a busy summer planned, packed with ne
 
 Hi! My name is Roberts K. and I’m a member of the software development team.
 
-The software developers have a busy summer planned, packed with new and exciting updates to the swerve drive, our use of sensors, and computer vision! The team has three off-season tracks: new developers are getting acquainted with our workflow and programming languages with mentor Greg; mentor Marisa is working with students to resurrect the 2016 Stronghold robot while learning about software architecture; and lead mentor Jeff is leading research and development on sensors and computer vision.
+The software developers have a busy summer planned, packed with new and exciting updates to the swerve drive, our use of sensors, and computer vision! The team has three off-season tracks: new developers are getting acquainted with our workflow and programming languages with mentor Greg; mentor Marisa is working with students to reimplement the 2016 Stronghold robot while learning about software architecture; and lead mentor Jeff is leading research and development on sensors and computer vision.
 <!--more-->
 
 ![Roberts and Marisa](roberts_marisa.jpg "Roberts and Marisa discuss the robot's software durning the 2018 FRC World Championship in Detroit.")
