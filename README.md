@@ -1,6 +1,11 @@
 # strykeforce.org
 The Stryke Force web site.
 
+## Blog Posts
+
+1. How to [contribute](https://deploy-preview-16--strykeforce.netlify.com/howto/blog/)
+2. Photos for posts can be cropped up to 1920 px wide for high dpi browsers.
+
 ## Linking Blog Posts to Social Media
 
 1. Create a social image in PhotoShop call `social.jpg`
