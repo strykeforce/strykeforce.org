@@ -828,11 +828,7 @@
   version "0.3.29"
   resolved "https://registry.yarnpkg.com/@types/mkdirp/-/mkdirp-0.3.29.tgz#7f2ad7ec55f914482fc9b1ec4bb1ae6028d46066"
 
-"@types/node@*":
-  version "10.3.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.4.tgz#c74e8aec19e555df44609b8057311052a2c84d9e"
-
-"@types/node@^10.3.5":
+"@types/node@*", "@types/node@^10.3.5":
   version "10.3.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.5.tgz#8423cdf6e6fb83433e489900d7600d3b61c8260c"
 
@@ -1398,8 +1394,8 @@ babel-core@7.0.0-bridge.0:
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-7.0.0-bridge.0.tgz#95a492ddd90f9b4e9a4a1da14eb335b87b634ece"
 
 babel-eslint@^8.2.2:
-  version "8.2.3"
-  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-8.2.3.tgz#1a2e6681cc9bc4473c32899e59915e19cd6733cf"
+  version "8.2.5"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-8.2.5.tgz#dc2331c259d36782aa189da510c43dedd5adc7a3"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.44"
     "@babel/traverse" "7.0.0-beta.44"
@@ -2335,12 +2331,12 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000856"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000856.tgz#fbebb99abe15a5654fc7747ebb5315bdfde3358f"
+  version "1.0.30000858"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000858.tgz#153c9348350641dc624d150ec174262c2ad985e5"
 
 caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000844:
-  version "1.0.30000856"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000856.tgz#ecc16978135a6f219b138991eb62009d25ee8daa"
+  version "1.0.30000858"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000858.tgz#f6f203a9128bac507136de1cf6cfd966d2df027c"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -3876,8 +3872,8 @@ eslint-plugin-graphql@^2.0.0:
     lodash "^4.11.1"
 
 eslint-plugin-import@^2.9.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.12.0.tgz#dad31781292d6664b25317fd049d2e2b2f02205d"
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.13.0.tgz#df24f241175e312d91662dc91ca84064caec14ed"
   dependencies:
     contains-path "^0.1.0"
     debug "^2.6.8"
@@ -3903,13 +3899,13 @@ eslint-plugin-jsx-a11y@^6.0.3:
     jsx-ast-utils "^2.0.0"
 
 eslint-plugin-react@^7.8.2:
-  version "7.9.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.9.1.tgz#101aadd15e7c7b431ed025303ac7b421a8e3dc15"
+  version "7.10.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.10.0.tgz#af5c1fef31c4704db02098f9be18202993828b50"
   dependencies:
     doctrine "^2.1.0"
-    has "^1.0.2"
+    has "^1.0.3"
     jsx-ast-utils "^2.0.1"
-    prop-types "^15.6.1"
+    prop-types "^15.6.2"
 
 eslint-scope@^3.7.1, eslint-scope@~3.7.1:
   version "3.7.1"
@@ -4661,9 +4657,9 @@ gatsby-image@next:
     "@babel/runtime" "7.0.0-beta.51"
     prop-types "^15.6.1"
 
-gatsby-link@^2.0.0-beta.2:
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.0.0-beta.2.tgz#b60bfab98b2215ba0ce46cb9546167912edd97ba"
+gatsby-link@^2.0.0-beta.3:
+  version "2.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.0.0-beta.3.tgz#2be4a3ec734bb83d209aaaad3f66d5090bc3e4ce"
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
     "@types/history" "^4.6.2"
@@ -4849,9 +4845,9 @@ gatsby-transformer-toml@next:
     bluebird "^3.5.0"
     toml "^2.3.2"
 
-gatsby@next:
-  version "2.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.9.tgz#320b700aaa324f440a788660d9ce1a4eb280c1a6"
+gatsby@^2.0.0-beta.9:
+  version "2.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.11.tgz#768500351a8931b509c5da9992be0b22c0355bdd"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.51"
     "@babel/core" "7.0.0-beta.51"
@@ -4905,7 +4901,7 @@ gatsby@next:
     front-matter "^2.1.0"
     fs-extra "^5.0.0"
     gatsby-cli "^2.0.0-beta.2"
-    gatsby-link "^2.0.0-beta.2"
+    gatsby-link "^2.0.0-beta.3"
     gatsby-plugin-page-creator "^2.0.0-beta.2"
     gatsby-react-router-scroll "^2.0.0-beta.2"
     glob "^7.1.1"
@@ -5446,7 +5442,7 @@ has-values@^1.0.0:
     is-number "^3.0.0"
     kind-of "^4.0.0"
 
-has@^1.0.1, has@^1.0.2:
+has@^1.0.1, has@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/has/-/has-1.0.3.tgz#722d7cbfc1f6aa8241f16dd814e011e1f41e8796"
   dependencies:
@@ -5580,8 +5576,8 @@ homedir-polyfill@^1.0.1:
     parse-passwd "^1.0.0"
 
 hosted-git-info@^2.1.4, hosted-git-info@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.6.0.tgz#23235b29ab230c576aab0d4f13fc046b0b038222"
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.6.1.tgz#6e4cee78b01bb849dcf93527708c69fdbee410df"
 
 hpack.js@^2.1.6:
   version "2.1.6"
@@ -7366,8 +7362,8 @@ node-libs-browser@^2.0.0:
     vm-browserify "0.0.4"
 
 node-pre-gyp@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.10.0.tgz#6e4ef5bb5c5203c6552448828c852c40111aac46"
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.10.2.tgz#e8945c20ef6795a20aac2b44f036eb13cf5146e3"
   dependencies:
     detect-libc "^1.0.2"
     mkdirp "^0.5.1"
@@ -7375,7 +7371,7 @@ node-pre-gyp@^0.10.0:
     nopt "^4.0.1"
     npm-packlist "^1.1.6"
     npmlog "^4.0.2"
-    rc "^1.1.7"
+    rc "^1.2.7"
     rimraf "^2.6.1"
     semver "^5.3.0"
     tar "^4"
@@ -8357,8 +8353,8 @@ preserve@^0.2.0:
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
 prettier@^1.12.0:
-  version "1.13.5"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.5.tgz#7ae2076998c8edce79d63834e9b7b09fead6bfd0"
+  version "1.13.6"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.6.tgz#00ae0b777ad92f81a9e7a1df2f0470b6dab0cb44"
 
 pretty-bytes@^4.0.2:
   version "4.0.2"
@@ -8416,7 +8412,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.1:
+prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -8568,7 +8564,7 @@ raw-loader@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
 
-rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.1.7:
+rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.2.7:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
   dependencies:
@@ -9479,8 +9475,8 @@ shallow-compare@^1.2.2:
   resolved "https://registry.yarnpkg.com/shallow-compare/-/shallow-compare-1.2.2.tgz#fa4794627bf455a47c4f56881d8a6132d581ffdb"
 
 shallowequal@^1.0.1, shallowequal@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.0.2.tgz#1561dbdefb8c01408100319085764da3fcf83f8f"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
 
 sharp@^0.20.2:
   version "0.20.4"
@@ -10427,8 +10423,8 @@ uglify-to-browserify@~1.0.0:
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
 
 uglifyjs-webpack-plugin@^1.2.4:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.6.tgz#f4bb44f02431e82b301d8d4624330a6a35729381"
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.7.tgz#57638dd99c853a1ebfe9d97b42160a8a507f9d00"
   dependencies:
     cacache "^10.0.4"
     find-cache-dir "^1.0.0"
@@ -11007,8 +11003,8 @@ webpack-stats-plugin@^0.1.5:
   resolved "https://registry.yarnpkg.com/webpack-stats-plugin/-/webpack-stats-plugin-0.1.5.tgz#29e5f12ebfd53158d31d656a113ac1f7b86179d9"
 
 webpack@^4.12.0:
-  version "4.12.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.12.0.tgz#14758e035ae69747f68dd0edf3c5a572a82bdee9"
+  version "4.12.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.12.1.tgz#9108078c67fdd72c2609cea22af87d7aed2acb08"
   dependencies:
     "@webassemblyjs/ast" "1.5.12"
     "@webassemblyjs/helper-module-context" "1.5.12"
