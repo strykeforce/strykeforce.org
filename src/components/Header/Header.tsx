@@ -11,7 +11,7 @@ const Background = styled.div`
 
 const Navigation = styled.div`
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: space-between;
 `
 

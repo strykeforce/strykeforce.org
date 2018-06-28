@@ -1,54 +1,141 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import styled from 'react-emotion'
+import styled, { css } from 'react-emotion'
+import bars from './bars.svg'
 import { HeaderProps } from './HeaderProps'
 import { PayPalButton } from './PayPalButton'
-
-const List = styled.ul`
-  display: flex;
-  flex-direction: row;
-  width: auto;
-  padding: 0;
-  margin: 0;
-
-  @media (max-width: 414px) {
-    flex-direction: column;
-  }
-`
-const Item = styled.li`
-  list-style: none;
-  padding: 0 1em;
-
-  @media (max-width: 414px) {
-    padding: 0 0 0.618em;
-  }
-`
 
 interface ItemLinkProps {
   menu: string
   path: string
 }
 
+const Nav = styled.nav`
+  .navWide {
+    display: none;
+    padding-top: 1em;
+  }
+
+  .navNarrow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 1em;
+    padding-right: 1em;
+  }
+
+  @media (min-width: 480px) {
+    .navWide {
+      display: block;
+    }
+    .navNarrow {
+      display: none;
+    }
+  }
+`
+
+const Burger = styled.img`
+  height: 2em;
+`
+
+const wide = css`
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0;
+  margin: 0;
+
+  & > li {
+    list-style: none;
+    padding-top: 0.5em;
+    padding-right: 1em;
+  }
+`
+
+const narrow = css`
+  display: none;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  padding: 0;
+  margin: 0;
+
+  & > li {
+    list-style: none;
+    padding-top: 0.5em;
+  }
+`
+
 const ItemLink = styled(Link)`
   text-decoration: none !important;
   font-weight: bold;
   font-size: 120%;
-  text-transform: capitalize;
   color: ${({ path, menu }: ItemLinkProps) =>
     path.startsWith(menu, 1) ? '#fff' : '#333'};
 `
 
+const toggleBurger = () => {
+  const linksEl = document.querySelector(`.${narrow}`) as HTMLElement
+  linksEl.style.display =
+    linksEl.style.display === 'flex'
+      ? (linksEl.style.display = 'none')
+      : (linksEl.style.display = 'flex')
+}
+
 export const HeaderNav: React.SFC<HeaderProps> = ({ path }) => (
-  <List>
-    {['about', 'blog', 'contact'].map(menu => (
-      <Item key={menu}>
-        <ItemLink to={`/${menu}/`} menu={menu} path={path}>
-          {menu}
-        </ItemLink>
-      </Item>
-    ))}
-    <Item>
-      <PayPalButton />
-    </Item>
-  </List>
+  <Nav>
+    <div className="navWide">
+      <ul className={wide}>
+        <li>
+          <ItemLink to="/about/" menu="about" path={path}>
+            About
+          </ItemLink>
+        </li>
+        <li>
+          <ItemLink to="/blog/" menu="blog" path={path}>
+            Blog
+          </ItemLink>
+        </li>
+        <li>
+          <ItemLink to="/contact/" menu="contact" path={path}>
+            Contact
+          </ItemLink>
+        </li>
+        <li>
+          <PayPalButton />
+        </li>
+      </ul>
+    </div>
+    <div className="navNarrow">
+      <Burger src={bars} alt="Menu" onClick={toggleBurger} />
+      <ul className={narrow}>
+        <li>
+          <ItemLink
+            to="/about/"
+            menu="about"
+            path={path}
+            onClick={toggleBurger}
+          >
+            About
+          </ItemLink>
+        </li>
+        <li>
+          <ItemLink to="/blog/" menu="blog" path={path} onClick={toggleBurger}>
+            Blog
+          </ItemLink>
+        </li>
+        <li>
+          <ItemLink
+            to="/contact/"
+            menu="contact"
+            path={path}
+            onClick={toggleBurger}
+          >
+            Contact
+          </ItemLink>
+        </li>
+        <li>
+          <PayPalButton />
+        </li>
+      </ul>
+    </div>
+  </Nav>
 )
