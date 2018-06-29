@@ -22,7 +22,10 @@ const BlogTemplate: React.SFC<BlogTemplateProps> = ({
   data: { post },
 }) => (
   <Layout path={pathname}>
-    <Helmet title={`${post.frontmatter.title} | Blog`} />
+    <Helmet>
+      <title>{`${post.frontmatter.title} | Blog`}</title>
+      <meta name="description" content={post.frontmatter.description} />
+    </Helmet>
     <Wrapper>
       <Post {...post} />
     </Wrapper>

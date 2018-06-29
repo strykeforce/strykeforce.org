@@ -3,6 +3,7 @@ path: "/about/history/"
 date: 2018-05-07T09:15:34-04:00
 draft: false
 title: Team History
+description: "The history of Stryke Force Team 2767, a FIRST Robotics team from Kalamazoo, Michigan."
 ---
 
 Stryke Force’s rookie year was in 2009. The original team name was FLEET. It was a homeschool team with twelve students and no sponsor. Even though it was a learning year, the team’s efforts were recognized with the Rookie All Star Award, the Rookie Inspiration Award, and the Highest Rookie Seed Award.

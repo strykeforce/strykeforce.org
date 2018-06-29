@@ -8,6 +8,7 @@ author: "Ethan L."
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+<!--more-->
 
 ![Stryke Force Business Team](social.jpg "The Stryke Force Business Team having a meeting on June 28, 2018 at the Midlink build space.")
 

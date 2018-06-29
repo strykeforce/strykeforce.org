@@ -3,6 +3,7 @@ path: "/about/nrg/"
 date: 2018-06-13T16:21:51Z
 draft: false
 title: Next Robotics Generation
+description: "Stryke Force Next Robotics Generation Spitfires team is an elementary level robotics team."
 ---
 
 The Stryke Force Next Robotics Generation (SF-NRG) Spitfires team is an Elementary level robotics team started in 2016. Using Arduino robot kits to get fully functioning robots in the hands of kids (and parents) quickly. The robots you build, and compete with, are yours to take home and enjoy.

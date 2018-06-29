@@ -3,6 +3,7 @@ path: "/about/about/"
 date: 2018-05-07T09:26:39-04:00
 draft: false
 title: About
+description: "Founded in 2009, Stryke Force is a FIRST Robotics Team from Kalamazoo, Michigan. Learn more about our team, students and partners."
 ---
 
 Team 2767, **Stryke Force** is a community [_FIRST<sup>®</sup>_ Robotics Competition](https://www.firstinspires.org/robotics/frc) team based in Kalamazoo, Michigan. We are FRC 2767, FTC 7228 and FTC 8553.

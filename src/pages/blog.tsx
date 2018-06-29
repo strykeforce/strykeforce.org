@@ -23,7 +23,13 @@ const BlogIndexPage: React.SFC<BlogIndexPageProps> = ({
 }) => {
   return (
     <Layout path={pathname}>
-      <Helmet title="Blog" />
+      <Helmet title="Blog">
+        <meta
+          name="description"
+          content="News from Stryke Force Team 2767, a FIRST Robotics Team from Kalamazoo, Michigan."
+        />
+      </Helmet>
+
       <Wrapper>
         <PostIndex posts={edges.filter(post => !!post.node.frontmatter.date)} />
       </Wrapper>
