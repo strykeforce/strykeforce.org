@@ -24,7 +24,13 @@ const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({
 
   return (
     <Layout path={pathname}>
-      <Helmet title="About" />
+      <Helmet title="About">
+        <meta
+          name="description"
+          content="Founded in 2009, Stryke Force is a FIRST Robotics Team from Kalamazoo, Michigan. Learn more about our team, students and partners."
+        />
+      </Helmet>
+
       <Wrapper maxWidth="40em">
         <h1>About Stryke Force</h1>
         <Post>
@@ -65,7 +71,10 @@ export const pageQuery = graphql`
           excerpt
           frontmatter {
             title
+            date(formatString: "MMMM DD, YYYY")
             path
+            description
+            author
           }
         }
       }

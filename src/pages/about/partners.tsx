@@ -29,7 +29,13 @@ const PartnerPage: React.SFC<PartnerPageProps> = ({
   const toml = data.partnersToml
   return (
     <Layout path={pathname}>
-      <Helmet title="Partners" />
+      <Helmet title="Partners">
+        <meta
+          name="description"
+          content="These organizations provide generous financial support, materials and services to Stryke Force Team 2767, a FIRST Robotics team from Kalamazoo, Michigan."
+        />
+      </Helmet>
+
       <Wrapper padding="2em">
         <h1>{toml.title}</h1>
         <p>{toml.description}</p>

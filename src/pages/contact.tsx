@@ -15,7 +15,13 @@ const ContactPage: React.SFC<ContactPageProps> = ({
 }) => {
   return (
     <Layout path={pathname}>
-      <Helmet title="Contact Us" />
+      <Helmet title="Contact Us">
+        <meta
+          name="description"
+          content="Contact Stryke Force Team 2767, a FIRST Robotics team from Kalamazoo, Michigan."
+        />
+      </Helmet>
+
       <Wrapper>
         <h1>Contact Stryke Force</h1>
         <ContactFormGallery />

@@ -1,24 +1,20 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { PostByline } from './PostByline'
 
 const Div = styled.div`
   max-width: 40em;
   margin: auto;
 `
 
-const Byline = styled.h2`
-  color: #aaa;
-  font-size: 1em;
-  font-weight: normal;
-  margin-top: -0.75em;
+const Header = styled.h1`
+  margin-bottom: 0;
 `
 
 export const Post: React.SFC<PostDetail> = ({ frontmatter, html }) => (
   <Div>
-    <h1>{frontmatter.title}</h1>
-    <Byline>
-      Posted on {frontmatter.date} by {frontmatter.author}
-    </Byline>
+    <Header>{frontmatter.title}</Header>
+    <PostByline date={frontmatter.date} author={frontmatter.author} />
     <div dangerouslySetInnerHTML={{ __html: html }} />
   </Div>
 )

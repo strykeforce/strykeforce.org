@@ -1,6 +1,7 @@
 import Img from 'gatsby-image'
 import React from 'react'
 import styled from 'react-emotion'
+import { PostByline } from './PostByline'
 import { PostMoreButton } from './PostMoreButton'
 
 export const Post = styled.article`
@@ -12,19 +13,10 @@ export const Title = styled.h2`
   margin-bottom: 0;
 `
 
-const Date = styled.p`
-  color: #666;
-  margin-top: 0;
-`
-
 export const PostLink: React.SFC<{ post: PostExcerpt }> = ({ post }) => (
   <Post>
     <Title>{post.frontmatter.title}</Title>
-    <Date>
-      <small>
-        Posted on {post.frontmatter.date} by {post.frontmatter.author}
-      </small>
-    </Date>
+    <PostByline date={post.frontmatter.date} author={post.frontmatter.author} />
     {post.frontmatter.image && (
       <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
     )}
