@@ -36,11 +36,11 @@ const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({
         <Post>
           <div dangerouslySetInnerHTML={{ __html: about }} />
         </Post>
-        {/* <Post>
+        <Post>
           <Title>Stryke Force Students</Title>
           <p>Meet the team for the 2019 FRC season.</p>
           <PostMoreButton to="/about/students/" />
-        </Post> */}
+        </Post>
         <Post>
           <Title>Stryke Force Partners</Title>
           <p>{partners}</p>

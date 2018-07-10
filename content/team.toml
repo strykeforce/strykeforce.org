@@ -1,5 +1,5 @@
 [[students]]
-  id = "c205e3e2-e569-42cc-82a1-34bc29342169"
+  id = "7a383d9c-dec3-4953-9c09-dea4ffc28c6c"
   name = "Audrey Rabick"
   displayName = "Audrey R."
   photo = "./about/team/2018/audrey_r.jpg"
@@ -8,7 +8,7 @@
   quote = "My two favorite historic inventions are duct tape and whiteboards."
 
 [[students]]
-  id = "14b9ddde-b0d3-4590-ae86-c73f920e01fa"
+  id = "7ec39b71-6103-44df-8f67-bfcb324616b5"
   name = "Cade Peterman"
   displayName = "Cade P."
   photo = "./about/team/2018/cade_p.jpg"
@@ -17,16 +17,16 @@
   quote = "I'm not a quotable person. Yay robots?"
 
 [[students]]
-  id = "7fb2295a-7876-40b0-82ab-4f63b2295fb2"
+  id = "0cfe9060-d02d-4a4c-a01f-4079824b308a"
   name = "Carter Briggs"
   displayName = "Carter B."
   photo = "./about/team/2018/carter_b.jpg"
   grade = 12
   school = "Portage Northern"
-  quote = "Engineering is solving problems you didn't know you had in ways you don't understant."
+  quote = "Engineering is solving problems you didn't know you had in ways you don't understand."
 
 [[students]]
-  id = "f35af411-1a60-44dd-970e-959c19f18d37"
+  id = "e1013ff5-b34c-4670-9e81-2cad50b2ddd5"
   name = "Greg Redlon"
   displayName = "Greg R."
   photo = "./about/team/2018/greg_r.jpg"
@@ -35,16 +35,16 @@
   quote = "There wouldn’t be good times without the tough times."
 
 [[students]]
-  id = "5fea54be-9464-427e-add3-05397aa8f442"
+  id = "26c33493-a011-4b77-8160-90cea84d8fea"
   name = "Hunter McGillivray"
   displayName = "Hunter M."
   photo = "./about/team/2018/hunter_m.jpg"
   grade = 12
   school = "Portage Northern"
-  quote = "The single most rewarding experience in the world is creating an experience for some of your dearest friends and watching them tear it apart..."
+  quote = "Allow one to interpret your creation before you tell them how"
 
 [[students]]
-  id = "ea0b108c-b3b7-4696-b112-1b5d64e221cb"
+  id = "939927bb-28fa-4997-9cc8-fd7e431429b8"
   name = "Jack Bruinwood"
   displayName = "Jack B."
   photo = "./about/team/2018/jack_b.jpg"
@@ -53,7 +53,7 @@
   quote = "Two robots drove into a bar, the third one had me as a driver."
 
 [[students]]
-  id = "e3c3b1d2-9c64-45a0-a04d-48cfc6ef4eb8"
+  id = "ec4b2f10-01f0-4e97-b48d-fc8f39e7f0c1"
   name = "Matt Clark"
   displayName = "Matt C."
   photo = "./about/team/2018/matt_c.jpg"
@@ -62,7 +62,7 @@
   quote = "If it ain't broke don't fix it. If it is-ZIP TIES!"
 
 [[students]]
-  id = "0f56346d-e212-4ea6-a53e-cb2428fdb567"
+  id = "7e9172cf-2afb-48dd-9a9f-f06ae71dd03c"
   name = "Roberts Kalnins"
   displayName = "Roberts K."
   photo = "./about/team/2018/roberts_k.jpg"
@@ -71,7 +71,7 @@
   quote = "I'm trilingual — I speak English, Latvian, and Java."
 
 [[students]]
-  id = "d999892e-eb9d-4ff8-8ca7-0b46c3f2d1e2"
+  id = "308f428b-b86c-4c31-8584-516432bf09a1"
   name = "Ross Malackowski"
   displayName = "Ross M."
   photo = "./about/team/2018/ross_m.jpg"
@@ -80,7 +80,7 @@
   quote = "Stryke Force helps me fly!"
 
 [[students]]
-  id = "ccb78b41-b739-4638-a243-25216affdbb5"
+  id = "b604344b-d7a8-4320-abbb-b8eabb3e19fb"
   name = "Sam Breuer"
   displayName = "Sam B."
   photo = "./about/team/2018/sam_b.jpg"
@@ -89,7 +89,7 @@
   quote = "Did somebody say scouting, I'm so glad you asked!"
 
 [[students]]
-  id = "d0808f41-96cf-4b6f-8da5-112685358fd5"
+  id = "a1b386ee-3b16-4863-bf73-19e98c95bedf"
   name = "Sierra Staunton"
   displayName = "Sierra S."
   photo = "./about/team/2018/sierra_s.jpg"
@@ -98,7 +98,16 @@
   quote = "Leaders aren't those who love to win, but those who hate to lose."
 
 [[students]]
-  id = "e611f31f-848a-420e-a24d-86f9feb4291a"
+  id = "545a51c1-1ef7-411b-8252-aed1a3971e01"
+  name = "Aayush Mohanty"
+  displayName = "Aayush M."
+  photo = "./about/team/2018/aayush_m.jpg"
+  grade = 11
+  school = "Portage Northern"
+  quote = "Robotics is the start to an engineering career."
+
+[[students]]
+  id = "29da720c-9b5f-4645-8d3c-ebb3a85876de"
   name = "Anna Puca"
   displayName = "Anna P."
   photo = "./about/team/2018/anne_p.jpg"
@@ -107,16 +116,16 @@
   quote = "Don't get mono two weeks before the World Championship Robotics Competition."
 
 [[students]]
-  id = "ccb33f01-8e35-475b-a07a-9b66ac9f7249"
-  name = "Brianna Kohl"
-  displayName = "Brianna K."
+  id = "f5290817-97e7-4d0e-8cb0-a10e4382f28b"
+  name = "Briana Kohl"
+  displayName = "Briana K."
   photo = "./about/team/2018/brianna_k.jpg"
   grade = 11
   school = "Mattawan"
   quote = "When life throws a swerve at you, make lemonade."
 
 [[students]]
-  id = "7e245294-fa22-4e00-a091-fc8115cf0bcc"
+  id = "fb5b456b-6ace-4868-9664-d6e6c26dcbf1"
   name = "Ethan Lee"
   displayName = "Ethan L."
   photo = "./about/team/2018/ethan_l.jpg"
@@ -125,7 +134,7 @@
   quote = "Don't call it a dream. Call it a plan."
 
 [[students]]
-  id = "fe55db40-0d08-4e9c-94bc-e6aab5045bd0"
+  id = "eec95d21-50dc-40c0-8a44-79d82582f7a5"
   name = "Kris Ouvry"
   displayName = "Kris O."
   photo = "./about/team/2018/kris_o.jpg"
@@ -134,7 +143,7 @@
   quote = "Stryke Force Yellow: a man-made marvel seen from space."
 
 [[students]]
-  id = "b452dd22-c120-40bf-a95e-23fec56a7475"
+  id = "10ad865a-506a-4702-a5d4-2c44cad7e718"
   name = "Lilian Gates"
   displayName = "Lilian G."
   photo = "./about/team/2018/lilian_g.jpg"
@@ -143,7 +152,7 @@
   quote = "It's always a software problem."
 
 [[students]]
-  id = "91a80022-105c-430b-88aa-55e259b83ab0"
+  id = "f2d7ce80-4ea2-4760-bc10-be8dd59ac0be"
   name = "Ranya Liu"
   displayName = "Ranya L."
   photo = "./about/team/2018/ranya_l.jpg"
@@ -152,7 +161,7 @@
   quote = "Came for the food, stayed for the robot."
 
 [[students]]
-  id = "00d83548-8ba0-4080-9b60-51088c1312ba"
+  id = "539a8901-5250-4884-a863-097156424853"
   name = "Alex Zajac"
   displayName = "Alex Z."
   photo = "./about/team/2018/alex_z.jpg"
@@ -161,16 +170,16 @@
   quote = "Feels good to get your hands dirty."
 
 [[students]]
-  id = "59263375-188e-4e85-af42-d153588f206e"
+  id = "aa6a751e-0eee-441e-92dd-f4abf064b541"
   name = "David Herr"
   displayName = "David H."
   photo = "./about/team/2018/david_h.jpg"
   grade = 10
   school = "Portage Central"
-  quote = ""
+  quote = "Learn from your mistakes and successes to achieve new challenging problems."
 
 [[students]]
-  id = "c1ad2576-7cb6-44c7-aa36-5fb41de551dc"
+  id = "8a5009d5-a58e-4689-b465-2864f8a7d0dd"
   name = "Jacob Woessner"
   displayName = "Jacob W."
   photo = "./about/team/2018/jacob_w.jpg"
@@ -179,16 +188,16 @@
   quote = ""
 
 [[students]]
-  id = "3c410950-b7c5-47a9-85b1-f0f3ad2ecf87"
+  id = "d04e9ca6-549a-4032-8e32-50711ae850ec"
   name = "Jager Doorn"
   displayName = "Jager D."
   photo = "./about/team/2018/jager_d.jpg"
   grade = 10
   school = "Homeschool"
-  quote = ""
+  quote = "Talent is overrated. Eighty percent of success in life is showing up. The rest is integrity and perseverance."
 
 [[students]]
-  id = "37ab5c7f-8067-4336-9156-471904360808"
+  id = "fbf76f16-62c8-4b43-bfb9-564b83182639"
   name = "Kjerstin Lindbloom"
   displayName = "Kjerstin L."
   photo = "./about/team/2018/kjerstin_l.jpg"
@@ -197,7 +206,7 @@
   quote = "Uniqueness is what I strive for, awkwardness is what I have."
 
 [[students]]
-  id = "2c990779-cab6-4644-baa5-a36740d59e6e"
+  id = "39c05a5e-ccbf-4e38-9e9a-a48273a97453"
   name = "Sam Rabick"
   displayName = "Sam R."
   photo = "./about/team/2018/sam_r.jpg"
@@ -206,26 +215,26 @@
   quote = "If we accepted the sky as the limit, we would never have put a man on the moon."
 
 [[students]]
-  id = "86d620fb-d349-46e1-9747-0d9298b4cd3b"
+  id = "7c255480-bb8e-45ca-86fb-94b3ef96550f"
   name = "Cassie Nash"
   displayName = "Cassie N."
   photo = "./about/team/2018/cassie_n.jpg"
   grade = 9
   school = "Kalamazoo Central"
-  quote = ""
+  quote = "This is just a warm-up, next we build a TARDIS."
 
 [[students]]
-  id = "e95891e0-528f-46eb-8c4d-b46809775645"
+  id = "03c59d25-1cf1-4609-8b41-ff8fd8430d0a"
   name = "Cole Sherwood"
   displayName = "Cole S."
   photo = "./about/team/2018/cole_s.jpg"
   grade = 9
   school = "Portage Central"
-  quote = ""
+  quote = "Stryke Force hours- 24:7"
 
 [[students]]
-  id = "7c811c37-19e1-412c-8633-c7c797e9a80b"
-  name = "Siddhart Tiwari"
+  id = "b47031a9-6c0c-4976-91d0-d2220cb721f0"
+  name = "Siddharth Tiwar"
   displayName = "Siddhart T."
   photo = "./about/team/2018/siddhart_t.jpg"
   grade = 9
@@ -233,11 +242,11 @@
   quote = ""
 
 [[students]]
-  id = "fa0a36d1-13b6-4e47-bbdd-63fe4a935cbe"
+  id = "c08c01c7-1c74-4af0-a71b-c8c5556d2583"
   name = "Zach McDougal"
   displayName = "Zach M."
   photo = "./about/team/2018/zach_m.jpg"
   grade = 9
   school = "Portage Central"
-  quote = ""
+  quote = "I build robots and I know things."
 
