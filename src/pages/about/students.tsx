@@ -28,7 +28,13 @@ const StudentsPage: React.SFC<StudentsPageProps> = ({
   const students = data.allTeamToml.edges[0].node.students
   return (
     <Layout path={pathname}>
-      <Helmet title="Students" />
+      <Helmet title="Students">
+        <meta
+          name="description"
+          content="Photographs and quotes from the Stryke Force students."
+        />
+      </Helmet>
+
       <Wrapper padding="2em">
         <h1>Stryke Force Students</h1>
         <TeamGallery members={students} />
