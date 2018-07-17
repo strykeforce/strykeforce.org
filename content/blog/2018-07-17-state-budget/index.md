@@ -7,7 +7,7 @@ description: "The 2019 state education budget is not only good news for Stryke F
 author: "Ethan L."
 ---
 
-The 2019 state education budget is not only good news for Stryke Force, but the entirety of *FIRST* as well!
+The 2019 state education budget is not only good news for Stryke Force, but the entirety of FIRST as well!
 
 <!--more-->
 
