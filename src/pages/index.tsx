@@ -44,8 +44,9 @@ const IndexPage: React.SFC<IndexPageProps> = ({
       <Banner />
       <Wrapper>
         <Blurb>
-          Stryke Force is a community <i>FIRST</i> robotics team based in
-          Kalamazoo, Michigan. We are FRC 2767, FTC 7228 and FTC 8553.
+          Stryke Force 4-H <i>FIRST</i> Robotics Team 2767 is a community
+          robotics team based in Kalamazoo, Michigan. We are FRC 2767, FTC 7228
+          and FTC 8553.
         </Blurb>
         <LogoBand />
         <NewsHeading>Team News</NewsHeading>
