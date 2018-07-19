@@ -42,8 +42,8 @@ a:hover {
 }
 `
 
-const description = `Stryke Force is 
-  a community FIRST robotics team based in Kalamazoo,
+const description = `Stryke Force 4-H FIRST Robotics Team 2767 is 
+  a community robotics team based in Kalamazoo,
   Michigan. We are FRC 2767, FTC 7228 and FTC  8553.`
 
 export const Layout: React.SFC<LayoutProps> = ({ children, path }) => (
