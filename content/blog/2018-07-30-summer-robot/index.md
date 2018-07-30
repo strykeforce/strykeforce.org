@@ -4,7 +4,7 @@ path: /blog/2018-07-30-summer-robot/
 date: 2018-07-30T13:00:57Z
 image: "./social.jpg"
 description: "The Stryke Force programmers are dusting off our old Stronghold robot for a software makeover."
-author: "Sam B."
+author: "Sam R."
 ---
 
 The Stryke Force programmers are dusting off our old Stronghold robot for a software makeover.
