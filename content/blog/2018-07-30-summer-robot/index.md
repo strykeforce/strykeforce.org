@@ -1,5 +1,5 @@
 ---
-title: Summer Robot Project
+title: Developing Software Skills with 2016 Stronghold Robot
 path: /blog/2018-07-30-summer-robot/
 date: 2018-07-30T13:00:57Z
 image: "./social.jpg"
