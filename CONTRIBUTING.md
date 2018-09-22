@@ -1,6 +1,6 @@
 # Contributing to strykeforce.org
 
-:+1::tada: First off, thanks for reading this because we need students and mentors to help make our website awesome!
+:+1::tada: First off, thanks for reading this because we need students and mentors to help make our website awesome! If you have any questions see a team mentor or check out our #sfwebsite Slack channel.
 
 ## What should I know before I get started?
 
