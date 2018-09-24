@@ -4,7 +4,7 @@ path: "/blog/2018-09-23-talons-out"
 date: 2018-09-23T18:25:05Z
 image: "./social.jpg"
 description: "This past weekend Stryke Force participated in a great opportunity to serve our community, and our veterans."
-author: "Ethan L."
+author: "Hunter M."
 ---
 
 This past weekend Stryke Force participated in a great opportunity to serve our community, and our veterans.
