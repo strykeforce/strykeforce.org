@@ -1,5 +1,5 @@
 ---
-title: " Stryke Force shows appreciation for Talons Out Honor Flight"
+title: "Stryke Force shows appreciation for Talons Out Honor Flight"
 path: "/blog/2018-09-23-talons-out"
 date: 2018-09-23T18:25:05Z
 image: "./social.jpg"
