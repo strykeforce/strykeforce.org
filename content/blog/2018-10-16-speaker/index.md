@@ -16,4 +16,4 @@ One of the most valuable takeaways from our time at Stryke Force is all the know
 For prospective college students like me, it was interesting to hear about Kaitlin’s experience at Notre Dame, and how she decided to become an engineer. It was enlightening to hear about how she, being a mother of two, balanced work and home life, what she was most passionate about at work, and how she chose her career path. It was also great to learn about the importance of challenges, and some products she worked with at Stryker.
 
 This student, at least, retained one nugget of your advice—like you said. Thanks for speaking Kaitlin! 
-Giving professional presentations, forming relationships with local businesses, editing web pages and planning community events: what do all of these actions have in common?
+
