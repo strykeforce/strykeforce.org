@@ -3,7 +3,7 @@ path: "/about/ftc/"
 date: 2018-06-12
 draft: false
 title: FIRST Tech Challenge
-description: "Special Air Services, Team 7228 and Screaming Eagles, Team 8553 are our First Tech Challenge teams."
+description: "Special Air Services, Team 7228, Screaming Eagles, Team 8553 and Spittin' Kittens, Team 15106 are our First Tech Challenge teams."
 ---
 
 We are entering the 6th season of our FTC (FIRST Tech Challenge) program, which is made up of 7th and 8th grade students.
