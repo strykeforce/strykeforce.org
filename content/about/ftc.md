@@ -9,7 +9,7 @@ description: "Special Air Services, Team 7228, Screaming Eagles, Team 8553 and S
 We are entering the 6th season of our FTC (FIRST Tech Challenge) program, which is made up of 7th and 8th grade students.
 <!--more-->
 
-Special Air Services, Team 7228, had their Rookie year in 2013.  Due to the tremendous growth in interest in our program, Team 8553, the Screaming Eagles, was added a year later.
+Special Air Services, Team 7228, had their Rookie year in 2013.  Due to the tremendous growth in interest in our program, Team 8553, the Screaming Eagles, was added a year later and Team 15106, the Spittin' Kittens, was added in 2018.
 
 - [FTC 17/18 Season Highlight Photos](https://photos.app.goo.gl/72AIxOVQhT3ACQZx1)
 
