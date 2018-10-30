@@ -12,7 +12,7 @@
     "emotion": "^9.2.1",
     "emotion-server": "^9.2.1",
     "es6-promise": "^4.2.4",
-    "gatsby": "^2.0.0-beta.9",
+    "gatsby": "latest",
     "gatsby-image": "latest",
     "gatsby-plugin-catch-links": "latest",
     "gatsby-plugin-emotion": "latest",
@@ -43,6 +43,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "serve": "http-server public",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.tsx' 'src/**/*.js'",
     "type-check": "tsc --noEmit",
