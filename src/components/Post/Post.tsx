@@ -1,7 +1,16 @@
+import { injectGlobal } from 'emotion'
 import React from 'react'
 import styled from 'react-emotion'
-import './Post.css'
 import { PostByline } from './PostByline'
+
+// tslint:disable-next-line:no-unused-expression
+injectGlobal`
+p > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+`
 
 const Div = styled.div`
   margin: auto;
