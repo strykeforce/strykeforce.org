@@ -1,7 +1,8 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
-import styled from 'react-emotion'
+import styled, { css } from 'react-emotion'
 import frc2767 from './frc2767.svg'
+import ftc15106 from './ftc15106.svg'
 import ftc7228 from './ftc7228.svg'
 import ftc8553 from './ftc8553.svg'
 
@@ -29,13 +30,17 @@ const Logo = styled.img`
   border-width: 3px;
   border-color: #292929;
   border-radius: 50%;
-  width: 10em;
-  height: 10em;
+  width: 7.5em;
+  height: 7.5em;
 `
 
 export const LogoBand: React.SFC<{}> = () => (
   <Wrapper>
-    <Team>
+    <Team
+    // className={css`
+    //   flex-basis: 100%;
+    // `}
+    >
       <TeamLabel>FRC 2767</TeamLabel>
       <Link to="/about/history/">
         <Logo src={frc2767} />
@@ -51,6 +56,12 @@ export const LogoBand: React.SFC<{}> = () => (
       <TeamLabel>FTC 8553</TeamLabel>
       <Link to="/about/ftc/">
         <Logo src={ftc8553} />
+      </Link>
+    </Team>
+    <Team>
+      <TeamLabel>FTC 15106</TeamLabel>
+      <Link to="/about/ftc/">
+        <Logo src={ftc15106} />
       </Link>
     </Team>
   </Wrapper>
