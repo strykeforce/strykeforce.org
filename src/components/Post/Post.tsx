@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import './Post.css'
 import { PostByline } from './PostByline'
 
 const Div = styled.div`
