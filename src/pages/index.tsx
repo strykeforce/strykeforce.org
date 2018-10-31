@@ -62,6 +62,7 @@ export default IndexPage
 export const indexPageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
+      limit: 5,
       filter: { fileAbsolutePath: { glob: "**/content/blog/**" } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
