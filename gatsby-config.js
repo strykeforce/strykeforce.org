@@ -6,9 +6,7 @@ module.exports = {
       'This is the Stryke Force Web Site. Stryke Force is a community FIRST robotics team based in Kalamazoo, Michigan. We are FRC 2767, FTC 7228 and FTC 8553.',
   },
   plugins: [
-    // {
-    //   resolve: 'gatsby-plugin-sitemap',
-    // },
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
