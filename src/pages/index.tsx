@@ -3,7 +3,6 @@ import React from 'react'
 import styled from 'react-emotion'
 
 import { Layout } from '../components/Layout/Layout'
-import { Wrapper } from '../components/Layout/Wrapper'
 import { LogoBand } from '../components/LogoBand/LogoBand'
 import { PostIndex } from '../components/Post/PostIndex'
 import { SEOWebSite } from '../components/SEO/SEOWebSite'
@@ -27,7 +26,6 @@ const Blurb = styled.div`
 `
 
 const NewsHeading = styled.h1`
-  max-width: 40rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.2em;

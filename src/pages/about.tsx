@@ -3,8 +3,7 @@ import * as path from 'path'
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout/Layout'
-import { Wrapper } from '../components/Layout/Wrapper'
-import { PostIndex } from '../components/Post/PostIndex'
+import { PostIndex, PostIndexDiv } from '../components/Post/PostIndex'
 import { Post, Title } from '../components/Post/PostLink'
 import { PostMoreButton } from '../components/Post/PostMoreButton'
 
@@ -31,20 +30,22 @@ const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({
         />
       </Helmet>
 
-      <h1>About Stryke Force</h1>
-      <Post>
-        <div dangerouslySetInnerHTML={{ __html: about }} />
-      </Post>
-      <Post>
-        <Title>Stryke Force Students</Title>
-        <p>Meet the team for the 2019 FRC season.</p>
-        <PostMoreButton to="/about/students/" />
-      </Post>
-      <Post>
-        <Title>Stryke Force Partners</Title>
-        <p>{partners}</p>
-        <PostMoreButton to="/about/partners/" />
-      </Post>
+      <PostIndexDiv>
+        <h1>About Stryke Force</h1>
+        <Post>
+          <div dangerouslySetInnerHTML={{ __html: about }} />
+        </Post>
+        <Post>
+          <Title>Stryke Force Students</Title>
+          <p>Meet the team for the 2019 FRC season.</p>
+          <PostMoreButton to="/about/students/" />
+        </Post>
+        <Post>
+          <Title>Stryke Force Partners</Title>
+          <p>{partners}</p>
+          <PostMoreButton to="/about/partners/" />
+        </Post>
+      </PostIndexDiv>
       <PostIndex
         posts={posts.filter(
           ({ node }: any) =>
