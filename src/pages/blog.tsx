@@ -2,7 +2,6 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout/Layout'
-import { Wrapper } from '../components/Layout/Wrapper'
 import { PostIndex } from '../components/Post/PostIndex'
 
 // prettier-ignore
@@ -30,9 +29,7 @@ const BlogIndexPage: React.SFC<BlogIndexPageProps> = ({
         />
       </Helmet>
 
-      <Wrapper>
-        <PostIndex posts={edges.filter(post => !!post.node.frontmatter.date)} />
-      </Wrapper>
+      <PostIndex posts={edges.filter(post => !!post.node.frontmatter.date)} />
     </Layout>
   )
 }

@@ -31,28 +31,26 @@ const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({
         />
       </Helmet>
 
-      <Wrapper maxWidth="40em">
-        <h1>About Stryke Force</h1>
-        <Post>
-          <div dangerouslySetInnerHTML={{ __html: about }} />
-        </Post>
-        <Post>
-          <Title>Stryke Force Students</Title>
-          <p>Meet the team for the 2019 FRC season.</p>
-          <PostMoreButton to="/about/students/" />
-        </Post>
-        <Post>
-          <Title>Stryke Force Partners</Title>
-          <p>{partners}</p>
-          <PostMoreButton to="/about/partners/" />
-        </Post>
-        <PostIndex
-          posts={posts.filter(
-            ({ node }: any) =>
-              !path.basename(node.fileAbsolutePath).startsWith('_')
-          )}
-        />
-      </Wrapper>
+      <h1>About Stryke Force</h1>
+      <Post>
+        <div dangerouslySetInnerHTML={{ __html: about }} />
+      </Post>
+      <Post>
+        <Title>Stryke Force Students</Title>
+        <p>Meet the team for the 2019 FRC season.</p>
+        <PostMoreButton to="/about/students/" />
+      </Post>
+      <Post>
+        <Title>Stryke Force Partners</Title>
+        <p>{partners}</p>
+        <PostMoreButton to="/about/partners/" />
+      </Post>
+      <PostIndex
+        posts={posts.filter(
+          ({ node }: any) =>
+            !path.basename(node.fileAbsolutePath).startsWith('_')
+        )}
+      />
     </Layout>
   )
 }

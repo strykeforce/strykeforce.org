@@ -3,7 +3,6 @@ import styled from 'react-emotion'
 import { PostByline } from './PostByline'
 
 const Div = styled.div`
-  max-width: 40em;
   margin: auto;
 `
 

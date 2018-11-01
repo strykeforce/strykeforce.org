@@ -13,10 +13,8 @@ const NotFoundPage: React.SFC<NotFoundPageProps> = ({
   location: { pathname },
 }) => (
   <Layout path={pathname}>
-    <Wrapper padding="2em">
-      <h1>Page not found</h1>
-      <Link to="/">Home</Link>
-    </Wrapper>
+    <h1>Page not found</h1>
+    <Link to="/">Home</Link>
   </Layout>
 )
 

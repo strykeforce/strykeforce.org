@@ -36,17 +36,13 @@ const PartnerPage: React.SFC<PartnerPageProps> = ({
         />
       </Helmet>
 
-      <Wrapper padding="2em">
-        <h1>{toml.title}</h1>
-        <p>{toml.description}</p>
+      <h1>{toml.title}</h1>
+      <p>{toml.description}</p>
 
-        <PartnerGallery level={toml.platinum} />
-        <PartnerGallery level={toml.gold} />
-        <PartnerGallery level={toml.silver} />
-        <PartnerGallery level={toml.bronze} />
-
-        <Link to="/">Home</Link>
-      </Wrapper>
+      <PartnerGallery level={toml.platinum} />
+      <PartnerGallery level={toml.gold} />
+      <PartnerGallery level={toml.silver} />
+      <PartnerGallery level={toml.bronze} />
     </Layout>
   )
 }

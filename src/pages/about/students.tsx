@@ -35,10 +35,8 @@ const StudentsPage: React.SFC<StudentsPageProps> = ({
         />
       </Helmet>
 
-      <Wrapper padding="2em">
-        <h1>Stryke Force Students</h1>
-        <TeamGallery members={students} />
-      </Wrapper>
+      <h1>Stryke Force Students</h1>
+      <TeamGallery members={students} />
     </Layout>
   )
 }

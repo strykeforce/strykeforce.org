@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 import styled from 'react-emotion'
-import { Banner } from '../components/Banner/Banner'
+
 import { Layout } from '../components/Layout/Layout'
 import { Wrapper } from '../components/Layout/Wrapper'
 import { LogoBand } from '../components/LogoBand/LogoBand'
@@ -40,18 +40,16 @@ const IndexPage: React.SFC<IndexPageProps> = ({
   },
 }) => {
   return (
-    <Layout path={pathname}>
-      <Banner />
-      <Wrapper>
-        <Blurb>
-          Stryke Force 4-H <i>FIRST</i> Robotics Team 2767 is a community
-          robotics team based in Kalamazoo, Michigan. We are FRC 2767, FTC 7228,
-          FTC 8553 and FTC 15106.
-        </Blurb>
-        <LogoBand />
-        <NewsHeading>Team News</NewsHeading>
-        <PostIndex posts={edges.filter(post => !!post.node.frontmatter.date)} />
-      </Wrapper>
+    <Layout path={pathname} banner={true}>
+      <Blurb>
+        Stryke Force 4-H <i>FIRST</i> Robotics Team 2767 is a community robotics
+        team based in Kalamazoo, Michigan. We are FRC 2767, FTC 7228, FTC 8553
+        and FTC 15106.
+      </Blurb>
+      <LogoBand />
+      <NewsHeading>Team News</NewsHeading>
+      <PostIndex posts={edges.filter(post => !!post.node.frontmatter.date)} />
+
       <SEOWebSite />
     </Layout>
   )
@@ -62,7 +60,7 @@ export default IndexPage
 export const indexPageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
-      limit: 5,
+      limit: 5
       filter: { fileAbsolutePath: { glob: "**/content/blog/**" } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {

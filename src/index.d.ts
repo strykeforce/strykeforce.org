@@ -23,11 +23,11 @@ interface ImageSharpOriginal {
 
 // prettier-ignore
 interface Frontmatter {
-  date: string;
-  path: string;
-  title: string;
-  author: string;
-  description: string;
+  date: string
+  path: string
+  title: string
+  author: string
+  description: string
   image: {
     childImageSharp: { original: ImageSharpOriginal } | any;
   }
@@ -35,9 +35,9 @@ interface Frontmatter {
 
 // prettier-ignore
 interface PostExcerpt {
-  id: string;
-  excerpt: string;
-  frontmatter: Frontmatter;
+  id: string
+  excerpt: string
+  frontmatter: Frontmatter
 }
 
 interface PostExcerptNode {
@@ -46,8 +46,8 @@ interface PostExcerptNode {
 
 // prettier-ignore
 interface PostDetail {
-  html: string;
-  frontmatter: Frontmatter;
+  html: string
+  frontmatter: Frontmatter
 }
 
 interface Sponsor {
@@ -72,15 +72,26 @@ interface SponsorLevel {
 
 // prettier-ignore
 interface TeamMember {
-  id: string;
-  name: string;
-  displayName: string;
-  grade?: number;
-  school?: string;
-  quote?: string;
+  id: string
+  name: string
+  displayName: string
+  grade?: number
+  school?: string
+  quote?: string
   photo: {
     childImageSharp: {
       fixed: any;
     }
   }
+}
+
+// prettier-ignore
+interface EventData {
+  name: string
+  date: string
+  venue: string
+  street: string
+  city: string
+  state: string
+  zip: string
 }
