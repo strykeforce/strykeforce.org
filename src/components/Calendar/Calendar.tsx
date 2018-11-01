@@ -15,7 +15,8 @@ interface CalendarData {
 
 const CalendarDiv = styled.div`
   width: 15em;
-  padding-left: 1em;
+  padding-top: 1.5em;
+  padding-left: 2em;
   padding-right: 0.5em;
 
   @media (max-width: 480px) {
