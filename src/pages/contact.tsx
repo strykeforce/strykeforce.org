@@ -22,10 +22,8 @@ const ContactPage: React.SFC<ContactPageProps> = ({
         />
       </Helmet>
 
-      <Wrapper>
-        <h1>Contact Stryke Force</h1>
-        <ContactFormGallery />
-      </Wrapper>
+      <h1>Contact Stryke Force</h1>
+      <ContactFormGallery />
     </Layout>
   )
 }

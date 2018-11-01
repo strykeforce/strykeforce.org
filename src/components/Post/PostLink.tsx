@@ -5,7 +5,6 @@ import { PostByline } from './PostByline'
 import { PostMoreButton } from './PostMoreButton'
 
 export const Post = styled.article`
-  max-width: 40em;
   margin: auto;
 `
 

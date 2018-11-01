@@ -26,9 +26,7 @@ const BlogTemplate: React.SFC<BlogTemplateProps> = ({
       <title>{`${post.frontmatter.title} | Blog`}</title>
       <meta name="description" content={post.frontmatter.description} />
     </Helmet>
-    <Wrapper>
-      <Post {...post} />
-    </Wrapper>
+    <Post {...post} />
     <Twitter {...post} />
     <Facebook {...post} />
   </Layout>
