@@ -58,7 +58,7 @@ const description = `Stryke Force 4-H FIRST Robotics Team 2767 is
 const Row = styled.div`
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-end;
+  justify-content: center;
 
   @media (max-width: 480px) {
     flex-flow: column;
