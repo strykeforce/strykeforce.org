@@ -2,7 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { ContactFormGallery } from '../components/ContactForm/ContactFormGallery'
 import { Layout } from '../components/Layout/Layout'
-import { Wrapper } from '../components/Layout/Wrapper'
 
 interface ContactPageProps {
   location: {

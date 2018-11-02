@@ -2,7 +2,6 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Layout } from '../../components/Layout/Layout'
-import { Wrapper } from '../../components/Layout/Wrapper'
 import { TeamGallery } from '../../components/Team/TeamGallery'
 
 // prettier-ignore
