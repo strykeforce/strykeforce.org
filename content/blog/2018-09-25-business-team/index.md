@@ -1,8 +1,8 @@
 ---
 title: "Let's Get Down to Business"
-path: '/blog/2018-09-25-business-team'
+path: /blog/2018-09-25-business-team/
 date: 2018-09-25T18:25:05Z
-image: './social.jpg'
+image: "./social.jpg"
 description: 'Giving professional presentations, forming relationships with local businesses, editing web pages and planning community events: what do all of these actions have in common?'
 author: 'Audrey R.'
 ---

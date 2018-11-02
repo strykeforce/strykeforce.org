@@ -1,6 +1,6 @@
 ---
 title: 2018 Detroit World Champions
-path: "/blog/2018-05-01-detroit"
+path: "/blog/2018-05-01-detroit/"
 date: 2018-05-01T00:00:00-04:00
 author: "Margo S."
 ---
