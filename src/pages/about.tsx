@@ -52,6 +52,20 @@ const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({
             !path.basename(node.fileAbsolutePath).startsWith('_')
         )}
       />
+      <Post>
+        <Title>Stryke Force Photo Albums</Title>
+        <p>
+          Visit{' '}
+          <a
+            href="https://strykeforce.smugmug.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Stryke Force on SmugMug
+          </a>{' '}
+          to view, download or purchase team photos.
+        </p>
+      </Post>
     </Layout>
   )
 }
@@ -62,6 +76,7 @@ export const pageQuery = graphql`
   query AboutIndexQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { glob: "**/content/about/**" } }
+      sort: { fields: frontmatter___date }
     ) {
       edges {
         node {
