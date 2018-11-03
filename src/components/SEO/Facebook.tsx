@@ -44,7 +44,7 @@ export const Facebook: React.SFC<PostDetail> = ({ frontmatter }) => {
           property: 'fb:app_id',
         },
         {
-          content: '@2767strykeforce',
+          content: '107671715919694',
           property: 'article:publisher',
         },
       ]}
