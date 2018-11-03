@@ -1,3 +1,4 @@
+import { css } from 'emotion'
 import { graphql } from 'gatsby'
 import * as path from 'path'
 import React from 'react'
@@ -58,17 +59,23 @@ const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({
         )}
       />
       <Post>
-        <Title>Stryke Force Photo Albums</Title>
+        <a
+          href="https://strykeforce.smugmug.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/smugmug.svg"
+            alt="SmugMug"
+            className={css`
+              width: 35%;
+              padding-top: 1em;
+            `}
+          />
+        </a>
         <p>
-          Visit{' '}
-          <a
-            href="https://strykeforce.smugmug.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Stryke Force on SmugMug
-          </a>{' '}
-          to view, download or purchase team photos.
+          Visit Stryke Force on SmugMug to view, download or purchase team
+          photos.
         </p>
       </Post>
     </Layout>
