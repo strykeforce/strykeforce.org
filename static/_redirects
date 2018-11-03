@@ -1,3 +1,12 @@
-/blog/2018-05-01-open-houses /blog/2018-06-16-open-houses
-/sponsors   /about/partners
-/nrg-about  /about/nrg
+/blog/2018-05-01-open-houses              /blog/2018-06-16-open-houses/
+/blog/detroit-world-champions/            /blog/2018-05-01-detroit/
+/posts/2018/detroit-world-champions/      /blog/2018-05-01-detroit/
+/blog/community-open-houses/              /blog/2018-06-16-open-houses/
+/posts/2018/community-open-houses/        /blog/2018-06-16-open-houses/
+/blog/ranya-and-riley/                    /blog/2018-05-12-ranya-and-riley/
+/posts/2018/were-refreshing-our-web-site/ /
+/posts/                                   /blog/
+/sponsors                                 /about/partners/
+/about/sponsors/                          /about/partners/
+/nrg-about                                /about/nrg/
+/about/about/                             /about/
