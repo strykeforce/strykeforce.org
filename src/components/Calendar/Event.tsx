@@ -13,23 +13,27 @@ const Name = styled.span`
   padding-bottom: 0.15em;
 `
 
-const Date = styled.span`
+const Date = styled.time`
   font-weight: normal;
   padding-bottom: 0.25em;
 `
 
-const Address = styled.span`
+const Address = styled.address`
   font-size: 0.9em;
+  font-style: normal;
 `
 
 const Event: React.SFC<{ event: EventData }> = ({ event }) => (
   <EventDiv>
     <Name>{event.name}</Name>
     <Date>{event.date}</Date>
-    <Address>{event.venue}</Address>
-    <Address>{event.street}</Address>
     <Address>
+      {event.venue}
+      <br />
+      {event.street}
+      <br />
       {event.city}, {event.state} {event.zip}
+      <br />
     </Address>
   </EventDiv>
 )
