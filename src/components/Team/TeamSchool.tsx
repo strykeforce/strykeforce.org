@@ -12,6 +12,10 @@ const School = styled.p`
 
 function formatGrade(grade: number): string {
   switch (grade) {
+    case 7:
+      return 'Seventh Grade'
+    case 8:
+      return 'Eighth Grade'
     case 9:
       return 'Freshman'
     case 10:
