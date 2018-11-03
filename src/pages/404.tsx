@@ -1,7 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import { Layout } from '../components/Layout/Layout'
-import { Wrapper } from '../components/Layout/Wrapper'
 
 interface NotFoundPageProps {
   location: {

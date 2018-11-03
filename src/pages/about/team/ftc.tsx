@@ -1,8 +1,8 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Layout } from '../../components/Layout/Layout'
-import { TeamGallery } from '../../components/Team/TeamGallery'
+import { Layout } from '../../../components/Layout/Layout'
+import { TeamGallery } from '../../../components/Team/TeamGallery'
 
 // prettier-ignore
 interface StudentsPageProps {
@@ -10,7 +10,7 @@ interface StudentsPageProps {
     pathname: string
   }; // tslint:disable-line:semicolon
   data: {
-    allTeamToml: {
+    allFtcToml: {
       edges: Array<{
         node: {
           students: TeamMember[];
@@ -20,11 +20,11 @@ interface StudentsPageProps {
   }
 }
 
-const StudentsPage: React.SFC<StudentsPageProps> = ({
+const FtcStudentsPage: React.SFC<StudentsPageProps> = ({
   location: { pathname },
   data,
 }) => {
-  const students = data.allTeamToml.edges[0].node.students
+  const students = data.allFtcToml.edges[0].node.students
   return (
     <Layout path={pathname}>
       <Helmet title="Students">
@@ -34,17 +34,17 @@ const StudentsPage: React.SFC<StudentsPageProps> = ({
         />
       </Helmet>
 
-      <h1>Stryke Force Students</h1>
+      <h1>Stryke Force FTC Students</h1>
       <TeamGallery members={students} />
     </Layout>
   )
 }
 
-export default StudentsPage
+export default FtcStudentsPage
 
 export const studentsQuery = graphql`
-  query StudentsQuery {
-    allTeamToml {
+  query FtcStudentsQuery {
+    allFtcToml {
       edges {
         node {
           students {

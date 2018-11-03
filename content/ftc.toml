@@ -1,0 +1,198 @@
+[[students]]
+  id = "2a2b90c4-8b53-4e6e-987a-2756513a5e81"
+  name = "Alayna Boucher"
+  displayName = "Alayna B."
+  photo = "./about/team/ftc/2018/alayna_b.jpg"
+  grade = 8
+  school = "Maple Street Magnet School"
+  quote = "Screaming Eagles FTC Team 8553"
+
+[[students]]
+  id = "06515f91-9484-47d5-8acf-fd4a48dd0035"
+  name = "Alice Kraatz"
+  displayName = "Alice K."
+  photo = "./about/team/ftc/2018/alice_k.jpg"
+  grade = 8
+  school = "Portage North Middle School"
+  quote = "Spittin' Kittens FTC Team 15106"
+
+[[students]]
+  id = "0498a612-e5b8-447f-bf01-31e878eed09e"
+  name = "Anneka Doorn"
+  displayName = "Anneka D."
+  photo = "./about/team/ftc/2018/anneka_d.jpg"
+  grade = 8
+  school = "Homeschool"
+  quote = "Special Air Service FTC Team 7228"
+
+[[students]]
+  id = "5e3a587b-a39e-4a8f-a456-3440bf02e810"
+  name = "Deshana Betala"
+  displayName = "Deshana B."
+  photo = "./about/team/ftc/2018/deshana_b.jpg"
+  grade = 8
+  school = "Portage West Middle School"
+  quote = "Special Air Service FTC Team 7228"
+
+[[students]]
+  id = "d2cc30a0-1d6e-4546-b50f-659608c1d6e8"
+  name = "Jacob Earl"
+  displayName = "Jacob E."
+  photo = "./about/team/ftc/2018/jacob_e.jpg"
+  grade = 8
+  school = "Portage Central Middle School"
+  quote = "Spittin' Kittens FTC Team 15106"
+
+[[students]]
+  id = "63066e8c-fc25-44e5-abf6-f21d8c6ccb8c"
+  name = "Linkoln Kowalski"
+  displayName = "Linkoln K."
+  photo = "./about/team/ftc/2018/linkoln_k.jpg"
+  grade = 8
+  school = "Vicksburg Middle School"
+  quote = "Screaming Eagles FTC Team 8553"
+
+[[students]]
+  id = "16c6d7c8-65be-4777-a810-0faeaa93e0a2"
+  name = "Maxwell Scott"
+  displayName = "Maxwell S."
+  photo = "./about/team/ftc/2018/maxwell_s.jpg"
+  grade = 8
+  school = "Mattawan Middle School"
+  quote = "Special Air Service FTC Team 7228"
+
+[[students]]
+  id = "3eec808d-1536-4874-adde-3ce92b0b4579"
+  name = "Tori Dwyer"
+  displayName = "Tori D."
+  photo = "./about/team/ftc/2018/tori_d.jpg"
+  grade = 8
+  school = "Portage West Middle School"
+  quote = "Special Air Service FTC Team 7228"
+
+[[students]]
+  id = "82d1500a-7863-40c4-921f-6942ab8e544a"
+  name = "Alec McDougal"
+  displayName = "Alec M."
+  photo = "./about/team/ftc/2018/alec_m.jpg"
+  grade = 7
+  school = "Portage West Middle School"
+  quote = "Special Air Service FTC Team 7228"
+
+[[students]]
+  id = "967e0639-a7e4-44a5-adcc-573f66aaa1f5"
+  name = "Alexandra Nash"
+  displayName = "Alex N."
+  photo = "./about/team/ftc/2018/alex_n.jpg"
+  grade = 7
+  school = "Linden Grove Middle School"
+  quote = "Special Air Service FTC Team 7228"
+
+[[students]]
+  id = "b715b6f7-b9ca-45ad-a942-b60e8eb46c6e"
+  name = "Anshul Mohanty"
+  displayName = "Anshul M."
+  photo = "./about/team/ftc/2018/anshul_m.jpg"
+  grade = 7
+  school = "Portage North Middle School"
+  quote = "Spittin' Kittens FTC Team 15106"
+
+[[students]]
+  id = "ded447a6-731e-4fae-8348-06c4d7986a2d"
+  name = "April Bergman"
+  displayName = "April B."
+  photo = "./about/team/ftc/2018/april_b.jpg"
+  grade = 7
+  school = "Portage Central Middle School"
+  quote = "Screaming Eagles FTC Team 8553"
+
+[[students]]
+  id = "e3f5e27b-8208-4308-a326-3e1ca62556e9"
+  name = "Caden Dodde"
+  displayName = "Caden D."
+  photo = "./about/team/ftc/2018/caden_d.jpg"
+  grade = 7
+  school = "Portage West Middle School"
+  quote = "Spittin' Kittens FTC Team 15106"
+
+[[students]]
+  id = "6fca2ebc-4340-4a85-b25e-6593a9d9d0a2"
+  name = "Charles Gordon"
+  displayName = "Charles G."
+  photo = "./about/team/ftc/2018/charles_g.jpg"
+  grade = 7
+  school = "St. Monica"
+  quote = "Screaming Eagles FTC Team 8553"
+
+[[students]]
+  id = "124dbeb6-2c3a-4038-a972-8c5fba4fdfd1"
+  name = "Emiliano Castillo"
+  displayName = "Emiliano C."
+  photo = "./about/team/ftc/2018/emiliano_c.jpg"
+  grade = 7
+  school = "Linden Grove Middle School"
+  quote = "Screaming Eagles FTC Team 8553"
+
+[[students]]
+  id = "a87045e5-7e48-4242-bf31-bd5569315757"
+  name = "Hayden Lewis"
+  displayName = "Hayden L."
+  photo = "./about/team/ftc/2018/hayden_l.jpg"
+  grade = 7
+  school = "Portage North Middle School"
+  quote = "Special Air Service FTC Team 7228"
+
+[[students]]
+  id = "0d9013fd-6561-4223-8238-f31d8167c0d2"
+  name = "Kenny Seybold"
+  displayName = "Kenny S."
+  photo = "./about/team/ftc/2018/kenny_s.jpg"
+  grade = 7
+  school = "Portage West Middle School"
+  quote = "Spittin' Kittens FTC Team 15106"
+
+[[students]]
+  id = "941111c7-c16a-4a38-a1fd-8967868a1692"
+  name = "Mason Ray"
+  displayName = "Mason R."
+  photo = "./about/team/ftc/2018/mason_r.jpg"
+  grade = 7
+  school = "Gagie School"
+  quote = "Special Air Service FTC Team 7228"
+
+[[students]]
+  id = "cdcae722-04c9-4c93-a5dd-b5040d648b25"
+  name = "Riley Nilsson"
+  displayName = "Riley N."
+  photo = "./about/team/ftc/2018/riley_n.jpg"
+  grade = 7
+  school = "Linden Grove Middle School"
+  quote = "Spittin' Kittens FTC Team 15106"
+
+[[students]]
+  id = "d4a3a03b-eb09-4dd6-a09b-ca6ab7ce1c77"
+  name = "Rohan Singh."
+  displayName = "Rohan S."
+  photo = "./about/team/ftc/2018/rohan_s.jpg"
+  grade = 7
+  school = "Portage North Middle School"
+  quote = "Spittin' Kittens FTC Team 15106"
+
+[[students]]
+  id = "cda6a84f-2618-48b5-b684-64ec31ec0d6b"
+  name = "Trevor Archie"
+  displayName = "Trevor A. "
+  photo = "./about/team/ftc/2018/trevor_a.jpg"
+  grade = 7
+  school = "Homeschool"
+  quote = "Screaming Eagles FTC Team 8553"
+
+[[students]]
+  id = "3dc660e2-660e-4bba-bc96-a71f606ff70e"
+  name = "Veer Singh"
+  displayName = "Veer S."
+  photo = "./about/team/ftc/2018/veer_s.jpg"
+  grade = 7
+  school = "Gagie School"
+  quote = "Screaming Eagles FTC Team 8553"
+

@@ -36,9 +36,14 @@ const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({
           <div dangerouslySetInnerHTML={{ __html: about }} />
         </Post>
         <Post>
-          <Title>Stryke Force Students</Title>
-          <p>Meet the team for the 2019 FRC season.</p>
+          <Title>Stryke Force FRC Students</Title>
+          <p>Meet the FRC team for the 2019 FRC season.</p>
           <PostMoreButton to="/about/students/" />
+        </Post>
+        <Post>
+          <Title>Stryke Force FTC Students</Title>
+          <p>Meet the FTC team for the 2018-2019 FTC season.</p>
+          <PostMoreButton to="/about/team/ftc/" />
         </Post>
         <Post>
           <Title>Stryke Force Partners</Title>
