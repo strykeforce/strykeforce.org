@@ -3,6 +3,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout/Layout'
 import { Post } from '../components/Post/Post'
+import { PostIndexDiv } from '../components/Post/PostIndex'
 import { Facebook } from '../components/SEO/Facebook'
 import { Twitter } from '../components/SEO/Twitter'
 
@@ -25,7 +26,9 @@ const BlogTemplate: React.SFC<BlogTemplateProps> = ({
       <title>{`${post.frontmatter.title} | Blog`}</title>
       <meta name="description" content={post.frontmatter.description} />
     </Helmet>
-    <Post {...post} />
+    <PostIndexDiv>
+      <Post {...post} />
+    </PostIndexDiv>
     <Twitter {...post} />
     <Facebook {...post} />
   </Layout>
