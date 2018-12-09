@@ -15,7 +15,7 @@
     "gatsby": "latest",
     "gatsby-image": "latest",
     "gatsby-plugin-catch-links": "latest",
-    "gatsby-plugin-emotion": "latest",
+    "gatsby-plugin-emotion": "^2",
     "gatsby-plugin-google-analytics": "latest",
     "gatsby-plugin-netlify": "latest",
     "gatsby-plugin-react-helmet": "latest",
