@@ -1,5 +1,5 @@
 ---
-title: Student Sam Rabick talks about balancing schedules
+title: Student Sam R. Talks About Balancing Schedules
 path: /blog/2018-12-12-balancing-schedules/
 date: 2018-12-13T13:15:06Z
 image: ./social.jpg
