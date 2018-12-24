@@ -95,7 +95,7 @@ export const HeaderNav: React.SFC<HeaderProps> = ({ path }) => (
           </ItemLink>
         </li>
         <li>
-          <ItemLink to="/resources/" menu="resources" path={path}>
+          <ItemLink to="/resources" menu="resources" path={path}>
             Resources
           </ItemLink>
         </li>

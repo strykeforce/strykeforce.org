@@ -16,14 +16,23 @@ Stryke Force is committed to the FIRST Robotics community. Our students and ment
 This training course was presented by Stryke Force in December 2017.
 
 - [Chapter One (46:02)](https://youtu.be/VqUPmyUUkEs)
-- [Chapter Two (00:00)](https://youtu.be/VqUPmyUUkEs)
+- Chapter Two
+- Chapter Three
+- Chapter Four
+- Chapter Five
+- Chapter Six
+- Chapter Seven
+- Chapter Eight
+- Chapter Nine
+
+<!-- - [Chapter Two (00:00)](https://youtu.be/VqUPmyUUkEs)
 - [Chapter Three (00:00)](https://youtu.be/VqUPmyUUkEs)
 - [Chapter Four (00:00)](https://youtu.be/VqUPmyUUkEs)
 - [Chapter Five (00:00)](https://youtu.be/VqUPmyUUkEs)
 - [Chapter Six (00:00)](https://youtu.be/VqUPmyUUkEs)
 - [Chapter Seven (00:00)](https://youtu.be/VqUPmyUUkEs)
 - [Chapter Eight (00:00)](https://youtu.be/VqUPmyUUkEs)
-- [Chapter Nine (00:00)](https://youtu.be/VqUPmyUUkEs)
+- [Chapter Nine (00:00)](https://youtu.be/VqUPmyUUkEs) -->
 
 ## Third Coast Swerve Drive
 
