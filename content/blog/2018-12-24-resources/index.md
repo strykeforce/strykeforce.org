@@ -11,6 +11,12 @@ Stryke Force is committed to the FIRST Robotics community. Our students and ment
 
 <!--more-->
 
+## Third Coast Swerve Drive
+
+- [Mechanical Design Description of Stryke Force Swerve Drive Units](https://www.chiefdelphi.com/media/papers/download/5089)
+- [Third Coast Swerve Drive Software](https://github.com/strykeforce/thirdcoast)
+- [Software Examples](https://github.com/strykeforce/thirdcoast-examples)
+
 ## Stryke Force Talon SRX Motor Training Course
 
 This training course was presented by Stryke Force in December 2017.
@@ -33,12 +39,6 @@ This training course was presented by Stryke Force in December 2017.
 - [Chapter Seven (00:00)](https://youtu.be/VqUPmyUUkEs)
 - [Chapter Eight (00:00)](https://youtu.be/VqUPmyUUkEs)
 - [Chapter Nine (00:00)](https://youtu.be/VqUPmyUUkEs) -->
-
-## Third Coast Swerve Drive
-
-- [Mechanical Design Description of Stryke Force Swerve Drive Units](https://www.chiefdelphi.com/media/papers/download/5089)
-- [Third Coast Swerve Drive Software](https://github.com/strykeforce/thirdcoast)
-- [Software Examples](https://github.com/strykeforce/thirdcoast-examples)
 
 ## Tools
 
