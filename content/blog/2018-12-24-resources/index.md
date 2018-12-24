@@ -7,7 +7,7 @@ description: Stryke Force engineering contributions to the FRC community.
 author: Jeff H.
 ---
 
-Stryke Force is committed to the FIRST Robotics community.  Our students and mentors both leverage and provide technology, tools and training focused on building great robots. This page is the definative list of our contributions in one place.
+Stryke Force is committed to the FIRST Robotics community. Our students and mentors both leverage and provide technology, tools and training focused on building great robots. This page is the definative list of our contributions in one place.
 
 <!--more-->
 
@@ -29,6 +29,9 @@ This training course was presented by Stryke Force in December 2017.
 
 - [Mechanical Design Description of Stryke Force Swerve Drive Units](https://www.chiefdelphi.com/media/papers/download/5089)
 - [Third Coast Swerve Drive Software](https://github.com/strykeforce/thirdcoast)
-- [Third Coast Software Examples](https://github.com/strykeforce/thirdcoast-examples)
+- [Software Examples](https://github.com/strykeforce/thirdcoast-examples)
 
 ## Tools
+
+- [Third Cost Telemetry Utility](https://github.com/strykeforce/thirdcoast-tct)
+- [Third Cost Grapher](https://github.com/strykeforce/grapher)
