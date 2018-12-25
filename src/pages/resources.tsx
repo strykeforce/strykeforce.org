@@ -79,16 +79,16 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
               <a href="https://youtu.be/bZLMnFtyiIw">Chapter Five</a> (53:13)
             </li>
             <li>
-              <a href="#">Chapter Six</a> (00:00)
+              <a href="https://youtu.be/JnOEE89VDo4">Chapter Six</a> (55:02)
             </li>
             <li>
-              <a href="#">Chapter Seven</a> (00:00)
+              <a href="https://youtu.be/F5yFHDHxEVw">Chapter Seven</a> (38:59)
             </li>
             <li>
-              <a href="#">Chapter Eight</a> (00:00)
+              <a href="https://youtu.be/Fs46TUeJMyc">Chapter Eight</a> (56:37)
             </li>
             <li>
-              <a href="#">Chapter Nin</a> (00:00)
+              <a href="https://youtu.be/D0inPk1Bz7c">Chapter Nine</a> (38:00)
             </li>
           </ul>
 
