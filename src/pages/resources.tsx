@@ -96,7 +96,7 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
           <ul>
             <li>
               <a href="https://github.com/strykeforce/thirdcoast-tct">
-                Third Cost Telemetry Utility
+                Third Coast Telemetry Utility
               </a>{' '}
               - command-line utility that find useful for tuning motor
               closed-loop performance and manually controlling robot axes during
@@ -104,7 +104,7 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
             </li>
             <li>
               <a href="https://github.com/strykeforce/grapher">
-                Third Cost Grapher
+                Third Coast Grapher
               </a>{' '}
               - graphical strip-chart recorder that plots live telemetry
               information from a robot.
