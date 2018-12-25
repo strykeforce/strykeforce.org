@@ -6,7 +6,6 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout/Layout'
 import { PostIndex, PostIndexDiv } from '../components/Post/PostIndex'
 import { Post, Title } from '../components/Post/PostLink'
-import { PostMoreButton } from '../components/Post/PostMoreButton'
 
 // prettier-ignore
 interface ResourcesIndexPageProps {
@@ -38,25 +37,30 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
           <h2>Third Coast Swerve Drive</h2>
           <ul>
             <li>
-              <a href="https://www.chiefdelphi.com/media/papers/download/5089">
-                Mechanical Design Description of Stryke Force Swerve Drive Units
-              </a>
+              <a href="/resources/Mechanical_Design_Description_of_Stryke_Force_Swerve_Drive_Units.pdf">
+                Third Coast Swerve Drive Design
+              </a>{' '}
+              - history and mechanical design description.
             </li>
             <li>
               <a href="https://github.com/strykeforce/thirdcoast">
                 Third Coast Swerve Drive Software
-              </a>
+              </a>{' '}
+              - swerve drive and telemetry Java libraries for FRC robots.
             </li>
             <li>
               <a href="https://github.com/strykeforce/thirdcoast-examples">
                 Software Examples
-              </a>
+              </a>{' '}
+              - swerve drive and telemetry library usage.
             </li>
           </ul>
           <h2>Stryke Force Talon SRX Motor Training Course</h2>
           <p>
             This training course was presented to regional FRC teams by Stryke
-            Force in December 2017.
+            Force in December 2017. The software tools used in this training can
+            be downloaded from the{' '}
+            <a href="#other-resources"> Other Resources</a> section below.
           </p>
           <ul>
             <li>
@@ -87,17 +91,23 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
               <a href="#">Chapter Nin</a> (00:00)
             </li>
           </ul>
-          <h2>Tools</h2>
+
+          <h2 id="other-resources">Other Resources</h2>
           <ul>
             <li>
               <a href="https://github.com/strykeforce/thirdcoast-tct">
                 Third Cost Telemetry Utility
-              </a>
+              </a>{' '}
+              - command-line utility that find useful for tuning motor
+              closed-loop performance and manually controlling robot axes during
+              development.
             </li>
             <li>
               <a href="https://github.com/strykeforce/grapher">
                 Third Cost Grapher
-              </a>
+              </a>{' '}
+              - graphical strip-chart recorder that plots live telemetry
+              information from a robot.
             </li>
           </ul>
         </Post>
