@@ -72,6 +72,13 @@ const ItemLink = styled(Link)`
     path.startsWith(menu, 1) ? '#fff' : '#333'};
 `
 
+const RedirectLink = styled.a`
+  text-decoration: none !important;
+  font-weight: bold;
+  font-size: 120%;
+  color: #333;
+`
+
 const toggleBurger = () => {
   const linksEl = document.querySelector(`.${narrow}`) as HTMLElement
   linksEl.style.display =
@@ -95,9 +102,7 @@ export const HeaderNav: React.SFC<HeaderProps> = ({ path }) => (
           </ItemLink>
         </li>
         <li>
-          <ItemLink to="/resources/" menu="resources" path={path}>
-            Resources
-          </ItemLink>
+          <RedirectLink href="/resources/">Resources</RedirectLink>
         </li>
         <li>
           <ItemLink to="/contact/" menu="contact" path={path}>
