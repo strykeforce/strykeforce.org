@@ -3,7 +3,7 @@ title: FTC Season Update
 path: /blog/2018-12-24-ftc-season-update/
 date: 2018-12-25T13:39:19Z
 image: social.jpg
-description: FTC Season Update
+description: FTC had an exciting 2018-2019 season!
 author: Missy D.
 ---
 
