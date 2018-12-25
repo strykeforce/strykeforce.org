@@ -62,33 +62,81 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
             be downloaded from the{' '}
             <a href="#other-resources"> Other Resources</a> section below.
           </p>
+
+          <h3>Course Materials</h3>
           <ul>
             <li>
-              <a href="https://youtu.be/VqUPmyUUkEs">Chapter One</a> (46:03)
+              <a href="/resources/talon_course/overview.pdf">Overview</a>
             </li>
             <li>
-              <a href="https://youtu.be/cIZORBcM3vg">Chapter Two</a> (52:35)
+              <a href="/resources/talon_course/chapters.pdf">
+                Video Chapter Guide
+              </a>
             </li>
             <li>
-              <a href="https://youtu.be/llPmrsI5zgg">Chapter Three</a> (16:34)
+              Presentation (
+              <a href="/resources/talon_course/Talon_SRX_Motor_Training_Course_2017.pdf">
+                pdf
+              </a>
+              ) (
+              <a href="/resources/talon_course/Talon_SRX_Motor_Training_Course_2017.pptx">
+                pptx
+              </a>
+              )
+            </li>
+          </ul>
+
+          <h3>Course Videos</h3>
+          <ul>
+            <li>
+              <a href="https://youtu.be/VqUPmyUUkEs">Chapter One, Motors</a>{' '}
+              (46:03)
             </li>
             <li>
-              <a href="https://youtu.be/-6Q67sX9rA0">Chapter Four</a> (47:47)
+              <a href="https://youtu.be/cIZORBcM3vg">Chapter Two, Talon SRX</a>{' '}
+              (52:35)
             </li>
             <li>
-              <a href="https://youtu.be/bZLMnFtyiIw">Chapter Five</a> (53:13)
+              <a href="https://youtu.be/llPmrsI5zgg">
+                Chapter Three, Talon Encoders and Sensors
+              </a>{' '}
+              (16:34)
             </li>
             <li>
-              <a href="https://youtu.be/JnOEE89VDo4">Chapter Six</a> (55:02)
+              <a href="https://youtu.be/-6Q67sX9rA0">
+                Chapter Four, Control Loops
+              </a>{' '}
+              (47:47)
             </li>
             <li>
-              <a href="https://youtu.be/F5yFHDHxEVw">Chapter Seven</a> (38:59)
+              <a href="https://youtu.be/bZLMnFtyiIw">
+                Chapter Five, Live Tuning Examples part 1
+              </a>{' '}
+              (53:13)
             </li>
             <li>
-              <a href="https://youtu.be/Fs46TUeJMyc">Chapter Eight</a> (56:37)
+              <a href="https://youtu.be/JnOEE89VDo4">
+                Chapter Six, Live Tuning Examples part 2
+              </a>{' '}
+              (55:02)
             </li>
             <li>
-              <a href="https://youtu.be/D0inPk1Bz7c">Chapter Nine</a> (38:00)
+              <a href="https://youtu.be/F5yFHDHxEVw">
+                Chapter Seven, Live Tuning Examples part 3
+              </a>{' '}
+              (38:59)
+            </li>
+            <li>
+              <a href="https://youtu.be/Fs46TUeJMyc">
+                Chapter Eight, Live Tuning Examples part 4
+              </a>{' '}
+              (56:37)
+            </li>
+            <li>
+              <a href="https://youtu.be/D0inPk1Bz7c">
+                Chapter Nine, Quick Start Tuning Guide and Q&amp;A
+              </a>{' '}
+              (38:00)
             </li>
           </ul>
 
