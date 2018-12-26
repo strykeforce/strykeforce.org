@@ -1,5 +1,5 @@
 ---
-path: "/howto/blog/"
+path: "/resources/blog/"
 date: 2018-06-13T12:54:08Z
 draft: false
 title: Submitting to the Stryke Force Blog

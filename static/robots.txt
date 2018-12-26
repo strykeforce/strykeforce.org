@@ -7,4 +7,4 @@
 #
 
 User-agent: *
-Disallow: /howto/blog/
+Disallow: /resources/blog
