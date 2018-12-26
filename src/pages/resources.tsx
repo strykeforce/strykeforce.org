@@ -18,7 +18,8 @@ const frontmatter: PostDetail = {
   frontmatter: {
     author: 'Jeff Hutchison',
     date: '2018-12-26T13:56:12Z',
-    description: 'Stryke Force engineering contributions to the FRC community.',
+    description:
+      'Our students and mentors both leverage and provide technology, tools and training focused on building great robots.',
     image: {
       childImageSharp: {
         original: {
