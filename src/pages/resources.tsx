@@ -31,7 +31,7 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
             Stryke Force is committed to the FIRST Robotics community. Our
             students and mentors both leverage and provide technology, tools and
             training focused on building great robots. This page is the
-            definative list of our contributions in one place.
+            definitive list of our contributions in one place.
           </p>
 
           <h2 id="mechanical">Mechanical and Electrical</h2>
