@@ -1,5 +1,5 @@
 import { css } from 'emotion'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import * as path from 'path'
 import React from 'react'
 import Helmet from 'react-helmet'
@@ -34,7 +34,7 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
             definative list of our contributions in one place.
           </p>
 
-          <h2>Third Coast Swerve Drive</h2>
+          <h2 id="mechanical">Mechanical and Electrical</h2>
           <ul>
             <li>
               <a href="/resources/Mechanical_Design_Description_of_Stryke_Force_Swerve_Drive_Units.pdf">
@@ -43,24 +43,55 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
               - history and mechanical design description.
             </li>
             <li>
+              <a href="http://wmralliance.com/sentinal/">
+                Sentinal Interface Board for Talon SRX
+              </a>{' '}
+              - connect digital and analog signal inputs to the Talon SRX speed
+              controller. A collaboration with Team 141 WOBOT.
+            </li>
+          </ul>
+          <h2 id="software">Software and Development Tools</h2>
+          <ul>
+            <li>
               <a href="https://github.com/strykeforce/thirdcoast">
                 Third Coast Swerve Drive Software
               </a>{' '}
               - swerve drive and telemetry Java libraries for FRC robots.
             </li>
             <li>
+              <a href="https://github.com/strykeforce/thirdcoast-tct">
+                Telemetry Utility
+              </a>{' '}
+              - <strong>tct</strong>, a command-line utility useful for tuning
+              motor closed-loop performance and manually controlling robot axes
+              during development.
+            </li>
+            <li>
+              <a href="https://github.com/strykeforce/grapher">Grapher</a> -
+              LabView strip-chart recorder that plots real-time streaming
+              telemetry information from a robot.
+            </li>
+            <li>
               <a href="https://github.com/strykeforce/thirdcoast-examples">
                 Software Examples
               </a>{' '}
-              - swerve drive and telemetry library usage.
+              - Third Coast swerve drive and telemetry library usage.
+            </li>
+            <li>
+              <a href="https://github.com/strykeforce/cookiecutter-robot">
+                FRC Robot Cookiecutter Template
+              </a>{' '}
+              - a command-line utility that creates a Java or Kotlin robot
+              project from a template. Optionally include fully-configures
+              swerve drive, telemetry and/or logging.
             </li>
           </ul>
           <h2>Stryke Force Talon SRX Motor Training Course</h2>
           <p>
             This training course was presented to regional FRC teams by Stryke
-            Force in December 2017. The software tools used in this training can
-            be downloaded from the{' '}
-            <a href="#other-resources"> Other Resources</a> section below.
+            Force in December 2017. The tct and grapher software tools used in
+            this training can be downloaded from the{' '}
+            <a href="#software">software and tools section</a> above.
           </p>
 
           <h3>Course Materials</h3>
@@ -143,19 +174,11 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
           <h2 id="other-resources">Other Resources</h2>
           <ul>
             <li>
-              <a href="https://github.com/strykeforce/thirdcoast-tct">
-                Third Coast Telemetry Utility
-              </a>{' '}
-              - command-line utility that find useful for tuning motor
-              closed-loop performance and manually controlling robot axes during
-              development.
-            </li>
-            <li>
-              <a href="https://github.com/strykeforce/grapher">
-                Third Coast Grapher
-              </a>{' '}
-              - graphical strip-chart recorder that plots live telemetry
-              information from a robot.
+              <Link to="/resources/practice-field-network/">
+                FRC Practice Field Networking
+              </Link>{' '}
+              - We have installed OpenWRT on the Open Mesh OM5P-AN used on our
+              robots to allow us to connect to our robot via shop WiFi.
             </li>
           </ul>
         </Post>

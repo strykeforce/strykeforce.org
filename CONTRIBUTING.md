@@ -4,7 +4,7 @@
 
 ## What should I know before I get started?
 
-If you are writing a blog post see our [blog posting HOWTO](https://www.strykeforce.org/howto/blog/).
+If you are writing a blog post see our [blog posting resources](https://www.strykeforce.org/resources/blog/).
 
 If you are maintaing content on the site you should be familiar with:
 
@@ -27,7 +27,7 @@ If you are developing the site itself, in addition to above:
 
 ## Blog Posts
 
-1. See the [blog posting HOWTO](https://www.strykeforce.org/howto/blog/) and other blog posts for examples.
+1. See the [blog posting resources](https://www.strykeforce.org/resources/blog/) and other blog posts for examples.
 2. Photos for posts can be cropped up to 1920 px wide for high dpi browsers.
 
 ## Linking Blog Posts to Social Media
