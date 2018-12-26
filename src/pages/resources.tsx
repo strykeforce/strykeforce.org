@@ -40,7 +40,8 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
               <a href="/resources/Mechanical_Design_Description_of_Stryke_Force_Swerve_Drive_Units.pdf">
                 Third Coast Swerve Drive Design
               </a>{' '}
-              - history and mechanical design description.
+              - history and mechanical design description of our swerve drive
+              modules.
             </li>
             <li>
               <a href="http://wmralliance.com/sentinal/">
