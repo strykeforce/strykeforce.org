@@ -64,10 +64,10 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
               modules.
             </li>
             <li>
-              <a href="https://grabcad.com/library/frc-2767-2018-cad-1">
+              <a href="https://grabcad.com/cory.walters-1">
                 Swerve Drive CAD Files
               </a>{' '}
-              - 2018 swerve drive hosted on GrabCAD.
+              - 2017-2018 swerve drive hosted on GrabCAD.
             </li>
             <li>
               <a href="http://wmralliance.com/sentinal/">
