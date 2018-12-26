@@ -14,7 +14,7 @@ interface ResourcesIndexPageProps {
     location: { pathname: string }; // tslint:disable-line:semicolon
 }
 
-const frontmatter: PostDetail = {
+const postDetail: PostDetail = {
   frontmatter: {
     author: 'Jeff Hutchison',
     date: '2018-12-26T13:56:12Z',
@@ -41,11 +41,11 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
   return (
     <Layout path={pathname}>
       <Helmet title="Resources">
-        <meta name="description" content={frontmatter.description} />
+        <meta name="description" content={postDetail.frontmatter.description} />
       </Helmet>
 
       <PostIndexDiv>
-        <h1>Stryke Force Resources</h1>
+        <h1>{postDetail.frontmatter.title}</h1>
         <Post>
           <p>
             Stryke Force is committed to the FIRST Robotics community. Our
@@ -62,6 +62,12 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
               </a>{' '}
               - history and mechanical design description of our swerve drive
               modules.
+            </li>
+            <li>
+              <a href="https://grabcad.com/library/frc-2767-2018-cad-1">
+                Swerve Drive CAD Files
+              </a>{' '}
+              - 2018 swerve drive hosted on GrabCAD.
             </li>
             <li>
               <a href="http://wmralliance.com/sentinal/">
@@ -204,8 +210,8 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
           </ul>
         </Post>
       </PostIndexDiv>
-      <Twitter {...frontmatter} />
-      <Facebook {...frontmatter} />
+      <Twitter {...postDetail} />
+      <Facebook {...postDetail} />
     </Layout>
   )
 }
