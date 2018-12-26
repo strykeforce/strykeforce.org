@@ -6,7 +6,7 @@ title: Robot Practice Field Network
 description: A reference on setting up practice field driver station to robot networking on our home practice field.
 ---
 
-While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is useful. We have installed [OpenWRT][openwrt] on the Open Mesh OM5P-AN used on our robots to allow us to connect to our robot via shop WiFi. This also helps with WiFi packet loss we experienced with our Driver Station laptops since we can now connect them to our shop network via Ethernet.
+While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is useful. We have installed [OpenWRT](https://openwrt.org) on the Open Mesh OM5P-AN used on our robots to allow us to connect to our robot via shop WiFi. This also helps with WiFi packet loss we experienced with our Driver Station laptops since we can now connect them to our shop network via Ethernet.
 
 ## Diagram
 
