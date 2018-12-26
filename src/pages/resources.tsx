@@ -6,10 +6,32 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout/Layout'
 import { PostIndex, PostIndexDiv } from '../components/Post/PostIndex'
 import { Post, Title } from '../components/Post/PostLink'
+import { Facebook } from '../components/SEO/Facebook'
+import { Twitter } from '../components/SEO/Twitter'
 
 // prettier-ignore
 interface ResourcesIndexPageProps {
     location: { pathname: string }; // tslint:disable-line:semicolon
+}
+
+const frontmatter: PostDetail = {
+  frontmatter: {
+    author: 'Jeff Hutchison',
+    date: '2018-12-26T13:56:12Z',
+    description: 'Stryke Force engineering contributions to the FRC community.',
+    image: {
+      childImageSharp: {
+        original: {
+          height: 630,
+          src: '/resources/social.jpg',
+          width: 1200,
+        },
+      },
+    },
+    path: '/resources/',
+    title: 'Stryke Force Resources',
+  },
+  html: '',
 }
 
 const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
@@ -18,10 +40,7 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
   return (
     <Layout path={pathname}>
       <Helmet title="Resources">
-        <meta
-          name="description"
-          content="Stryke Force engineering contributions to the FRC community."
-        />
+        <meta name="description" content={frontmatter.description} />
       </Helmet>
 
       <PostIndexDiv>
@@ -184,6 +203,8 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
           </ul>
         </Post>
       </PostIndexDiv>
+      <Twitter {...frontmatter} />
+      <Facebook {...frontmatter} />
     </Layout>
   )
 }
