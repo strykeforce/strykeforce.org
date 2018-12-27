@@ -78,6 +78,26 @@ const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({
           photos.
         </p>
       </Post>
+      <Post>
+        <a
+          href="https://www.youtube.com/channel/UCf1qXXCYeVqUYSJApcr7RRg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/youtube.svg"
+            alt="YouTube"
+            className={css`
+              width: 28%;
+              padding-top: 1em;
+            `}
+          />
+        </a>
+        <p>
+          Visit Stryke Force on YouTube to view team highlight and training
+          videos.
+        </p>
+      </Post>
     </Layout>
   )
 }
