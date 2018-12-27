@@ -109,8 +109,8 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
                 FRC Robot Cookiecutter Template
               </a>{' '}
               - a command-line utility that creates a Java or Kotlin robot
-              project from a template. Optionally include fully-configures
-              swerve drive, telemetry and/or logging.
+              project from a template. Optionally include pre-configured swerve
+              drive, telemetry and/or logging.
             </li>
           </ul>
           <h2>Stryke Force Talon SRX Motor Training Course</h2>
