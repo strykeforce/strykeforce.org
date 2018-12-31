@@ -24,7 +24,7 @@ const postDetail: PostDetail = {
       childImageSharp: {
         original: {
           height: 630,
-          src: '/resources/social.jpg',
+          src: '/resources/connector.png',
           width: 1200,
         },
       },
@@ -200,6 +200,13 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
 
           <h2 id="other-resources">Other Resources</h2>
           <ul>
+            <li>
+              <a href="/resources/Connector_Tests.pdf">
+                Connector High Current Tests
+              </a>{' '}
+              - We have tested the current carrying capability of some popular
+              connectors used in FRC.
+            </li>
             <li>
               <Link to="/resources/practice-field-network/">
                 FRC Practice Field Networking
