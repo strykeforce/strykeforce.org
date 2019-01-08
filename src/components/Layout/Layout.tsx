@@ -22,8 +22,7 @@ interface ContentProps {
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
 body {
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   padding: 0;
   margin: 0;
   position: relative;
@@ -51,7 +50,7 @@ a:hover {
 }
 `
 
-const description = `Stryke Force 4-H FIRST Robotics Team 2767 is 
+const description = `Stryke Force 4-H FIRST Robotics Team 2767 is
   a community robotics team based in Kalamazoo,
   Michigan. We are FRC 2767, FTC 7228 and FTC  8553.`
 
