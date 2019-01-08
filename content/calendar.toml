@@ -1,22 +1,4 @@
 [[events]]
-name = "Constantine FTC Qualifier"
-date = 2018-11-17T00:00:00Z
-venue = "Constantine High School"
-street = "1 Falcon Dr."
-city = "Constantine"
-state = "MI"
-zip = "49042"
-
-[[events]]
-name = "Coloma FTC Qualifier"
-date = 2018-12-01T00:00:00Z
-venue = "Coloma High School"
-street = "500 W. St. Joseph St."
-city = "Coloma"
-state = "MI"
-zip = "49038"
-
-[[events]]
 name = "St. Joseph FRC District"
 date = 2019-03-07T00:00:00Z
 venue = "St. Joseph High School"
@@ -33,3 +15,12 @@ street = "6230 Kalamazoo Avenue SE"
 city = "Kentwood"
 state = "MI"
 zip = "49508"
+
+[[events]]
+name = "FIRST Championship Detroit"
+date = 2019-04-24T00:00:00Z
+venue = "Cobo Hall"
+street = "1 Washington Boulevard"
+city = "Detroit"
+state = "MI"
+zip = "48226"
