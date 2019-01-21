@@ -1,8 +1,3 @@
-workflow "check build on push" {
-  on = "push"
-  resolves = ["gradle build"]
-}
-
 workflow "process pull request" {
   on = "pull_request"
   resolves = ["post gif on fail", "branch cleanup"]
