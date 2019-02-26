@@ -1,7 +1,7 @@
 ---
 title: Fun times at the Boys and Girls Club
 path: /blog/2019-02-26-boys-and-girls-club/
-date: 2019-02-26T14:14:17Z
+date:
 image: social.jpg
 description: Fun times at the Boys and Girls Club
 author: Cassie N.
