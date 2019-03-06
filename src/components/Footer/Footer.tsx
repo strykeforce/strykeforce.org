@@ -21,7 +21,7 @@ const Footer: React.SFC<{}> = () => (
     </Link>
     <FooterSocial />
     <p>
-      <small>Stryke Force © 2018</small>
+      <small>Stryke Force © 2018 - 2019</small>
     </p>
   </CenteredWrapper>
 )
