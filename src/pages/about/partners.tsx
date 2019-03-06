@@ -1,4 +1,5 @@
 import { graphql, Link } from 'gatsby'
+import Img from 'gatsby-image'
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Layout } from '../../components/Layout/Layout'
@@ -10,13 +11,10 @@ interface PartnerPageProps {
     pathname: string;
   }; // tslint:disable-line:semicolon
   data: {
-    partnersToml: {
-      title: string;
-      description: string;
-      platinum: SponsorLevel;
-      gold: SponsorLevel;
-      silver: SponsorLevel;
-      bronze: SponsorLevel;
+    allPartnersCsv: {
+      edges: Array<{
+        node: Partner;
+      }>
     }
   }
 }
@@ -25,7 +23,8 @@ const PartnerPage: React.SFC<PartnerPageProps> = ({
   location: { pathname },
   data,
 }) => {
-  const toml = data.partnersToml
+  const partners = data.allPartnersCsv
+  // partners.edges.forEach(edge => console.log(edge.node.name))
   return (
     <Layout path={pathname}>
       <Helmet title="Partners">
@@ -35,13 +34,15 @@ const PartnerPage: React.SFC<PartnerPageProps> = ({
         />
       </Helmet>
 
-      <h1>{toml.title}</h1>
-      <p>{toml.description}</p>
+      <h1>Stryke Force Partners</h1>
+      <p>
+        We are grateful to our Stryke Force partners who have helped us make an
+        impact on our students every year. The organizations listed below
+        provide generous financial support, materials and services to make our
+        program possible.
+      </p>
 
-      <PartnerGallery level={toml.platinum} />
-      <PartnerGallery level={toml.gold} />
-      <PartnerGallery level={toml.silver} />
-      <PartnerGallery level={toml.bronze} />
+      <PartnerGallery partners={partners.edges} />
     </Layout>
   )
 }
@@ -49,67 +50,12 @@ const PartnerPage: React.SFC<PartnerPageProps> = ({
 export default PartnerPage
 
 export const partnerQuery = graphql`
-  query PartnerQuery {
-    partnersToml {
-      title
-      description
-      platinum {
-        name
-        width
-        height
-        sponsors {
+  query PartnersQuery {
+    allPartnersCsv {
+      edges {
+        node {
           name
-          url
-          logo {
-            childImageSharp {
-              id
-              original {
-                src
-              }
-            }
-          }
-        }
-      }
-      gold {
-        name
-        width
-        height
-        sponsors {
-          name
-          url
-          logo {
-            childImageSharp {
-              id
-              original {
-                src
-              }
-            }
-          }
-        }
-      }
-      silver {
-        name
-        width
-        height
-        sponsors {
-          name
-          url
-          logo {
-            childImageSharp {
-              id
-              original {
-                src
-              }
-            }
-          }
-        }
-      }
-      bronze {
-        name
-        width
-        height
-        sponsors {
-          name
+          text
           url
           logo {
             childImageSharp {

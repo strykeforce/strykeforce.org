@@ -50,24 +50,13 @@ interface PostDetail {
   frontmatter: Frontmatter
 }
 
-interface Sponsor {
+interface Partner {
   name: string
   url: string
+  text: string
   logo: {
-    childImageSharp: {
-      id: string
-      original: {
-        src: string
-      }
-    }
+    childImageSharp: any
   }
-}
-
-interface SponsorLevel {
-  name: string
-  width: number
-  height: number
-  sponsors: Sponsor[]
 }
 
 // prettier-ignore

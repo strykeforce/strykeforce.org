@@ -60,7 +60,9 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-transformer-csv',
     'gatsby-transformer-toml',
     'gatsby-plugin-netlify',
+    'gatsby-plugin-netlify-cache',
   ],
 }

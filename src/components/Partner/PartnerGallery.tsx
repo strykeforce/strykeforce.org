@@ -7,15 +7,23 @@ const Gallery = styled.div`
   text-align: center;
 `
 
-export const PartnerGallery: React.SFC<{ level: SponsorLevel }> = ({
-  level,
-}) => (
+const PartnersGalleryUl = styled.ul`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+`
+
+export const PartnerGallery: React.SFC<{
+  partners: Array<{ node: Partner }>
+}> = ({ partners }) => (
   <Gallery>
-    <h1>{level.name}</h1>
-    <CardGallery>
-      {level.sponsors.map(s => (
-        <PartnerCard item={s} key={s.logo.childImageSharp.id} />
+    <PartnersGalleryUl>
+      {partners.map(p => (
+        <PartnerCard item={p.node} key={p.node.logo.childImageSharp.id} />
       ))}
-    </CardGallery>
+    </PartnersGalleryUl>
   </Gallery>
 )
