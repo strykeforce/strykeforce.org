@@ -7,7 +7,9 @@ description: This weekend at St. Joseph High School, Stryke Force played in its 
 author: Ethan L.
 ---
 
-This weekend at St. Joseph High School, Stryke Force played in its first competition, and showed the robot off to the world for the first time! After the initial qualification rounds and the quarter-finals, Stryke Force finished up its run in the semi-finals. According to The Blue Alliance, we are now ranked 40th in the state of Michigan having earned 53 points, and with a record of 14-2-0.
+This weekend at St. Joseph High School, Stryke Force played in its first competition, and showed the robot off to the world for the first time! After the initial qualification rounds and the quarter-finals, Stryke Force finished up its run in the semi-finals. 
+
+According to The Blue Alliance, we are now ranked 40th in the state of Michigan having earned 53 points, and with a record of 14-2-0.
 
 <iframe src="https://strykeforce.smugmug.com/frame/slideshow?key=SHttDR&autoStart=1&captions=0&navigation=0&playButton=0&randomize=0&speed=3&transition=fade&transitionSpeed=2" width="800" height="600" frameborder="no" scrolling="no"></iframe>
 
