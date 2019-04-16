@@ -17,6 +17,15 @@ state = "MI"
 zip = "49508"
 
 [[events]]
+name = "Michigan State Championship"
+date = 2019-04-10T00:00:00Z
+venue = "Saginaw Valley State University"
+street = "7400 Bay Rd"
+city = "University Center"
+state = "MI"
+zip = "48710"
+
+[[events]]
 name = "FIRST Championship Detroit"
 date = 2019-04-24T00:00:00Z
 venue = "Cobo Hall"
