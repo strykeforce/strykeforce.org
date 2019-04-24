@@ -40,9 +40,20 @@ const IndexPage: React.SFC<IndexPageProps> = ({
   return (
     <Layout path={pathname} banner={true}>
       <Blurb>
-        Stryke Force 4-H <i>FIRST</i> Robotics Team 2767 is a community robotics
-        team based in Kalamazoo, Michigan. We are FRC 2767, FTC 7228, FTC 8553
-        and FTC 15106.
+        <p>
+          <strong>
+            Community Open Houses
+            <br />
+            Saturday May 18th - 11:00 a.m. to 2:00 p.m.
+            <br />
+            Monday May 20 and Tuesday May 21st - 6:00-7:30 p.m.
+          </strong>
+        </p>
+        <p>
+          Stryke Force 4-H <i>FIRST</i> Robotics Team 2767 is a community
+          robotics team based in Kalamazoo, Michigan. We are FRC 2767, FTC 7228,
+          FTC 8553 and FTC 15106.
+        </p>
       </Blurb>
       <LogoBand />
       <NewsHeading>Team News</NewsHeading>
