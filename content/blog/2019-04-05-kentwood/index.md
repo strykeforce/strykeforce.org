@@ -3,7 +3,7 @@ title: Stryke Force at the Kentwood District Competition
 path: /blog/2019-04-05-kentwood/
 date: 2019-04-05T14:24:50Z
 image: social.jpg
-description: This weekend at Kentwood High School, Stryke Force played in its second district competition, and competed with over 40 other teams from arounf the state.
+description: This weekend at Kentwood High School, Stryke Force played in its second district competition, and competed with over 40 other teams from around the state.
 author: Ethan L.
 ---
 
