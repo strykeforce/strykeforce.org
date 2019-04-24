@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 import heroDesktop from './hero_image.jpg'
-import heroPhone from './hero_image@0,5x.jpg'
+import heroMobile from './hero_image@0,5x.jpg'
 
 const Div = styled.div`
   flex: 1 100%;
@@ -12,7 +12,7 @@ const Div = styled.div`
   background-repeat: no-repeat;
 
   @media (max-width: 414px) {
-    background-image: url(${heroPhone});
+    background-image: url(${heroMobile});
   }
 `
 
