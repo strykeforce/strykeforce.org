@@ -4,7 +4,7 @@ path: /2019-05-11-openhouse/
 date: 2019-05-11T14:24:50Z
 image: social.jpg
 description: An invatation to Stryke Force's 2019 open houses.
-author: Ethan L.
+author: Audrey R.
 ---
 
 Mark your calendars for the upcoming Stryke Force Open Houses! Everyone is welcome to stop by and check us out for this interactive tour and demonstration at the Stryke Force build space.
