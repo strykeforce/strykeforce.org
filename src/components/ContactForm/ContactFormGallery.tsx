@@ -47,7 +47,11 @@ export const ContactFormGallery: React.SFC<{}> = () => (
         placeholder="Parent/Guardian Email Address"
         required={true}
       />
-      <input type="text" name="grade" placeholder="Grade for Fall 2018" />
+      <input
+        type="text"
+        name="grade"
+        placeholder="Grade for Fall School Year"
+      />
       <input type="text" name="school" placeholder="School" />
       <input
         type="text"
