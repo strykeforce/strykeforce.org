@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Jeff Hutchison <jeff@j3ff.io>",
   "dependencies": {
-    "@types/node": "^10.3",
+    "@types/node": "^12.0.5",
     "@types/react": "^16.4",
     "@types/react-dom": "^16.8",
     "@types/react-helmet": "^5.0",
@@ -31,7 +31,7 @@
     "gatsby-transformer-remark": "^2",
     "gatsby-transformer-sharp": "^2",
     "gatsby-transformer-toml": "^2",
-    "intersection-observer": "^0.5.0",
+    "intersection-observer": "^0.7.0",
     "object-fit-images": "^3.2.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -54,11 +54,11 @@
   },
   "devDependencies": {
     "eslint": "^5.0.1",
-    "eslint-config-prettier": "^3",
+    "eslint-config-prettier": "^4.3.0",
     "prettier": "^1.12.0",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
-    "tslint-react": "^3.6.0"
+    "tslint-react": "^4.0.0"
   },
   "repository": {
     "type": "git",
