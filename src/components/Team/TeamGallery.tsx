@@ -6,6 +6,8 @@ export const TeamGallery: React.SFC<{ members: TeamMember[] }> = ({
   members,
 }) => (
   <CardGallery>
-    {members.map(s => <TeamCard key={s.id} member={s} />)}
+    {members.map(s => (
+      <TeamCard key={s.id} member={s} />
+    ))}
   </CardGallery>
 )
