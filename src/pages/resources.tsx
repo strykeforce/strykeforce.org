@@ -61,7 +61,7 @@ const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({
                 Third Coast Swerve Drive Design
               </a>{' '}
               - history and mechanical design description of our swerve drive
-              modules. Updated for 2019 season.
+              modules. <strong>Updated for 2019 season.</strong>
             </li>
             <li>
               <a href="https://grabcad.com/cory.walters-1">

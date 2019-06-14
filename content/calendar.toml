@@ -1,35 +1,17 @@
 [[events]]
-name = "St. Joseph FRC District"
-date = 2019-03-07T00:00:00Z
-venue = "St. Joseph High School"
-street = "2521 Stadium Dr."
-city = "St. Joseph"
-state = "MI"
-zip = "49085"
+name = "Indiana Robotics Invitational"
+date = 2019-07-12T00:00:00Z
+venue = "Lawrence North High School"
+street = "7802 Hague Rd"
+city = "Indianapolis"
+state = "IN"
+zip = "46256"
 
 [[events]]
-name = "East Kentwood FRC District"
-date = 2019-03-28T00:00:00Z
-venue = "East Kentwood High School"
-street = "6230 Kalamazoo Avenue SE"
-city = "Kentwood"
+name = "West Michigan Robotics Invitational"
+date = 2019-10-19T00:00:00Z
+venue = "Zeeland East High School"
+street = "3333 96th Ave."
+city = "Zeeland"
 state = "MI"
-zip = "49508"
-
-[[events]]
-name = "Michigan State Championship"
-date = 2019-04-10T00:00:00Z
-venue = "Saginaw Valley State University"
-street = "7400 Bay Rd"
-city = "University Center"
-state = "MI"
-zip = "48710"
-
-[[events]]
-name = "FIRST Championship Detroit"
-date = 2019-04-24T00:00:00Z
-venue = "Cobo Hall"
-street = "1 Washington Boulevard"
-city = "Detroit"
-state = "MI"
-zip = "48226"
+zip = "49464"
