@@ -8,6 +8,15 @@ state = "IN"
 zip = "46256"
 
 [[events]]
+name = "Mid Mitten Robo Rodeo"
+date = 2019-08-10T00:00:00Z
+venue = "Lakewood High School"
+street = "7223 Velte Rd."
+city = "Lake Odessa"
+state = "MI"
+zip = "48849"
+
+[[events]]
 name = "West Michigan Robotics Invitational"
 date = 2019-10-19T00:00:00Z
 venue = "Zeeland East High School"
