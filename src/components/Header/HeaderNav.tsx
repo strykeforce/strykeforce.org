@@ -2,8 +2,8 @@ import { Link } from 'gatsby'
 import React from 'react'
 import styled, { css } from 'react-emotion'
 import bars from './bars.svg'
+import { DonateButton } from './DonateButton'
 import { HeaderProps } from './HeaderProps'
-import { PayPalButton } from './PayPalButton'
 
 interface ItemLinkProps {
   menu: string
@@ -105,7 +105,7 @@ export const HeaderNav: React.SFC<HeaderProps> = ({ path }) => (
           </ItemLink>
         </li>
         <li>
-          <PayPalButton />
+          <DonateButton />
         </li>
       </ul>
     </div>
@@ -148,7 +148,7 @@ export const HeaderNav: React.SFC<HeaderProps> = ({ path }) => (
           </ItemLink>
         </li>
         <li>
-          <PayPalButton />
+          <DonateButton />
         </li>
       </ul>
     </div>
