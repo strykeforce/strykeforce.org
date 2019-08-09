@@ -1,12 +1,12 @@
-import { css, injectGlobal } from 'emotion'
-import React from 'react'
-import styled from 'react-emotion'
-import Helmet from 'react-helmet'
-import { Banner } from '../Banner/Banner'
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
-import { SEOOrganization } from '../SEO/SEOOrganization'
-import SideBar from './SideBar'
+import { css, injectGlobal } from 'emotion';
+import React from 'react';
+import styled from 'react-emotion';
+import Helmet from 'react-helmet';
+import { Banner } from '../Banner/Banner';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import { SEOOrganization } from '../SEO/SEOOrganization';
+import SideBar from './SideBar';
 
 interface LayoutProps {
   children?: any;
@@ -48,11 +48,11 @@ a:hover {
   line-height: 1.2em;
   padding-top: 0.25em;
 }
-`
+`;
 
 const description = `Stryke Force 4-H FIRST Robotics Team 2767 is
   a community robotics team based in Kalamazoo,
-  Michigan. We are FRC 2767, FTC 7228 and FTC  8553.`
+  Michigan. We are FRC 2767, FTC 7228 and FTC  8553.`;
 
 const Row = styled.div`
   display: flex;
@@ -62,7 +62,7 @@ const Row = styled.div`
   @media (max-width: 480px) {
     flex-flow: column;
   }
-`
+`;
 
 // change order to 1 to have the calendar appear at the top of the home page
 const mobileContentDivIndex = css`
@@ -71,16 +71,14 @@ const mobileContentDivIndex = css`
   @media (max-width: 480px) {
     order: 0;
   }
-`
+`;
 const contentDiv = css`
   padding-left: 1.5em;
-`
+`;
 
 const Content: React.SFC<ContentProps> = ({ path, children }) => (
-  <div className={path === '/' ? mobileContentDivIndex : contentDiv}>
-    {children}
-  </div>
-)
+  <div className={path === '/' ? mobileContentDivIndex : contentDiv}>{children}</div>
+);
 
 export const Layout: React.SFC<LayoutProps> = ({ children, banner, path }) => (
   <div>
@@ -103,4 +101,4 @@ export const Layout: React.SFC<LayoutProps> = ({ children, banner, path }) => (
     </Row>
     <Footer />
   </div>
-)
+);

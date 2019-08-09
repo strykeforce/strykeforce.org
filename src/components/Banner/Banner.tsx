@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'react-emotion'
-import heroDesktop from './hero_image.jpg'
-import heroMobile from './hero_image@0,5x.jpg'
+import React from 'react';
+import styled from 'react-emotion';
+import heroDesktop from './hero_image.jpg';
+import heroMobile from './hero_image@0,5x.jpg';
 
 const Div = styled.div`
   flex: 1 100%;
@@ -14,6 +14,6 @@ const Div = styled.div`
   @media (max-width: 414px) {
     background-image: url(${heroMobile});
   }
-`
+`;
 
-export const Banner: React.SFC<{}> = () => <Div />
+export const Banner: React.SFC<{}> = () => <Div />;

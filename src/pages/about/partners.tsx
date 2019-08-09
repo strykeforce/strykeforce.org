@@ -1,9 +1,9 @@
-import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Layout } from '../../components/Layout/Layout'
-import { PartnerGallery } from '../../components/Partner/PartnerGallery'
+import { graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
+import React from 'react';
+import Helmet from 'react-helmet';
+import { Layout } from '../../components/Layout/Layout';
+import { PartnerGallery } from '../../components/Partner/PartnerGallery';
 
 // prettier-ignore
 interface PartnerPageProps {
@@ -19,11 +19,8 @@ interface PartnerPageProps {
   };
 }
 
-const PartnerPage: React.SFC<PartnerPageProps> = ({
-  location: { pathname },
-  data,
-}) => {
-  const partners = data.allPartnersCsv
+const PartnerPage: React.SFC<PartnerPageProps> = ({ location: { pathname }, data }) => {
+  const partners = data.allPartnersCsv;
   // partners.edges.forEach(edge => console.log(edge.node.name))
   return (
     <Layout path={pathname}>
@@ -36,18 +33,17 @@ const PartnerPage: React.SFC<PartnerPageProps> = ({
 
       <h1>Stryke Force Partners</h1>
       <p>
-        We are grateful to our Stryke Force partners who have helped us make an
-        impact on our students every year. The organizations listed below
-        provide generous financial support, materials and services to make our
-        program possible.
+        We are grateful to our Stryke Force partners who have helped us make an impact on our students every year. The
+        organizations listed below provide generous financial support, materials and services to make our program
+        possible.
       </p>
 
       <PartnerGallery partners={partners.edges} />
     </Layout>
-  )
-}
+  );
+};
 
-export default PartnerPage
+export default PartnerPage;
 
 export const partnerQuery = graphql`
   query PartnersQuery {
@@ -69,4 +65,4 @@ export const partnerQuery = graphql`
       }
     }
   }
-`
+`;

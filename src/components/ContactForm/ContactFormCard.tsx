@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'react-emotion'
-import { CardWrapper } from '../CardGallery/CardWrapper'
+import React from 'react';
+import styled from 'react-emotion';
+import { CardWrapper } from '../CardGallery/CardWrapper';
 
-export const BLUE = 'hsl(206.25, 74.7663551402%, 50%)'
-export const YELLOW = 'rgb(241, 186, 27)'
+export const BLUE = 'hsl(206.25, 74.7663551402%, 50%)';
+export const YELLOW = 'rgb(241, 186, 27)';
 
 interface ContactFormProps {
   title: string;
@@ -44,11 +44,11 @@ const Wrapper = styled.div`
       padding: 3%;
     }
   }
-`
+`;
 
 const HiddenInput = styled.input`
   display: none;
-`
+`;
 
 interface ColorProps {
   formColor: string;
@@ -62,7 +62,7 @@ const Title = styled.h1`
   text-align: center;
   color: white;
   margin: -16px -16px 16px -16px;
-`
+`;
 
 const Submit = styled.input`
   box-sizing: border-box;
@@ -75,23 +75,13 @@ const Submit = styled.input`
   border-right-style: none;
   border-left-style: none;
   font-size: 95%;
-`
+`;
 
-export const ContactFormCard: React.SFC<ContactFormProps> = ({
-  title,
-  color,
-  children,
-}) => (
+export const ContactFormCard: React.SFC<ContactFormProps> = ({ title, color, children }) => (
   <CardWrapper>
     <Wrapper>
       <Title formColor={color}>{title}</Title>
-      <form
-        name={title}
-        method="POST"
-        action="/"
-        netlify-honeypot="subject"
-        data-netlify={true}
-      >
+      <form name={title} method="POST" action="/" netlify-honeypot="subject" data-netlify={true}>
         {children}
         <HiddenInput type="text" name="subject" />
         <input type="hidden" name="form-name" value={title} />
@@ -99,4 +89,4 @@ export const ContactFormCard: React.SFC<ContactFormProps> = ({
       </form>
     </Wrapper>
   </CardWrapper>
-)
+);

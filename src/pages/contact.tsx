@@ -1,7 +1,7 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { ContactFormGallery } from '../components/ContactForm/ContactFormGallery'
-import { Layout } from '../components/Layout/Layout'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { ContactFormGallery } from '../components/ContactForm/ContactFormGallery';
+import { Layout } from '../components/Layout/Layout';
 
 interface ContactPageProps {
   location: {
@@ -9,9 +9,7 @@ interface ContactPageProps {
   };
 }
 
-const ContactPage: React.SFC<ContactPageProps> = ({
-  location: { pathname },
-}) => {
+const ContactPage: React.SFC<ContactPageProps> = ({ location: { pathname } }) => {
   return (
     <Layout path={pathname}>
       <Helmet title="Contact Us">
@@ -24,7 +22,7 @@ const ContactPage: React.SFC<ContactPageProps> = ({
       <h1>Contact Stryke Force</h1>
       <ContactFormGallery />
     </Layout>
-  )
-}
+  );
+};
 
-export default ContactPage
+export default ContactPage;

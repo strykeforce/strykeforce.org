@@ -1,8 +1,8 @@
-import { graphql } from 'gatsby'
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Layout } from '../../../components/Layout/Layout'
-import { TeamGallery } from '../../../components/Team/TeamGallery'
+import { graphql } from 'gatsby';
+import React from 'react';
+import Helmet from 'react-helmet';
+import { Layout } from '../../../components/Layout/Layout';
+import { TeamGallery } from '../../../components/Team/TeamGallery';
 
 // prettier-ignore
 interface StudentsPageProps {
@@ -20,27 +20,21 @@ interface StudentsPageProps {
   };
 }
 
-const FtcStudentsPage: React.SFC<StudentsPageProps> = ({
-  location: { pathname },
-  data,
-}) => {
-  const students = data.allFtcToml.edges[0].node.students
+const FtcStudentsPage: React.SFC<StudentsPageProps> = ({ location: { pathname }, data }) => {
+  const students = data.allFtcToml.edges[0].node.students;
   return (
     <Layout path={pathname}>
       <Helmet title="Students">
-        <meta
-          name="description"
-          content="Photographs and quotes from the Stryke Force students."
-        />
+        <meta name="description" content="Photographs and quotes from the Stryke Force students." />
       </Helmet>
 
       <h1>Stryke Force FTC Students</h1>
       <TeamGallery members={students} />
     </Layout>
-  )
-}
+  );
+};
 
-export default FtcStudentsPage
+export default FtcStudentsPage;
 
 export const studentsQuery = graphql`
   query FtcStudentsQuery {
@@ -66,4 +60,4 @@ export const studentsQuery = graphql`
       }
     }
   }
-`
+`;

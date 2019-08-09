@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'react-emotion'
+import React from 'react';
+import styled from 'react-emotion';
 
 interface TeamSchoolProps {
   grade: number;
@@ -8,29 +8,29 @@ interface TeamSchoolProps {
 
 const School = styled.p`
   margin: 0;
-`
+`;
 
 function formatGrade(grade: number): string {
   switch (grade) {
     case 7:
-      return 'Seventh Grade'
+      return 'Seventh Grade';
     case 8:
-      return 'Eighth Grade'
+      return 'Eighth Grade';
     case 9:
-      return 'Freshman'
+      return 'Freshman';
     case 10:
-      return 'Sophomore'
+      return 'Sophomore';
     case 11:
-      return 'Junior'
+      return 'Junior';
     case 12:
-      return 'Senior'
+      return 'Senior';
     default:
-      throw new Error('Unknown Grade: ' + grade)
+      throw new Error('Unknown Grade: ' + grade);
   }
 }
 
 function formatSchool(school: string): string {
-  return school.toLowerCase() !== 'homeschool' ? `${school} ` : ' Homeschooled '
+  return school.toLowerCase() !== 'homeschool' ? `${school} ` : ' Homeschooled ';
 }
 
 export const TeamSchool: React.SFC<TeamSchoolProps> = ({ grade, school }) => (
@@ -38,4 +38,4 @@ export const TeamSchool: React.SFC<TeamSchoolProps> = ({ grade, school }) => (
     {formatSchool(school)}
     {formatGrade(grade)}
   </School>
-)
+);

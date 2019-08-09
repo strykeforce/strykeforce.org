@@ -1,11 +1,11 @@
-import { graphql } from 'gatsby'
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Layout } from '../components/Layout/Layout'
-import { Post } from '../components/Post/Post'
-import { PostIndexDiv } from '../components/Post/PostIndex'
-import { Facebook } from '../components/SEO/Facebook'
-import { Twitter } from '../components/SEO/Twitter'
+import { graphql } from 'gatsby';
+import React from 'react';
+import Helmet from 'react-helmet';
+import { Layout } from '../components/Layout/Layout';
+import { Post } from '../components/Post/Post';
+import { PostIndexDiv } from '../components/Post/PostIndex';
+import { Facebook } from '../components/SEO/Facebook';
+import { Twitter } from '../components/SEO/Twitter';
 
 // prettier-ignore
 interface BlogTemplateProps {
@@ -17,10 +17,7 @@ interface BlogTemplateProps {
   };
 }
 
-const BlogTemplate: React.SFC<BlogTemplateProps> = ({
-  location: { pathname },
-  data: { post },
-}) => (
+const BlogTemplate: React.SFC<BlogTemplateProps> = ({ location: { pathname }, data: { post } }) => (
   <Layout path={pathname}>
     <Helmet>
       <title>{`${post.frontmatter.title} | Blog`}</title>
@@ -32,9 +29,9 @@ const BlogTemplate: React.SFC<BlogTemplateProps> = ({
     <Twitter {...post} />
     <Facebook {...post} />
   </Layout>
-)
+);
 
-export default BlogTemplate
+export default BlogTemplate;
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -58,4 +55,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

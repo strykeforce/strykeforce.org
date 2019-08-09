@@ -1,12 +1,11 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
 
 export const Twitter: React.SFC<PostDetail> = ({ frontmatter }) => {
   if (!frontmatter.image) {
-    return null
+    return null;
   }
-  const original: ImageSharpOriginal =
-    frontmatter.image.childImageSharp.original
+  const original: ImageSharpOriginal = frontmatter.image.childImageSharp.original;
   return (
     <Helmet
       meta={[
@@ -28,5 +27,5 @@ export const Twitter: React.SFC<PostDetail> = ({ frontmatter }) => {
         },
       ]}
     />
-  )
-}
+  );
+};

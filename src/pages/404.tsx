@@ -1,6 +1,6 @@
-import { Link } from 'gatsby'
-import React from 'react'
-import { Layout } from '../components/Layout/Layout'
+import { Link } from 'gatsby';
+import React from 'react';
+import { Layout } from '../components/Layout/Layout';
 
 interface NotFoundPageProps {
   location: {
@@ -8,13 +8,11 @@ interface NotFoundPageProps {
   };
 }
 
-const NotFoundPage: React.SFC<NotFoundPageProps> = ({
-  location: { pathname },
-}) => (
+const NotFoundPage: React.SFC<NotFoundPageProps> = ({ location: { pathname } }) => (
   <Layout path={pathname}>
     <h1>Page not found</h1>
     <Link to="/">Home</Link>
   </Layout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

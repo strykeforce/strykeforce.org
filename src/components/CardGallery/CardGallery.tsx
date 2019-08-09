@@ -1,4 +1,4 @@
-import styled from 'react-emotion'
+import styled from 'react-emotion';
 
 export const CardGallery = styled.ul`
   display: flex;
@@ -7,4 +7,4 @@ export const CardGallery = styled.ul`
   align-items: center;
   padding: 0;
   margin: 0;
-`
+`;

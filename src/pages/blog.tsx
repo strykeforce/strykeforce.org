@@ -1,8 +1,8 @@
-import { graphql } from 'gatsby'
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Layout } from '../components/Layout/Layout'
-import { PostIndex } from '../components/Post/PostIndex'
+import { graphql } from 'gatsby';
+import React from 'react';
+import Helmet from 'react-helmet';
+import { Layout } from '../components/Layout/Layout';
+import { PostIndex } from '../components/Post/PostIndex';
 
 // prettier-ignore
 interface BlogIndexPageProps {
@@ -31,10 +31,10 @@ const BlogIndexPage: React.SFC<BlogIndexPageProps> = ({
 
       <PostIndex posts={edges.filter(post => !!post.node.frontmatter.date)} />
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndexPage
+export default BlogIndexPage;
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
@@ -63,4 +63,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
