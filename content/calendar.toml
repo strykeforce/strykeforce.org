@@ -17,6 +17,15 @@ state = "MI"
 zip = "48849"
 
 [[events]]
+name = "FSU Roboday"
+date = 2019-09-28T00:00:00Z
+venue = "Ferris State University"
+street = "210 Sports Drive"
+city = "Big Rapids"
+state = "MI"
+zip = "49307"
+
+[[events]]
 name = "West Michigan Robotics Invitational"
 date = 2019-10-19T00:00:00Z
 venue = "Zeeland East High School"
