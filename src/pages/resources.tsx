@@ -11,7 +11,7 @@ import { Twitter } from '../components/SEO/Twitter'
 
 // prettier-ignore
 interface ResourcesIndexPageProps {
-    location: { pathname: string }; // tslint:disable-line:semicolon
+  location: { pathname: string }; // tslint:disable-line:semicolon
 }
 
 const postDetail: PostDetail = {

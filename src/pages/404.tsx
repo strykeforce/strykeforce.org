@@ -4,8 +4,8 @@ import { Layout } from '../components/Layout/Layout'
 
 interface NotFoundPageProps {
   location: {
-    pathname: string
-  }
+    pathname: string;
+  };
 }
 
 const NotFoundPage: React.SFC<NotFoundPageProps> = ({

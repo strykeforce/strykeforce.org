@@ -5,8 +5,8 @@ import { Layout } from '../components/Layout/Layout'
 
 interface ContactPageProps {
   location: {
-    pathname: string
-  }
+    pathname: string;
+  };
 }
 
 const ContactPage: React.SFC<ContactPageProps> = ({

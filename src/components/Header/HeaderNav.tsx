@@ -6,8 +6,8 @@ import { DonateButton } from './DonateButton'
 import { HeaderProps } from './HeaderProps'
 
 interface ItemLinkProps {
-  menu: string
-  path: string
+  menu: string;
+  path: string;
 }
 
 const Nav = styled.nav`

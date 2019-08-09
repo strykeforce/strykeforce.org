@@ -6,9 +6,9 @@ export const BLUE = 'hsl(206.25, 74.7663551402%, 50%)'
 export const YELLOW = 'rgb(241, 186, 27)'
 
 interface ContactFormProps {
-  title: string
-  color: string
-  children: any
+  title: string;
+  color: string;
+  children: any;
 }
 
 const Wrapper = styled.div`
@@ -51,7 +51,7 @@ const HiddenInput = styled.input`
 `
 
 interface ColorProps {
-  formColor: string
+  formColor: string;
 }
 
 const Title = styled.h1`

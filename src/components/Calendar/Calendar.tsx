@@ -5,12 +5,12 @@ import Event from './Event'
 
 interface CalendarData {
   allCalendarToml: {
-    edges: Array<{
+    edges: {
       node: {
-        events: EventData[]
-      }
-    }>
-  }
+        events: EventData[];
+      };
+    }[];
+  };
 }
 
 const CalendarDiv = styled.div`

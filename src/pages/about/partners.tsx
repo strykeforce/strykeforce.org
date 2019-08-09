@@ -12,11 +12,11 @@ interface PartnerPageProps {
   }; // tslint:disable-line:semicolon
   data: {
     allPartnersCsv: {
-      edges: Array<{
+      edges: {
         node: Partner;
-      }>
-    }
-  }
+      }[];
+    };
+  };
 }
 
 const PartnerPage: React.SFC<PartnerPageProps> = ({

@@ -13,8 +13,8 @@ interface IndexPageProps {
   data: {
     allMarkdownRemark: {
       edges: PostExcerptNode[];
-    }
-  }
+    };
+  };
 }
 
 const Blurb = styled.div`

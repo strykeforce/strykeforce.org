@@ -14,7 +14,7 @@ interface BlogTemplateProps {
   }; // tslint:disable-line:semicolon
   data: {
     post: PostDetail;
-  }
+  };
 }
 
 const BlogTemplate: React.SFC<BlogTemplateProps> = ({

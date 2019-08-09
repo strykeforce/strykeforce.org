@@ -11,7 +11,7 @@ import { PostMoreButton } from '../components/Post/PostMoreButton'
 // prettier-ignore
 interface AboutIndexPageProps {
   location: { pathname: string }; // tslint:disable-line:semicolon
-  data: any
+  data: any;
 }
 
 const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({

@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'react-emotion'
 
 interface TeamSchoolProps {
-  grade: number
-  school: string
+  grade: number;
+  school: string;
 }
 
 const School = styled.p`

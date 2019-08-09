@@ -9,14 +9,14 @@ import { SEOOrganization } from '../SEO/SEOOrganization'
 import SideBar from './SideBar'
 
 interface LayoutProps {
-  children?: any
-  banner?: boolean
-  path: string
+  children?: any;
+  banner?: boolean;
+  path: string;
 }
 
 interface ContentProps {
-  path: string
-  children?: any
+  path: string;
+  children?: any;
 }
 
 // tslint:disable-next-line:no-unused-expression

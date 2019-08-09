@@ -10,8 +10,8 @@ interface BlogIndexPageProps {
   data: {
     allMarkdownRemark: {
       edges: PostExcerptNode[];
-    }
-  }
+    };
+  };
 }
 
 const BlogIndexPage: React.SFC<BlogIndexPageProps> = ({

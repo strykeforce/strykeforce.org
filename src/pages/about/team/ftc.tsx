@@ -7,17 +7,17 @@ import { TeamGallery } from '../../../components/Team/TeamGallery'
 // prettier-ignore
 interface StudentsPageProps {
   location: {
-    pathname: string
+    pathname: string;
   }; // tslint:disable-line:semicolon
   data: {
     allFtcToml: {
-      edges: Array<{
+      edges: {
         node: {
           students: TeamMember[];
-        }
-      }>
-    }
-  }
+        };
+      }[];
+    };
+  };
 }
 
 const FtcStudentsPage: React.SFC<StudentsPageProps> = ({

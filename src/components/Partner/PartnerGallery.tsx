@@ -17,7 +17,7 @@ const PartnersGalleryUl = styled.ul`
 `
 
 export const PartnerGallery: React.SFC<{
-  partners: Array<{ node: Partner }>
+  partners: { node: Partner }[];
 }> = ({ partners }) => (
   <Gallery>
     <PartnersGalleryUl>
