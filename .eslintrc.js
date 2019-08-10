@@ -13,6 +13,7 @@ module.exports = {
       jsx: true, // Allows for the parsing of JSX
     },
   },
+  plugins: ['emotion'],
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
@@ -24,6 +25,11 @@ module.exports = {
     'react/prop-types': 'off',
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
+    'emotion/jsx-import': 'error',
+    'emotion/no-vanilla': 'error',
+    'emotion/import-from-emotion': 'error',
+    'emotion/styled-import': 'error',
+    'emotion/syntax-preference': [2, 'object'],
   },
   settings: {
     react: {
