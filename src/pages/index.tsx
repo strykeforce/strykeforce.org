@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { Layout } from '../components/Layout/Layout';
 import { LogoBand } from '../components/LogoBand/LogoBand';

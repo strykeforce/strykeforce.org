@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
 import React from 'react';
+import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Layout } from '../components/Layout/Layout';
 import { Post } from '../components/Post/Post';
@@ -17,7 +17,7 @@ interface BlogTemplateProps {
   };
 }
 
-const BlogTemplate: React.SFC<BlogTemplateProps> = ({ location: { pathname }, data: { post } }) => (
+const BlogTemplate: React.FC<BlogTemplateProps> = ({ location: { pathname }, data: { post } }) => (
   <Layout path={pathname}>
     <Helmet>
       <title>{`${post.frontmatter.title} | Blog`}</title>

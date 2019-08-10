@@ -29,7 +29,7 @@ module.exports = {
     'emotion/no-vanilla': 'error',
     'emotion/import-from-emotion': 'error',
     'emotion/styled-import': 'error',
-    'emotion/syntax-preference': [2, 'object'],
+    'emotion/syntax-preference': [0, 'object'],
   },
   settings: {
     react: {

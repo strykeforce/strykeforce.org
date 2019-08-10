@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import { PostLink } from './PostLink';
 
 export const PostIndexDiv = styled.div`

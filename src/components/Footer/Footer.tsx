@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import logo from './2767.svg';
 import { Rule } from './FooterRule';
 import { FooterSocial } from './FooterSocial';
