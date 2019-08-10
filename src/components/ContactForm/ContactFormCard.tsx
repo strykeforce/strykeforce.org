@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import { CardWrapper } from '../CardGallery/CardWrapper';
 
 export const BLUE = 'hsl(206.25, 74.7663551402%, 50%)';

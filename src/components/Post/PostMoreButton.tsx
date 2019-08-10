@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
   padding-top: 0.39em;

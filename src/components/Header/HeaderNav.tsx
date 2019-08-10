@@ -1,6 +1,9 @@
+/** @jsx jsx */
 import React from 'react';
 import { Link } from 'gatsby';
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
+//import { css } from 'emotion';
+import { css, jsx } from '@emotion/core';
 import bars from './bars.svg';
 import { DonateButton } from './DonateButton';
 import { HeaderProps } from './HeaderProps';
@@ -80,7 +83,7 @@ const toggleBurger = (): void => {
 export const HeaderNav: React.FC<HeaderProps> = ({ path }) => (
   <Nav>
     <div className="navWide">
-      <ul className={wide}>
+      <ul css={wide}>
         <li>
           <ItemLink to="/about/" menu="about" path={path}>
             About
@@ -108,7 +111,7 @@ export const HeaderNav: React.FC<HeaderProps> = ({ path }) => (
     </div>
     <div className="navNarrow">
       <Burger src={bars} alt="Menu" onClick={toggleBurger} />
-      <ul className={narrow}>
+      <ul css={narrow}>
         <li>
           <ItemLink to="/about/" menu="about" path={path} onClick={toggleBurger}>
             About

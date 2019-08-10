@@ -1,15 +1,6 @@
 import React from 'react';
-import { injectGlobal } from 'emotion';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import { PostByline } from './PostByline';
-
-injectGlobal`
-p > img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-`;
 
 const Div = styled.div`
   margin: auto;

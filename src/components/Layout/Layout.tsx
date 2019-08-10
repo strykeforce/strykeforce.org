@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import React from 'react';
-import { css, injectGlobal } from 'emotion';
-import styled from 'react-emotion';
+import { Global, css, jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import Helmet from 'react-helmet';
 import { Banner } from '../Banner/Banner';
 import Footer from '../Footer/Footer';
@@ -16,36 +17,6 @@ interface LayoutProps {
 interface ContentProps {
   path: string;
 }
-
-injectGlobal`
-body {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  padding: 0;
-  margin: 0;
-  position: relative;
-  font-size: 1rem;
-}
-
-a {
-  color: #1b75bb;
-  text-decoration: none;
-}
-
-a img{
-    border: 0px;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.gatsby-resp-image-figcaption {
-  font-size: 0.875em;
-  color: #666;
-  line-height: 1.2em;
-  padding-top: 0.25em;
-}
-`;
 
 const description = `Stryke Force 4-H FIRST Robotics Team 2767 is
   a community robotics team based in Kalamazoo,
@@ -74,11 +45,49 @@ const contentDiv = css`
 `;
 
 const Content: React.FC<ContentProps> = ({ path, children }) => (
-  <div className={path === '/' ? mobileContentDivIndex : contentDiv}>{children}</div>
+  <div css={path === '/' ? mobileContentDivIndex : contentDiv}>{children}</div>
 );
 
 export const Layout: React.FC<LayoutProps> = ({ children, banner, path }) => (
   <div>
+    <Global
+      styles={css`
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+            sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+          padding: 0;
+          margin: 0;
+          position: relative;
+          font-size: 1rem;
+        }
+
+        a {
+          color: #1b75bb;
+          text-decoration: none;
+        }
+
+        a img {
+          border: 0px;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+
+        p > img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .gatsby-resp-image-figcaption {
+          font-size: 0.875em;
+          color: #666;
+          line-height: 1.2em;
+          padding-top: 0.25em;
+        }
+      `}
+    />
     <Helmet
       defaultTitle="Stryke Force"
       titleTemplate="%s | Stryke Force"

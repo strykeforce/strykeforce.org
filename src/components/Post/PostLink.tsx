@@ -1,6 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import { PostByline } from './PostByline';
 import { PostMoreButton } from './PostMoreButton';
 

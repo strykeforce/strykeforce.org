@@ -1,4 +1,5 @@
-import { css } from 'emotion';
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
 import { graphql } from 'gatsby';
 import * as path from 'path';
 import React from 'react';
@@ -58,7 +59,7 @@ const AboutIndexPage: React.FC<AboutIndexPageProps> = ({ location: { pathname },
           <img
             src="/smugmug.svg"
             alt="SmugMug"
-            className={css`
+            css={css`
               width: 35%;
               padding-top: 1em;
             `}
@@ -71,7 +72,7 @@ const AboutIndexPage: React.FC<AboutIndexPageProps> = ({ location: { pathname },
           <img
             src="/youtube.svg"
             alt="YouTube"
-            className={css`
+            css={css`
               width: 28%;
               padding-top: 1em;
             `}

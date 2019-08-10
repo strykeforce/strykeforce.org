@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import heroDesktop from './hero_image.jpg';
 import heroMobile from './hero_image@0,5x.jpg';
 
