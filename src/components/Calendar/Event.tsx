@@ -23,7 +23,7 @@ const Address = styled.address`
   font-style: normal;
 `;
 
-const Event: React.SFC<{ event: EventData }> = ({ event }) => (
+const Event: React.FC<{ event: EventData }> = ({ event }) => (
   <EventDiv>
     <Name>{event.name}</Name>
     <Date>{event.date}</Date>

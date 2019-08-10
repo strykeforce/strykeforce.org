@@ -9,7 +9,7 @@ interface ContactPageProps {
   };
 }
 
-const ContactPage: React.SFC<ContactPageProps> = ({ location: { pathname } }) => {
+const ContactPage: React.FC<ContactPageProps> = ({ location: { pathname } }): React.ReactElement => {
   return (
     <Layout path={pathname}>
       <Helmet title="Contact Us">

@@ -8,7 +8,7 @@ interface NotFoundPageProps {
   };
 }
 
-const NotFoundPage: React.SFC<NotFoundPageProps> = ({ location: { pathname } }) => (
+const NotFoundPage: React.FC<NotFoundPageProps> = ({ location: { pathname } }): React.ReactElement => (
   <Layout path={pathname}>
     <h1>Page not found</h1>
     <Link to="/">Home</Link>

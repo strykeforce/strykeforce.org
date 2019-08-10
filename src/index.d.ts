@@ -21,7 +21,6 @@ interface ImageSharpOriginal {
 
 // declare const graphql: (query: TemplateStringsArray) => void
 
-// prettier-ignore
 interface Frontmatter {
   date: string;
   path: string;
@@ -29,14 +28,14 @@ interface Frontmatter {
   author: string;
   description: string;
   image: {
-    childImageSharp: { original: ImageSharpOriginal } | any;
+    childImageSharp: { original: ImageSharpOriginal } | any; // eslint-disable-line @typescript-eslint/no-explicit-any
   };
 }
 
-// prettier-ignore
 interface PostExcerpt {
   id: string;
   excerpt: string;
+  fileAbsolutePath: string;
   frontmatter: Frontmatter;
 }
 
@@ -44,7 +43,6 @@ interface PostExcerptNode {
   node: PostExcerpt;
 }
 
-// prettier-ignore
 interface PostDetail {
   html: string;
   frontmatter: Frontmatter;
@@ -55,11 +53,10 @@ interface Partner {
   url: string;
   text: string;
   logo: {
-    childImageSharp: any;
+    childImageSharp: any; // eslint-disable-line @typescript-eslint/no-explicit-any
   };
 }
 
-// prettier-ignore
 interface TeamMember {
   id: string;
   name: string;
@@ -69,12 +66,11 @@ interface TeamMember {
   quote?: string;
   photo: {
     childImageSharp: {
-      fixed: any;
+      fixed: any; // eslint-disable-line @typescript-eslint/no-explicit-any
     };
   };
 }
 
-// prettier-ignore
 interface EventData {
   name: string;
   date: string;

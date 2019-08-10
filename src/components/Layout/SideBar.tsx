@@ -4,7 +4,7 @@ import Calendar from '../Calendar/Calendar';
 
 const Div = styled.div``;
 
-const SideBar: React.SFC<{}> = () => (
+const SideBar: React.FC<{}> = () => (
   <Div>
     <Calendar />
   </Div>

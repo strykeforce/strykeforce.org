@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import styled, { css } from 'react-emotion';
 import bars from './bars.svg';
 import { DonateButton } from './DonateButton';
@@ -71,13 +71,13 @@ const ItemLink = styled(Link)`
   color: ${({ path, menu }: ItemLinkProps) => (path.startsWith(menu, 1) ? '#fff' : '#333')};
 `;
 
-const toggleBurger = () => {
+const toggleBurger = (): void => {
   const linksEl = document.querySelector(`.${narrow}`) as HTMLElement;
   linksEl.style.display =
     linksEl.style.display === 'flex' ? (linksEl.style.display = 'none') : (linksEl.style.display = 'flex');
 };
 
-export const HeaderNav: React.SFC<HeaderProps> = ({ path }) => (
+export const HeaderNav: React.FC<HeaderProps> = ({ path }) => (
   <Nav>
     <div className="navWide">
       <ul className={wide}>

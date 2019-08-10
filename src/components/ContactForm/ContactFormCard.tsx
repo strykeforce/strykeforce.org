@@ -8,7 +8,6 @@ export const YELLOW = 'rgb(241, 186, 27)';
 interface ContactFormProps {
   title: string;
   color: string;
-  children: any;
 }
 
 const Wrapper = styled.div`
@@ -55,7 +54,7 @@ interface ColorProps {
 }
 
 const Title = styled.h1`
-  background: ${(props: ColorProps) => props.formColor};
+  background: ${(props: ColorProps): string => props.formColor};
   padding: 20px 0;
   font-size: 140%;
   font-weight: 300;
@@ -69,15 +68,15 @@ const Submit = styled.input`
   width: 100%;
   padding: 3%;
   color: white;
-  background: ${(props: ColorProps) => props.formColor};
-  border-bottom: 2px solid ${(props: ColorProps) => props.formColor};
+  background: ${(props: ColorProps): string => props.formColor};
+  border-bottom: 2px solid ${(props: ColorProps): string => props.formColor};
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
   font-size: 95%;
 `;
 
-export const ContactFormCard: React.SFC<ContactFormProps> = ({ title, color, children }) => (
+export const ContactFormCard: React.FC<ContactFormProps> = ({ title, color, children }) => (
   <CardWrapper>
     <Wrapper>
       <Title formColor={color}>{title}</Title>

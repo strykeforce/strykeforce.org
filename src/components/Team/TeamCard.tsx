@@ -1,5 +1,5 @@
-import Img from 'gatsby-image';
 import React from 'react';
+import Img from 'gatsby-image';
 import styled from 'react-emotion';
 import { CardWrapper } from '../CardGallery/CardWrapper';
 import { TeamQuote } from './TeamQuote';
@@ -21,7 +21,7 @@ const Head = styled.h2`
   margin-bottom: 0.25em;
 `;
 
-export const TeamCard: React.SFC<{ member: TeamMember }> = ({ member }) => (
+export const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => (
   <CardWrapper>
     <Wrapper>
       <Img fixed={member.photo.childImageSharp.fixed} />

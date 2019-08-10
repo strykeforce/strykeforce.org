@@ -1,5 +1,5 @@
-import { css, injectGlobal } from 'emotion';
 import React from 'react';
+import { css, injectGlobal } from 'emotion';
 import styled from 'react-emotion';
 import Helmet from 'react-helmet';
 import { Banner } from '../Banner/Banner';
@@ -9,17 +9,14 @@ import { SEOOrganization } from '../SEO/SEOOrganization';
 import SideBar from './SideBar';
 
 interface LayoutProps {
-  children?: any;
   banner?: boolean;
   path: string;
 }
 
 interface ContentProps {
   path: string;
-  children?: any;
 }
 
-// tslint:disable-next-line:no-unused-expression
 injectGlobal`
 body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
@@ -76,11 +73,11 @@ const contentDiv = css`
   padding-left: 1.5em;
 `;
 
-const Content: React.SFC<ContentProps> = ({ path, children }) => (
+const Content: React.FC<ContentProps> = ({ path, children }) => (
   <div className={path === '/' ? mobileContentDivIndex : contentDiv}>{children}</div>
 );
 
-export const Layout: React.SFC<LayoutProps> = ({ children, banner, path }) => (
+export const Layout: React.FC<LayoutProps> = ({ children, banner, path }) => (
   <div>
     <Helmet
       defaultTitle="Stryke Force"
@@ -96,7 +93,7 @@ export const Layout: React.SFC<LayoutProps> = ({ children, banner, path }) => (
     <Header path={path} />
     {banner ? <Banner /> : null}
     <Row>
-      <Content path={path} children={children} />
+      <Content path={path}>{children}</Content>
       <SideBar />
     </Row>
     <Footer />

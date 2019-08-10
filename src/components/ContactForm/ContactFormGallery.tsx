@@ -2,7 +2,7 @@ import React from 'react';
 import { CardGallery } from '../CardGallery/CardGallery';
 import { BLUE, ContactFormCard, YELLOW } from './ContactFormCard';
 
-export const ContactFormGallery: React.SFC<{}> = () => (
+export const ContactFormGallery: React.FC<{}> = () => (
   <CardGallery css={{ alignItems: 'flex-start' }}>
     <ContactFormCard title="Contact Us" color={BLUE}>
       <input type="text" name="name" placeholder="Your Name" autoComplete="name" required={true} />

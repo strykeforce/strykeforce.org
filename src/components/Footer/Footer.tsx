@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'react-emotion';
 import logo from './2767.svg';
 import { Rule } from './FooterRule';
@@ -13,7 +13,7 @@ const CenteredWrapper = styled.div`
   text-align: center;
 `;
 
-const Footer: React.SFC<{}> = () => (
+const Footer: React.FC<{}> = () => (
   <CenteredWrapper>
     <Rule />
     <Link to="/">

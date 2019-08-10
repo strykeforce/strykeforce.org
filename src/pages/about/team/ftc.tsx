@@ -1,26 +1,15 @@
-import { graphql } from 'gatsby';
 import React from 'react';
+import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Layout } from '../../../components/Layout/Layout';
 import { TeamGallery } from '../../../components/Team/TeamGallery';
 
-// prettier-ignore
 interface StudentsPageProps {
-  location: {
-    pathname: string;
-  }; // tslint:disable-line:semicolon
-  data: {
-    allFtcToml: {
-      edges: {
-        node: {
-          students: TeamMember[];
-        };
-      }[];
-    };
-  };
+  location: { pathname: string };
+  data: { allFtcToml: { edges: { node: { students: TeamMember[] } }[] } };
 }
 
-const FtcStudentsPage: React.SFC<StudentsPageProps> = ({ location: { pathname }, data }) => {
+const FtcStudentsPage: React.FC<StudentsPageProps> = ({ location: { pathname }, data }) => {
   const students = data.allFtcToml.edges[0].node.students;
   return (
     <Layout path={pathname}>

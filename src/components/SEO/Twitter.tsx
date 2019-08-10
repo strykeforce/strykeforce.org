@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-export const Twitter: React.SFC<PostDetail> = ({ frontmatter }) => {
+export const Twitter: React.FC<PostDetail> = ({ frontmatter }) => {
   if (!frontmatter.image) {
     return null;
   }

@@ -3,9 +3,8 @@ module.exports = {
   extends: [
     'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules from @typescript-eslint/eslint-plugin
-    'prettier/@typescript-eslint',  // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-    'plugin:prettier/recommended',  // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-
+    'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
   parserOptions: {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
@@ -18,37 +17,17 @@ module.exports = {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     '@typescript-eslint/indent': ['error', 2],
+    '@typescript-eslint/explicit-function-return-type': [
+      1,
+      { allowExpressions: true, allowTypedFunctionExpressions: true, allowHigherOrderFunctions: false },
+    ],
     'react/prop-types': 'off',
+    'linebreak-style': ['error', 'unix'],
+    quotes: ['error', 'single'],
   },
   settings: {
     react: {
       version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
     },
   },
-}
-// module.exports = {
-//     "env": {
-//         "browser": true,
-//         "commonjs": true,
-//         "es6": true,
-//         "node": true
-//     },
-//     "extends": "eslint:recommended",
-//     "parserOptions": {
-//         "sourceType": "module"
-//     },
-//     "rules": {
-//         "linebreak-style": [
-//             "error",
-//             "unix"
-//         ],
-//         "quotes": [
-//             "error",
-//             "single"
-//         ],
-//         "semi": [
-//             "error",
-//             "never"
-//         ]
-//     }
-// };
+};

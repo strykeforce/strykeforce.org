@@ -49,7 +49,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.tsx' 'src/**/*.js'",
     "type-check": "tsc --noEmit",
-    "lint": "tslint --project .",
+    "lint": "eslint --ext .js,.ts,.tsx src",
     "clean": "rm -rf .cache public"
   },
   "devDependencies": {

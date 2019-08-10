@@ -8,16 +8,19 @@ import { PostIndex, PostIndexDiv } from '../components/Post/PostIndex';
 import { Post, Title } from '../components/Post/PostLink';
 import { PostMoreButton } from '../components/Post/PostMoreButton';
 
-// prettier-ignore
 interface AboutIndexPageProps {
-  location: { pathname: string }; // tslint:disable-line:semicolon
-  data: any;
+  location: { pathname: string };
+  data: {
+    about: { childMarkdownRemark: { html: string } };
+    partners: { childPartnersToml: { description: string } };
+    allMarkdownRemark: { edges: PostExcerptNode[] };
+  };
 }
 
-const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({ location: { pathname }, data }) => {
-  const about: string = data.about.childMarkdownRemark.html;
-  const partners: string = data.partners.childPartnersToml.description;
-  const posts: any = data.allMarkdownRemark.edges;
+const AboutIndexPage: React.FC<AboutIndexPageProps> = ({ location: { pathname }, data }): React.ReactElement => {
+  const about = data.about.childMarkdownRemark.html;
+  const partners = data.partners.childPartnersToml.description;
+  const postNodes: PostExcerptNode[] = data.allMarkdownRemark.edges;
 
   return (
     <Layout path={pathname}>
@@ -49,7 +52,7 @@ const AboutIndexPage: React.SFC<AboutIndexPageProps> = ({ location: { pathname }
           <PostMoreButton to="/about/team/ftc/" />
         </Post>
       </PostIndexDiv>
-      <PostIndex posts={posts.filter(({ node }: any) => !path.basename(node.fileAbsolutePath).startsWith('_'))} />
+      <PostIndex posts={postNodes.filter(({ node }) => !path.basename(node.fileAbsolutePath).startsWith('_'))} />
       <Post>
         <a href="https://strykeforce.smugmug.com" target="_blank" rel="noopener noreferrer">
           <img

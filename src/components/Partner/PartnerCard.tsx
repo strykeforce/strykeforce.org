@@ -1,4 +1,3 @@
-import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'react-emotion';
 import { CardWrapper } from '../CardGallery/CardWrapper';
@@ -33,7 +32,7 @@ const Blurb = styled.p`
   }
 `;
 
-export const PartnerCard: React.SFC<{ item: Partner }> = ({ item }) => (
+export const PartnerCard: React.FC<{ item: Partner }> = ({ item }) => (
   <CardWrapper>
     <PartnerDiv>
       <a href={item.url} target="_blank" rel="noopener noreferrer">

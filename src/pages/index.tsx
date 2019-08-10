@@ -7,9 +7,8 @@ import { LogoBand } from '../components/LogoBand/LogoBand';
 import { PostIndex } from '../components/Post/PostIndex';
 import { SEOWebSite } from '../components/SEO/SEOWebSite';
 
-// prettier-ignore
 interface IndexPageProps {
-  location: { pathname: string }; // tslint:disable-line:semicolon
+  location: { pathname: string };
   data: {
     allMarkdownRemark: {
       edges: PostExcerptNode[];
@@ -31,12 +30,12 @@ const NewsHeading = styled.h1`
   margin-top: 1.2em;
 `;
 
-const IndexPage: React.SFC<IndexPageProps> = ({
+const IndexPage: React.FC<IndexPageProps> = ({
   location: { pathname },
   data: {
     allMarkdownRemark: { edges },
   },
-}) => {
+}): React.ReactElement => {
   return (
     <Layout path={pathname} banner={true}>
       <Blurb>

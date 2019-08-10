@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 const BASE = 'https://www.strykeforce.org';
 
-export const Facebook: React.SFC<PostDetail> = ({ frontmatter }) => {
+export const Facebook: React.FC<PostDetail> = ({ frontmatter }) => {
   if (!frontmatter.image) {
     return null;
   }

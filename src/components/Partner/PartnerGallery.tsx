@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { CardGallery } from '../CardGallery/CardGallery';
 import { PartnerCard } from './PartnerCard';
 
 const Gallery = styled.div`
@@ -16,9 +15,7 @@ const PartnersGalleryUl = styled.ul`
   margin: 0;
 `;
 
-export const PartnerGallery: React.SFC<{
-  partners: { node: Partner }[];
-}> = ({ partners }) => (
+export const PartnerGallery: React.FC<{ partners: { node: Partner }[] }> = ({ partners }) => (
   <Gallery>
     <PartnersGalleryUl>
       {partners.map(p => (

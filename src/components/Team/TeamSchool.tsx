@@ -33,7 +33,7 @@ function formatSchool(school: string): string {
   return school.toLowerCase() !== 'homeschool' ? `${school} ` : ' Homeschooled ';
 }
 
-export const TeamSchool: React.SFC<TeamSchoolProps> = ({ grade, school }) => (
+export const TeamSchool: React.FC<TeamSchoolProps> = ({ grade, school }) => (
   <School>
     {formatSchool(school)}
     {formatGrade(grade)}

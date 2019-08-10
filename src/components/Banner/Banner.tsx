@@ -16,4 +16,4 @@ const Div = styled.div`
   }
 `;
 
-export const Banner: React.SFC<{}> = () => <Div />;
+export const Banner: React.FC<{}> = () => <Div />;

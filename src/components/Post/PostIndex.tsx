@@ -7,7 +7,7 @@ export const PostIndexDiv = styled.div`
   margin-left: auto;
 `;
 
-export const PostIndex: React.SFC<{ posts: PostExcerptNode[] }> = ({ posts }) => {
+export const PostIndex: React.FC<{ posts: PostExcerptNode[] }> = ({ posts }) => {
   const Posts = posts.map((post: PostExcerptNode) => <PostLink key={post.node.id} post={post.node} />);
 
   return <PostIndexDiv>{Posts}</PostIndexDiv>;

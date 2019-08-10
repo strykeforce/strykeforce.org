@@ -8,4 +8,4 @@ const Quote = styled.p`
   overflow: hidden;
 `;
 
-export const TeamQuote: React.SFC<{ quote?: string }> = ({ quote }) => <Quote>{quote}</Quote>;
+export const TeamQuote: React.FC<{ quote?: string }> = ({ quote }) => <Quote>{quote}</Quote>;

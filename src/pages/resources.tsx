@@ -1,17 +1,14 @@
-import { css } from 'emotion';
-import { graphql, Link } from 'gatsby';
-import * as path from 'path';
+import { Link } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Layout } from '../components/Layout/Layout';
-import { PostIndex, PostIndexDiv } from '../components/Post/PostIndex';
-import { Post, Title } from '../components/Post/PostLink';
+import { PostIndexDiv } from '../components/Post/PostIndex';
+import { Post } from '../components/Post/PostLink';
 import { Facebook } from '../components/SEO/Facebook';
 import { Twitter } from '../components/SEO/Twitter';
 
-// prettier-ignore
 interface ResourcesIndexPageProps {
-  location: { pathname: string }; // tslint:disable-line:semicolon
+  location: { pathname: string };
 }
 
 const postDetail: PostDetail = {
@@ -35,7 +32,7 @@ const postDetail: PostDetail = {
   html: '',
 };
 
-const ResourceIndexPage: React.SFC<ResourcesIndexPageProps> = ({ location: { pathname } }) => {
+const ResourceIndexPage: React.FC<ResourcesIndexPageProps> = ({ location: { pathname } }): React.ReactElement => {
   return (
     <Layout path={pathname}>
       <Helmet title="Resources">

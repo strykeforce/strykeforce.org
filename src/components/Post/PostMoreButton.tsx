@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'react-emotion';
 
 const Wrapper = styled.div`
@@ -22,7 +22,7 @@ const Button = styled(Link)`
   }
 `;
 
-export const PostMoreButton: React.SFC<{ to: string }> = ({ to }) => (
+export const PostMoreButton: React.FC<{ to: string }> = ({ to }) => (
   <Wrapper>
     <Button to={to}>Read More</Button>
   </Wrapper>

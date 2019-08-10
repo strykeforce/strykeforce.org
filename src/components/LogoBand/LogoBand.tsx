@@ -1,6 +1,6 @@
+import React from 'react';
 import { Link } from 'gatsby';
-import * as React from 'react';
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 import frc2767 from './frc2767.svg';
 import ftc15106 from './ftc15106.svg';
 import ftc7228 from './ftc7228.svg';

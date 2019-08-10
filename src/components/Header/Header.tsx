@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'react-emotion';
 
 import { HeaderLogo } from './HeaderLogo';
@@ -15,7 +15,7 @@ const Navigation = styled.div`
   justify-content: space-between;
 `;
 
-const Header: React.SFC<HeaderProps> = ({ path }) => (
+const Header: React.FC<HeaderProps> = ({ path }) => (
   <Background>
     <Navigation>
       <HeaderLogo />

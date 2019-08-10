@@ -6,7 +6,7 @@ import github from './github.svg';
 import instagram from './instagram.svg';
 import twitter from './twitter.svg';
 
-const data = [
+const socialLinks = [
   {
     img: twitter,
     name: 'Twitter',
@@ -49,9 +49,9 @@ const Icon = styled.img`
   padding-right: 1em;
 `;
 
-export const FooterSocial: React.SFC<{}> = () => (
+export const FooterSocial: React.FC<{}> = () => (
   <List>
-    {data.map(s => (
+    {socialLinks.map(s => (
       <Item key={s.name}>
         <a href={s.url} target="_blank" rel="noopener noreferrer">
           <Icon src={s.img} alt={s.name} />

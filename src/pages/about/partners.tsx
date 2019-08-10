@@ -1,25 +1,15 @@
-import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
 import React from 'react';
+import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Layout } from '../../components/Layout/Layout';
 import { PartnerGallery } from '../../components/Partner/PartnerGallery';
 
-// prettier-ignore
 interface PartnerPageProps {
-  location: {
-    pathname: string;
-  }; // tslint:disable-line:semicolon
-  data: {
-    allPartnersCsv: {
-      edges: {
-        node: Partner;
-      }[];
-    };
-  };
+  location: { pathname: string };
+  data: { allPartnersCsv: { edges: { node: Partner }[] } };
 }
 
-const PartnerPage: React.SFC<PartnerPageProps> = ({ location: { pathname }, data }) => {
+const PartnerPage: React.FC<PartnerPageProps> = ({ location: { pathname }, data }) => {
   const partners = data.allPartnersCsv;
   // partners.edges.forEach(edge => console.log(edge.node.name))
   return (

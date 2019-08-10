@@ -6,7 +6,7 @@ const Date = styled.p`
   margin-top: 0;
 `;
 
-export const PostByline: React.SFC<{ date: string; author: string }> = ({ date, author }) =>
+export const PostByline: React.FC<{ date: string; author: string }> = ({ date, author }) =>
   author !== null ? (
     <Date>
       <small>
