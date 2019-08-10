@@ -1,25 +1,24 @@
-import { graphql } from 'gatsby'
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Layout } from '../components/Layout/Layout'
-import { PostIndex } from '../components/Post/PostIndex'
+import { graphql } from 'gatsby';
+import React from 'react';
+import Helmet from 'react-helmet';
+import { Layout } from '../components/Layout/Layout';
+import { PostIndex } from '../components/Post/PostIndex';
 
-// prettier-ignore
 interface BlogIndexPageProps {
-  location: { pathname: string }; // tslint:disable-line:semicolon
+  location: { pathname: string };
   data: {
     allMarkdownRemark: {
       edges: PostExcerptNode[];
-    }
-  }
+    };
+  };
 }
 
-const BlogIndexPage: React.SFC<BlogIndexPageProps> = ({
+const BlogIndexPage: React.FC<BlogIndexPageProps> = ({
   location: { pathname },
   data: {
     allMarkdownRemark: { edges },
   },
-}) => {
+}): React.ReactElement => {
   return (
     <Layout path={pathname}>
       <Helmet title="Blog">
@@ -29,12 +28,12 @@ const BlogIndexPage: React.SFC<BlogIndexPageProps> = ({
         />
       </Helmet>
 
-      <PostIndex posts={edges.filter(post => !!post.node.frontmatter.date)} />
+      <PostIndex posts={edges.filter((post): boolean => !!post.node.frontmatter.date)} />
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndexPage
+export default BlogIndexPage;
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
@@ -63,4 +62,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

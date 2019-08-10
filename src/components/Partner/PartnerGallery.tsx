@@ -1,11 +1,10 @@
-import React from 'react'
-import styled from 'react-emotion'
-import { CardGallery } from '../CardGallery/CardGallery'
-import { PartnerCard } from './PartnerCard'
+import React from 'react';
+import styled from 'react-emotion';
+import { PartnerCard } from './PartnerCard';
 
 const Gallery = styled.div`
   text-align: center;
-`
+`;
 
 const PartnersGalleryUl = styled.ul`
   display: flex;
@@ -14,11 +13,9 @@ const PartnersGalleryUl = styled.ul`
   align-items: center;
   padding: 0;
   margin: 0;
-`
+`;
 
-export const PartnerGallery: React.SFC<{
-  partners: Array<{ node: Partner }>
-}> = ({ partners }) => (
+export const PartnerGallery: React.FC<{ partners: { node: Partner }[] }> = ({ partners }) => (
   <Gallery>
     <PartnersGalleryUl>
       {partners.map(p => (
@@ -26,4 +23,4 @@ export const PartnerGallery: React.SFC<{
       ))}
     </PartnersGalleryUl>
   </Gallery>
-)
+);

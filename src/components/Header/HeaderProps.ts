@@ -1,3 +1,3 @@
 export interface HeaderProps {
-  path: string
+  path: string;
 }

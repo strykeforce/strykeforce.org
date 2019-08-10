@@ -1,11 +1,11 @@
-import { Link } from 'gatsby'
-import React from 'react'
-import styled from 'react-emotion'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'react-emotion';
 
 const Wrapper = styled.div`
   padding-top: 0.39em;
   padding-bottom: 0.618em;
-`
+`;
 
 const Button = styled(Link)`
   display: inline-block;
@@ -20,10 +20,10 @@ const Button = styled(Link)`
   &:hover {
     transform: scale(1.05, 1.05);
   }
-`
+`;
 
-export const PostMoreButton: React.SFC<{ to: string }> = ({ to }) => (
+export const PostMoreButton: React.FC<{ to: string }> = ({ to }) => (
   <Wrapper>
     <Button to={to}>Read More</Button>
   </Wrapper>
-)
+);

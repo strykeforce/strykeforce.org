@@ -1,12 +1,6 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import {
-  LOGO,
-  NAME,
-  ORGANIZATION_ID,
-  STRYKE_FORCE,
-  URL,
-} from './SEOOrganization'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { LOGO, NAME, ORGANIZATION_ID, STRYKE_FORCE, URL } from './SEOOrganization';
 
 const WEBSITE = {
   '@context': 'http://schema.org',
@@ -17,10 +11,10 @@ const WEBSITE = {
   name: NAME,
   publisher: { '@id': ORGANIZATION_ID },
   url: URL,
-}
+};
 
-export const SEOWebSite: React.SFC<{}> = () => (
+export const SEOWebSite: React.FC<{}> = () => (
   <Helmet>
     <script type="application/ld+json">{JSON.stringify(WEBSITE)}</script>
   </Helmet>
-)
+);

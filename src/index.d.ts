@@ -1,86 +1,82 @@
 declare module '*.svg' {
-  const content: string
-  export default content
+  const content: string;
+  export default content;
 }
 
 declare module '*.jpg' {
-  const content: string
-  export default content
+  const content: string;
+  export default content;
 }
 
 declare module '*.png' {
-  const content: string
-  export default content
+  const content: string;
+  export default content;
 }
 
 interface ImageSharpOriginal {
-  src: string
-  width: number
-  height: number
+  src: string;
+  width: number;
+  height: number;
 }
 
 // declare const graphql: (query: TemplateStringsArray) => void
 
-// prettier-ignore
 interface Frontmatter {
-  date: string
-  path: string
-  title: string
-  author: string
-  description: string
+  date: string;
+  path: string;
+  title: string;
+  author: string;
+  description: string;
   image: {
-    childImageSharp: { original: ImageSharpOriginal } | any;
-  }
+    childImageSharp: { original: ImageSharpOriginal } | any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  };
 }
 
-// prettier-ignore
 interface PostExcerpt {
-  id: string
-  excerpt: string
-  frontmatter: Frontmatter
+  id: string;
+  excerpt: string;
+  fileAbsolutePath: string;
+  frontmatter: Frontmatter;
 }
 
 interface PostExcerptNode {
-  node: PostExcerpt
+  node: PostExcerpt;
 }
 
-// prettier-ignore
 interface PostDetail {
-  html: string
-  frontmatter: Frontmatter
+  html: string;
+  frontmatter: Frontmatter;
 }
 
 interface Partner {
-  name: string
-  url: string
-  text: string
+  name: string;
+  url: string;
+  text: string;
   logo: {
-    childImageSharp: any
-  }
+    childImageSharp: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  };
 }
 
-// prettier-ignore
 interface TeamMember {
-  id: string
-  name: string
-  displayName: string
-  grade?: number
-  school?: string
-  quote?: string
+  id: string;
+  name: string;
+  displayName: string;
+  grade?: number;
+  school?: string;
+  quote?: string;
   photo: {
     childImageSharp: {
-      fixed: any;
-    }
-  }
+      fixed: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    };
+  };
 }
 
-// prettier-ignore
 interface EventData {
-  name: string
-  date: string
-  venue: string
-  street: string
-  city: string
-  state: string
-  zip: string
+  name: string;
+  date: string;
+  venue: string;
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
 }

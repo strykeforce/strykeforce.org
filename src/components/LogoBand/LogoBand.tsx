@@ -1,10 +1,10 @@
-import { Link } from 'gatsby'
-import * as React from 'react'
-import styled, { css } from 'react-emotion'
-import frc2767 from './frc2767.svg'
-import ftc15106 from './ftc15106.svg'
-import ftc7228 from './ftc7228.svg'
-import ftc8553 from './ftc8553.svg'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'react-emotion';
+import frc2767 from './frc2767.svg';
+import ftc15106 from './ftc15106.svg';
+import ftc7228 from './ftc7228.svg';
+import ftc8553 from './ftc8553.svg';
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,18 +12,18 @@ const Wrapper = styled.div`
   justify-content: space-around;
   max-width: 40rem;
   margin: auto;
-`
+`;
 
 const Team = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-`
+`;
 
 const TeamLabel = styled.h2`
   font-weight: 400;
   margin-bottom: 0.5em;
-`
+`;
 
 const Logo = styled.img`
   border-style: solid;
@@ -32,7 +32,7 @@ const Logo = styled.img`
   border-radius: 50%;
   width: 7.5em;
   height: 7.5em;
-`
+`;
 
 export const LogoBand: React.SFC<{}> = () => (
   <Wrapper>
@@ -65,4 +65,4 @@ export const LogoBand: React.SFC<{}> = () => (
       </Link>
     </Team>
   </Wrapper>
-)
+);

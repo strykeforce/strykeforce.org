@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'react-emotion'
+import React from 'react';
+import styled from 'react-emotion';
 
-import facebook from './facebook.svg'
-import github from './github.svg'
-import instagram from './instagram.svg'
-import twitter from './twitter.svg'
+import facebook from './facebook.svg';
+import github from './github.svg';
+import instagram from './instagram.svg';
+import twitter from './twitter.svg';
 
-const data = [
+const socialLinks = [
   {
     img: twitter,
     name: 'Twitter',
@@ -27,7 +27,7 @@ const data = [
     name: 'GitHub',
     url: 'https://github.com/strykeforce',
   },
-]
+];
 
 const List = styled.ul`
   display: flex;
@@ -37,21 +37,21 @@ const List = styled.ul`
   align-items: center;
   padding: 0;
   margin: 0;
-`
+`;
 
 const Item = styled.li`
   list-style: none;
-`
+`;
 
 const Icon = styled.img`
   height: 2em;
   padding-left: 1em;
   padding-right: 1em;
-`
+`;
 
-export const FooterSocial: React.SFC<{}> = () => (
+export const FooterSocial: React.FC<{}> = () => (
   <List>
-    {data.map(s => (
+    {socialLinks.map(s => (
       <Item key={s.name}>
         <a href={s.url} target="_blank" rel="noopener noreferrer">
           <Icon src={s.img} alt={s.name} />
@@ -59,4 +59,4 @@ export const FooterSocial: React.SFC<{}> = () => (
       </Item>
     ))}
   </List>
-)
+);

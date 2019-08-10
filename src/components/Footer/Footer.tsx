@@ -1,19 +1,19 @@
-import { Link } from 'gatsby'
-import React from 'react'
-import styled from 'react-emotion'
-import logo from './2767.svg'
-import { Rule } from './FooterRule'
-import { FooterSocial } from './FooterSocial'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'react-emotion';
+import logo from './2767.svg';
+import { Rule } from './FooterRule';
+import { FooterSocial } from './FooterSocial';
 
 const Logo = styled.img`
   height: 4rem;
-`
+`;
 
 const CenteredWrapper = styled.div`
   text-align: center;
-`
+`;
 
-const Footer: React.SFC<{}> = () => (
+const Footer: React.FC<{}> = () => (
   <CenteredWrapper>
     <Rule />
     <Link to="/">
@@ -24,6 +24,6 @@ const Footer: React.SFC<{}> = () => (
       <small>Stryke Force © 2018 - 2019</small>
     </p>
   </CenteredWrapper>
-)
+);
 
-export default Footer
+export default Footer;

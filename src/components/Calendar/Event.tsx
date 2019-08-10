@@ -1,29 +1,29 @@
-import React from 'react'
-import styled from 'react-emotion'
+import React from 'react';
+import styled from 'react-emotion';
 
 const EventDiv = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
   font-size: 0.85em;
-`
+`;
 
 const Name = styled.span`
   font-weight: bold;
   padding-bottom: 0.15em;
-`
+`;
 
 const Date = styled.time`
   font-weight: normal;
   padding-bottom: 0.25em;
-`
+`;
 
 const Address = styled.address`
   font-size: 0.9em;
   font-style: normal;
-`
+`;
 
-const Event: React.SFC<{ event: EventData }> = ({ event }) => (
+const Event: React.FC<{ event: EventData }> = ({ event }) => (
   <EventDiv>
     <Name>{event.name}</Name>
     <Date>{event.date}</Date>
@@ -36,6 +36,6 @@ const Event: React.SFC<{ event: EventData }> = ({ event }) => (
       <br />
     </Address>
   </EventDiv>
-)
+);
 
-export default Event
+export default Event;

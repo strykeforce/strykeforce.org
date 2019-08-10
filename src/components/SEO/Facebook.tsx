@@ -1,13 +1,13 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
 
-const BASE = 'https://www.strykeforce.org'
+const BASE = 'https://www.strykeforce.org';
 
-export const Facebook: React.SFC<PostDetail> = ({ frontmatter }) => {
+export const Facebook: React.FC<PostDetail> = ({ frontmatter }) => {
   if (!frontmatter.image) {
-    return null
+    return null;
   }
-  const original = frontmatter.image.childImageSharp.original
+  const original = frontmatter.image.childImageSharp.original;
   return (
     <Helmet
       meta={[
@@ -49,5 +49,5 @@ export const Facebook: React.SFC<PostDetail> = ({ frontmatter }) => {
         },
       ]}
     />
-  )
-}
+  );
+};

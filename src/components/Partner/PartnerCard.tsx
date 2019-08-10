@@ -1,7 +1,6 @@
-import Img from 'gatsby-image'
-import React from 'react'
-import styled from 'react-emotion'
-import { CardWrapper } from '../CardGallery/CardWrapper'
+import React from 'react';
+import styled from 'react-emotion';
+import { CardWrapper } from '../CardGallery/CardWrapper';
 
 const PartnerDiv = styled.div`
   display: flex;
@@ -15,12 +14,12 @@ const PartnerDiv = styled.div`
     flex-flow: column;
     width: auto;
   }
-`
+`;
 
 const Logo = styled.img`
   max-width: 100%;
   height: auto;
-`
+`;
 
 const Blurb = styled.p`
   text-align: left;
@@ -31,9 +30,9 @@ const Blurb = styled.p`
     padding-left: 0;
     max-width: 100%;
   }
-`
+`;
 
-export const PartnerCard: React.SFC<{ item: Partner }> = ({ item }) => (
+export const PartnerCard: React.FC<{ item: Partner }> = ({ item }) => (
   <CardWrapper>
     <PartnerDiv>
       <a href={item.url} target="_blank" rel="noopener noreferrer">
@@ -42,4 +41,4 @@ export const PartnerCard: React.SFC<{ item: Partner }> = ({ item }) => (
       <Blurb>{item.text}</Blurb>
     </PartnerDiv>
   </CardWrapper>
-)
+);

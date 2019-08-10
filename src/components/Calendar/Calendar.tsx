@@ -1,16 +1,16 @@
-import { graphql, StaticQuery } from 'gatsby'
-import React from 'react'
-import styled from 'react-emotion'
-import Event from './Event'
+import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
+import styled from 'react-emotion';
+import Event from './Event';
 
 interface CalendarData {
   allCalendarToml: {
-    edges: Array<{
+    edges: {
       node: {
-        events: EventData[]
-      }
-    }>
-  }
+        events: EventData[];
+      };
+    }[];
+  };
 }
 
 const CalendarDiv = styled.div`
@@ -22,13 +22,13 @@ const CalendarDiv = styled.div`
   @media (max-width: 480px) {
     width: auto;
   }
-`
+`;
 
 const Header = styled.h2`
   text-align: center;
-`
+`;
 
-const Calendar: React.SFC<{}> = () => (
+const Calendar: React.FC<{}> = () => (
   <CalendarDiv>
     <Header>Calendar</Header>
     <StaticQuery
@@ -51,13 +51,12 @@ const Calendar: React.SFC<{}> = () => (
           }
         }
       `}
-      // tslint:disable-next-line:jsx-no-lambda
       render={(data: CalendarData) => {
-        const events = data.allCalendarToml.edges[0].node.events
-        return events.map((e: EventData) => <Event event={e} key={e.date} />)
+        const events: EventData[] = data.allCalendarToml.edges[0].node.events;
+        return events.map(e => <Event event={e} key={e.date} />);
       }}
     />
   </CalendarDiv>
-)
+);
 
-export default Calendar
+export default Calendar;

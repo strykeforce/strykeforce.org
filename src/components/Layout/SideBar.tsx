@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'react-emotion'
-import Calendar from '../Calendar/Calendar'
+import React from 'react';
+import styled from 'react-emotion';
+import Calendar from '../Calendar/Calendar';
 
-const Div = styled.div``
+const Div = styled.div``;
 
-const SideBar: React.SFC<{}> = () => (
+const SideBar: React.FC<{}> = () => (
   <Div>
     <Calendar />
   </Div>
-)
+);
 
-export default SideBar
+export default SideBar;
