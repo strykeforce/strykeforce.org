@@ -10,7 +10,7 @@ interface ContactFormProps {
   color: string;
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled('div')`
   max-width: 25em;
   margin: 0.625em auto;
   padding: 1em;
@@ -53,8 +53,8 @@ interface ColorProps {
   formColor: string;
 }
 
-const Title = styled.h1`
-  background: ${(props: ColorProps): string => props.formColor};
+const Title = styled('h1')<ColorProps>`
+  background: ${(props): string => props.formColor};
   padding: 20px 0;
   font-size: 140%;
   font-weight: 300;
@@ -63,13 +63,13 @@ const Title = styled.h1`
   margin: -16px -16px 16px -16px;
 `;
 
-const Submit = styled.input`
+const Submit = styled('input')<ColorProps>`
   box-sizing: border-box;
   width: 100%;
   padding: 3%;
   color: white;
-  background: ${(props: ColorProps): string => props.formColor};
-  border-bottom: 2px solid ${(props: ColorProps): string => props.formColor};
+  background: ${(props): string => props.formColor};
+  border-bottom: 2px solid ${(props): string => props.formColor};
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;

@@ -67,11 +67,11 @@ const narrow = css`
   }
 `;
 
-const ItemLink = styled(Link)`
+const ItemLink = styled(Link)<ItemLinkProps>`
   text-decoration: none !important;
   font-weight: bold;
   font-size: 120%;
-  color: ${({ path, menu }: ItemLinkProps) => (path.startsWith(menu, 1) ? '#fff' : '#333')};
+  color: ${({ path, menu }) => (path.startsWith(menu, 1) ? '#fff' : '#333')};
 `;
 
 const toggleBurger = (): void => {
