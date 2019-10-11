@@ -54,32 +54,59 @@ const AboutIndexPage: React.FC<AboutIndexPageProps> = ({ location: { pathname },
         </Post>
       </PostIndexDiv>
       <PostIndex posts={postNodes.filter(({ node }) => !path.basename(node.fileAbsolutePath).startsWith('_'))} />
-      <Post>
-        <a href="https://strykeforce.smugmug.com" target="_blank" rel="noopener noreferrer">
-          <img
-            src="/smugmug.svg"
-            alt="SmugMug"
-            css={css`
-              width: 35%;
-              padding-top: 1em;
-            `}
-          />
-        </a>
-        <p>Visit Stryke Force on SmugMug to view, download or purchase team photos.</p>
-      </Post>
-      <Post>
-        <a href="https://www.youtube.com/channel/UCf1qXXCYeVqUYSJApcr7RRg" target="_blank" rel="noopener noreferrer">
-          <img
-            src="/youtube.svg"
-            alt="YouTube"
-            css={css`
-              width: 28%;
-              padding-top: 1em;
-            `}
-          />
-        </a>
-        <p>Visit Stryke Force on YouTube to view team highlight and training videos.</p>
-      </Post>
+      <PostIndexDiv>
+        <Post>
+          <a href="https://strykeforce.smugmug.com" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/smugmug.svg"
+              alt="SmugMug"
+              css={css`
+                width: 35%;
+                padding-top: 1em;
+              `}
+            />
+          </a>
+          <p>Visit Stryke Force on SmugMug to view, download or purchase team photos.</p>
+        </Post>
+        <Post>
+          <a href="https://www.youtube.com/channel/UCf1qXXCYeVqUYSJApcr7RRg" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/youtube.svg"
+              alt="YouTube"
+              css={css`
+                width: 28%;
+                padding-top: 1em;
+              `}
+            />
+          </a>
+          <p>Visit Stryke Force on YouTube to view team highlight and training videos.</p>
+        </Post>
+        <Post>
+          <h2>Attribution</h2>
+          <p>
+            The Stryke Force website is powered by{' '}
+            <a href="https://www.gatsbyjs.org" target="_blank" rel="noopener noreferrer">
+              GatsbyJS
+            </a>{' '}
+            and{' '}
+            <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">
+              netlify
+            </a>
+            .
+          </p>
+          <p>
+            Icons provided by{' '}
+            <a href="https://fontawesome.com" target="_blank" rel="noopener noreferrer">
+              Font Awesome
+            </a>{' '}
+            under a{' '}
+            <a href="https://fontawesome.com/license/free" target="_blank" rel="noopener noreferrer">
+              CC BY 4.0 License
+            </a>
+            .
+          </p>
+        </Post>
+      </PostIndexDiv>
     </Layout>
   );
 };
