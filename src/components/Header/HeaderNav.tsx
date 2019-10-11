@@ -75,7 +75,7 @@ const ItemLink = styled(Link)<ItemLinkProps>`
 `;
 
 const toggleBurger = (): void => {
-  const linksEl = document.querySelector(`.${narrow}`) as HTMLElement;
+  const linksEl = document.querySelector('#navNarrowId') as HTMLElement;
   linksEl.style.display =
     linksEl.style.display === 'flex' ? (linksEl.style.display = 'none') : (linksEl.style.display = 'flex');
 };
@@ -83,7 +83,7 @@ const toggleBurger = (): void => {
 export const HeaderNav: React.FC<HeaderProps> = ({ path }) => (
   <Nav>
     <div className="navWide">
-      <ul css={wide}>
+      <ul id="navWideId" css={wide}>
         <li>
           <ItemLink to="/about/" menu="about" path={path}>
             About
@@ -111,7 +111,7 @@ export const HeaderNav: React.FC<HeaderProps> = ({ path }) => (
     </div>
     <div className="navNarrow">
       <Burger src={bars} alt="Menu" onClick={toggleBurger} />
-      <ul css={narrow}>
+      <ul id="navNarrowId" css={narrow}>
         <li>
           <ItemLink to="/about/" menu="about" path={path} onClick={toggleBurger}>
             About
