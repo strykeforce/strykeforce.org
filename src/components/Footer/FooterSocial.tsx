@@ -5,6 +5,7 @@ import facebook from './facebook.svg';
 import github from './github.svg';
 import instagram from './instagram.svg';
 import twitter from './twitter.svg';
+import snapchat from './snapchat.svg';
 
 const socialLinks = [
   {
@@ -21,6 +22,11 @@ const socialLinks = [
     img: instagram,
     name: 'Instagram',
     url: 'https://instagram.com/2767strykeforce',
+  },
+  {
+    img: snapchat,
+    name: 'Snapchat',
+    url: 'https://www.snapchat.com/add/strykeforce2767',
   },
   {
     img: github,
