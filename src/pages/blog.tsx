@@ -27,7 +27,9 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({
           content="News from Stryke Force Team 2767, a FIRST Robotics Team from Kalamazoo, Michigan."
         />
       </Helmet>
-
+      <h2>
+        Sign up for our <a href="http://eepurl.com/bBlRN1">monthly newsletter</a>!
+      </h2>
       <PostIndex posts={edges.filter((post): boolean => !!post.node.frontmatter.date)} />
     </Layout>
   );
