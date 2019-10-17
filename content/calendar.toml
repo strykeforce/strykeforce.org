@@ -42,3 +42,12 @@ street = "3333 96th Ave."
 city = "Zeeland"
 state = "MI"
 zip = "49464"
+
+[[events]]
+name = "NRG Competition"
+date = 2019-10-19T00:00:00Z
+venue = "Portage District Library"
+street = "300 Library Ln"
+city = "Portage"
+state = "MI"
+zip = "49002"
