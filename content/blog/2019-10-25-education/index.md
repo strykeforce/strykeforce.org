@@ -4,7 +4,7 @@ path: /blog/2019-10-25-education/
 date: 2019-10-25T00:00:00Z
 image: social.jpg
 description: Stryke Force is helping students receive education in new and different ways, helping them prepare for the future.
-author: Sofia A.
+author: Cassie N.
 ---
 
 Stryke Force is helping students receive education in new and different ways, helping them prepare for the future.
