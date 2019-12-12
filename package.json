@@ -33,10 +33,10 @@
     "gatsby-transformer-toml": "^2.2.21",
     "intersection-observer": "^0.7.0",
     "object-fit-images": "^3.2.3",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.3"
   },
   "keywords": [
     "gatsby"
@@ -53,15 +53,15 @@
     "upgrade": "npm-check --update"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.6.0",
-    "@typescript-eslint/parser": "^2.6.0",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.5.0",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-emotion": "^10.0.14",
     "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react": "^7.17.0",
     "npm-check": "^5.9.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.19.1"
   },
   "repository": {
     "type": "git",
