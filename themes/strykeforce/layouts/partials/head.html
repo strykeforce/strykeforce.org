@@ -1,0 +1,44 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  {{ hugo.Generator }}
+  <title>{{ .Site.Title }}</title>
+  <meta
+    content="Stryke Force 4-H FIRST Robotics Team 2767 is
+    a community robotics team based in Kalamazoo,
+    Michigan. We are FRC 2767, FTC 7228 and FTC  8553."
+    name="description"
+  />
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@id": "https://www.strykeforce.org/#organization",
+      "@type": "Organization",
+      "address": {
+        "@context": "http://schema.org",
+        "@type": "PostalAddress",
+        "addressCountry": "USA",
+        "addressLocality": "Kalamazoo",
+        "addressRegion": "MI",
+        "postalCode": "49001",
+        "streetAddress": "3710 Gembrit Circle"
+      },
+      "description": "Stryke Force 4-H FIRST Robotics Team 2767 is a community FIRST robotics team based in Kalamazoo, Michigan.",
+      "logo": "https://www.strykeforce.org/logo.png",
+      "name": "Stryke Force 4-H FIRST Robotics Team 2767",
+      "sameAs": [
+        "https://twitter.com/2767StrykeForce",
+        "https://facebook.com/2767strykeforce",
+        "https://github.com/strykeforce",
+        "https://instagram.com/2767strykeforce",
+        "https://strykeforce.smugmug.com"
+      ],
+      "url": "https://www.strykeforce.org/"
+    }
+  </script>
+  {{ $main := resources.Get "css/main.css" | resources.PostCSS }}
+  <link rel="stylesheet" href="{{ $main.Permalink }}" />
+  {{ $header := resources.Get "css/header.css" | resources.PostCSS }}
+  <link rel="stylesheet" href="{{ $header.Permalink }}" />
+</head>
