@@ -2,7 +2,7 @@
 title: 2019 Chairman's Award Video
 date: 2019-06-19T12:23:48Z
 images:
-  - cover.jpg
+  - blog/2019/06/19-chairmans-video/cover.jpg
 description: Every year, Stryke Force submits their Chairman's Award video.
 author: Ethan L.
 draft: false

@@ -2,7 +2,7 @@
 title: Stryke Force Students Compete in Science Olympiad
 date: 2019-04-24T14:24:50Z
 images:
-  - cover.jpg
+  - blog/2019/04/24-science/cover.jpg
 description: A few weeks ago, four Stryke Force students competed in a Regional Science Olympiad Tournament.
 author: Zach Z.
 draft: false

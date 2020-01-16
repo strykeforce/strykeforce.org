@@ -2,7 +2,7 @@
 title: 'It’s official: DESTINATION: DEEP SPACE Presented By The Boeing Company has “lifted off”'
 date: 2019-01-08T13:20:26Z
 images:
-  - cover.jpg
+  - blog/2019/01/08-game-reveal/cover.jpg
 description: 'It’s official: FRC 2019 game DESTINATION: DEEP SPACE has “lifted off”'
 author: Ethan L.
 draft: false

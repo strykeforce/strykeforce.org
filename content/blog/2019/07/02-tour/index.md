@@ -2,7 +2,7 @@
 title: Stryke Force is Going on Tour
 date: 2019-07-02T12:23:48Z
 images:
-  - cover.jpg
+  - blog/2019/07/02-tour/cover.jpg
 description: During the summer, the team is planning to do a little bit of traveling and attend three events outside of the regular season.
 author: Ethan L.
 draft: false

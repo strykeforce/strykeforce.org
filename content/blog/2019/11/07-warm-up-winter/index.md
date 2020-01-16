@@ -2,7 +2,7 @@
 title: 'Stryke Force supports the Kalamazoo Gospel Mission through ‘Warm Up the Winter’'
 date: 2019-11-07T00:00:00Z
 images:
-  - cover.jpg
+  - blog/2019/11/07-warm-up-winter/cover.jpg
 description: This holiday season, Stryke Force is proud to help student Samuel R. collect winter wear for the Kalamazoo Gospel Mission.
 author: Shelby A.
 draft: false

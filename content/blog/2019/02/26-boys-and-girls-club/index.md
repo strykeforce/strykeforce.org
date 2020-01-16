@@ -2,7 +2,7 @@
 title: Fun times at the Boys and Girls Club
 date: 2019-03-06T18:49:42Z
 images:
-  - cover.jpg
+  - blog/2019/02/26-boys-and-girls-club/cover.jpg
 description: Fun times at the Boys and Girls Club
 author: Cassie N.
 draft: false

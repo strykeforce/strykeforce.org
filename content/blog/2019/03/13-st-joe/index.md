@@ -2,7 +2,7 @@
 title: Stryke Force at the St. Joseph District Competition
 date: 2019-03-13T14:24:50Z
 images:
-  - cover.jpg
+  - blog/2019/03/13-st-joe/cover.jpg
 description: This weekend at St. Joseph High School, Stryke Force played in its first competition, and showed the robot off to the world for the first time!
 author: Ethan L.
 draft: false

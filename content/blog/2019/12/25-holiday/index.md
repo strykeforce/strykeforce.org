@@ -2,7 +2,7 @@
 title: Happy Holidays from Stryke Force!
 date: 2019-12-25T00:00:00Z
 images:
-  - cover.jpg
+  - blog/2019/12/25-holiday/cover.jpg
 description: Happy Holidays from all of the students, families, and mentors of Stryke Force!
 author: Ethan L.
 draft: false

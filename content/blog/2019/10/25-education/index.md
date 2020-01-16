@@ -2,7 +2,7 @@
 title: The Stryke Force Education Experience
 date: 2019-10-25T00:00:00Z
 images:
-  - cover.jpg
+  - blog/2019/10/25-education/cover.jpg
 description: Stryke Force is helping students receive education in new and different ways, helping them prepare for the future.
 author: Cassie N.
 draft: false

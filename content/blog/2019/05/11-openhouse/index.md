@@ -2,7 +2,7 @@
 title: Come on Down to Stryke Force's 2019 Open Houses!
 date: 2019-05-11T14:24:50Z
 images:
-  - cover.jpg
+  - blog/2019/05/11-openhouse/cover.jpg
 description: An invatation to Stryke Force's 2019 open houses.
 author: Audrey R.
 draft: false

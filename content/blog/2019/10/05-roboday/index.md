@@ -2,7 +2,7 @@
 title: Stryke Force at our first Ferris State University Roboday
 date: 2019-10-05T00:00:00Z
 images:
-  - cover.jpg
+  - blog/2019/10/05-roboday/cover.jpg
 description: Our third off-season event with our FRC team at Stryke Force was September 28 at Ferris State University in Big Rapids, Michigan.
 author: Ethan L.
 draft: false

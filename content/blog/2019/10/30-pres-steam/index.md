@@ -2,7 +2,7 @@
 title: Stryke Force at the Prairie Ridge Elementary School STEAM Night
 date: 2019-10-30T00:00:00Z
 images:
-  - cover.jpg
+  - blog/2019/10/30-pres-steam/cover.jpg
 description: Stryke Force participated in Prairie Ridge Elementary School’s 2019 STEAM Night
 author: Ethan L.
 draft: false

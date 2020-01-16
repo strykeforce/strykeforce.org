@@ -2,7 +2,7 @@
 title: VEX IQ Season Finish
 date: 2019-12-12T00:00:00Z
 images:
-  - cover.jpg
+  - blog/2019/12/12-vex/cover.jpg
 description: The first VEX IQ season at Stryke Force has officially come to an end. The children ended off the season with a bang, at their competition, where they worked together with other teams to gain the most points.
 author: Cassie N.
 draft: false

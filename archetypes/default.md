@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 images:
-  - cover.jpg
+  - {{ .File.Dir }}cover.jpg
 description: Put a one-sentence description here.
 author: First L.
 draft: false

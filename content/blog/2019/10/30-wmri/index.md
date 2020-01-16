@@ -2,7 +2,7 @@
 title: 'Stryke Force at the West Michigan Robotics Invitational 2019: Goodbye Airtight!'
 date: 2019-10-30T00:00:01Z
 images:
-  - cover.jpg
+  - blog/2019/10/30-wmri/cover.jpg
 description: The West Michigan Robotics Invitational (WMRI) was Stryke Force's final 2019 off-season event.
 author: Zach Z.
 draft: false
