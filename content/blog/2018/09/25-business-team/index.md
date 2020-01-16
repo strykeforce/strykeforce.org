@@ -1,7 +1,7 @@
 ---
 title: "Let's Get Down to Business"
 date: 2018-09-25T18:25:05Z
-image: './social.jpg'
+image: './cover.jpg'
 description: 'Giving professional presentations, forming relationships with local businesses, editing web pages and planning community events: what do all of these actions have in common?'
 author: 'Audrey R.'
 draft: false

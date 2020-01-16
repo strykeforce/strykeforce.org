@@ -1,7 +1,7 @@
 ---
 title: FTC Season Preview
 date: 2018-08-02T12:04:13Z
-image: './social.jpg'
+image: './cover.jpg'
 description: "We are gearing up for our FIRST Tech Challenge (FTC) season.  This year's teams include 4 returning students and 19 rookie students from schools all over the greater Kalamazoo area."
 author: 'Missy D., FTC Coach'
 draft: false

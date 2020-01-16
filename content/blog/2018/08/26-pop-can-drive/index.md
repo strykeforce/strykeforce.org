@@ -1,7 +1,7 @@
 ---
 title: 'The FTC season is off to a great start!'
 date: 2018-08-26T18:00:49Z
-image: './social.jpg'
+image: './cover.jpg'
 description: 'The Stryke Force FTC kids have been meeting since the beginning of August to get to know each other and learn some basic skills.'
 author: 'Missy D., FTC Coach'
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: Student Sam R. Talks About Balancing Schedules
 date: 2018-12-13T13:15:06Z
-image: ./social.jpg
+image: ./cover.jpg
 description: Balancing Schedules
 author: Sam R.
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: 'Kaitlin Konopacz Speaks About Work and Beyond'
 date: 2018-10-16T12:55:33Z
-image: './social.jpg'
+image: './cover.jpg'
 description: 'One of the most valuable takeaways from our time at Stryke Force is all the knowledge and experience that we absorb.'
 author: 'Ethan L.'
 draft: false

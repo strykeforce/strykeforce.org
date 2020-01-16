@@ -1,7 +1,7 @@
 ---
 title: FTC Constantine Qualifier
 date: 2018-12-09T17:19:18Z
-image: ./social.jpg
+image: ./cover.jpg
 description: FTC Constantine Qualifier
 author: Missy D., FTC Coach
 draft: false

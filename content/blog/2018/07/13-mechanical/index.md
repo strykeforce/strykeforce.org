@@ -1,7 +1,7 @@
 ---
 title: 2018 Summer Mechanical Projects
 date: 2018-07-13T22:11:12Z
-image: './social.jpg'
+image: './cover.jpg'
 description: 'The Stryke Force Mechanical Team is working on several projects this summer.'
 author: 'Jack B.'
 draft: false

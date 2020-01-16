@@ -1,7 +1,7 @@
 ---
 title: Stryke Force visits the Michigan State Board of Education
 date: 2018-06-12T16:54:26Z
-image: './social.jpg'
+image: './cover.jpg'
 description: 'FRC teams 2767 and 27 present on FIRST Robotics to the Michigan State Board of Education.'
 author: 'Drew S.'
 draft: false

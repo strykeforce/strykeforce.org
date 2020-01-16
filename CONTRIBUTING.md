@@ -30,13 +30,13 @@ If you are developing the site itself, in addition to above:
 
 ## Linking Blog Posts to Social Media
 
-1. Create a social image in PhotoShop called `social.jpg`
+1. Create a social image in PhotoShop called `cover.jpg`
    - Cropped to 1.91:1
    - Resized to 1200x630
    - Export as 80% JPG
 2. Fill out the following front matter fields in the blog post markdown:
    - `path: "/blog/blah/"`: should end with a trailing `/` to prevent server redirects.
-   - `image: "./social.jpg"`
+   - `image: "./cover.jpg"`
    - `description: Stryke Force blah blah..`
 3. If desired, test at:
    - **Facebook:** https://developers.facebook.com/tools/debug/sharing/

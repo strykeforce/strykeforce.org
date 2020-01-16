@@ -1,7 +1,7 @@
 ---
 title: FTC Season Update
 date: 2018-12-25T13:39:19Z
-image: social.jpg
+image: cover.jpg
 description: FTC had an exciting 2018-2019 season!
 author: Missy D.
 draft: false

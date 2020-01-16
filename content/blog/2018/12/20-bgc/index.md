@@ -1,7 +1,7 @@
 ---
 title: Stryke Force teaches STEM at the Boys and Girls Club
 date: 2018-12-20T13:44:56Z
-image: social.jpg
+image: cover.jpg
 description: Boys and Girls Club
 author: Audrey R.
 draft: false

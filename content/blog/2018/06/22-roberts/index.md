@@ -1,7 +1,7 @@
 ---
 title: 2018 Summer Software Projects
 date: 2018-06-22T13:33:07Z
-image: './social.jpg'
+image: './cover.jpg'
 description: 'The software developers have a busy summer planned, packed with new and exciting updates to the swerve drive, our use of sensors, and computer vision!'
 author: 'Roberts K.'
 draft: false

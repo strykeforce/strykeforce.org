@@ -1,7 +1,7 @@
 ---
 title: Stryke Force appreciates veterans at Talons Out Honor Flight
 date: 2019-11-13T00:00:00Z
-image: social.jpg
+image: cover.jpg
 description: Stryke Force had the amazing opportunity to welcome veterans back home from their Washington D.C trip at the 2019 Talons Out Honor Flight.
 author: Cassie N.
 draft: false

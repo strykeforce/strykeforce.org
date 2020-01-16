@@ -1,7 +1,7 @@
 ---
 title: '2018 Open Houses were a Huge Success!'
 date: 2018-06-16T11:20:23Z
-image: './social.jpg'
+image: './cover.jpg'
 description: 'Stryke Force hosted guests and new students at their 2018 Open House at Midlink Business Park.'
 author: 'Ethan L.'
 draft: false

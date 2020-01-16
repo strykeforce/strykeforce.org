@@ -1,7 +1,7 @@
 ---
 title: Bronson Park Tree Lighting Ceremony
 date: 2018-11-30T15:31:44Z
-image: ./social.jpg
+image: ./cover.jpg
 description: Last Friday, at Bronson Park in downtown Kalamazoo, the annual tree lighting ceremony drew numerous spectators.
 author: Ethan L.
 draft: false
