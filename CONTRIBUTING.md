@@ -36,7 +36,7 @@ If you are developing the site itself, in addition to above:
    - Export as 80% JPG
 2. Fill out the following front matter fields in the blog post markdown:
    - `path: "/blog/blah/"`: should end with a trailing `/` to prevent server redirects.
-   - `image: "./cover.jpg"`
+   - `images: cover.jpg`
    - `description: Stryke Force blah blah..`
 3. If desired, test at:
    - **Facebook:** https://developers.facebook.com/tools/debug/sharing/

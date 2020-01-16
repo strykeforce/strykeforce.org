@@ -1,7 +1,8 @@
 ---
 title: 'Stryke Force shows appreciation for Talons Out Honor Flight'
 date: 2018-09-23T18:25:05Z
-image: './cover.jpg'
+images:
+  - cover.jpg
 description: 'This past weekend Stryke Force participated in a great opportunity to serve our community, and our veterans.'
 author: 'Hunter M.'
 draft: false

@@ -1,7 +1,8 @@
 ---
 title: Indiana Robotics Invitational 2019, and What I Learned
 date: 2019-07-31T12:23:48Z
-image: cover.jpg
+images:
+  - cover.jpg
 description: In mid July, Stryke Force attended the Indiana Robotics Invitational (IRI).
 author: Alex Z.
 draft: false

@@ -1,7 +1,8 @@
 ---
 title: 'West Michigan Robotics Invitational'
 date: 2018-10-30T21:36:46Z
-image: './cover.jpg'
+images:
+  - cover.jpg
 description: 'WMRI went great, we started out a little rusty but we picked up the pace and worked out the kinks to be the first alliance captain.'
 author: 'Greg R.'
 draft: false

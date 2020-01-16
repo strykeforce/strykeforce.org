@@ -1,7 +1,8 @@
 ---
 title: Safety Is The Number One Concern of Stryke Force
 date: 2019-02-11T12:52:21Z
-image: cover.jpg
+images:
+  - cover.jpg
 description: Safety is the number one concern of Stryke Force and of FIRST
 author: Carter B.
 draft: false

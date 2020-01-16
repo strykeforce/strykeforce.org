@@ -1,7 +1,8 @@
 ---
 title: Last Week's FRC to FTC Mentoring
 date: 2018-08-22T22:34:52Z
-image: './cover.jpg'
+images:
+  - cover.jpg
 description: 'The 2018 FIRST Tech Challenge (FTC) season is starting soon, and Stryke Force is gearing up for action! '
 author: 'Aayush M.'
 draft: false

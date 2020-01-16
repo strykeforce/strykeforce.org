@@ -1,7 +1,8 @@
 ---
 title: New 2018 Michigan FIRST Budget
 date: 2018-07-17T13:23:27Z
-image: './cover.jpg'
+images:
+  - cover.jpg
 description: 'The 2019 state education budget is not only good news for Stryke Force, but the entirety of FIRST as well!'
 author: 'Ethan L.'
 draft: false

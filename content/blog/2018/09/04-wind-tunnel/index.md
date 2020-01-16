@@ -1,7 +1,8 @@
 ---
 title: 'Stryke Force Blown Away by WMU Wind Tunnels'
 date: 2018-09-04T18:57:16Z
-image: './cover.jpg'
+images:
+  - cover.jpg
 description: 'Stryke Force students got the opportunity to tour of Western Michigan University’s Applied Aerodynamics Laboratory with Dr. Tianshu Liu and learn about Western’s Aerospace Engineering program.'
 author: 'Carter B.'
 draft: false

@@ -1,7 +1,8 @@
 ---
 title: Stryke Force at the 2019 FIRST Championship in Detroit
 date: 2019-05-10T14:24:50Z
-image: cover.jpg
+images:
+  - cover.jpg
 description: A recap of Stryke Force's experiences at the 2019 First Championship in Detroit.
 author: Ethan L.
 draft: false

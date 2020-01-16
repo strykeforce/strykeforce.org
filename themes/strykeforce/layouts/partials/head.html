@@ -37,6 +37,11 @@
       "url": "https://www.strykeforce.org/"
     }
   </script>
+  <!-- opengraph -->
+  {{ template "_internal/opengraph.html" . }}
+  <!-- twitter -->
+  {{ template "_internal/twitter_cards.html" . }}
+  <!-- -->
   {{ $main := resources.Get "css/main.css" | resources.PostCSS }}
   <link rel="stylesheet" href="{{ $main.Permalink }}" />
   {{ $header := resources.Get "css/header.css" | resources.PostCSS }}

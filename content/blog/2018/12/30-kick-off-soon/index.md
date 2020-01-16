@@ -1,7 +1,8 @@
 ---
 title: '2019 Game "FIRST: Destination Deep Space" kicks off very soon!'
 date: 2018-12-30T20:45:02Z
-image: cover.jpg
+images:
+  - cover.jpg
 description: It’s coming very soon...the official 2019 game for FIRST will launch this Saturday, January 5th at 10:30 a.m.
 author: Ethan L.
 draft: false

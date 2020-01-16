@@ -1,7 +1,8 @@
 ---
 title: A look at Stryke Force last Tuesday
 date: 2019-09-20T00:00:00Z
-image: cover.jpg
+images:
+  - cover.jpg
 description: Next Robotics Generation starts its season.
 author: Ethan L.
 draft: false

@@ -1,7 +1,8 @@
 ---
 title: 'Observations from West Michigan Robotics Invitational'
 date: 2018-11-04T23:14:31Z
-image: './cover.jpg'
+images:
+  - cover.jpg
 description: 'The Western Michigan Robotics Invitational (WMRI) exposed me to a completely different atmosphere of what robotics competitions are like'
 author: 'Zach Z.'
 draft: false

@@ -1,7 +1,8 @@
 ---
 title: VEX is Next!
 date: 2019-12-07T00:00:00Z
-image: cover.jpg
+images:
+  - cover.jpg
 description: Throughout the VEX IQ season, the high school FRC team has had the opportunity to introduce and teach the kids some of the skills that we believe would help them in their season, or when they join the high school team.
 author: Cassie N.
 draft: false

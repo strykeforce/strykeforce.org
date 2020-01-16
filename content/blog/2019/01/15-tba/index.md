@@ -1,7 +1,8 @@
 ---
 title: The Blue Alliance rolls out app for iOS devices
 date: 2019-01-15T15:13:37Z
-image: cover.jpg
+images:
+  - cover.jpg
 description: The Blue Alliance rolls out app for iOS devices
 author: Ethan L.
 draft: false

@@ -1,7 +1,8 @@
 ---
 title: Rookie Ryan L. Details His Experiences So Far
 date: 2019-01-21T02:44:44Z
-image: cover.jpg
+images:
+  - cover.jpg
 description: Rookie Ryan L. details his experiences so far
 author: Ryan L.
 draft: false

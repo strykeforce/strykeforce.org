@@ -1,7 +1,8 @@
 ---
 title: Developing Software Skills with 2016 Stronghold Robot
 date: 2018-07-30T13:00:57Z
-image: './cover.jpg'
+images:
+  - cover.jpg
 description: 'The Stryke Force programmers are dusting off our old Stronghold robot for a software makeover.'
 author: 'Sam R.'
 draft: false

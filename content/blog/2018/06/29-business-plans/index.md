@@ -1,7 +1,8 @@
 ---
 title: 2018 Business Plans
 date: 2018-06-29T14:43:32Z
-image: './cover.jpg'
+images:
+  - cover.jpg
 description: 'The Stryke Force Business Team prepares a plan for the summer.'
 author: 'Ethan L.'
 draft: false

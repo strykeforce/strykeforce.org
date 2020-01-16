@@ -1,7 +1,8 @@
 ---
 title: Stryke Force at the Michigan State Championship
 date: 2019-04-24T14:24:50Z
-image: cover.jpg
+images:
+  - cover.jpg
 description: This past weekend at Saginaw Valley State University in Saginaw, Michigan, Team 2767 Stryke Force competed with the best FIRST robotics teams in the entire state.
 author: Ethan L.
 draft: false
