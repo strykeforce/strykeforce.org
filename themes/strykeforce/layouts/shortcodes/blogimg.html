@@ -1,5 +1,5 @@
 {{ $original := .Page.Resources.GetMatch (.Get 0) }} {{ $image := $original.Fit "640x480" }}
-<figure style="text-align: center;">
+<figure>
   <img src="{{ $image.RelPermalink }}" alt="{{ .Get 1 }}" />
   <figcaption>
     <p>{{ .Get 1 }}</p>

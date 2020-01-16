@@ -15,6 +15,11 @@ a {
   }
 }
 
+figure {
+  margin: 0;
+  tet-align: center;
+}
+
 p > img {
   display: block;
   margin-left: auto;
