@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Jeff Hutchison <jeff@j3ff.io>",
   "dependencies": {
-    "postcss-cli": "^7.0.0",
+    "postcss-cli": "^7.1.0",
     "postcss-preset-env": "^6.7.0"
   },
   "keywords": [
