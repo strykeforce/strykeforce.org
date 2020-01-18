@@ -1,30 +1,14 @@
 <div class="calendar">
   <h2 class="calendar__h2">Calendar</h2>
+  {{ range $.Site.Data.calendar.events }}
   <div class="event">
-    <span class="event__name">Ferdon Robot Roundup</span>
-    <time class="event__date">January 12, 2020</time>
+    <span class="event__name">{{ .name }}</span>
+    <time class="event__date">{{ .date.Format "January 2, 2006" }}</time>
     <address class="event_address">
-      Ferdon House <br />
-      3005 Ferdon Rd. <br />
-      Kalamazoo, MI 49008
+      {{ .venue }} <br />
+      {{ .street }} <br />
+      {{ .city }}, {{ .state }} {{ .zip }}
     </address>
   </div>
-  <div class="event">
-    <span class="event__name">Ferdon Robot Roundup</span>
-    <time class="event__date">January 12, 2020</time>
-    <address class="event_address">
-      Ferdon House <br />
-      3005 Ferdon Rd. <br />
-      Kalamazoo, MI 49008
-    </address>
-  </div>
-  <div class="event">
-    <span class="event__name">Ferdon Robot Roundup</span>
-    <time class="event__date">January 12, 2020</time>
-    <address class="event_address">
-      Ferdon House <br />
-      3005 Ferdon Rd. <br />
-      Kalamazoo, MI 49008
-    </address>
-  </div>
+  {{ end }}
 </div>
