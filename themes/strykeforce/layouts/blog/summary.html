@@ -1,0 +1,11 @@
+<article style="margin: auto;">
+  {{ partial "blog-header.html" . }}
+  <p>
+    {{ .Summary }}
+  </p>
+  {{ if .Truncated }}
+  <div class="more-button">
+    <a href="{{ .Permalink }}">Read More</a>
+  </div>
+  {{ end }}
+</article>

@@ -1,0 +1,19 @@
+<h2 style="margin-bottom: 0;">{{ .Title }}</h2>
+{{ if isset .Params "author" }}
+<p class="blog-list__date">
+  <small
+    >Posted on
+    <!-- -->{{ dateFormat "Jan 1, 2006" .Date }}<!-- -->
+    by
+    <!-- -->{{ .Params.author }}</small
+  >
+</p>
+{{ end }} {{ with .Resources.GetMatch "cover.*" }}<!-- -->
+{{ $image := .Fit "640x480" }}
+<img
+  style="max-width: 100%; width: auto; height: auto;"
+  src="{{ $image.RelPermalink }}"
+  width="{{ $image.Width }}"
+  height="{{ $image.Height }}"
+/>
+{{ end }}

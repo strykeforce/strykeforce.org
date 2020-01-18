@@ -1,0 +1,14 @@
+<div style="text-align: center;">
+  <ul class="gallery">
+    {{ range $.Site.Data.partners }}
+    <li>
+      <div class="gallery__card--partner">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+          <img src="{{ .logo }}" alt="{{ .name }} Logo" />
+        </a>
+        <p>{{ .text }}</p>
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+</div>

@@ -1,0 +1,35 @@
+{{ define "main" }}
+<ul class="gallery" style="align-items: flex-start;">
+  <li>
+    <div class="gallery__card--form">
+      <h1 class="form__title blue-background">Contact Us</h1>
+      <form action="/" name="Contact Us" method="POST" action="/" netlify-honeypot="subject" data-netlify>
+        <input type="text" name="name" placeholder="Your Name" autocomplete="name" required />
+        <input type="email" name="email" placeholder="Email Address" autocomplete="email" required />
+        <textarea name="message" placeholder="Type your Message" rows="5"></textarea>
+        <input style="display: none;" type="text" name="subject" />
+        <input type="hidden" name="form-name" value="Contact Us" />
+        <input class="form__submit blue-background" type="submit" value="Send" />
+      </form>
+    </div>
+  </li>
+  <li>
+    <div class="gallery__card--form">
+      <h1 class="form__title blue-background">New Members</h1>
+      <form action="/" name="New Members" method="POST" action="/" netlify-honeypot="subject" data-netlify>
+        <input type="text" name="student_name" placeholder="Student Name" required />
+        <input type="email" name="student_email" placeholder="Student Email Address" required />
+        <input type="text" name="parent_name" placeholder="Parent/Guardian Name" required />
+        <input type="email" name="parent_email" placeholder="Parent/Guardian Email Address" required />
+        <input type="text" name="grade" placeholder="Grade for Fall School Year" />
+        <input type="text" name="school" placeholder="School" />
+        <input type="text" name="referral" placeholder="How did you hear about us?" />
+        <textarea name="message" placeholder="Optional Message"></textarea>
+        <input style="display: none;" type="text" name="subject" />
+        <input type="hidden" name="form-name" value="New Members" />
+        <input class="form__submit blue-background" type="submit" value="Send" />
+      </form>
+    </div>
+  </li>
+</ul>
+{{ end }}

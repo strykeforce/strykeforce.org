@@ -1,0 +1,17 @@
+<div>
+  <ul class="gallery">
+    {{ range $.Site.Data.frc }}
+    <li>
+      <div class="gallery__card--team">
+        {{ $original := $.Page.Resources.GetMatch (printf "img/%s.jpg" .slug )}} {{ $image := $original.Fit "256x192" }}
+        <img src="{{ $image.RelPermalink }}" alt="" />
+        <div style="padding: 0 1em;">
+          <h2>{{ .display }}</h2>
+          <p style="margin: 0;">{{ .school }}</p>
+          <p class="gallery__quote">{{ .motto }}</p>
+        </div>
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+</div>

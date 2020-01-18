@@ -1,0 +1,25 @@
+{{ define "main" }} {{ "<!-- themes/strykeforce/layouts/_default/list.html -->" | safeHTML }}
+<div>
+  <main class="content__main content__main--column">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <ul>
+      <!-- Ranges through content/posts/*.md -->
+      {{ range .Pages }}
+      <article style="margin: auto;">
+        {{ partial "blog-header.html" . }}
+        <p>
+          {{ .Summary }}
+        </p>
+        {{ if .Truncated }}
+        <div class="more-button">
+          <a href="{{ .Permalink }}">Read More</a>
+        </div>
+        {{ end }}
+      </article>
+
+      {{ end }}
+    </ul>
+  </main>
+</div>
+{{ end }}

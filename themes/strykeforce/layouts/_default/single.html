@@ -1,0 +1,12 @@
+{{ define "main" }} {{ "<!-- themes/strykeforce/layouts/_default/single.html -->" | safeHTML }}
+<div>
+  <main class="content__main content__main--column">
+    <div class="blog-list">
+      <article style="margin: auto;">
+        {{ partial "blog-header.html" . }}
+        <div>{{ .Content }}</div>
+      </article>
+    </div>
+  </main>
+</div>
+{{ end }}

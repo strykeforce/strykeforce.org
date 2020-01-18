@@ -1,0 +1,4 @@
+baseURL = "https://strykeforce.org/"
+languageCode = "en-us"
+title = "Stryke Force"
+theme = "strykeforce"

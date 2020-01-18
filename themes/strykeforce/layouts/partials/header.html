@@ -1,0 +1,71 @@
+<!-- Background -->
+<!-- Navigation -->
+<div class="header">
+  <!-- HeaderLogo -->
+  <a href="/"><img class="logo" src="/img/logo.svg" alt="Stryke Force Logo"/></a>
+  <!-- HeaderNav -->
+  <!-- Nav -->
+  <nav>
+    <!-- div.navWide -->
+    <div class="site-nav site-nav--wide">
+      <!-- ul -->
+      <ul class="site-nav__menu--wide">
+        <li>
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "About") }}
+        </li>
+        <li>
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Blog") }}
+        </li>
+        <li>
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Resources") }}
+        </li>
+        <li>
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Contact") }}
+        </li>
+        <li>
+          <!-- DonateButton -->
+          <a style="border: 'none'" href="/resources/donation_form.pdf" download>
+            <img src="/img/donate.svg" />
+          </a>
+          <!-- /DonateButton -->
+        </li>
+      </ul>
+      <!-- /ul -->
+    </div>
+    <!-- /div -->
+    <!-- div.navNarrow -->
+    <div class="site-nav site-nav--narrow" onclick="toggleBurgerMenu()">
+      <!-- Burger -->
+      <img class="site-nav__burger" src="/img/bars.svg" alt="Menu" />
+      <!-- /Burger -->
+      <!-- ul -->
+      <ul id="site-nav__menu--narrow" class="site-nav__menu--narrow">
+        <li>
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "About") }}
+        </li>
+        <li>
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Blog") }}
+        </li>
+        <li>
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Resources") }}
+        </li>
+        <li>
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Contact") }}
+        </li>
+        <li>
+          <!-- DonateButton -->
+          <a style="border: 'none'" href="/resources/donation_form.pdf" download>
+            <img src="/img/donate.svg" />
+          </a>
+          <!-- /DonateButton -->
+        </li>
+      </ul>
+      <!-- /ul -->
+    </div>
+    <!-- /div -->
+  </nav>
+  <!-- /Nav -->
+  <!-- /HeaderNav -->
+</div>
+<!-- /Navigation -->
+<!-- /Background -->

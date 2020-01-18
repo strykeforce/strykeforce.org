@@ -1,0 +1,13 @@
+{{ define "banner" }}
+<div class="banner"></div>
+{{ end }} {{ define "main" }}
+<div>
+  <main class="content__main content__main--column">
+    {{ .Content }}
+    <h1>Team News</h1>
+    <div>
+      {{ range first 5 (where .Site.RegularPages "Section" "blog") }} {{ .Render "summary" }} {{ end }}
+    </div>
+  </main>
+</div>
+{{ end }}
