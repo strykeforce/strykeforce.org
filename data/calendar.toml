@@ -1,53 +1,33 @@
 [[events]]
-name = "Indiana Robotics Invitational"
-date = 2019-07-12T00:00:00Z
-venue = "Lawrence North High School"
-street = "7802 Hague Rd"
-city = "Indianapolis"
-state = "IN"
-zip = "46256"
+name = "St Joseph Districts"
+date = 2020-03-05T00:00:00Z
+venue = "St. Joseph High School"
+street = "2521 Stadium Drive"
+city = "St. Joseph"
+state = "MI"
+zip = "49085"
 
 [[events]]
-name = "Mid Mitten Robo Rodeo"
-date = 2019-08-10T00:00:00Z
-venue = "Lakewood High School"
-street = "7223 Velte Rd."
-city = "Lake Odessa"
+name = "Lakeview Districts"
+date = 2020-03-26T00:00:00Z
+venue = "Lakeview High School"
+street = "15060 Helmer Rd S"
+city = "Battle Creek"
 state = "MI"
-zip = "48849"
+zip = "49015"
 
-[[events]]
-name = "FSU Roboday"
-date = 2019-09-28T00:00:00Z
-venue = "Ferris State University"
-street = "210 Sports Drive"
-city = "Big Rapids"
-state = "MI"
-zip = "49307"
+# [[events]]
+# name = "Michigan State Championship"
+# date = 2020-04-10T00:00:00Z
+# venue = "University Center"
+# state = "MI"
+# zip = "48710"
 
-[[events]]
-name = "Grand Rapids Girls Robotics Competition"
-date = 2019-10-05T00:00:00Z
-venue = "Lakewood High School"
-street = "7223 Velte Rd"
-city = "Lake Odessa"
-state = "MI"
-zip = "48849"
-
-[[events]]
-name = "West Michigan Robotics Invitational"
-date = 2019-10-19T00:00:00Z
-venue = "Zeeland East High School"
-street = "3333 96th Ave."
-city = "Zeeland"
-state = "MI"
-zip = "49464"
-
-[[events]]
-name = "NRG Competition"
-date = 2019-10-19T00:00:00Z
-venue = "Portage District Library"
-street = "300 Library Ln"
-city = "Portage"
-state = "MI"
-zip = "49002"
+# [[events]]
+# name = "FIRST Champinship - Detroit"
+# date = 2020-04-24T00:00:00Z
+# venue = "Cobo Center"
+# street = "1 Washington Boulevard"
+# city = "Detroit"
+# state = "MI"
+# zip = "48226"
