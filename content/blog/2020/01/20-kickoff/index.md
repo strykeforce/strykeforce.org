@@ -1,8 +1,8 @@
 ---
-title: "2020 Kickoff"
+title: '2020 Kickoff'
 date: 2020-01-20T19:02:41-05:00
 images:
-  - blog\2020\01\20-kickoff\cover.jpg
+  - blog/2020/01/20-kickoff/cover.jpg
 description: 'Stryke Force had a great time this 2020 kickoff!'
 author: Shelby A.
 draft: false
@@ -16,6 +16,6 @@ Here at Stryke Force, we started the year off right! On January 4th, FIRST robot
 
 Finally, the time had come. We started a drumroll and counted down like it was New Year’s Eve in Times Square. The announcer came on and for the next 1 minute and 57 seconds our minds were on the screen, enthralled. Afterwards, nothing could contain our excitement. Whether it be the new game piece, the field design, or the funky Star Wars references, all of us here at Stryke Force are beyond excited for this season.
 
-Happy Fundraising! Happy Building! Happy Programming! 
+Happy Fundraising! Happy Building! Happy Programming!
 
 Have a fantastic 2020 competition season!
