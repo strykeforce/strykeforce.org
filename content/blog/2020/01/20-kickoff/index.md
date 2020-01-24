@@ -1,6 +1,6 @@
 ---
 title: '2020 Kickoff'
-date: 2020-01-20T19:02:41-05:00
+date: 2020-01-07T19:02:41-05:00
 images:
   - blog/2020/01/20-kickoff/cover.jpg
 description: 'Stryke Force had a great time this 2020 kickoff!'
