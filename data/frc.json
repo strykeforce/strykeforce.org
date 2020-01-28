@@ -1,306 +1,322 @@
 [
   {
-    "name": "Aakash Gorthy",
-    "display": "Aakash G.",
-    "slug": "aakash_g",
-    "grade": 9,
+    "name": "Aashish Harishchandre",
+    "display": "Aashish H.",
+    "slug": "harishchandre_a",
+    "grade": 10,
     "school": "Portage Central",
-    "motto": "Never give up"
+    "motto": "#TeamTrees"
   },
   {
-    "name": "Aayush Mohanty",
+    "name": "Aayush Mohenty",
     "display": "Aayush M.",
-    "slug": "aayush_m",
-    "grade": 11,
+    "slug": "mohenty_a",
+    "grade": 12,
     "school": "Portage Northern",
-    "motto": "Robotics is the start to an engineering career."
+    "motto": "Alone we can do so little, together we can do so much more."
+  },
+  {
+    "name": "Alayna Boucher",
+    "display": "Alayna B.",
+    "slug": "boucher_a",
+    "grade": 9,
+    "school": "Loy Norrix",
+    "motto": "Where words fail, music speaks."
   },
   {
     "name": "Alex Zajac",
     "display": "Alex Z.",
-    "slug": "alex_z",
-    "grade": 10,
+    "slug": "zajac_a",
+    "grade": 11,
     "school": "Loy Norrix",
-    "motto": "Feels good to get your hands dirty."
+    "motto": "Let it go, bro."
   },
   {
     "name": "Arjav Patel",
     "display": "Arjav P.",
-    "slug": "arjav_p",
-    "grade": 11,
-    "school": "Portage Northern",
-    "motto": ""
-  },
-  {
-    "name": "Audrey Rabick",
-    "display": "Audrey R.",
-    "slug": "audrey_r",
-    "grade": 12,
-    "school": "Comstock",
-    "motto": "My two favorite historic inventions are duct tape and whiteboards."
-  },
-  {
-    "name": "Briana Kohl",
-    "display": "Briana K.",
-    "slug": "brianna_k",
-    "grade": 11,
-    "school": "Mattawan",
-    "motto": "When life throws a swerve at you, make lemonade."
-  },
-  {
-    "name": "Cade Peterman",
-    "display": "Cade P.",
-    "slug": "cade_p",
-    "grade": 12,
-    "school": "Loy Norrix",
-    "motto": "I'm not a quotable person. Yay robots?"
-  },
-  {
-    "name": "Carter Briggs",
-    "display": "Carter B.",
-    "slug": "carter_b",
+    "slug": "patel_a",
     "grade": 12,
     "school": "Portage Northern",
-    "motto": "Engineering is solving problems you didn't know you had in ways you don't understand."
+    "motto": "It's not a bug; it's a feature."
+  },
+  {
+    "name": "Brayden Fuller",
+    "display": "Brayden F.",
+    "slug": "fuller_b",
+    "grade": 10,
+    "school": "Portage Central",
+    "motto": "Sleep is for the weak, and I am very weak."
   },
   {
     "name": "Casey Murray",
     "display": "Casey M.",
-    "slug": "casey_m",
-    "grade": 9,
+    "slug": "murray_c",
+    "grade": 10,
     "school": "Galesburg",
-    "motto": "I like to learn how things work, then take that knowledge and make something of it."
+    "motto": "Anything that needs a manual to work is broken."
   },
   {
     "name": "Cassie Nash",
     "display": "Cassie N.",
-    "slug": "cassie_n",
-    "grade": 9,
+    "slug": "nash_c",
+    "grade": 10,
     "school": "Kalamazoo Central",
-    "motto": "This is just a warm-up, next we build a TARDIS."
+    "motto": "Wingardium Levi- oh cRAP the robots flying?!"
   },
   {
     "name": "Cole Sherwood",
     "display": "Cole S.",
-    "slug": "cole_s",
-    "grade": 9,
+    "slug": "sherwood_c",
+    "grade": 10,
     "school": "Portage Central",
-    "motto": "Stryke Force hours- 24:7"
+    "motto": "NEEEEEEEEEEXT MAAAAATCH!"
+  },
+  {
+    "name": "Daniel Collins",
+    "display": "Daniel C.",
+    "slug": "collins_d",
+    "grade": 9,
+    "school": "Homeschool",
+    "motto": "Did you hear about the old man that fell down a well? He couldn't see that well."
   },
   {
     "name": "David Herr",
     "display": "David H.",
-    "slug": "david_h",
-    "grade": 10,
+    "slug": "herr_d",
+    "grade": 11,
     "school": "Portage Central",
-    "motto": "Learn from your mistakes and successes to achieve new challenging problems."
+    "motto": "When you work, you always learn. But you should never work while you learn."
   },
   {
-    "name": "David Jin",
-    "display": "David J.",
-    "slug": "david_j",
-    "grade": 10,
+    "name": "Dellaunna Baker",
+    "display": "Dellauna B.",
+    "slug": "baker_d",
+    "grade": 11,
+    "school": "Kalamazoo Central",
+    "motto": "The stars make business deals all the time!"
+  },
+  {
+    "name": "Deshana Betala",
+    "display": "Deshana B.",
+    "slug": "betala_d",
+    "grade": 9,
     "school": "Portage Central",
-    "motto": "Every successful person started out as a failure."
+    "motto": "Life doesn't require that we be our best, but that we try our best."
+  },
+  {
+    "name": "Ethan Clare",
+    "display": "Ethan C..",
+    "slug": "clare_e",
+    "grade": 11,
+    "school": "Portage Northern",
+    "motto": "The more effort you put in, the more fun and learning you get."
   },
   {
     "name": "Ethan Lee",
     "display": "Ethan L.",
-    "slug": "ethan_l",
-    "grade": 11,
-    "school": "Portage Central",
-    "motto": "Don't call it a dream. Call it a plan."
-  },
-  {
-    "name": "Greg Redlon",
-    "display": "Greg R.",
-    "slug": "greg_r",
+    "slug": "lee_e",
     "grade": 12,
     "school": "Portage Central",
-    "motto": "There wouldn’t be good times without the tough times."
+    "motto": "Ambition is your inner voice that tells you, you can, and should, strive to go beyond your circumstances or situation in life."
+  },
+  {
+    "name": "Evalynn Hurley",
+    "display": "Evalynn H.",
+    "slug": "hurley_e",
+    "grade": 11,
+    "school": "Loy Norrix",
+    "motto": "I DONT KNOW WHAT IM DOING ANYMOREEEEE!"
+  },
+  {
+    "name": "Gretta Gardner",
+    "display": "Gretta G.",
+    "slug": "gardner_g",
+    "grade": 10,
+    "school": "Kalamazoo Central",
+    "motto": "I lost the Game."
+  },
+  {
+    "name": "Hopelynn Camacho",
+    "display": "Hopelynn C.",
+    "slug": "camacho_h",
+    "grade": 10,
+    "school": "Loy Norrix",
+    "motto": "I put the child in the fridge and I put the chicken in bed."
   },
   {
     "name": "Hung Huynh",
     "display": "Hung H.",
-    "slug": "hung_h",
-    "grade": 11,
-    "school": "Portage Northern",
-    "motto": "Reach for the moon. Even if you miss, you'll land among the stars."
-  },
-  {
-    "name": "Hunter McGillivray",
-    "display": "Hunter M.",
-    "slug": "hunter_m",
+    "slug": "huynh_h",
     "grade": 12,
     "school": "Portage Northern",
-    "motto": "Allow one to interpret your creation before you tell them how"
+    "motto": "Hung is not a place, it is a person."
   },
   {
-    "name": "Jack Bruinwood",
-    "display": "Jack B.",
-    "slug": "jack_b",
+    "name": "Jack Collins",
+    "display": "Jack C.",
+    "slug": "collins_j",
     "grade": 12,
     "school": "Homeschool",
-    "motto": "Two robots drove into a bar, the third one had me as a driver."
+    "motto": "I have 6 toes."
+  },
+  {
+    "name": "Jacob Earl",
+    "display": "Jacob E.",
+    "slug": "earl_j",
+    "grade": 9,
+    "school": "Portage Central",
+    "motto": "Without the software, a robot is just a bunch of out of control parts!"
   },
   {
     "name": "Jacob Woessner",
     "display": "Jacob W.",
-    "slug": "jacob_w",
-    "grade": 10,
+    "slug": "woessner_j",
+    "grade": 11,
     "school": "Portage Central",
-    "motto": "I like to play magic the gathering"
+    "motto": "I like to play magic: the gathering."
   },
   {
     "name": "Jager Doorn",
     "display": "Jager D.",
-    "slug": "jager_d",
-    "grade": 10,
-    "school": "Homeschool",
+    "slug": "doorn_j",
+    "grade": 11,
+    "school": "Schoolcraft",
     "motto": "Talent is overrated. Eighty percent of success in life is showing up. The rest is integrity and perseverance."
   },
   {
     "name": "Jiawen Fan",
     "display": "Jiawen F.",
-    "slug": "jiawen_f",
-    "grade": 11,
+    "slug": "fan_j",
+    "grade": 12,
     "school": "Portage Central",
-    "motto": "Open your eyes so dreams become true"
+    "motto": "Failure is the opportunity to begin again more intelligently."
   },
   {
-    "name": "Jonathan Koh",
-    "display": "Jonathan K.",
-    "slug": "jonathan_k",
+    "name": "Jade Camacho",
+    "display": "Jade C.",
+    "slug": "camacho_j",
     "grade": 9,
+    "school": "Loy Norrix",
+    "motto": "A year ago, I would have died for certain people. Now, a year later, half of them are dead to me."
+  },
+  {
+    "name": "Kiana Martin",
+    "display": "Kiana M.",
+    "slug": "martin_k",
+    "grade": 12,
     "school": "Portage Central",
-    "motto": "Work hard play hard"
+    "motto": "Work hard, play hard."
   },
   {
     "name": "Kjerstin Lindbloom",
     "display": "Kjerstin L.",
-    "slug": "kjerstin_l",
-    "grade": 10,
-    "school": "Mattawan",
-    "motto": "Uniqueness is what I strive for, awkwardness is what I have."
-  },
-  {
-    "name": "Kris Ouvry",
-    "display": "Kris O.",
-    "slug": "kris_o",
+    "slug": "lindbloom_k",
     "grade": 11,
-    "school": "Portage Central",
-    "motto": "Stryke Force Yellow: a man-made marvel seen from space."
+    "school": "Mattawan",
+    "motto": "If mistakes help you learn, then I must be learning a lot."
   },
   {
     "name": "Lilian Gates",
     "display": "Lilian G.",
-    "slug": "lilian_g",
-    "grade": 11,
+    "slug": "gates_l",
+    "grade": 12,
     "school": "Portage Central",
     "motto": "It's always a software problem."
   },
   {
-    "name": "Nina Herschleb",
-    "display": "Nina H.",
-    "slug": "nina_h",
-    "grade": 12,
+    "name": "Linkoln Kowalski",
+    "display": "Linkoln K.",
+    "slug": "kowalski_l",
+    "grade": 9,
+    "school": "Vicksburg",
+    "motto": "The best preparation for tomorrow is what is done today."
+  },
+  {
+    "name": "Maxwell Scott",
+    "display": "Maxwell S.",
+    "slug": "scott_m",
+    "grade": 9,
+    "school": "Mattawan",
+    "motto": "If it works, it needs more features."
+  },
+  {
+    "name": "Oscar Bujanos",
+    "display": "Oscar B.",
+    "slug": "bujanos_o",
+    "grade": 9,
     "school": "Loy Norrix",
-    "motto": "I'm the gofer, I do whatever people need."
+    "motto": "Life us like a box of chocolates. You never know what your gonna get."
   },
   {
     "name": "Ranya Liu",
     "display": "Ranya L.",
-    "slug": "ranya_l",
-    "grade": 11,
+    "slug": "liu_r",
+    "grade": 12,
     "school": "Portage Central",
     "motto": "Came for the food, stayed for the robot."
   },
   {
-    "name": "Roberts Kalnins",
-    "display": "Roberts K.",
-    "slug": "roberts_k",
+    "name": "Rohit Kamath",
+    "display": "Rohit K.",
+    "slug": "kamath_r",
     "grade": 12,
-    "school": "Portage Northern",
-    "motto": "I'm trilingual — I speak English, Latvian, and Java."
-  },
-  {
-    "name": "Ross Malackowski",
-    "display": "Ross M.",
-    "slug": "ross_m",
-    "grade": 12,
-    "school": "Homeschool",
-    "motto": "Stryke Force helps me fly!"
+    "school": "Portage Central",
+    "motto": "Anything in life worth doing is worth overdoing. Moderation is for cowards."
   },
   {
     "name": "Ryan Lehoczky",
     "display": "Ryan L.",
-    "slug": "ryan_l",
-    "grade": 11,
-    "school": "Portage Northern",
-    "motto": "Robot is a way of life."
-  },
-  {
-    "name": "Sam Breuer",
-    "display": "Sam B.",
-    "slug": "sam_b",
+    "slug": "lehoczky_r",
     "grade": 12,
-    "school": "Portage Central",
-    "motto": "Did somebody say scouting, I'm so glad you asked!"
+    "school": "Portage Northern",
+    "motto": "I'm the one in the corner with the camera."
   },
   {
     "name": "Sam Rabick",
     "display": "Sam R.",
-    "slug": "sam_r",
-    "grade": 10,
+    "slug": "rabick_s",
+    "grade": 11,
     "school": "Comstock",
     "motto": "If we accepted the sky as the limit, we would never have put a man on the moon."
   },
   {
-    "name": "Siddharth Tiwar",
-    "display": "Siddharth T.",
-    "slug": "siddhart_t",
-    "grade": 9,
-    "school": "Portage Central",
-    "motto": "There's no 'I' in team"
-  },
-  {
-    "name": "Sierra Staunton",
-    "display": "Sierra S.",
-    "slug": "sierra_s",
-    "grade": 12,
-    "school": "Portage Northern",
-    "motto": "Leaders aren't those who love to win, but those who hate to lose."
-  },
-  {
     "name": "Shelby Alexander",
     "display": "Shelby A.",
-    "slug": "shelby_a",
-    "grade": 10,
+    "slug": "alexander_s",
+    "grade": 11,
     "school": "Comstock",
-    "motto": ""
+    "motto": "Things aren't always #000000 and #FFFFFF."
   },
   {
-    "name": "Tingfeng Luo",
-    "display": "Leo L.",
-    "slug": "leo_l",
+    "name": "Sofia Aguila",
+    "display": "Sofia A.",
+    "slug": "aguila_s",
     "grade": 10,
-    "school": "K Christian",
-    "motto": "Going bald for coding."
+    "school": "Kalamazoo Central",
+    "motto": "Vibe check."
+  },
+  {
+    "name": "Tori Dwyer",
+    "display": "Tori D.",
+    "slug": "dwyer_v",
+    "grade": 9,
+    "school": "Portage Central",
+    "motto": "Believe you can and your halfway there."
   },
   {
     "name": "Zach McDougal",
     "display": "Zach M.",
-    "slug": "zach_m",
-    "grade": 9,
+    "slug": "mcdougal_z",
+    "grade": 10,
     "school": "Portage Central",
     "motto": "I build robots and I know things."
   },
   {
     "name": "Zach Zlomek",
     "display": "Zach Z.",
-    "slug": "zach_z",
-    "grade": 11,
+    "slug": "zlomek_z",
+    "grade": 12,
     "school": "Portage Central",
-    "motto": "Most people say \"if it ain't broke, don't fix it\". Engineers say \"if it ain't broke, there aren't enough features yet\"."
+    "motto": "I could watch it happen or be a part of it."
   }
 ]
