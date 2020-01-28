@@ -1,3 +1,4 @@
+{{ $grade := dict "9" "Freshman" "10" "Sophomore" "11" "Junior" "12" "Senior" }}
 <div>
   <ul class="gallery">
     {{ range $.Site.Data.frc }}
@@ -7,7 +8,7 @@
         <img src="{{ $image.RelPermalink }}" alt="" />
         <div style="padding: 0 1em;">
           <h2>{{ .display }}</h2>
-          <p style="margin: 0;">{{ .school }}</p>
+          <p style="margin: 0;">{{ .school }} {{ index $grade (string .grade) }}</p>
           <p class="gallery__quote">{{ .motto }}</p>
         </div>
       </div>
