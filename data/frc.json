@@ -248,6 +248,14 @@
     "motto": "Life us like a box of chocolates. You never know what your gonna get."
   },
   {
+    "name": "Paul Schreiter",
+    "display": "Paul S.",
+    "slug": "schrieter_p",
+    "grade": 11,
+    "school": "Portage Central",
+    "motto": "Hair isn't everything but it's pretty important."
+  },
+  {
     "name": "Ranya Liu",
     "display": "Ranya L.",
     "slug": "liu_r",
