@@ -20,6 +20,7 @@ Stryke Force is committed to the FIRST Robotics community. Our students and ment
 - [Third Coast Swerve Drive Software](https://github.com/strykeforce/thirdcoast) -- swerve drive and telemetry Java libraries for FRC robots.
 - [Third Coast Command Line Utility (TCT)](https://github.com/strykeforce/thirdcoast-tct) -- a command-line utility useful for tuning motor closed-loop performance and manually controlling robot axes and sensors during development.
 - [Grapher](https://github.com/strykeforce/grapher) -- LabView strip-chart recorder that plots real-time streaming telemetry information from Third Coast telemetry library.
+- [Third Coast Health Check](/resources/healthcheck) -- instructions on implementing our Pit motor health check.
 - [FRC Practice Field WiFi](/resources/practice-field-network/) -- Using OpenWRT on the robot's Open Mesh OM5P-AN to allow us to connect to our robot via build-space WiFi.
 
 ## Stryke Force Talon SRX Motor Training Course
