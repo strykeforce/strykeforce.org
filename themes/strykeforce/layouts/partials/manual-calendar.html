@@ -1,20 +1,24 @@
 <div class="calendar">
   <h2 class="calendar__h2">Calendar</h2>
-  {{ range $.Site.Data.calendar.events }}
+
   <div class="event">
-    {{ if .tba }}
+    {{/*
     <a href="{{ .tba }}" target="_blank" rel="noopener noreferrer">
-      {{ end }}
-      <span class="event__name">{{ .name }}</span>
-      {{ if .tba }}
+      */}}
+
+      <span class="event__name">Stryke Force Virtual Open House</span>
+
+      {{/*
     </a>
-    {{ end }}
-    <time class="event__date">{{ .date.Format "January 2, 2006" }}</time>
+    */}}
+
+    <time class="event__date">Coming mid-June 2020</time>
+    {{/*
     <address class="event_address">
       {{ .venue }} <br />
       {{ .street }} <br />
       {{ .city }}, {{ .state }} {{ .zip }}
     </address>
+    */}}
   </div>
-  {{ end }}
 </div>
