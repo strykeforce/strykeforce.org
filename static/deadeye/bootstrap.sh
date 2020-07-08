@@ -37,3 +37,6 @@ echo Configured $HOSTNAME with static ip address $IP
 
 echo '%sudo    ALL=(ALL:ALL) NOPASSWD:ALL' > /etc/sudoers.d/local
 echo Allow sudo without password for Ansible
+
+systemctl set-default multi-user.target
+echo Graphical boot disabled
