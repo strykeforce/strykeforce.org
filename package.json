@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Jeff Hutchison <jeff@j3ff.io>",
   "dependencies": {
-    "postcss-cli": "^7.1.0",
+    "postcss-cli": "^7.1.1",
     "postcss-preset-env": "^6.7.0"
   },
   "keywords": [
@@ -17,8 +17,8 @@
     "upgrade": "npm-check --update"
   },
   "devDependencies": {
-    "npm-check": "^5.9.0",
-    "prettier": "^1.19.1"
+    "npm-check": "^5.9.2",
+    "prettier": "^2.0.5"
   },
   "repository": {
     "type": "git",
