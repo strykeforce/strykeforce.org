@@ -5,8 +5,6 @@ draft: false
 description: "Here is information regarding our upcoming virtual open house."
 ---
 
-# Virtual Open House
-
 ![Open House Flyer](flyer.jpg 'Crop of Recruitment Poster')
 
 Mark your calendars for the upcoming Stryke Force Open House! Our open house is going virtual this year, which means we need you to RSVP. The open house will be on TBD @ this TIME. Everyone is welcome! We will be discussing our three different programs, and inviting prospective students to join!
@@ -15,11 +13,11 @@ Our open house will utilize Zoom. If you do not have the ability to join us live
 
 Sign up for our seminar [here!](https://forms.gle/v2K1PsBt8sYKpQx8A)
 
-## Our Teams
+# Our Teams
 
 Stryke Force has three different robotics programs: Next Robotics Generation (grades 5-6), VEX IQ Robotics (grades 7-8), and FIRST Robotics Competition (grades 9-12).
 
-### Next Robotics Generation
+## Next Robotics Generation
 
 {{< youtube VbYttJtLK5k >}}
 
@@ -29,7 +27,7 @@ First year students will work with a parent to build an Arduino robot car, learn
 
 For more information, click [here!](https://www.strykeforce.org/about/nrg/)
 
-### Vex IQ
+## Vex IQ
 
 {{< youtube ihk1KUI3duU >}}
 
@@ -39,7 +37,7 @@ Unfortunately, our 2020 VEX IQ season has been cancelled due to COVID-19. Howeve
 
 For more information, click [here!](https://www.vexrobotics.com/iq)
 
-### FIRST Robotics Competition
+## FIRST Robotics Competition
 
 ![FRC 2018 Team Picture](frc_2018_worlds.jpg 'Our world winning team in 2018.')
 
