@@ -1,2 +1,2 @@
-{{ $slug := .label | lower | printf "/%s/" }}
-<a href="{{ $slug }}" {{ if hasPrefix .link $slug }} style="color: #fff" {{ end }}>{{ .label }}</a>
+{{ $slug := .slug | printf "/%s/" }}
+<a href="{{ $slug }}" {{ if hasPrefix .link $slug }} style="color: #fff;" {{ end }}>{{ .label }}</a>
