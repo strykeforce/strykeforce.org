@@ -7,15 +7,46 @@ description: "Here is information regarding our upcoming virtual open house."
 
 ![Open House Flyer](flyer.jpg 'Crop of Recruitment Poster')
 
-Mark your calendars for the upcoming Stryke Force Open House! Our open house is going virtual this year, which means we need you to RSVP. The open house will be on TBD @ this TIME. Everyone is welcome! We will be discussing our three different programs, and inviting prospective students to join!
+Mark your calendars for the upcoming Stryke Force Open House! Our open house is going virtual this year, which means we need you to sign-up to participate following the link below. The open house will consist of 3 information sessions, one for each team, based on grade level. All students in grades 5-12 from the Greater Kalamazoo area are welcome, and no previous experience is required. 
 
-Our open house will utilize Zoom. If you do not have the ability to join us live, don't worry! We will be sending out the same information afterwards. So, if you cannot join live, please still RSVP below so we can make sure to reach you.
+Currently, we are actively recruiting for our high school program, FIRST Robotics Competition. Next Robotics Generation, the 5th and 6th grade program, is in session now and the VEX IQ program for 7th and 8th grade was postponed until Spring 2021 due to COVID-19. Learn more about our programs below.
 
-Sign up for our seminar [here!](https://forms.gle/v2K1PsBt8sYKpQx8A)
+Our open house will utilize Zoom. We will send the Zoom meeting invitation to the email address you provide. If you cannot join live, please still sign-up, so we can reach out to you with further information.
+
+### Sign up for your session **[here!](https://forms.gle/v2K1PsBt8sYKpQx8A)**
 
 # Our Teams
 
 Stryke Force has three different robotics programs: Next Robotics Generation (grades 5-6), VEX IQ Robotics (grades 7-8), and FIRST Robotics Competition (grades 9-12).
+
+## FIRST Robotics Competition
+
+![FRC 2018 Team Picture](frc_2018_worlds.jpg 'Our world winning team in 2018.')
+
+FIRST® Robotics Competition challenges our high-school students to raise funds, market our brand, hone teamwork skills, and build and program industrial-size robots to play a difficult field game against other teams from Michigan and around the world. This season, we are continuing last year's game: **Infinite Recharge**!
+
+Our team is divided into 3 major sub-teams: engineering, programming, and business. Students can explore in our space going from welding to scouting to marketing to driving to industrial designing, and so on. We encourage our members to make their own path utilizing our exquisite mentors and the badge system.
+- The engineering team works to build and design the robot for the season's game.
+- The programming team works to program the robot to complete tasks and to create the scouting app for the season's game.
+- The business team works to gain sponsors, create/run outreach events, and apply for team awards.
+
+For more information, click [here!](https://www.firstinspires.org/robotics/frc)
+
+### FRC Videos
+
+Click on the link below to see a portion of our build space.
+
+- [A Look at Our Build Space](https://youtu.be/wencjhaGL80)
+
+Click on the links below to hear testimonials from some of our alumni!
+
+- [Sierra Staunton, class of 2019](https://youtu.be/kfAigm_j7SI)
+- [Zach Zlomek, class of 2020](https://youtu.be/1ObZivzDpOs) 
+- [Ethan Lee, class of 2020](https://youtu.be/VZgLkdzxkcE)
+- [Fred Ouding, class of 2017](https://youtu.be/s53Ka9xtYNk)
+- [Greg Redlon, class of 2019](https://youtu.be/iYLw2cKdkvk)
+- [Hunter McGillivray, class of 2019](https://youtu.be/XpFCEEKvskk)
+- [Kelsey Bruinwood, class of 2016](https://youtu.be/plncz-2VzVk)
 
 ## Next Robotics Generation
 
@@ -37,24 +68,3 @@ Unfortunately, our 2020 VEX IQ season has been cancelled due to COVID-19. Howeve
 
 For more information, click [here!](https://www.vexrobotics.com/iq)
 
-## FIRST Robotics Competition
-
-![FRC 2018 Team Picture](frc_2018_worlds.jpg 'Our world winning team in 2018.')
-
-FIRST® Robotics Competition challenges our high-school students to raise funds, market our brand, hone teamwork skills, and build and program industrial-size robots to play a difficult field game against other teams from Michigan and around the world. This season, we are continuing last year's game: **Infinite Recharge**!
-
-Our team is divided into 5 major sub-teams: engineering, programming, and business. Students can explore in our space going from welding to scouting to marketing to driving to industrial designing, and so on. We encourage our members to make their own path utilizing our exquisite mentors and the badge system.
-
-For more information, click [here!](https://www.firstinspires.org/robotics/frc)
-
-## FRC Testimonials
-
-Click on the links below to hear testimonials from some of our alumni!
-
-- [Sierra Staunton, class of 2019](https://youtu.be/kfAigm_j7SI)
-- [Zach Zlomek, class of 2020](https://youtu.be/1ObZivzDpOs) 
-- [Ethan Lee, class of 2020](https://youtu.be/VZgLkdzxkcE)
-- [Fred Ouding, class of 2017](https://youtu.be/s53Ka9xtYNk)
-- [Greg Redlon, class of 2019](https://youtu.be/iYLw2cKdkvk)
-- [Hunter McGillivray, class of 2019](https://youtu.be/XpFCEEKvskk)
-- [Kelsey Bruinwood, class of 2016](https://youtu.be/plncz-2VzVk)
