@@ -2,7 +2,7 @@
 <!-- Navigation -->
 <div class="header">
   <!-- HeaderLogo -->
-  <a href="/"><img class="logo" src="/img/logo.svg" alt="Stryke Force Logo"/></a>
+  <a href="/"><img class="logo" src="/img/logo.svg" alt="Stryke Force Logo" /></a>
   <!-- HeaderNav -->
   <!-- Nav -->
   <nav>
@@ -11,20 +11,23 @@
       <!-- ul -->
       <ul class="site-nav__menu--wide">
         <li>
-          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "About") }}
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "About" "slug" "about") }}
         </li>
         <li>
-          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Blog") }}
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Open House" "slug" "open-house") }}
         </li>
         <li>
-          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Resources") }}
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Blog" "slug" "blog") }}
         </li>
         <li>
-          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Contact") }}
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Resources" "slug" "resources") }}
+        </li>
+        <li>
+          {{ partial "site-menu-link" (dict "link" .RelPermalink "label" "Contact" "slug" "contact") }}
         </li>
         <li>
           <!-- DonateButton -->
-          <a style="border: 'none'" href="/resources/donation_form.pdf" download>
+          <a style="border: 'none';" href="/resources/donation_form.pdf" download>
             <img src="/img/donate.svg" />
           </a>
           <!-- /DonateButton -->
@@ -54,7 +57,7 @@
         </li>
         <li>
           <!-- DonateButton -->
-          <a style="border: 'none'" href="/resources/donation_form.pdf" download>
+          <a style="border: 'none';" href="/resources/donation_form.pdf" download>
             <img src="/img/donate.svg" />
           </a>
           <!-- /DonateButton -->
