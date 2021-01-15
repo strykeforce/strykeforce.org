@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Jeff Hutchison <jeff@j3ff.io>",
   "dependencies": {
-    "postcss-cli": "^7.1.1",
+    "postcss-cli": "^8.3.1",
     "postcss-preset-env": "^6.7.0"
   },
   "keywords": [
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "npm-check": "^5.9.2",
-    "prettier": "^2.0.5"
+    "prettier": "^2.2.1"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "peerDependencies": {
+    "postcss": "^8.2.4"
+  }
 }

@@ -67,6 +67,10 @@ p > img {
 .content__main--column {
   max-width: 40rem;
   margin-left: auto;
+
+  & > ul {
+    padding-left: 0;
+  }
 }
 
 /* Calendar */
