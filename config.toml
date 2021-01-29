@@ -1,4 +1,4 @@
-baseURL = "https://strykeforce.org/"
+baseURL = "https://www.strykeforce.org/"
 languageCode = "en-us"
-title = "Stryke Force"
 theme = "strykeforce"
+title = "Stryke Force"
