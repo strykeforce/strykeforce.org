@@ -1,3 +1,6 @@
+.hugo_build.lock
+.idea/
+
 # Project dependencies
 .cache
 node_modules
