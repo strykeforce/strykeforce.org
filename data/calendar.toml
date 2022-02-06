@@ -1,37 +1,37 @@
 [[events]]
-name = "St Joseph Districts"
-date = 2020-03-05T00:00:00Z
+name = "St Joseph District Event"
+date = 2022-03-10T00:00:00Z
 venue = "St. Joseph High School"
 street = "2521 Stadium Drive"
 city = "St. Joseph"
 state = "MI"
 zip = "49085"
-tba = "https://www.thebluealliance.com/event/2020misjo"
+tba = "https://www.thebluealliance.com/event/2022misjo"
 
 [[events]]
-name = "Lakeview Districts"
-date = 2020-03-26T00:00:00Z
+name = "Lakeview District Event"
+date = 2022-03-31T00:00:00Z
 venue = "Lakeview High School"
 street = "15060 Helmer Rd S"
 city = "Battle Creek"
 state = "MI"
 zip = "49015"
-tba = "https://www.thebluealliance.com/event/2020milak"
+tba = "https://www.thebluealliance.com/event/2022milak"
 
 # [[events]]
 # name = "Michigan State Championship"
-# date = 2020-04-08T00:00:00Z
+# date = 2022-04-13T00:00:00Z
 # venue = "University Center"
 # state = "MI"
 # zip = "48710"
-# tba = "https://www.thebluealliance.com/event/2020micmp"
+# tba = "https://www.thebluealliance.com/event/2022micmp"
 
 # [[events]]
-# name = "FIRST Champinship - Detroit"
-# date = 2020-04-24T00:00:00Z
-# venue = "Cobo Center"
-# street = "1 Washington Boulevard"
-# city = "Detroit"
-# state = "MI"
-# zip = "48226"
-# tba = "https://www.thebluealliance.com/event/2020cmpmi"
+# name = "FIRST Championship"
+# date = 2022-04-20T00:00:00Z
+# venue = "GRB Convention Center"
+# street = "1001 Avenida de las Americas"
+# city = "Houston"
+# state = "TX"
+# zip = "77010"
+# tba = "https://www.thebluealliance.com/event/2022cmptx"
