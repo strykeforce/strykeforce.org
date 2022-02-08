@@ -42,8 +42,6 @@
   <meta name="twitter:site" content="@2767StrykeForce" />
   {{ template "_internal/twitter_cards.html" . }}
   <!-- -->
-  {{ $main := resources.Get "css/main.css" | resources.PostCSS }}
-  <link rel="stylesheet" href="{{ $main.Permalink }}" />
-  {{ $header := resources.Get "css/header.css" | resources.PostCSS }}
-  <link rel="stylesheet" href="{{ $header.Permalink }}" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/header.css" />
 </head>
