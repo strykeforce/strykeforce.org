@@ -72,3 +72,19 @@ We headed to the Michigan State Championship held at Saginaw State University. S
 Stryke Force advanced to the FIRST Championship held in Detroit. Through smart and diligent play we finished second on Daly Field. When all the dust settled we became an alliance captain once again leading our alliance to win Daly Field. As the winners of all 6 fields battled Stryke Force once again showed their prowess and ended in first place to compete in the finals for the Championship. We went on to win Finals at Ford Field making us back-to-back world champions.
 
 The team finished with a stunning 71-10 record, and once again cemented their position in FIRST. In the 29-year history of FIRST we are one of only 4 teams to be back- to-back world champions, the only back-to-back alliance captain and the youngest team to win back-to-back world championships.
+
+### 2019
+
+In 2019, Stryke Force finished in the semi-finals at St. Joe, and as a finalist at Kentwood, we were ranked 3rd at State’s. The team finished 95-35-0 overall at the end, finishing as a finalist at World’s. In this year, Stryke Force switched from FTC to VEX IQ for our middle school program, letting the students have a larger role while increasing the number who could participate. Other benefits were that the VEX program requires less resources while increasing independence—all students learn skills in building, programming, developing, and driving the robot, teaching skills needed later in the robotic and engineering fields.
+
+In the off-season of 2019, Stryke Force attended an unprecedented 5 off-season competitions. The Indiana Robotics Invitational (IRI) and the West Michigan Robotics Invitational (WMRI), in addition the team attended 3 new events: the Mid Mitten Robo Rodeo, the Ferris State University Roboday, and the Grand Rapids Girls Competition.
+
+### 2020
+
+In 2020, we were able to attend one competition at St. Joseph High School in early March.  We made it to the semifinals and took home the Excellence in Engineering Award.  The team finished the season with a 12-5-0 record.  Our season was cut short due to the Coronavirus pandemic. The remaining competitions for 2020 were canceled.
+
+Although our 2020 competition season ended early, a few of our students and mentors were driven to help keep front line workers safe by designing, producing and distributing over 30,000 face shields locally to area hospitals and businesses.  
+
+### 2021
+
+In 2021, FIRST decided to make the competition season virtual with a Game Design challenge and five skills challenges. We participated in all challenges and took home a banner in Game Design. In addition, we were invited to participate in a Girl Scouts STEM event. Three female members of our team along with a female mentor attended and demonstrated the abilities of our robot and promoted STEM.
