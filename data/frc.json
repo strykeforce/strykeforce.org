@@ -1,330 +1,299 @@
 [
   {
-    "name": "Aashish Harishchandre",
-    "display": "Aashish H.",
-    "slug": "harishchandre_a",
-    "grade": 10,
-    "school": "Portage Central",
-    "motto": "#TeamTrees"
-  },
-  {
-    "name": "Aayush Mohenty",
-    "display": "Aayush M.",
-    "slug": "mohenty_a",
+    "name": "Zach M.",
     "grade": 12,
-    "school": "Portage Northern",
-    "motto": "Alone we can do so little, together we can do so much more."
+    "last_initial": "M.",
+    "team": "Drive/Build",
+    "school": "Portage Central High School",
+    "quote": "",
+    "first_name": "Zach"
   },
   {
-    "name": "Alayna Boucher",
-    "display": "Alayna B.",
-    "slug": "boucher_a",
-    "grade": 9,
-    "school": "Loy Norrix",
-    "motto": "Where words fail, music speaks."
-  },
-  {
-    "name": "Alex Zajac",
-    "display": "Alex Z.",
-    "slug": "zajac_a",
-    "grade": 11,
-    "school": "Loy Norrix",
-    "motto": "Let it go, bro."
-  },
-  {
-    "name": "Arjav Patel",
-    "display": "Arjav P.",
-    "slug": "patel_a",
+    "name": "Casey M.",
     "grade": 12,
-    "school": "Portage Northern",
-    "motto": "It's not a bug; it's a feature."
+    "last_initial": "M.",
+    "team": "Build",
+    "school": "Galesburg-Augusta High School",
+    "quote": "",
+    "first_name": "Casey"
   },
   {
-    "name": "Brayden Fuller",
-    "display": "Brayden F.",
-    "slug": "fuller_b",
+    "name": "Cole S.",
+    "grade": 12,
+    "last_initial": "S.",
+    "team": "Scouting/software",
+    "school": "Portage Central High School",
+    "quote": "",
+    "first_name": "Cole"
+  },
+  {
+    "name": "Alex B.",
     "grade": 11,
-    "school": "Portage Central",
-    "motto": "Sleep is for the weak, and I am very weak."
+    "last_initial": "B.",
+    "team": "Build",
+    "school": "Kalamazoo Central High School",
+    "quote": "",
+    "first_name": "Alex"
   },
   {
-    "name": "Casey Murray",
-    "display": "Casey M.",
-    "slug": "murray_c",
-    "grade": 10,
-    "school": "Galesburg",
-    "motto": "Anything that needs a manual to work is broken."
+    "name": "Alex B.",
+    "grade": 11,
+    "last_initial": "B.",
+    "team": "Build",
+    "school": "Loy Norrix High School",
+    "quote": "",
+    "first_name": "Alex"
   },
   {
-    "name": "Cassie Nash",
-    "display": "Cassie N.",
-    "slug": "nash_c",
-    "grade": 10,
-    "school": "Kalamazoo Central",
-    "motto": "Wingardium Levi- oh cRAP the robots flying?!"
+    "name": "Emiliano C.",
+    "grade": 11,
+    "last_initial": "C.",
+    "team": "Build",
+    "school": "Loy Norrix High School",
+    "quote": "",
+    "first_name": "Emiliano"
   },
   {
-    "name": "Cole Sherwood",
-    "display": "Cole S.",
-    "slug": "sherwood_c",
-    "grade": 10,
-    "school": "Portage Central",
-    "motto": "NEEEEEEEEEEXT MAAAAATCH!"
-  },
-  {
-    "name": "Daniel Collins",
-    "display": "Daniel C.",
-    "slug": "collins_d",
-    "grade": 9,
+    "name": "Daniel C.",
+    "grade": 11,
+    "last_initial": "C.",
+    "team": "Scouting/software",
     "school": "Homeschool",
-    "motto": "Did you hear about the old man that fell down a well? He couldn't see that well."
+    "quote": "",
+    "first_name": "Daniel"
   },
   {
-    "name": "David Herr",
-    "display": "David H.",
-    "slug": "herr_d",
+    "name": "Tori D.",
     "grade": 11,
-    "school": "Portage Central",
-    "motto": "When you work, you always learn. But you should never work while you learn."
+    "last_initial": "D.",
+    "team": "Drive/Build",
+    "school": "Portage Central High School",
+    "quote": "",
+    "first_name": "Tori"
   },
   {
-    "name": "Dellaunna Baker",
-    "display": "Dellauna B.",
-    "slug": "baker_d",
+    "name": "Jacob E.",
     "grade": 11,
-    "school": "Kalamazoo Central",
-    "motto": "The stars make business deals all the time!"
+    "last_initial": "E.",
+    "team": "Software",
+    "school": "Portage Central High School",
+    "quote": "",
+    "first_name": "Jacob"
   },
   {
-    "name": "Deshana Betala",
-    "display": "Deshana B.",
-    "slug": "betala_d",
-    "grade": 9,
-    "school": "Portage Central",
-    "motto": "Life doesn't require that we be our best, but that we try our best."
-  },
-  {
-    "name": "Ethan Clare",
-    "display": "Ethan C.",
-    "slug": "clare_e",
+    "name": "Peter R.",
     "grade": 11,
-    "school": "Portage Northern",
-    "motto": "The more effort you put in, the more fun and learning you get."
-  },
-  {
-    "name": "Ethan Lee",
-    "display": "Ethan L.",
-    "slug": "lee_e",
-    "grade": 12,
-    "school": "Portage Central",
-    "motto": "Ambition is your inner voice that tells you, you can, and should, strive to go beyond your circumstances or situation."
-  },
-  {
-    "name": "Evalynn Hurley",
-    "display": "Evalynn H.",
-    "slug": "hurley_e",
-    "grade": 11,
-    "school": "Loy Norrix",
-    "motto": "I DONT KNOW WHAT IM DOING ANYMOREEEEE!"
-  },
-  {
-    "name": "Gretta Gardner",
-    "display": "Gretta G.",
-    "slug": "gardner_g",
-    "grade": 10,
-    "school": "Kalamazoo Central",
-    "motto": "I lost the Game."
-  },
-  {
-    "name": "Hopelynn Camacho",
-    "display": "Hopelynn C.",
-    "slug": "camacho_h",
-    "grade": 10,
-    "school": "Loy Norrix",
-    "motto": "I put the child in the fridge and I put the chicken in bed."
-  },
-  {
-    "name": "Hung Huynh",
-    "display": "Hung H.",
-    "slug": "huynh_h",
-    "grade": 12,
-    "school": "Portage Northern",
-    "motto": "Hung is not a place, it is a person."
-  },
-  {
-    "name": "Jack Collins",
-    "display": "Jack C.",
-    "slug": "collins_j",
-    "grade": 12,
+    "last_initial": "R.",
+    "team": "Build",
     "school": "Homeschool",
-    "motto": "I have 6 toes."
+    "quote": "",
+    "first_name": "Peter"
   },
   {
-    "name": "Jacob Earl",
-    "display": "Jacob E.",
-    "slug": "earl_j",
-    "grade": 9,
-    "school": "Portage Central",
-    "motto": "Without the software, a robot is just a bunch of out of control parts!"
-  },
-  {
-    "name": "Jacob Woessner",
-    "display": "Jacob W.",
-    "slug": "woessner_j",
+    "name": "Ronit S.",
     "grade": 11,
-    "school": "Portage Central",
-    "motto": "I like to play magic: the gathering."
+    "last_initial": "S.",
+    "team": "Software",
+    "school": "Portage Northern High School",
+    "quote": "",
+    "first_name": "Ronit"
   },
   {
-    "name": "Jager Doorn",
-    "display": "Jager D.",
-    "slug": "doorn_j",
+    "name": "Maxwell S.",
     "grade": 11,
-    "school": "Schoolcraft",
-    "motto": "Talent is overrated. Eighty percent of success in life is showing up. The rest is integrity and perseverance."
+    "last_initial": "S.",
+    "team": "Software",
+    "school": "Mattawan High School",
+    "quote": "",
+    "first_name": "Maxwell"
   },
   {
-    "name": "Jiawen Fan",
-    "display": "Jiawen F.",
-    "slug": "fan_j",
-    "grade": 12,
-    "school": "Portage Central",
-    "motto": "Failure is the opportunity to begin again more intelligently."
-  },
-  {
-    "name": "Jade Camacho",
-    "display": "Jade C.",
-    "slug": "camacho_j",
-    "grade": 9,
-    "school": "Loy Norrix",
-    "motto": "A year ago, I would have died for certain people. Now, a year later, half of them are dead to me."
-  },
-  {
-    "name": "Kiana Martin",
-    "display": "Kiana M.",
-    "slug": "martin_k",
-    "grade": 12,
-    "school": "Portage Central",
-    "motto": "Work hard, play hard."
-  },
-  {
-    "name": "Kjerstin Lindbloom",
-    "display": "Kjerstin L.",
-    "slug": "lindbloom_k",
+    "name": "Haley W.",
     "grade": 11,
-    "school": "Mattawan",
-    "motto": "If mistakes help you learn, then I must be learning a lot."
+    "last_initial": "W.",
+    "team": "Build",
+    "school": "Vicksburg High School",
+    "quote": "",
+    "first_name": "Haley"
   },
   {
-    "name": "Lilian Gates",
-    "display": "Lilian G.",
-    "slug": "gates_l",
-    "grade": 12,
-    "school": "Portage Central",
-    "motto": "It's always a software problem."
-  },
-  {
-    "name": "Linkoln Kowalski",
-    "display": "Linkoln K.",
-    "slug": "kowalski_l",
-    "grade": 9,
-    "school": "Vicksburg",
-    "motto": "The best preparation for tomorrow is what is done today."
-  },
-  {
-    "name": "Maxwell Scott",
-    "display": "Maxwell S.",
-    "slug": "scott_m",
-    "grade": 9,
-    "school": "Mattawan",
-    "motto": "If it works, it needs more features."
-  },
-  {
-    "name": "Oscar Bujanos",
-    "display": "Oscar B.",
-    "slug": "bujanos_o",
-    "grade": 9,
-    "school": "Loy Norrix",
-    "motto": "Life us like a box of chocolates. You never know what your gonna get."
-  },
-  {
-    "name": "Paul Schreiter",
-    "display": "Paul S.",
-    "slug": "schreiter_p",
-    "grade": 11,
-    "school": "Portage Central",
-    "motto": "Hair isn't everything but it's pretty important."
-  },
-  {
-    "name": "Ranya Liu",
-    "display": "Ranya L.",
-    "slug": "liu_r",
-    "grade": 12,
-    "school": "Portage Central",
-    "motto": "Came for the food, stayed for the robot."
-  },
-  {
-    "name": "Rohit Kamath",
-    "display": "Rohit K.",
-    "slug": "kamath_r",
-    "grade": 12,
-    "school": "Portage Central",
-    "motto": "Anything in life worth doing is worth overdoing. Moderation is for cowards."
-  },
-  {
-    "name": "Ryan Lehoczky",
-    "display": "Ryan L.",
-    "slug": "lehoczky_r",
-    "grade": 12,
-    "school": "Portage Northern",
-    "motto": "I'm the one in the corner with the camera."
-  },
-  {
-    "name": "Sam Rabick",
-    "display": "Sam R.",
-    "slug": "rabick_s",
-    "grade": 11,
-    "school": "Comstock",
-    "motto": "If we accepted the sky as the limit, we would never have put a man on the moon."
-  },
-  {
-    "name": "Shelby Alexander",
-    "display": "Shelby A.",
-    "slug": "alexander_s",
-    "grade": 11,
-    "school": "Comstock",
-    "motto": "Things aren't always #000000 and #FFFFFF."
-  },
-  {
-    "name": "Sofia Aguila",
-    "display": "Sofia A.",
-    "slug": "aguila_s",
+    "name": "Vivienne C.",
     "grade": 10,
-    "school": "Kalamazoo Central",
-    "motto": "Vibe check."
+    "last_initial": "C.",
+    "team": "Software",
+    "school": "Loy Norrix High School",
+    "quote": "",
+    "first_name": "Vivienne"
   },
   {
-    "name": "Tori Dwyer",
-    "display": "Tori D.",
-    "slug": "dwyer_v",
-    "grade": 9,
-    "school": "Portage Central",
-    "motto": "Believe you can and you're halfway there."
-  },
-  {
-    "name": "Zach McDougal",
-    "display": "Zach M.",
-    "slug": "mcdougal_z",
+    "name": "Hayden L.",
     "grade": 10,
-    "school": "Portage Central",
-    "motto": "I build robots and I know things."
+    "last_initial": "L.",
+    "team": "Build",
+    "school": "Portage Northern High School",
+    "quote": "",
+    "first_name": "Hayden"
   },
   {
-    "name": "Zach Zlomek",
-    "display": "Zach Z.",
-    "slug": "zlomek_z",
-    "grade": 12,
-    "school": "Portage Central",
-    "motto": "I could watch it happen or be a part of it."
+    "name": "Anshul M.",
+    "grade": 10,
+    "last_initial": "M.",
+    "team": "Build",
+    "school": "Portage Northern High School",
+    "quote": "",
+    "first_name": "Anshul"
+  },
+  {
+    "name": "Avery M.",
+    "grade": 10,
+    "last_initial": "M.",
+    "team": "Drive/Build",
+    "school": "Portage Central High School",
+    "quote": "",
+    "first_name": "Avery"
+  },
+  {
+    "name": "Riley N.",
+    "grade": 10,
+    "last_initial": "N.",
+    "team": "Build",
+    "school": "Loy Norrix High School",
+    "quote": "",
+    "first_name": "Riley"
+  },
+  {
+    "name": "Kenny S.",
+    "grade": 10,
+    "last_initial": "S.",
+    "team": "Software",
+    "school": "Portage Northern High School",
+    "quote": "",
+    "first_name": "Kenny"
+  },
+  {
+    "name": "Prakash S.",
+    "grade": 10,
+    "last_initial": "S.",
+    "team": "Software",
+    "school": "Portage Central High School",
+    "quote": "",
+    "first_name": "Prakash"
+  },
+  {
+    "name": "Maxwell S.",
+    "grade": 10,
+    "last_initial": "S.",
+    "team": "Build",
+    "school": "Portage Central High School",
+    "quote": "",
+    "first_name": "Maxwell"
+  },
+  {
+    "name": "Rohan S.",
+    "grade": 10,
+    "last_initial": "S.",
+    "team": "Build",
+    "school": "Portage Northern High School",
+    "quote": "",
+    "first_name": "Rohan"
+  },
+  {
+    "name": "Veer S.",
+    "grade": 10,
+    "last_initial": "S.",
+    "team": "Business/Drive",
+    "school": "Portage Northern High School",
+    "quote": "",
+    "first_name": "Veer"
+  },
+  {
+    "name": "Liam T.",
+    "grade": 10,
+    "last_initial": "T.",
+    "team": "Business",
+    "school": "Plainwell High School",
+    "quote": "",
+    "first_name": "Liam"
+  },
+  {
+    "name": "Bethlehem C.",
+    "grade": 9,
+    "last_initial": "C.",
+    "team": "Build",
+    "school": "Homeschool",
+    "quote": "",
+    "first_name": "Bethlehem"
+  },
+  {
+    "name": "Miles F.",
+    "grade": 9,
+    "last_initial": "F.",
+    "team": "Software",
+    "school": "Portage Northern High School",
+    "quote": "",
+    "first_name": "Miles"
+  },
+  {
+    "name": "Collin L.",
+    "grade": 9,
+    "last_initial": "L.",
+    "team": "Build",
+    "school": "Delton Kellogg High School",
+    "quote": "",
+    "first_name": "Collin"
+  },
+  {
+    "name": "Maximilian M.",
+    "grade": 9,
+    "last_initial": "M.",
+    "team": "Build",
+    "school": "Portage Northern High School",
+    "quote": "",
+    "first_name": "Maximilian"
+  },
+  {
+    "name": "Alec M.",
+    "grade": 9,
+    "last_initial": "M.",
+    "team": "Build",
+    "school": "Portage Central High School",
+    "quote": "",
+    "first_name": "Alec"
+  },
+  {
+    "name": "Lauren P.",
+    "grade": 9,
+    "last_initial": "P.",
+    "team": "Business",
+    "school": "Portage Northern High School",
+    "quote": "",
+    "first_name": "Lauren"
+  },
+  {
+    "name": "Layla P.",
+    "grade": 9,
+    "last_initial": "P.",
+    "team": "Build",
+    "school": "Homeschool",
+    "quote": "",
+    "first_name": "Layla"
+  },
+  {
+    "name": "Isaac R.",
+    "grade": 9,
+    "last_initial": "R.",
+    "team": "Software",
+    "school": "Hackett High School",
+    "quote": "",
+    "first_name": "Isaac"
+  },
+  {
+    "name": "Lizzy R.",
+    "grade": 9,
+    "last_initial": "R.",
+    "team": "Business",
+    "school": "Portage Northern High School",
+    "quote": "",
+    "first_name": "Lizzy"
   }
 ]

@@ -1,18 +1,10 @@
 {{ $grade := dict "9" "Freshman" "10" "Sophomore" "11" "Junior" "12" "Senior" }}
 <div>
-  <ul class="gallery">
-    {{ range $.Site.Data.frc }}
-    <li>
-      <div class="gallery__card--team">
-        {{ $original := $.Page.Resources.GetMatch (printf "img/%s.jpg" .slug )}} {{ $image := $original.Fit "256x192" }}
-        <img src="{{ $image.RelPermalink }}" alt="" />
-        <div style="padding: 0 1em;">
-          <h2>{{ .display }}</h2>
-          <p style="margin: 0;">{{ .school }} {{ index $grade (string .grade) }}</p>
-          <p class="gallery__quote">{{ .motto }}</p>
-        </div>
-      </div>
-    </li>
-    {{ end }}
-  </ul>
+  {{ range $.Site.Data.frc }}
+  <p>
+    <strong>{{ .name }}</strong><br />
+    {{ .school }}, {{ index $grade (string .grade) }}, {{ .team }}<br />
+    <em>{{ .quote }}</em>
+  </p>
+  {{ end }}
 </div>
