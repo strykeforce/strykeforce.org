@@ -5,7 +5,7 @@ title: VEX IQ
 description: VEX IQ is our robotics program for seventh and eight graders.
 ---
 
-In 2019, to support the growing interest in the program at the 7th and 8th grade level, we launched our first season using the VEX IQ robotics program. Prior to this we participated in the FIRST FTC program.
+In 2019, to support the growing interest in the program at the 7th and 8th grade level, we launched our first season using the VEX IQ robotics program. Prior to this we participated in the _FIRST_ FTC program.
 
 <!--more-->
 
