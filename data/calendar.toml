@@ -18,13 +18,15 @@ state = "MI"
 zip = "49015"
 tba = "https://www.thebluealliance.com/event/2022milak"
 
-# [[events]]
-# name = "Michigan State Championship"
-# date = 2022-04-13T00:00:00Z
-# venue = "University Center"
-# state = "MI"
-# zip = "48710"
-# tba = "https://www.thebluealliance.com/event/2022micmp"
+[[events]]
+name = "Michigan State Championship"
+date = 2022-04-13T00:00:00Z
+venue = "Saginaw Valley State University"
+street = "7100 Bay Rd"
+city = "Saginaw"
+state = "MI"
+zip = "48710"
+tba = "https://www.thebluealliance.com/event/2022micmp"
 
 # [[events]]
 # name = "FIRST Championship"
