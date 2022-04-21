@@ -28,12 +28,12 @@ state = "MI"
 zip = "48710"
 tba = "https://www.thebluealliance.com/event/2022micmp"
 
-# [[events]]
-# name = "FIRST Championship"
-# date = 2022-04-20T00:00:00Z
-# venue = "GRB Convention Center"
-# street = "1001 Avenida de las Americas"
-# city = "Houston"
-# state = "TX"
-# zip = "77010"
-# tba = "https://www.thebluealliance.com/event/2022cmptx"
+[[events]]
+name = "FIRST Championship"
+date = 2022-04-20T00:00:00Z
+venue = "GRB Convention Center"
+street = "1001 Avenida de las Americas"
+city = "Houston"
+state = "TX"
+zip = "77010"
+tba = "https://www.thebluealliance.com/event/2022cmptx"
