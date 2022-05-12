@@ -37,3 +37,23 @@ city = "Houston"
 state = "TX"
 zip = "77010"
 tba = "https://www.thebluealliance.com/event/2022cmptx"
+
+[[events]]
+name = "Stryke Force Open House"
+date = 2022-05-23T00:00:00Z
+venue = "Stryke Force"
+street = "3710 Gembrit Cr."
+city = "Kalamazoo"
+state = "MI"
+zip = "49001"
+tba = "/open_house_2022.jpg"
+
+[[events]]
+name = "Stryke Force Open House"
+date = 2022-05-26T00:00:00Z
+venue = "Stryke Force"
+street = "3710 Gembrit Cr."
+city = "Kalamazoo"
+state = "MI"
+zip = "49001"
+tba = "/open_house_2022.jpg"
