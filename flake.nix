@@ -15,9 +15,8 @@
 
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            hugo
             sfdo.packages.${system}.default
-          ];
+          ] ++ lib.optional stdenv.isLinux hugo;
         };
 
         packages.default = with pkgs.poetry2nix; mkPoetryApplication {
