@@ -17,3 +17,33 @@ street = "15060 Helmer Rd S"
 tba = "https://www.thebluealliance.com/event/2023milak"
 venue = "Lakeview High School"
 zip = "49015"
+
+#  [[events]]
+#  name = "Michigan State Championship"
+#  date = 2023-04-13T00:00:00Z
+#  venue = "Saginaw Valley State University"
+#  street = "7100 Bay Rd"
+#  city = "Saginaw"
+#  state = "MI"
+#  zip = "48710"
+#  tba = "https://www.thebluealliance.com/event/2023micmp"
+
+#  [[events]]
+#  name = "FIRST Championship"
+#  date = 2023-04-20T00:00:00Z
+#  venue = "GRB Convention Center"
+#  street = "1001 Avenida de las Americas"
+#  city = "Houston"
+#  state = "TX"
+#  zip = "77010"
+#  tba = "https://www.thebluealliance.com/event/2023cmptx"
+
+#  [[events]]
+#  name = "Stryke Force Open House"
+#  date = 2023-05-23T00:00:00Z
+#  venue = "Stryke Force"
+#  street = "3710 Gembrit Cr."
+#  city = "Kalamazoo"
+#  state = "MI"
+#  zip = "49001"
+#  tba = "/open_house_2023.jpg"
