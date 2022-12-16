@@ -1,59 +1,19 @@
 [[events]]
-name = "St Joseph District Event"
-date = 2022-03-10T00:00:00Z
-venue = "St. Joseph High School"
-street = "2521 Stadium Drive"
 city = "St. Joseph"
+date = 2023-03-09T00:00:00Z
+name = "St Joseph District Event"
 state = "MI"
+street = "2521 Stadium Drive"
+tba = "https://www.thebluealliance.com/event/2023misjo"
+venue = "St. Joseph High School"
 zip = "49085"
-tba = "https://www.thebluealliance.com/event/2022misjo"
 
 [[events]]
-name = "Lakeview District Event"
-date = 2022-03-31T00:00:00Z
-venue = "Lakeview High School"
-street = "15060 Helmer Rd S"
 city = "Battle Creek"
+date = 2023-03-25T00:00:00Z
+name = "Lakeview District Event"
 state = "MI"
+street = "15060 Helmer Rd S"
+tba = "https://www.thebluealliance.com/event/2023milak"
+venue = "Lakeview High School"
 zip = "49015"
-tba = "https://www.thebluealliance.com/event/2022milak"
-
-[[events]]
-name = "Michigan State Championship"
-date = 2022-04-13T00:00:00Z
-venue = "Saginaw Valley State University"
-street = "7100 Bay Rd"
-city = "Saginaw"
-state = "MI"
-zip = "48710"
-tba = "https://www.thebluealliance.com/event/2022micmp"
-
-[[events]]
-name = "FIRST Championship"
-date = 2022-04-20T00:00:00Z
-venue = "GRB Convention Center"
-street = "1001 Avenida de las Americas"
-city = "Houston"
-state = "TX"
-zip = "77010"
-tba = "https://www.thebluealliance.com/event/2022cmptx"
-
-[[events]]
-name = "Stryke Force Open House"
-date = 2022-05-23T00:00:00Z
-venue = "Stryke Force"
-street = "3710 Gembrit Cr."
-city = "Kalamazoo"
-state = "MI"
-zip = "49001"
-tba = "/open_house_2022.jpg"
-
-[[events]]
-name = "Stryke Force Open House"
-date = 2022-05-26T00:00:00Z
-venue = "Stryke Force"
-street = "3710 Gembrit Cr."
-city = "Kalamazoo"
-state = "MI"
-zip = "49001"
-tba = "/open_house_2022.jpg"
