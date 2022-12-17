@@ -1,0 +1,32 @@
+[tool.poetry]
+authors = ["Jeff Hutchison <jeff@j3ff.io>"]
+description = "Stryke Force Website"
+license = "MIT"
+name = "stryke_force_website"
+packages = [
+  {include = "website"},
+]
+readme = "README.md"
+version = "4.0.0"
+
+[tool.poetry.dependencies]
+Django = {extras = ["argon2"], version = "^4.1"}
+python = "^3.10"
+whitenoise = {extras = ["brotli"], version = "^6.1.0"}
+wagtail = "^4.1.1"
+psycopg2 = "^2.9.5"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+rich = "^12.4.4"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.black]
+line-length = 99
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
