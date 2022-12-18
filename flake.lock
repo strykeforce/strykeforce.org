@@ -54,17 +54,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1671293519,
-        "narHash": "sha256-QGgLNAm/DNkGpCqeBpn7yypGAXcDKVL0YhIVOgo8uVM=",
-        "owner": "nix-community",
-        "repo": "poetry2nix",
-        "rev": "99b765e1ecf8a61334b7bab7fe44dd3141b003ef",
-        "type": "github"
+        "lastModified": 1671374086,
+        "narHash": "sha256-gsS0VdZgkOKL4juAk1cuYFfFyyq3fkbZa8ci1GzKB3A=",
+        "path": "/Users/jeff/Code/others/poetry2nix",
+        "type": "path"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "poetry2nix",
-        "type": "github"
+        "path": "/Users/jeff/Code/others/poetry2nix",
+        "type": "path"
       }
     },
     "root": {

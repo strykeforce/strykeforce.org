@@ -4,7 +4,8 @@
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.poetry2nix = {
-    url = "github:nix-community/poetry2nix";
+    # url = "github:nix-community/poetry2nix";
+    url = "path:/Users/jeff/Code/others/poetry2nix";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -14,9 +15,13 @@
       overlay = nixpkgs.lib.composeManyExtensions [
         poetry2nix.overlay
         (final: prev: {
-          # The application
-          stryke_force_website = prev.poetry2nix.mkPoetryApplication {
+          stryke_force_website_dev = prev.poetry2nix.mkPoetryEnv {
             projectDir = ./.;
+            groups = [ "main" "dev" ];
+          };
+          stryke_force_website = prev.poetry2nix.mkPoetryEnv {
+            projectDir = ./.;
+            groups = [ "main" ];
           };
         })
       ];
@@ -29,10 +34,13 @@
       in
       {
 
-        packages.default = pkgs.stryke_force_website.dependencyEnv;
+        packages.default = pkgs.stryke_force_website;
+
+        packages.venv = pkgs.stryke_force_website_dev;
 
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
+            stryke_force_website_dev
             postgresql
             nodejs
             poetry
