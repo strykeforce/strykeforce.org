@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from .base import *  # noqa
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -12,6 +14,6 @@ ALLOWED_HOSTS = ["*"]
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 try:
-    from .local import *
+    from .local import *  # noqa
 except ImportError:
     pass

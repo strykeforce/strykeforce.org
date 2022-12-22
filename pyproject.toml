@@ -21,6 +21,9 @@ dj-database-url = "^1.2.0"
 black = "^22.10.0"
 rich = "^12.4.4"
 
+
+[tool.poetry.dependencies]
+gunicorn = "^20.1.0"
 [build-system]
 build-backend = "poetry.core.masonry.api"
 requires = ["poetry-core"]

@@ -1,8 +1,10 @@
+from __future__ import annotations
+
 import os
 
 import dj_database_url
 
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 
@@ -76,7 +78,7 @@ DATABASES = {
     "default": dj_database_url.config(
         conn_max_age=600,
         conn_health_checks=True,
-    )
+    ),
 }
 
 # Password validation
@@ -107,7 +109,6 @@ TIME_ZONE = "UTC"
 
 USE_I18N = True
 
-USE_L10N = True
 
 USE_TZ = True
 
@@ -145,7 +146,7 @@ WAGTAIL_SITE_NAME = "strykeforce"
 WAGTAILSEARCH_BACKENDS = {
     "default": {
         "BACKEND": "wagtail.search.backends.database",
-    }
+    },
 }
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -

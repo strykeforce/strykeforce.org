@@ -1,4 +1,5 @@
 # Nix
+.tmp
 /result
 /venv
 

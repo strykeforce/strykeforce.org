@@ -1,4 +1,4 @@
-from django.db import models
+from __future__ import annotations
 
 from wagtail.models import Page
 
