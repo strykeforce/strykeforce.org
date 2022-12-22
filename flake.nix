@@ -123,6 +123,7 @@
                     environment = {
                       DJANGO_SETTINGS_MODULE = cfg.settingsModule;
                       STATIC_ROOT = "${static}";
+                      MEDIA_ROOT = "${stateDir}/media";
                       DATABASE_URL = databaseUrl;
                     };
 
