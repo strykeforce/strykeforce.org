@@ -130,11 +130,31 @@
                     preStart = "${pkg}/bin/manage.py migrate --no-input";
 
                     serviceConfig = {
-                      ExecStart = "${pkg}/bin/gunicorn --bind 0.0.0.0:8000 website.wsgi";
+                      ExecStart = "${pkg}/bin/gunicorn --bind 127.0.0.1:8000 website.wsgi";
                       User = "strykeforce";
                       Restart = "on-failure";
                     };
                   };
+
+                services.nginx = {
+                  enable = true;
+                  recommendedProxySettings = true;
+                  recommendedOptimisation = true;
+                  recommendedGzipSettings = true;
+
+                  virtualHosts."strykeforce.j3ff.io" = {
+                    # security.acme is configured for eris globally in nginx.nix
+                    forceSSL = false;
+                    enableACME = false;
+                    acmeRoot = null;
+
+                    locations = {
+                      "/" = {
+                        proxyPass = "http://127.0.0.1:8000";
+                      };
+                    };
+                  };
+                };
               };
             };
 
