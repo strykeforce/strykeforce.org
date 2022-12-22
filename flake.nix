@@ -9,15 +9,19 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, poetry2nix }:
+    let
+      version = "4.0.0-pre";
+    in
     {
       overlay = nixpkgs.lib.composeManyExtensions [
         poetry2nix.overlay
         (final: prev: {
-          stryke_force_website_dev = prev.poetry2nix.mkPoetryEnv {
+          strykeforce-website-dev = prev.poetry2nix.mkPoetryEnv {
             projectDir = ./.;
             groups = [ "main" "dev" ];
           };
-          stryke_force_website = prev.poetry2nix.mkPoetryApplication {
+
+          strykeforce-website = prev.poetry2nix.mkPoetryApplication {
             projectDir = ./.;
             groups = [ "main" ];
             postInstall = ''
@@ -26,7 +30,97 @@
             '';
           };
         })
+
+        (final: prev: {
+          strykeforce-static = prev.stdenv.mkDerivation {
+            pname = "strykeforce-static";
+            inherit version;
+            src = ./.;
+            phases = "installPhase";
+            installPhase = ''
+              export DJANGO_SETTINGS_MODULE=website.settings.production
+              export SECRET_KEY=
+              export DATABASE_URL=
+              export STATIC_ROOT=$out
+              mkdir -p $out
+              ${prev.strykeforce-website}/bin/manage.py collectstatic --no-input
+            '';
+          };
+        })
       ];
+
+      nixosModules.default = { config, lib, pkgs, ... }:
+        let
+          cfg = config.strykeforce.services.website;
+          stateDir = "/var/lib/strykeforce";
+          databaseUrl = "sqlite:///${stateDir}/website.sqlite";
+        in
+        {
+          options.strykeforce.services.website = {
+            enable = lib.mkEnableOption "Enable the Stryke Force website service";
+
+            settingsModule = lib.mkOption {
+              type = lib.types.str;
+              default = "website.settings.production";
+            };
+          };
+
+          config = lib.mkIf cfg.enable {
+
+            users.users.strykeforce = {
+              isSystemUser = true;
+              group = "strykeforce";
+            };
+            users.groups.strykeforce = { };
+
+            systemd.tmpfiles.rules = [
+              "d ${stateDir} 0770 strykeforce strykeforce -"
+            ];
+
+            systemd.services.strykeforce-website =
+              let
+                pkg = pkgs.strykeforce-website.dependencyEnv;
+              in
+              {
+                wantedBy = [ "multi-user.target" ];
+
+                environment = {
+                  DJANGO_SETTINGS_MODULE = cfg.settingsModule;
+                  STATIC_ROOT = "${pkgs.strykeforce-static}";
+                  MEDIA_ROOT = "${stateDir}/media";
+                  DATABASE_URL = databaseUrl;
+                };
+
+                preStart = "${pkg}/bin/manage.py migrate --no-input";
+
+                serviceConfig = {
+                  ExecStart = "${pkg}/bin/gunicorn --bind 127.0.0.1:8000 website.wsgi";
+                  User = "strykeforce";
+                  Restart = "on-failure";
+                };
+              };
+
+            services.nginx = {
+              enable = true;
+              recommendedProxySettings = true;
+              recommendedOptimisation = true;
+              recommendedGzipSettings = true;
+
+              virtualHosts."strykeforce.j3ff.io" = {
+                # security.acme is configured for eris globally in nginx.nix
+                forceSSL = false;
+                enableACME = false;
+                acmeRoot = null;
+
+                locations = {
+                  "/" = {
+                    proxyPass = "http://127.0.0.1:8000";
+                  };
+                };
+              };
+            };
+          };
+        };
 
       nixosConfigurations.container =
         let
@@ -35,7 +129,7 @@
         nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
-            self.nixosModules.${system}.default
+            self.nixosModules.default
             ({ ... }: {
               boot.isContainer = true;
               networking.useDHCP = false;
@@ -53,7 +147,6 @@
     (flake-utils.lib.eachDefaultSystem
       (system:
         let
-          version = "4.0.0-pre";
           src = ./.;
           pkgs = import nixpkgs {
             inherit system;
@@ -62,108 +155,22 @@
         in
         {
           packages = {
-            default = pkgs.stryke_force_website;
+            default = pkgs.strykeforce-website;
+            static = pkgs.strykeforce-static;
 
             # refresh venv for Pycharm with: nix build .#venv -o venv
-            venv = pkgs.stryke_force_website_dev;
+            venv = pkgs.strykeforce-website-dev;
 
-            static = pkgs.stdenv.mkDerivation {
-              pname = "strykeforce-static";
-              inherit version;
-              inherit src;
-              phases = "installPhase";
-              installPhase = ''
-                export DJANGO_SETTINGS_MODULE=website.settings.production
-                export SECRET_KEY=
-                export DATABASE_URL=
-                export STATIC_ROOT=$out
-                mkdir -p $out
-                ${pkgs.stryke_force_website}/bin/manage.py collectstatic --no-input
-              '';
-            };
           };
 
 
-          nixosModules.default = { config, lib, pkgs, ... }:
-            let
-              cfg = config.strykeforce.services.website;
-              stateDir = "/var/lib/strykeforce";
-              databaseUrl = "sqlite:///${stateDir}/website.sqlite";
-            in
-            {
-              options.strykeforce.services.website = {
-                enable = lib.mkEnableOption "Enable the Stryke Force website service";
-
-                settingsModule = lib.mkOption {
-                  type = lib.types.str;
-                  default = "website.settings.production";
-                };
-              };
-
-              config = lib.mkIf cfg.enable {
-
-                users.users.strykeforce = {
-                  isSystemUser = true;
-                  group = "strykeforce";
-                };
-                users.groups.strykeforce = { };
-
-                systemd.tmpfiles.rules = [
-                  "d ${stateDir} 0770 strykeforce strykeforce -"
-                ];
-
-                systemd.services.strykeforce-website =
-                  let
-                    pkg = self.packages.${system}.default.dependencyEnv;
-                    static = self.packages.${system}.static;
-                  in
-                  {
-                    wantedBy = [ "multi-user.target" ];
-
-                    environment = {
-                      DJANGO_SETTINGS_MODULE = cfg.settingsModule;
-                      STATIC_ROOT = "${static}";
-                      MEDIA_ROOT = "${stateDir}/media";
-                      DATABASE_URL = databaseUrl;
-                    };
-
-                    preStart = "${pkg}/bin/manage.py migrate --no-input";
-
-                    serviceConfig = {
-                      ExecStart = "${pkg}/bin/gunicorn --bind 127.0.0.1:8000 website.wsgi";
-                      User = "strykeforce";
-                      Restart = "on-failure";
-                    };
-                  };
-
-                services.nginx = {
-                  enable = true;
-                  recommendedProxySettings = true;
-                  recommendedOptimisation = true;
-                  recommendedGzipSettings = true;
-
-                  virtualHosts."strykeforce.j3ff.io" = {
-                    # security.acme is configured for eris globally in nginx.nix
-                    forceSSL = false;
-                    enableACME = false;
-                    acmeRoot = null;
-
-                    locations = {
-                      "/" = {
-                        proxyPass = "http://127.0.0.1:8000";
-                      };
-                    };
-                  };
-                };
-              };
-            };
 
 
 
           devShell = pkgs.mkShell
             {
               buildInputs = with pkgs; [
-                stryke_force_website_dev
+                strykeforce-website-dev
                 postgresql
                 nodejs
                 poetry
