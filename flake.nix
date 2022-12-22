@@ -1,5 +1,5 @@
 {
-  description = "Behold My Awesome Project!";
+  description = "Stryke Force Website";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
@@ -49,7 +49,7 @@
         })
       ];
 
-      nixosModules.default = { config, lib, pkgs, ... }:
+      nixosModules.strykeforce = { config, lib, pkgs, ... }:
         let
           cfg = config.strykeforce.services.website;
           stateDir = "/var/lib/strykeforce";
@@ -74,27 +74,28 @@
             users.groups.strykeforce = { };
 
             systemd.tmpfiles.rules = [
-              "d ${stateDir} 0770 strykeforce strykeforce -"
+              "d ${stateDir} 0775 strykeforce strykeforce -"
             ];
 
             systemd.services.strykeforce-website =
               let
-                pkg = pkgs.strykeforce-website.dependencyEnv;
+                website = self.packages.${pkgs.system}.website.dependencyEnv;
+                static = self.packages.${pkgs.system}.static;
               in
               {
                 wantedBy = [ "multi-user.target" ];
 
                 environment = {
                   DJANGO_SETTINGS_MODULE = cfg.settingsModule;
-                  STATIC_ROOT = "${pkgs.strykeforce-static}";
+                  STATIC_ROOT = "${static}";
                   MEDIA_ROOT = "${stateDir}/media";
                   DATABASE_URL = databaseUrl;
                 };
 
-                preStart = "${pkg}/bin/manage.py migrate --no-input";
+                preStart = "${website}/bin/manage.py migrate --no-input";
 
                 serviceConfig = {
-                  ExecStart = "${pkg}/bin/gunicorn --bind 127.0.0.1:8000 website.wsgi";
+                  ExecStart = "${website}/bin/gunicorn --bind 127.0.0.1:8000 website.wsgi";
                   User = "strykeforce";
                   Restart = "on-failure";
                 };
@@ -116,11 +117,17 @@
                   "/" = {
                     proxyPass = "http://127.0.0.1:8000";
                   };
+
+                  "/media" = {
+                    root = "${stateDir}/media";
+                  };
                 };
               };
             };
           };
         };
+
+      nixosModule = self.nixosModules.strykeforce;
 
       nixosConfigurations.container =
         let
@@ -155,17 +162,14 @@
         in
         {
           packages = {
-            default = pkgs.strykeforce-website;
+            website = pkgs.strykeforce-website;
             static = pkgs.strykeforce-static;
 
             # refresh venv for Pycharm with: nix build .#venv -o venv
             venv = pkgs.strykeforce-website-dev;
 
+            default = pkgs.strykeforce-website;
           };
-
-
-
-
 
           devShell = pkgs.mkShell
             {
