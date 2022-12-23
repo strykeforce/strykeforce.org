@@ -118,8 +118,8 @@
                     proxyPass = "http://127.0.0.1:8000";
                   };
 
-                  "/media" = {
-                    root = "${stateDir}/media";
+                  "/media/" = {
+                    alias = "${stateDir}/media/";
                   };
                 };
               };
