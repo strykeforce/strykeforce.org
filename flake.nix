@@ -53,7 +53,7 @@
         let
           cfg = config.strykeforce.services.website;
           stateDir = "/var/lib/strykeforce";
-          databaseUrl = "sqlite:///${stateDir}/website.sqlite";
+          databaseUrl = "sqlite:///${stateDir}/website.sqlite3";
         in
         {
           options.strykeforce.services.website = {
@@ -180,6 +180,8 @@
                 poetry
                 pre-commit
               ] ++ lib.optional stdenv.isDarwin openssl;
+
+              DATABASE_URL = "sqlite:///db.sqlite3";
             };
         }));
 }
