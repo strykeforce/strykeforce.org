@@ -15,6 +15,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
+    "website.blog",
     "website.home",
     "website.search",
     "wagtail.contrib.forms",
@@ -137,7 +138,7 @@ MEDIA_URL = "/media/"
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "strykeforce"
+WAGTAIL_SITE_NAME = "Stryke Force"
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html

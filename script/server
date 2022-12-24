@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# script/server: Launch my_awesome_project and any extra required processes
+#                locally.
+
+source "$(dirname "$0")/.config"
+
+# ensure everything in the app is up to date.
+script/update || exit 1
+
+poetry run python -X dev manage.py runserver

@@ -1,0 +1,27 @@
+{
+  "name": "strykeforce-website",
+  "watch": {
+    "build": {
+      "patterns": [
+        "website"
+      ],
+      "extensions": "html"
+    }
+  },
+  "scripts": {
+    "build": "postcss website/static/css/base.css -o website/static/css/main.css",
+    "watch": "npm-watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.8",
+    "autoprefixer": "^10.4.12",
+    "cssnano": "^5.1.13",
+    "npm-watch": "^0.11.0",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.2.1"
+  }
+}

@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# script/bootstrap: Resolve all dependencies that the my_awesome_project
+#                   requires to run.
+
+source "$(dirname "$0")/.config"
+
+if [ ! -f ".envrc" ]; then
+    _message "==> Installing flake dependencies…"
+    echo "use flake" > .envrc
+    direnv allow .
+    _warn "==> Re-run $SCRIPT_NAME after direnv completes building."
+    exit 1
+fi
+
+if [ -f "pyproject.toml" ]; then
+    _message "==> Installing python dependencies…"
+    if [ ! -f "poetry.lock" ]; then
+        poetry lock
+    fi
+    poetry env info -p >/dev/null 2>&1 || {
+        poetry install --with=dev
+    }
+fi
+
+if [ -f "package.json" ]; then
+    _message "==> Installing NPM CSS & JS dependencies…"
+    [ -d "node_modules" ] || {
+        npm install
+    }
+fi
+
+if [ -f ".pre-commit-config.yaml" ]; then
+    _message "==> Installing pre-commit"
+    if [ ! -d ".git" ]; then
+        git init
+        git add flake.*
+    fi
+    if [ ! -f ".git/hooks/pre-commit" ]; then
+        pre-commit install --install-hooks
+    fi
+fi

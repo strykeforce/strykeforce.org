@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# script/clean: Remove all build artifacts and cached dependencies.
+
+source "$(dirname "$0")/.config"
+
+if [ "$1" != "-y" ]; then
+    _warn "==> Aborting, run $SCRIPT_NAME with \"-y\" to confirm"
+    exit 1
+fi
+
+_message "==> Removing files in .gitignore…"
+git clean -dfX --exclude='!.env'
+
+_message "==> Removing poetry environments…"
+poetry env remove --all
