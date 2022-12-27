@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -8,7 +8,44 @@
 {% endblock extra_css %}
 
 {% block content %}
-  <div class="prose">
-    {{ page.body|richtext }}
+
+  <div class="bg-white">
+    <main>
+      <div>
+        <!-- Hero card -->
+        <div class="relative">
+          <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
+              <div class="absolute inset-0">
+                {% image page.hero_image original class="h-full w-full object-cover" %}
+                <div class="absolute inset-0 bg-blue mix-blend-multiply"></div>
+              </div>
+              <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+                <h1 class="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+                  <span class="text-white">Stryke Force</span>
+                  <span class="text-yellow">2767</span>
+                </h1>
+                <div class="mx-auto mt-6 max-w-lg text-center text-xl text-gray-300 sm:max-w-3xl">
+                  {{ page.body|richtext }}
+                </div>
+                <div class="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+                  <div class="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
+                    <a
+                        href="#"
+                        class="hover:bg-gray-50 flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-blue shadow-sm sm:px-8"
+                    >Join the team</a>
+                    <a
+                        href="#"
+                        class="flex items-center justify-center rounded-md border border-transparent bg-blue-400 bg-opacity-70 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-80 sm:px-8"
+                    >Support the team</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
+
 {% endblock %}
