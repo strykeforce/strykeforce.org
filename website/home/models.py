@@ -20,3 +20,19 @@ class HomePage(Page):
         FieldPanel("hero_image"),
         FieldPanel("body"),
     ]
+
+
+class PartnersPage(Page):
+    body = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("body"),
+    ]
+
+
+class TeamPage(Page):
+    body = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("body"),
+    ]
