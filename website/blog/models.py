@@ -12,10 +12,10 @@ from wagtail.search import index
 
 
 class BlogIndexPage(Page):
-    intro = RichTextField(blank=True)
+    body = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
-        FieldPanel("intro"),
+        FieldPanel("body"),
     ]
 
     subpage_types = ["blog.BlogPage"]

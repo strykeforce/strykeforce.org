@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.dj-input-text, .dj-input-url {
-  @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm;
-}
-
-.dj-input-textarea {
-  @apply block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm;
+div.block-heading {
+  @apply text-xl font-bold tracking-tight;
 }

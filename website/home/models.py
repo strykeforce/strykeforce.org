@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 from django.db import models
+from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import RichTextField
+from wagtail.fields import StreamField
+from wagtail.images.blocks import ImageChooserBlock
 from wagtail.models import Page
 
 
@@ -30,8 +33,15 @@ class PartnersPage(Page):
     ]
 
 
-class TeamPage(Page):
-    body = RichTextField(blank=True)
+class AboutPage(Page):
+    body = StreamField(
+        [
+            ("heading", blocks.CharBlock(form_classname="title")),
+            ("paragraph", blocks.RichTextBlock()),
+            ("image", ImageChooserBlock()),
+        ],
+        use_json_field=True,
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),

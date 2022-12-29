@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block content %}
+  <div class="relative overflow-hidden bg-white py-16">
+    {%  include 'home/_grid_watermark.html' %}
+    <div class="relative px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-prose text-lg">
+        <h1>
+          <span class="block text-center text-lg font-semibold text-gray-600">About Us</span>
+          <span
+              class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">{{ page.title }}</span>
+        </h1>
+        <p class="mt-8 text-xl leading-8 text-gray-500">{{ page.intro }}</p>
+      </div>
+      <div class="prose prose-lg prose-gray prose-img:rounded-xl prose-img:w-full mx-auto mt-6 text-gray-500">
+        {% include_block page.body %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+
+<div class="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
+  <h1 class="text-2xl font-bold tracking-tight"></h1>
+
+</div>
