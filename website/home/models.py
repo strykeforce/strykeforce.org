@@ -22,7 +22,7 @@ class HomePage(Page):
     ]
 
 
-class PartnersPage(Page):
+class SponsorsPage(Page):
     body = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -38,3 +38,5 @@ class ContentPage(Page):
         FieldPanel("intro"),
         FieldPanel("body"),
     ]
+
+    subpage_types: list[str] = []

@@ -34,7 +34,8 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     {# Border goes in the div below: border-b-2 border-gray-100 #}
     <div
-        class="flex items-center justify-between py-6 md:justify-start md:space-x-10 {% block nav_classes %}{% endblock %} "
+        class="flex items-center justify-between py-6 md:justify-start md:space-x-10
+            {% block nav_classes %}{% endblock %} "
     >
       {# Logo #}
       <div class="flex justify-start lg:w-0 lg:flex-1">
@@ -131,16 +132,6 @@
             </svg>
           </button>
 
-          <!--
-              'About' flyout menu, show/hide based on flyout menu state.
-
-              Entering: "transition ease-out duration-200"
-                From: "opacity-0 translate-y-1"
-                To: "opacity-100 translate-y-0"
-              Leaving: "transition ease-in duration-150"
-                From: "opacity-100 translate-y-0"
-                To: "opacity-0 translate-y-1"
-            -->
           <div
               x-ref="panel"
               x-show="open"
@@ -182,6 +173,32 @@
                     </p>
                   </div>
                 </a>
+
+                {# FRC #}
+                <a
+                    href="https://www.firstinspires.org"
+                    class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                  {# Heroicon name: outline/trophy #}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                       stroke="currentColor" class="w-6 h-6 flex-shrink-0  text-blue" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
+                  </svg>
+
+
+                  <div class="ml-4">
+                    <p class="text-base font-medium text-gray-900">
+                      FIRST
+                    </p>
+                    <p class="mt-1 text-sm text-gray-500">
+                      FIRST® is a global robotics community that prepares young people for the future.
+                    </p>
+                  </div>
+                </a>
+
 
                 {# Students #}
                 <a
@@ -459,7 +476,7 @@
 
         <a href="{% slugurl "blog" %}" class="text-base font-medium text-gray-500 hover:text-gray-900">Blog</a>
 
-        <a href="{% slugurl "partners" %}" class="text-base font-medium text-gray-500 hover:text-gray-900">Partners</a>
+        <a href="{% slugurl "partners" %}" class="text-base font-medium text-gray-500 hover:text-gray-900">Sponsors</a>
 
         {# Resources #}
         <div class="relative">
