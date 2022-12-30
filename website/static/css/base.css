@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.richtext-image.full-width {
+    @apply w-full;
+}
+
+.richtext-image.left {
+    @apply float-left mr-5 w-1/2;
+}
+
+.richtext-image.right {
+    @apply float-right ml-5 w-1/2;
+}
+
+.responsive-object {
+    @apply relative;
+}
+
+.responsive-object iframe,
+.responsive-object object,
+.responsive-object embed {
+    @apply absolute w-full h-full top-0 left-0;
+}

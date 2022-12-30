@@ -1,37 +1,28 @@
 {% extends "base.html" %}
-
 {% load wagtailcore_tags wagtailimages_tags %}
 
+{% block nav_classes %}border-b-2 border-gray-100{% endblock %}
+
 {% block content %}
-  <h1>{{ page.title }}</h1>
-  <p class="meta">{{ page.date }}</p>
-
-  {% with categories=page.categories.all %}
-    {% if categories %}
-      <h3>Posted in:</h3>
-      <ul>
-        {% for category in categories %}
-          <li style="display: inline">
-            {% image category.icon fill-32x32 style="vertical-align: middle" %}
-            {{ category.name }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  {% endwith %}
-
-  <div>{{ page.intro }}</div>
-
-  <div class="prose">{{ page.body|richtext }}</div>
-
-
-  {% for item in page.gallery_images.all %}
-    <div style="float: left; margin: 10px">
-      {% image item.image fill-320x240 %}
-      <p>{{ item.caption }}</p>
+  <div class="relative overflow-hidden bg-white py-16">
+    {% include 'home/_grid_watermark.html' %}
+    <div class="relative px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-prose text-lg">
+        <h1>
+          <span class="block text-center text-lg font-semibold text-blue">Blog</span>
+          <span
+              class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">{{ page.title }}</span>
+        </h1>
+        <p class="mt-8 text-xl leading-8 text-gray-500">{{ page.intro }}</p>
+      </div>
+      <div
+          class="prose prose-lg prose-gray mx-auto mt-6 text-gray-600 prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-xl">
+        {% with page.image as main_image %}
+          {% if main_image %}{% image main_image fill-1200x630 %}{% endif %}
+        {% endwith %}
+        {{ page.body|richtext }}
+        <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
+      </div>
     </div>
-  {% endfor %}
-
-  <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
-
-{% endblock %}
+  </div>
+{% endblock content %}
