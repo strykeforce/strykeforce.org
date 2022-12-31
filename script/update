@@ -6,6 +6,8 @@ source "$(dirname "$0")/.config"
 
 script/bootstrap || exit 1
 
+nix build .#venv -o venv
+
 if [ -n "$USE_TAILWIND_CSS" ]; then
     _message "==> Updating Tailwind CSS…"
     npx postcss "$APPS_DIR/static/css/base.css" -o "$APPS_DIR/static/css/main.css"
