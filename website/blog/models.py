@@ -20,7 +20,11 @@ class BlogIndexPage(Page):
 
 class BlogPage(Page):
     date = models.DateField("Post date")
-    intro = models.CharField(max_length=250)
+    introduction = models.TextField(
+        blank=True,
+        max_length=1000,
+        help_text="Text to describe the page",
+    )
     body = RichTextField(blank=True)
     image = models.ForeignKey(
         "wagtailimages.Image",
@@ -28,10 +32,11 @@ class BlogPage(Page):
         null=True,
         on_delete=models.SET_NULL,
         related_name="+",
+        help_text="Landscape mode only; horizontal width greater than 1200 pixels.",
     )
 
     search_fields = Page.search_fields + [
-        index.SearchField("intro"),
+        index.SearchField("introduction"),
         index.SearchField("body"),
     ]
 
@@ -42,7 +47,7 @@ class BlogPage(Page):
             ],
             heading="Blog information",
         ),
-        FieldPanel("intro"),
+        FieldPanel("introduction"),
         FieldPanel("image", heading="Main Image"),
         FieldPanel("body"),
     ]
