@@ -5,7 +5,7 @@ from django.core.management import CommandError
 from django.db import transaction
 
 from website.members.factories import MentorFactory
-from website.members.models import Mentor
+from website.members.models import Member
 
 
 class Command(BaseCommand):
@@ -13,11 +13,11 @@ class Command(BaseCommand):
 
     @transaction.atomic
     def handle(self, *args, **options):
-        if Mentor.objects.exists():
+        if Member.mentors.exists():
             raise CommandError(
-                "This command cannot be run when any students exist, to guard against accidental use in production.",
+                "This command cannot be run when any mentors exist, to guard against accidental use in production.",
             )
 
-        self.stdout.write("Seeding database with sample students...")
+        self.stdout.write("Seeding database with sample mentors...")
         MentorFactory.create_batch(5)
         self.stdout.write("Done.")

@@ -5,7 +5,7 @@ from django.core.management import CommandError
 from django.db import transaction
 
 from website.members.factories import StudentFactory
-from website.members.models import Student
+from website.members.models import Member
 
 
 class Command(BaseCommand):
@@ -13,7 +13,7 @@ class Command(BaseCommand):
 
     @transaction.atomic
     def handle(self, *args, **options):
-        if Student.objects.exists():
+        if Member.students.exists():
             raise CommandError(
                 "This command cannot be run when any students exist, to guard against accidental use in production.",
             )
