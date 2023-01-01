@@ -15,6 +15,7 @@ from wagtail.admin.panels import FieldRowPanel
 from wagtail.admin.panels import MultiFieldPanel
 from wagtail.fields import RichTextField
 from wagtail.models import Page
+from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
 
@@ -47,7 +48,7 @@ class MentorsManager(models.Manager):
 
 
 @register_snippet
-class Member(models.Model):
+class Member(index.Indexed, models.Model):
     """Team members snippet model."""
 
     MEMBER_TYPE = (
@@ -126,6 +127,11 @@ class Member(models.Model):
         FieldPanel("title"),
         FieldPanel("blurb"),
         # PublishingPanel(),
+    ]
+
+    search_fields = [
+        index.SearchField("first_name"),
+        index.SearchField("last_name"),
     ]
 
     class Meta:
