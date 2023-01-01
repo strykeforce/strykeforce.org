@@ -1,9 +1,13 @@
 from __future__ import annotations
 
 from django.db import models
+from django.db.models import ForeignKey
+from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import InlinePanel
 from wagtail.admin.panels import MultiFieldPanel
 from wagtail.fields import RichTextField
+from wagtail.models import Orderable
 from wagtail.models import Page
 from wagtail.search import index
 
@@ -18,6 +22,22 @@ class BlogIndexPage(Page):
     subpage_types = ["blog.BlogPage"]
 
 
+class BlogMemberAuthorRelation(Orderable, models.Model):
+    page = ParentalKey("blog.BlogPage", on_delete=models.CASCADE, related_name="authors")
+    member = ForeignKey("members.Member", on_delete=models.CASCADE, related_name="+")
+
+    class Meta(Orderable.Meta):
+        verbose_name = "blog author"
+        verbose_name_plural = "blog authors"
+
+    panels = [
+        FieldPanel("member"),
+    ]
+
+    def __str__(self):
+        return self.page.title + " -> " + self.member.name
+
+
 class BlogPage(Page):
     date = models.DateField("Post date")
     introduction = models.TextField(
@@ -26,6 +46,7 @@ class BlogPage(Page):
         help_text="Text to describe the page",
     )
     body = RichTextField(blank=True)
+    # noinspection PyUnresolvedReferences
     image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -43,6 +64,7 @@ class BlogPage(Page):
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
+                InlinePanel("authors", label="Authors"),
                 FieldPanel("date"),
             ],
             heading="Blog information",
