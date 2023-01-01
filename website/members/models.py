@@ -27,16 +27,40 @@ class School(models.Model):
 
     panels = [FieldPanel("name"), FieldPanel("url")]
 
+    class Meta:
+        indexes = [models.Index(fields=["name"])]
+        verbose_name = "school"
+        verbose_name_plural = "schools"
+
     def __str__(self):
         return self.name
 
 
+class StudentsManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(member_type="STUDENT")
+
+
+class MentorsManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(member_type="MENTOR")
+
+
+@register_snippet
 class Member(models.Model):
-    """Abstract base class for team members."""
+    """Team members snippet model."""
+
+    MEMBER_TYPE = (
+        ("STUDENT", "Student"),
+        ("MENTOR", "Mentor"),
+        ("OTHER", "Other"),
+    )
 
     first_name = CharField(max_length=100)
     last_name = CharField(max_length=100)
+    member_type = CharField(choices=MEMBER_TYPE, default="STUDENT", max_length=50)
     email = EmailField(blank=True)
+    title = CharField(max_length=255, blank=True)
     # noinspection PyUnresolvedReferences
     image = models.ForeignKey(
         "wagtailimages.Image",
@@ -45,7 +69,29 @@ class Member(models.Model):
         blank=True,
         related_name="+",
     )
+    blurb = RichTextField(blank=True, features=["bold", "italic", "link", "document-link"])
     date_joined = DateField(default=timezone.now)
+
+    # Students
+    grade = PositiveIntegerField(
+        blank=True,
+        null=True,
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(12),
+        ],
+    )
+    school = models.ForeignKey(
+        "members.School",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="+",
+    )
+
+    objects = models.Manager()
+    students = StudentsManager()
+    mentors = MentorsManager()
 
     panels = [
         MultiFieldPanel(
@@ -62,37 +108,11 @@ class Member(models.Model):
                         FieldPanel("date_joined"),
                     ],
                 ),
+                FieldPanel("member_type"),
             ],
             "Member Information",
         ),
         FieldPanel("image"),
-        # PublishingPanel(),
-    ]
-
-    def __str__(self):
-        return f"{self.first_name} {self.last_name}"
-
-    class Meta:
-        abstract = True
-
-
-@register_snippet
-class Student(Member):
-    grade = PositiveIntegerField(
-        validators=[
-            MinValueValidator(1),
-            MaxValueValidator(12),
-        ],
-    )
-    school = models.ForeignKey(
-        "members.School",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name="+",
-    )
-
-    panels = Member.panels + [
         MultiFieldPanel(
             [
                 FieldRowPanel(
@@ -103,23 +123,22 @@ class Student(Member):
                 ),
             ],
         ),
-    ]
-
-
-@register_snippet
-class Mentor(Member):
-    title = CharField(max_length=255, blank=True)
-    blurb = RichTextField(blank=True, features=["bold", "italic", "link", "document-link"])
-
-    panels = Member.panels + [
         FieldPanel("title"),
         FieldPanel("blurb"),
+        # PublishingPanel(),
     ]
 
+    class Meta:
+        indexes = [models.Index(fields=["last_name", "first_name"])]
+        verbose_name = "member"
+        verbose_name_plural = "members"
 
-class StudentsPage(Page):
-    body = RichTextField(blank=True)
+    def __str__(self):
+        if self.member_type == "STUDENT":
+            return f"{self.name} ({self.grade})"
+        return f"{self.name} ({self.member_type.lower()})"
 
-    content_panels = Page.content_panels + [
-        FieldPanel("body"),
-    ]
+    @property
+    def name(self):
+        """Full name of member."""
+        return self.first_name + " " + self.last_name

@@ -8,6 +8,7 @@ from wagtail.models import Page
 
 class HomePage(Page):
     body = RichTextField(blank=True)
+    # noinspection PyUnresolvedReferences
     hero_image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,

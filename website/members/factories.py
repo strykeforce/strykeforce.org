@@ -6,9 +6,8 @@ from factory import Faker
 from factory import LazyFunction
 from factory.django import DjangoModelFactory
 
-from .models import Mentor
+from .models import Member
 from .models import School
-from .models import Student
 
 schools = None
 
@@ -26,8 +25,9 @@ def get_grade():
 
 class StudentFactory(DjangoModelFactory):
     class Meta:
-        model = Student
+        model = Member
 
+    member_type = "STUDENT"
     first_name = Faker("first_name")
     last_name = Faker("first_name")
     email = Faker("email")
@@ -38,10 +38,12 @@ class StudentFactory(DjangoModelFactory):
 
 class MentorFactory(DjangoModelFactory):
     class Meta:
-        model = Mentor
+        model = Member
 
+    member_type = "MENTOR"
     first_name = Faker("first_name")
     last_name = Faker("first_name")
     email = Faker("email")
 
+    title = Faker("job")
     blurb = Faker("paragraph", nb_sentences=5)

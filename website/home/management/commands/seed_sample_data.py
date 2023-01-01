@@ -3,9 +3,8 @@ from __future__ import annotations
 from django.core.management import BaseCommand
 from django.core.management import call_command
 
-from website.members.models import Mentor
+from website.members.models import Member
 from website.members.models import School
-from website.members.models import Student
 
 
 class Command(BaseCommand):
@@ -17,12 +16,12 @@ class Command(BaseCommand):
         else:
             self.stdout.write("Schools are loaded, skipping...")
 
-        if not Student.objects.exists():
+        if not Member.students.exists():
             call_command("seed_sample_students")
         else:
             self.stdout.write("Students are loaded, skipping...")
 
-        if not Mentor.objects.exists():
+        if not Member.mentors.exists():
             call_command("seed_sample_mentors")
         else:
             self.stdout.write("Mentors are loaded, skipping...")
