@@ -13,13 +13,22 @@ from wagtail.search import index
 
 
 class BlogIndexPage(Page):
-    body = RichTextField(blank=True)
+    body = models.TextField(
+        blank=True,
+        max_length=1000,
+        help_text="Text to describe the page",
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),
     ]
 
     subpage_types = ["blog.BlogPage"]
+
+    def get_context(self, request, **kwargs):
+        context = super().get_context(request)
+        context["posts"] = BlogPage.objects.descendant_of(self).live().order_by("-date")
+        return context
 
 
 class BlogMemberAuthorRelation(Orderable, models.Model):
