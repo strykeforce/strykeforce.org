@@ -148,3 +148,8 @@ class Member(index.Indexed, models.Model):
     def name(self):
         """Full name of member."""
         return self.first_name + " " + self.last_name
+
+    @property
+    def student_name(self):
+        "First name plus last initial of member."
+        return f"{self.first_name} {self.last_name[0]}."
