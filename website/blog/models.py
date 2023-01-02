@@ -13,7 +13,11 @@ from wagtail.search import index
 
 
 class BlogIndexPage(Page):
-    body = RichTextField(blank=True)
+    body = models.TextField(
+        blank=True,
+        max_length=1000,
+        help_text="Text to describe the page",
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),
