@@ -25,6 +25,11 @@ class BlogIndexPage(Page):
 
     subpage_types = ["blog.BlogPage"]
 
+    def get_context(self, request, **kwargs):
+        context = super().get_context(request)
+        context["posts"] = BlogPage.objects.descendant_of(self).live().order_by("-date")
+        return context
+
 
 class BlogMemberAuthorRelation(Orderable, models.Model):
     page = ParentalKey("blog.BlogPage", on_delete=models.CASCADE, related_name="authors")
