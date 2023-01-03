@@ -1,0 +1,20 @@
+{% load  wagtailimages_tags %}
+
+{% for author in authors %}
+  {% with author.member as member %}
+    <div class="mt-6 flex items-center">
+      <div class="flex-shrink-0">
+        <span>
+          <span class="sr-only">{{ member.student_name }}</span>
+          {% image member.image fill-72x72 class="inline-block h-10 w-10 rounded-full" alt="" %}
+        </span>
+      </div>
+      <div class="ml-3">
+        <p class="text-sm font-medium text-gray-900">
+          {{ member.student_name }}
+        </p>
+
+      </div>
+    </div>
+  {% endwith %}
+{% endfor %}
