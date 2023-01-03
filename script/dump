@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# script/dump: Dump content of database.
+
+source "$(dirname "$0")/.config"
+
+DUMP_FILE=dump.json
+DUMP_ARCHIVE=dump.tar
+MEDIA_DIR=/var/lib/strykeforce/media
+IMAGE_ARCHIVE=images.tar
+
+_message "==> Dumping database contents to ${DUMP_FILE} …"
+
+./manage.py dumpdata --natural-foreign --natural-primary --indent 2 \
+          -e contenttypes -e auth.permission \
+          -e wagtailcore.groupcollectionpermission \
+          -e wagtailcore.grouppagepermission -e wagtailimages.rendition \
+          -e sessions \
+          -e wagtailsearch.sqliteftsindexentry -e wagtailsearch.indexentry \
+          > $DUMP_FILE
+
+if [ -d $MEDIA_DIR ]; then
+    _message "==> Copying original images to ${IMAGE_ARCHIVE} …"
+    pushd $MEDIA_DIR
+    tar cf $IMAGE_ARCHIVE original_images
+    popd
+fi
+
+tar cf $DUMP_ARCHIVE $DUMP_FILE $IMAGE_ARCHIVE
+_message "==> Finished dumping website contents to ${DUMP_ARCHIVE} …"
