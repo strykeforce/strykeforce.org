@@ -21,9 +21,7 @@ _message "==> Dumping database contents to ${DUMP_FILE} …"
 
 if [ -d $MEDIA_DIR ]; then
     _message "==> Copying original images to ${IMAGE_ARCHIVE} …"
-    pushd $MEDIA_DIR
-    tar cf $IMAGE_ARCHIVE original_images
-    popd
+    tar --directory=$MEDIA_DIR -c -f $IMAGE_ARCHIVE original_images
 fi
 
 tar cf $DUMP_ARCHIVE $DUMP_FILE $IMAGE_ARCHIVE
