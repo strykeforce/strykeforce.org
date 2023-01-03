@@ -25,4 +25,5 @@ if [ -d $MEDIA_DIR ]; then
 fi
 
 tar cf $DUMP_ARCHIVE $DUMP_FILE $IMAGE_ARCHIVE
+rm $DUMP_FILE $IMAGE_ARCHIVE
 _message "==> Finished dumping website contents to ${DUMP_ARCHIVE} …"
