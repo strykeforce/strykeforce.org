@@ -25,6 +25,9 @@ class EventIndexPage(Page):
     def future_events(self):
         return self.events().filter(date_start__gt=timezone.now())
 
+    def events_by_year(self):
+        return self.get_children().live().order_by("title")
+
     content_panels = Page.content_panels + [
         FieldPanel("body"),
     ]
