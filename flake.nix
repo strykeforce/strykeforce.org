@@ -5,7 +5,7 @@
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.poetry2nix = {
 #    url = "github:nix-community/poetry2nix";
-    url = "github:jhh/poetry2nix";
+    url = "github:jhh/poetry2nix/build-systems";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
