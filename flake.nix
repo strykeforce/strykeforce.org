@@ -183,6 +183,7 @@
                 nodejs
                 poetry
                 pre-commit
+                sqlite
               ] ++ lib.optional stdenv.isDarwin openssl;
 
               DATABASE_URL = "sqlite:///db.sqlite3";
