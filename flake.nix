@@ -41,6 +41,7 @@
             installPhase = ''
               export DJANGO_SETTINGS_MODULE=website.settings.production
               export SECRET_KEY=
+              export TBA_READ_KEY=
               export DATABASE_URL=
               export STATIC_ROOT=$out
               mkdir -p $out
