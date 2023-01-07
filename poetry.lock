@@ -946,6 +946,23 @@ files = [
 ]
 
 [[package]]
+name = "tba-api-v3client"
+version = "3.8.0"
+description = "The Blue Alliance API v3"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "tba-api-v3client-3.8.0.tar.gz", hash = "sha256:2192150f41fdadb295e11e1a935d47fc9157f65274571dbad9b5c25caed93386"},
+]
+
+[package.dependencies]
+certifi = "*"
+python-dateutil = "*"
+six = ">=1.10"
+urllib3 = ">=1.15"
+
+[[package]]
 name = "telepath"
 version = "0.3"
 description = "A library for exchanging data between Python and JavaScript"
@@ -1084,4 +1101,4 @@ testing = ["Pillow (>=6.0.0,<10.0.0)", "Wand (>=0.6,<1.0)", "mock (>=3.0,<4.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "0a9935a49ccd2a17d25223392930986c3afabdf1f27f7a276e066e90c240127c"
+content-hash = "aec308f03c12bb9a6280c96d4a952c2faa7e572881e7a6be5f84cd4289012d1b"

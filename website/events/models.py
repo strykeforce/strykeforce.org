@@ -3,13 +3,16 @@ from __future__ import annotations
 from django.db import models
 from django.db.models import CharField
 from django.db.models import DateField
+from django.db.models import FloatField
+from django.db.models import IntegerField
+from django.db.models import JSONField
 from django.db.models import URLField
 from django.utils import timezone
 from wagtail.admin.panels import FieldPanel
-from wagtail.admin.panels import FieldRowPanel
-from wagtail.admin.panels import MultiFieldPanel
 from wagtail.fields import RichTextField
 from wagtail.models import Page
+
+MAX_LENGTH = 1000
 
 
 class EventIndexPage(Page):
@@ -20,10 +23,10 @@ class EventIndexPage(Page):
     )
 
     def events(self):
-        return EventPage.objects.descendant_of(self).live().order_by("date_start")
+        return Event.objects.order_by("start_date")
 
     def future_events(self):
-        return self.events().filter(date_start__gt=timezone.now())
+        return self.events().filter(start_date__gt=timezone.now())
 
     def events_by_year(self):
         return self.get_children().live().order_by("title")
@@ -32,55 +35,45 @@ class EventIndexPage(Page):
         FieldPanel("body"),
     ]
 
-    subpage_types = [
-        "events.EventIndexPage",
-        "events.EventPage",
-    ]
 
-
-class EventPage(Page):
-    date_start = DateField()
-    date_end = DateField()
-    tba_url = URLField(blank=True, verbose_name="TBA URL")
-    event_url = URLField(blank=True, verbose_name="Event URL")
-    venue = CharField(max_length=100)
-    street = CharField(max_length=100)
-    city = CharField(max_length=100)
-    state = CharField(max_length=2)
-    zip = CharField(max_length=10)
+class Event(models.Model):
+    key = CharField(unique=True, default="", max_length=MAX_LENGTH)
+    name = CharField(default="", max_length=MAX_LENGTH)
+    event_code = CharField(default="", max_length=MAX_LENGTH)
+    event_type = IntegerField(default=-1)
+    district = JSONField(blank=True, null=True)
+    city = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    state_prov = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    country = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    start_date = DateField(default=timezone.now)
+    end_date = DateField(default=timezone.now)
+    year = IntegerField(default=timezone.now)
+    short_name = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    event_type_string = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    week = IntegerField(blank=True, null=True)
+    address = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    postal_code = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    gmaps_place_id = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    gmaps_url = URLField(max_length=MAX_LENGTH, blank=True, null=True)
+    lat = FloatField(blank=True, null=True)
+    lng = FloatField(blank=True, null=True)
+    location_name = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    website = URLField(max_length=MAX_LENGTH, blank=True, null=True)
+    first_event_id = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    first_event_code = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    webcasts = JSONField(blank=True, null=True)
+    division_keys = JSONField(blank=True, null=True)
+    parent_event_key = CharField(max_length=MAX_LENGTH, blank=True, null=True)
+    playoff_type = IntegerField(blank=True, null=True)
+    playoff_type_string = CharField(max_length=MAX_LENGTH, blank=True, null=True)
     body = RichTextField(blank=True)
 
     class Meta:
-        indexes = [models.Index(fields=["date_start"])]
+        ordering = ["-start_date"]
+        indexes = [
+            models.Index(fields=["year"]),
+            models.Index(fields=["start_date"]),
+        ]
 
-    content_panels = Page.content_panels + [
-        MultiFieldPanel(
-            [
-                FieldRowPanel(
-                    [
-                        FieldPanel("date_start"),
-                        FieldPanel("date_end"),
-                    ],
-                ),
-                FieldPanel("tba_url"),
-                FieldPanel("event_url"),
-            ],
-        ),
-        MultiFieldPanel(
-            [
-                FieldPanel("venue"),
-                FieldPanel("street"),
-                FieldRowPanel(
-                    [
-                        FieldPanel("city"),
-                        FieldPanel("state"),
-                        FieldPanel("zip"),
-                    ],
-                ),
-            ],
-        ),
-        FieldPanel("body"),
-    ]
-
-    subpage_types: list[str] = []
-    parent_page_types = ["events.EventIndexPage"]
+    def __str__(self):
+        return self.name
