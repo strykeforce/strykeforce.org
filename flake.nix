@@ -105,6 +105,10 @@
                 };
               };
 
+            services.redis.servers."" = {
+                enable = true;
+            };
+
             services.nginx = {
               enable = true;
               recommendedProxySettings = true;
