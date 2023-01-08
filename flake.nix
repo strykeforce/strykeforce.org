@@ -5,7 +5,7 @@
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.poetry2nix = {
     url = "github:nix-community/poetry2nix";
-#    url = "github:jhh/poetry2nix/build-systems";
+    #    url = "github:jhh/poetry2nix/build-systems";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -55,7 +55,6 @@
         let
           cfg = config.strykeforce.services.website;
           stateDir = "/var/lib/strykeforce";
-          databaseUrl = "sqlite:///${stateDir}/website.sqlite3";
         in
         {
           options.strykeforce.services.website = {
@@ -86,12 +85,13 @@
               in
               {
                 wantedBy = [ "multi-user.target" ];
+                requires = [ "postgresql.service" ];
+                after = [ "postgresql.service" ];
 
                 environment = {
                   DJANGO_SETTINGS_MODULE = cfg.settingsModule;
                   STATIC_ROOT = "${static}";
                   MEDIA_ROOT = "${stateDir}/media";
-                  DATABASE_URL = databaseUrl;
                 };
 
                 preStart = "${website}/bin/manage.py migrate --no-input";
@@ -105,8 +105,22 @@
                 };
               };
 
+
+            services.postgresql = {
+              ensureDatabases = [ "strykeforce" ];
+              ensureUsers = [
+                {
+                  name = "strykeforce";
+                  ensurePermissions."DATABASE strykeforce" = "ALL PRIVILEGES";
+                }
+              ];
+              # authentication = ''
+              #   local strykeforce strykeforce md5
+              # '';
+            };
+
             services.redis.servers."" = {
-                enable = true;
+              enable = true;
             };
 
             services.nginx = {
@@ -189,8 +203,6 @@
                 pre-commit
                 sqlite
               ] ++ lib.optional stdenv.isDarwin openssl;
-
-              DATABASE_URL = "sqlite:///db.sqlite3";
             };
         }));
 }
