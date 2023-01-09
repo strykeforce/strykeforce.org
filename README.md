@@ -10,6 +10,17 @@
 ALTER ROLE strykeforce WITH PASSWORD '<password>';
 ```
 
+## Copy or restore production data
+
+To restore database from backup:
+
+```sh
+zcat strykeforce.sql.gz | psql -d strykeforce
+cd media
+tar xf ../images.tar
+cd ..
+./manage.py wagtail_update_image_renditions
+```
 ## Server Management
 
 To run `manage.py` commands, check out the repo on the host server and set up the `.envrc`:
@@ -17,5 +28,4 @@ To run `manage.py` commands, check out the repo on the host server and set up th
 ```
 use flake
 export TBA_READ_KEY=<key>
-export DATABASE_URL=postgres://strykeforce:<password>@127.0.0.1:5432/strykeforce
 ```
