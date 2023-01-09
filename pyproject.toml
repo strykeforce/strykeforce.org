@@ -26,6 +26,9 @@ black = "^22.10.0"
 rich = "^12.4.4"
 django-debug-toolbar = "^3.8.1"
 
+
+[tool.poetry.dependencies]
+hiredis = "^2.1.0"
 [build-system]
 build-backend = "poetry.core.masonry.api"
 requires = ["poetry-core"]

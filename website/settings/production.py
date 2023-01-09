@@ -27,9 +27,10 @@ CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "unix:///run/redis/redis.sock?db=0",
-        "TIMEOUT": 604800,
+        "TIMEOUT": None,
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "PARSER_CLASS": "redis.connection.HiredisParser",
             "PICKLE_VERSION": -1,
         },
     },
