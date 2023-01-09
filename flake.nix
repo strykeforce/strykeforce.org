@@ -68,11 +68,14 @@
 
           config = lib.mkIf cfg.enable {
 
-            users.users.strykeforce = {
-              isSystemUser = true;
-              group = "strykeforce";
+            users = {
+              users.strykeforce = {
+                isSystemUser = true;
+                group = "strykeforce";
+                extraGroups = [ "redis" ];
+              };
+              groups.strykeforce = { };
             };
-            users.groups.strykeforce = { };
 
             systemd.tmpfiles.rules = [
               "d ${stateDir} 0775 strykeforce strykeforce -"
@@ -114,9 +117,9 @@
                   ensurePermissions."DATABASE strykeforce" = "ALL PRIVILEGES";
                 }
               ];
-#              authentication = ''
-#                local strykeforce strykeforce md5
-#              '';
+              #              authentication = ''
+              #                local strykeforce strykeforce md5
+              #              '';
             };
 
             services.redis.servers."" = {
