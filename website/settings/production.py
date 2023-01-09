@@ -17,6 +17,17 @@ try:
 except ImportError:
     pass
 
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "strykeforce",
+        "USER": "strykeforce",
+        "PASSWORD": "",
+        "HOST": "/run/postgresql",
+        "PORT": "5432",
+    },
+}
+
 MIDDLEWARE = (
     ["django.middleware.cache.UpdateCacheMiddleware"]
     + MIDDLEWARE
