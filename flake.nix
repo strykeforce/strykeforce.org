@@ -115,6 +115,10 @@
                   name = "strykeforce";
                   ensurePermissions."DATABASE strykeforce" = "ALL PRIVILEGES";
                 }
+                {
+                  name = "jeff";
+                  ensurePermissions."DATABASE strykeforce" = "ALL PRIVILEGES";
+                }
               ];
               #              authentication = ''
               #                local strykeforce strykeforce md5
