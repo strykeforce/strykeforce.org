@@ -16,7 +16,7 @@ _message "==> Dumping database contents to ${DUMP_FILE} …"
           -e wagtailcore.groupcollectionpermission \
           -e wagtailcore.grouppagepermission -e wagtailimages.rendition \
           -e sessions \
-          -e wagtailsearch.sqliteftsindexentry -e wagtailsearch.indexentry \
+          -e wagtailsearch.indexentry \
           > $DUMP_FILE
 
 if [ -d $MEDIA_DIR ]; then
