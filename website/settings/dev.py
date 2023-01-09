@@ -11,6 +11,13 @@ SECRET_KEY = "django-insecure-nazl^__i55zgwj+9a*pf2_td+*3&3aa!)517v((0bhqras0w2%
 # SECURITY WARNING: define the correct hosts in production!
 ALLOWED_HOSTS = ["*"]
 
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "strykeforce",
+    },
+}
+
 INSTALLED_APPS += [
     "debug_toolbar",
 ]

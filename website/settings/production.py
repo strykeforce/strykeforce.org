@@ -25,6 +25,7 @@ DATABASES = {
         "PASSWORD": "",
         "HOST": "/run/postgresql",
         "PORT": "5432",
+        "CONN_MAX_AGE": 600,
     },
 }
 
