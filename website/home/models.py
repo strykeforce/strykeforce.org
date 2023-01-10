@@ -9,6 +9,8 @@ from website.blog.models import BlogIndexPage
 from website.blog.models import BlogPage
 from website.events.models import EventIndexPage
 
+LATEST_NEWS = 2
+
 
 class HomePage(Page):
     body = RichTextField(blank=True)
@@ -23,7 +25,9 @@ class HomePage(Page):
 
     def get_context(self, request, **kwargs):
         context = super().get_context(request)
-        context["blog_posts"] = BlogPage.objects.descendant_of(self).live().order_by("-date")[0:4]
+        context["blog_posts"] = (
+            BlogPage.objects.descendant_of(self).live().order_by("-date")[0:LATEST_NEWS]
+        )
         blog_index_page = BlogIndexPage.objects.child_of(self).live().first()
         context["blog_title"] = blog_index_page.title
         context["blog_intro"] = blog_index_page.body
