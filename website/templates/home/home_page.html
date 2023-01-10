@@ -54,7 +54,7 @@
           {% for event in event_index.future_events %}
             <li class="col-span-1 flex rounded-md shadow-sm">
               <div
-                  class="flex flex-col flex-shrink-0 items-center justify-center w-16 bg-yellow text-black text-md font-medium rounded-l-md">
+                  class="flex flex-col items-center justify-center w-16 bg-yellow text-black font-medium rounded-l-md">
                 <div>{{ event.start_date|date:"M"|upper }}</div>
                 <div>{{ event.start_date|date:"j" }}</div>
               </div>
