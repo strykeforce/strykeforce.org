@@ -120,9 +120,6 @@
                   ensurePermissions."DATABASE strykeforce" = "ALL PRIVILEGES";
                 }
               ];
-              #              authentication = ''
-              #                local strykeforce strykeforce md5
-              #              '';
             };
 
             services.redis.servers."" = {
