@@ -117,7 +117,10 @@
                 }
                 {
                   name = "jeff";
-                  ensurePermissions."DATABASE strykeforce" = "ALL PRIVILEGES";
+                  ensurePermissions = {
+                    "DATABASE strykeforce" = "ALL PRIVILEGES";
+                    "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
+                  };
                 }
               ];
             };
