@@ -34,8 +34,7 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     {# Border goes in the div below: border-b-2 border-gray-100 #}
     <div
-        class="flex items-center justify-between py-6 md:justify-start md:space-x-10
-            {% block nav_classes %}{% endblock %} "
+        class="flex items-center justify-between py-6 md:justify-start md:space-x-10 {% block nav_classes %}{% endblock %}"
     >
       {# Logo #}
       <div class="flex justify-start lg:w-0 lg:flex-1">
@@ -73,7 +72,7 @@
       </div>
 
       {# Desktop menu #}
-      <nav class=" space-x-10 md:flex">
+      <nav class="hidden space-x-10 md:flex">
 
         {# About #}
         <div
@@ -726,7 +725,7 @@
         To: "opacity-0 scale-95"
     -->
   <div
-      class="hidden absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+      class="absolute z-20 inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
   >
     <div
         class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5"
