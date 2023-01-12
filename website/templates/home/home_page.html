@@ -132,9 +132,9 @@
         <p class="mt-2 text-base text-gray-500 sm:mt-4">{{ sponsors_index.body }}</p>
       </div>
 
-      <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
+      <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
         {% for sponsor in sponsors_index.platinum_sponsors %}
-          <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+          <div class="col-span-1 flex justify-center lg:col-span-1">
             {% image sponsor.logo max-160x90 class="grayscale contrast-[0.25] w-[160] h-[90] m-auto" alt="{{ sponsor.name }}" %}
           </div>
         {% endfor %}
