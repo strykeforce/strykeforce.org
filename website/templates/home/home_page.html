@@ -3,7 +3,7 @@
 {% load wagtailcore_tags wagtailimages_tags blog_tags %}
 {% block content %}
 
-<div>
+  <div>
   {# Hero card #}
   <div class="relative">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -23,14 +23,14 @@
           <div class="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
             <div class="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
               <a
-                href="#"
-                class="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-blue shadow-sm hover:bg-gray-50 sm:px-8"
-                >Join the team</a
+                  href="#"
+                  class="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-blue shadow-sm hover:bg-gray-50 sm:px-8"
+              >Join the team</a
               >
               <a
-                href="#"
-                class="flex items-center justify-center rounded-md border border-transparent bg-blue-400 bg-opacity-70 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-80 sm:px-8"
-                >Support the team</a
+                  href="#"
+                  class="flex items-center justify-center rounded-md border border-transparent bg-blue-400 bg-opacity-70 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-80 sm:px-8"
+              >Support the team</a
               >
             </div>
           </div>
@@ -42,7 +42,7 @@
   {# Content #}
   <div class="relative">
     <div
-      class="mx-auto mx-auto flex flex-col items-center sm:flex-row sm:items-start sm:space-x-10 sm:px-6 sm:pt-12 lg:max-w-7xl lg:px-8"
+        class="mx-auto mx-auto flex flex-col items-center sm:flex-row sm:items-start sm:space-x-10 sm:px-6 sm:pt-12 lg:max-w-7xl lg:px-8"
     >
       {# Events #}
       <div class="mt-10 w-80 flex-none grow-0 sm:mt-0">
@@ -53,30 +53,30 @@
 
         <ul role="list" class="mt-4 grid grid-cols-1 gap-5 sm:gap-6">
           {% for event in event_index.future_events %}
-          <li class="col-span-1 flex rounded-md shadow-sm">
-            <div
-              class="flex w-16 flex-col items-center justify-center rounded-l-md bg-yellow font-medium text-black"
-            >
-              <div>{{ event.start_date|date:"M"|upper }}</div>
-              <div>{{ event.start_date|date:"j" }}</div>
-            </div>
-            <div
-              class="flex flex-1 items-center justify-between truncate rounded-r-md border-t border-r border-b border-gray-200 bg-white"
-            >
-              <div class="flex-1 truncate px-4 py-2 text-sm">
-                <a href="#" class="truncate font-medium text-blue hover:text-gray-700"
-                  >{{ event.name }}
-                </a>
-                <p class="text-gray-500">{{ event.city }}, {{ event.state_prov }}</p>
+            <li class="col-span-1 flex rounded-md shadow-sm">
+              <div
+                  class="flex w-16 flex-col items-center justify-center rounded-l-md bg-yellow font-medium text-black"
+              >
+                <div>{{ event.start_date|date:"M"|upper }}</div>
+                <div>{{ event.start_date|date:"j" }}</div>
               </div>
-            </div>
-          </li>
+              <div
+                  class="flex flex-1 items-center justify-between truncate rounded-r-md border-t border-r border-b border-gray-200 bg-white"
+              >
+                <div class="flex-1 truncate px-4 py-2 text-sm">
+                  <a href="#" class="truncate font-medium text-blue hover:text-gray-700"
+                  >{{ event.name }}
+                  </a>
+                  <p class="text-gray-500">{{ event.city }}, {{ event.state_prov }}</p>
+                </div>
+              </div>
+            </li>
           {% endfor %}
         </ul>
         <div class="mt-4 px-4 sm:px-0">
           <a
-            href="{% slugurl 'events' %}"
-            class="text-base font-semibold text-blue hover:text-gray-700"
+              href="{% slugurl 'events' %}"
+              class="text-base font-semibold text-blue hover:text-gray-700"
           >
             All events <span aria-hidden="true">→</span>
           </a>
@@ -90,8 +90,8 @@
           <p class="mt-2 text-base text-gray-500 sm:mt-4">{{ blog_intro }}</p>
           <div class="mt-1">
             <a
-              href="{% slugurl 'blog' %}"
-              class="text-base font-semibold text-blue hover:text-gray-700"
+                href="{% slugurl 'blog' %}"
+                class="text-base font-semibold text-blue hover:text-gray-700"
             >
               Browse all news <span aria-hidden="true">→</span>
             </a>
@@ -99,31 +99,54 @@
         </div>
         <div class="mx-auto mt-6 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-2">
           {% for post in blog_posts %}
-          <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
-            <div class="flex-shrink-0">
-              {% image post.image fill-1200x630 class="h-48 w-full object-cover" alt="" %}
-            </div>
-            <div class="flex flex-1 flex-col justify-between bg-white p-6">
-              <div class="flex-1">
-                <a href="{% pageurl post %}" class="block">
-                  <p class="text-xl font-semibold text-gray-900">{{ post.title }}</p>
-                  <div class="text-sm text-gray-500">
-                    <time datetime="2020-03-16">{{ post.date }}</time>
-                  </div>
-
-                  <p class="mt-3 text-base text-gray-500">{{ post.introduction }}</p>
-                </a>
+            <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+              <div class="flex-shrink-0">
+                {% image post.image fill-1200x630 class="h-48 w-full object-cover" alt="" %}
               </div>
+              <div class="flex flex-1 flex-col justify-between bg-white p-6">
+                <div class="flex-1">
+                  <a href="{% pageurl post %}" class="block">
+                    <p class="text-xl font-semibold text-gray-900">{{ post.title }}</p>
+                    <div class="text-sm text-gray-500">
+                      <time datetime="2020-03-16">{{ post.date }}</time>
+                    </div>
 
-              {# Authors #}
-              <div class="mt-2 flex space-x-4">{% blog_authors post %}</div>
+                    <p class="mt-3 text-base text-gray-500">{{ post.introduction }}</p>
+                  </a>
+                </div>
+
+                {# Authors #}
+                <div class="mt-2 flex space-x-4">{% blog_authors post %}</div>
+              </div>
             </div>
-          </div>
           {% endfor %}
         </div>
       </div>
     </div>
+
+    {# Sponsors #}
+      <div class="mx-auto max-w-7xl py-12 px-6 lg:px-8">
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
+          <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <img class="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
+          </div>
+          <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <img class="h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage">
+          </div>
+          <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <img class="h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
+          </div>
+          <div class="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+            <img class="h-12" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Transistor">
+          </div>
+          <div class="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
+            <img class="h-12" src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg" alt="Workcation">
+          </div>
+        </div>
+      </div>
+
+
   </div>
 
-  {% endblock %}
+{% endblock %}
 </div>

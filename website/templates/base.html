@@ -730,6 +730,14 @@
 {% wagtailuserbar %}
 
 <div class="bg-gray-50">
+{#    {% comment %}#}
+  <div class="fixed top-0">
+    <div class="block md:hidden">sm</div>
+    <div class="hidden md:block lg:hidden">md</div>
+    <div class="hidden lg:block xl:hidden">lg</div>
+    <div class="hidden xl:block 2xl:hidden">xl</div>
+  </div>
+{#    {% endcomment %}#}
   <main>
     {% block content %}{% endblock %}
   </main>
@@ -773,7 +781,7 @@
       </a>
     </div>
     <div class="mt-8 md:order-1 md:mt-0">
-      <p class="text-center text-xs leading-5 text-gray-500">&copy; 2018–{%now "Y"%} Stryke Force 4-H FIRST Robotics Team 2767</p>
+      <p class="text-center text-xs leading-5 text-gray-500">&copy; 2018–{%now "Y"%} Friends of Stryke Force Team 2767</p>
     </div>
   </div>
 </footer>
