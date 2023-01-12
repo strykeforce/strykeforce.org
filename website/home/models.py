@@ -1,9 +1,16 @@
 from __future__ import annotations
 
 from django.db import models
+from django.db.models import BooleanField
+from django.db.models import CharField
+from django.db.models import URLField
 from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldRowPanel
+from wagtail.admin.panels import MultiFieldPanel
 from wagtail.fields import RichTextField
 from wagtail.models import Page
+from wagtail.search import index
+from wagtail.snippets.models import register_snippet
 
 from website.blog.models import BlogIndexPage
 from website.blog.models import BlogPage
@@ -33,6 +40,8 @@ class HomePage(Page):
         context["blog_intro"] = blog_index_page.body
         event_index_page = EventIndexPage.objects.child_of(self).live().first()
         context["event_index"] = event_index_page
+        sponsors_index = SponsorsPage.objects.child_of(self).live().first()
+        context["sponsors_index"] = sponsors_index
         return context
 
     content_panels = Page.content_panels + [
@@ -42,7 +51,13 @@ class HomePage(Page):
 
 
 class SponsorsPage(Page):
-    body = RichTextField(blank=True)
+    body = models.TextField(blank=True)
+
+    def sponsors(self):
+        return Sponsor.objects.filter(active=True).order_by("name")
+
+    def platinum_sponsors(self):
+        return self.sponsors().filter(level__exact=LevelType.PLATINUM)
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),
@@ -59,3 +74,60 @@ class ContentPage(Page):
     ]
 
     subpage_types: list[str] = []
+
+
+LevelType = models.TextChoices("LevelType", "PLATINUM GOLD SILVER BRONZE")  # type: ignore
+
+
+@register_snippet
+class Sponsor(index.Indexed, models.Model):
+    """Sponsors type snippet model."""
+
+    name = models.CharField(max_length=100, unique=True)
+    description = models.TextField(max_length=1000, blank=True)
+    website = URLField(blank=True)
+    # noinspection PyUnresolvedReferences
+    level = CharField(choices=LevelType.choices, default=LevelType.BRONZE, max_length=20)
+    active = BooleanField(default=True)
+    # noinspection PyUnresolvedReferences
+    logo = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+
+    def grid_columns(self):
+        return round(self.logo.width / self.logo.height)
+
+    panels = [
+        FieldPanel("name"),
+        MultiFieldPanel(
+            [
+                FieldRowPanel(
+                    [
+                        FieldPanel("level"),
+                        FieldPanel("active"),
+                    ],
+                ),
+            ],
+        ),
+        FieldPanel("website"),
+        FieldPanel("logo"),
+        FieldPanel("description"),
+    ]
+
+    search_fields = [
+        index.SearchField("name"),
+    ]
+
+    class Meta:
+        indexes = [models.Index(fields=["level", "name"])]
+        verbose_name = "sponsor"
+        verbose_name_plural = "sponsors"
+
+    def __str__(self):
+        # noinspection PyUnresolvedReferences
+        level = LevelType[self.level.__str__()].label
+        return f"{self.name} ({level})"
