@@ -125,25 +125,29 @@
     </div>
 
     {# Sponsors #}
-      <div class="mx-auto max-w-7xl py-12 px-6 lg:px-8">
-        <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-          <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <img class="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
-          </div>
-          <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <img class="h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage">
-          </div>
-          <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <img class="h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
-          </div>
-          <div class="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-            <img class="h-12" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Transistor">
-          </div>
-          <div class="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
-            <img class="h-12" src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg" alt="Workcation">
-          </div>
-        </div>
+
+    <div class="mx-auto max-w-7xl py-12 px-6 lg:px-8">
+      <div class="max-w-prose px-4 sm:px-0">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900">Sponsors</h2>
+        <p class="mt-2 text-base text-gray-500 sm:mt-4">{{ sponsors_index.body }}</p>
       </div>
+
+      <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
+        {% for sponsor in sponsors_index.platinum_sponsors %}
+          <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            {% image sponsor.logo max-160x90 class="grayscale contrast-[0.25] w-[160] h-[90] m-auto" alt="{{ sponsor.name }}" %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="mt-4">
+        <a
+            href="{% slugurl 'sponsors' %}"
+            class="text-base font-semibold text-blue hover:text-gray-700"
+        >
+          All sponsors <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
 
 
   </div>

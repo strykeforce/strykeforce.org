@@ -40,6 +40,8 @@ class HomePage(Page):
         context["blog_intro"] = blog_index_page.body
         event_index_page = EventIndexPage.objects.child_of(self).live().first()
         context["event_index"] = event_index_page
+        sponsors_index = SponsorsPage.objects.child_of(self).live().first()
+        context["sponsors_index"] = sponsors_index
         return context
 
     content_panels = Page.content_panels + [
@@ -49,13 +51,13 @@ class HomePage(Page):
 
 
 class SponsorsPage(Page):
-    body = RichTextField(blank=True)
+    body = models.TextField(blank=True)
 
     def sponsors(self):
         return Sponsor.objects.filter(active=True).order_by("name")
 
     def platinum_sponsors(self):
-        return Sponsor.sponsors().filter(level__exact=LevelType.PLATINUM)
+        return self.sponsors().filter(level__exact=LevelType.PLATINUM)
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),

@@ -1111,9 +1111,6 @@ video {
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
-.col-span-2 {
-  grid-column: span 2 / span 2;
-}
 .-m-3 {
   margin: -0.75rem;
 }
@@ -1200,8 +1197,8 @@ video {
 .h-48 {
   height: 12rem;
 }
-.h-12 {
-  height: 3rem;
+.h-\[90\] {
+  height: 90;
 }
 .h-\[180\] {
   height: 180;
@@ -1229,6 +1226,9 @@ video {
 }
 .w-80 {
   width: 20rem;
+}
+.w-\[160\] {
+  width: 160;
 }
 .w-\[320\] {
   width: 320;
@@ -1660,6 +1660,14 @@ video {
 .ring-opacity-5 {
   --tw-ring-opacity: 0.05;
 }
+.contrast-\[0\.25\] {
+  --tw-contrast: contrast(0.25);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1940,10 +1948,6 @@ video {
 
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
-  }
-
-  .md\:col-span-3 {
-    grid-column: span 3 / span 3;
   }
 
   .md\:mt-0 {
