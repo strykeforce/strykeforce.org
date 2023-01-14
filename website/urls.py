@@ -10,11 +10,17 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from .search import views as search_views
 
+
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
+
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
+    path("sentry-debug/", trigger_error),
 ]
 
 
