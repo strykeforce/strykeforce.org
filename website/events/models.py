@@ -9,13 +9,15 @@ from django.db.models import JSONField
 from django.db.models import URLField
 from django.utils import timezone
 from wagtail.admin.panels import FieldPanel
+from wagtail.contrib.routable_page.models import path
+from wagtail.contrib.routable_page.models import RoutablePageMixin
 from wagtail.fields import RichTextField
 from wagtail.models import Page
 
 MAX_LENGTH = 1000
 
 
-class EventIndexPage(Page):
+class EventIndexPage(RoutablePageMixin, Page):
     body = models.TextField(
         blank=True,
         max_length=1000,
@@ -28,8 +30,36 @@ class EventIndexPage(Page):
     def future_events(self):
         return self.events().filter(start_date__gt=timezone.now())
 
-    def events_by_year(self):
-        return self.get_children().live().order_by("title")
+    @path("")
+    @path("year/<int:year>/")
+    def events_for_year(self, request, year=None):
+        """View function for current season's events."""
+        if year is None:
+            year = timezone.now().year
+
+        events = self.events().filter(start_date__year=year)
+
+        return self.render(
+            request,
+            context_overrides={
+                "title": f"{year} Events",
+                "events": events,
+            },
+        )
+
+    @path("key/<slug:key>/")
+    def event_for_key(self, request, key):
+        """View function for event looked up by event key."""
+
+        event = Event.objects.get(key=key)
+
+        return self.render(
+            request,
+            template="events/event_page.html",
+            context_overrides={
+                "event": event,
+            },
+        )
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),
