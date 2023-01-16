@@ -5,9 +5,13 @@
   networking.hostName = "mercury";
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
-  environment.systemPackages = with pkgs; [ vim ];
-  programs.vim.defaultEditor = true;
   systemd.services.amazon-init.enable = false;
+
+  # environment.systemPackages = with pkgs; [ ];
+  programs = {
+    git.enable = true;
+    vim.defaultEditor = true;
+  };
 
   nix.extraOptions = ''
     auto-optimise-store = true
