@@ -7,4 +7,5 @@ let
 in
 {
   "strykeforce_website_secrets.age".publicKeys = [ jeff mercury ];
+  "strykeforce_s3_secrets.age".publicKeys = [ jeff mercury ];
 }

@@ -44,6 +44,7 @@
           inherit system;
           modules = [
             ./configuration.nix
+            ./rclone.nix
             agenix.nixosModule
             strykeforce.nixosModule
             ({ config, pkgs, ... }: {
