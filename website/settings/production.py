@@ -25,12 +25,8 @@ ALLOWED_HOSTS = [
     "strykeforce.j3ff.io",
     "strykeforce.org",
     "www.strykeforce.org",
+    "mercury.strykeforce.org",
 ]
-
-try:
-    from .local import *  # noqa
-except ImportError:
-    pass
 
 DATABASES = {
     "default": {
