@@ -23,9 +23,13 @@ cd ..
 ```
 ## Server Management
 
-To run `manage.py` commands, check out the repo on the host server and set up the `.envrc`:
+In production, look up the deployed derivation using `systemctl cat
+strykeforce-website` and run `manage.py` as user `strykeforce` with required
+environment variable set:
 
 ```
-use flake
-export TBA_READ_KEY=<key>
-```
+sudo -u strykeforce env \
+  DJANGO_SETTINGS_MODULE=website.settings.production \
+  TBA_READ_KEY= \
+  SECRET_KEY=<something> \
+  $NIX_STORE_PATH/bin/manage.py
