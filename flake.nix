@@ -42,6 +42,8 @@
               export DJANGO_SETTINGS_MODULE=website.settings.production
               export SECRET_KEY=
               export TBA_READ_KEY=
+              export EMAIL_HOST_USER=
+              export EMAIL_HOST_PASSWORD=
               export STATIC_ROOT=$out
               mkdir -p $out
               ${prev.strykeforce-website}/bin/manage.py collectstatic --no-input
