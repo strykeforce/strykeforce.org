@@ -114,7 +114,7 @@
                   name = "strykeforce";
                   ensurePermissions = {
                     "DATABASE strykeforce" = "ALL PRIVILEGES";
-                    "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
+                    "SCHEMA public" = "ALL PRIVILEGES";
                   };
                 }
               ];
