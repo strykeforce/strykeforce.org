@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block nav_classes %}border-b-2 border-gray-100{% endblock %}
+
+{% block content %}
+  <div class="px-4 pb-20 sm:px-6 lg:px-8 lg:pt-8 lg:pb-28">
+    <div class="relative mx-auto max-w-lg lg:max-w-3xl">
+      <div class="relative px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-prose text-lg">
+          <h1>
+            <span class="block text-center text-lg font-semibold text-blue">Contact Us</span>
+            <span
+                class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">{{ page.title }}</span>
+          </h1>
+          <div class="mt-8 text-xl leading-8 text-gray-500">{{ page.intro|richtext }}</div>
+        </div>
+        <div class="">
+          <form action="{% pageurl page %}" method="POST" class="space-y-8 divide-y divide-gray-200">
+            <div class="space-y-8 divide-y divide-gray-200"></div>
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+              {{ hidden }}
+            {% endfor %}
+            {# Include the visible fields #}
+            {% for field in form.visible_fields %}
+              <div class="dj-field-div">
+                {{ field.errors }}
+                {{ field.label_tag }}
+                <div class="mt-1">
+                  {{ field }}
+                </div>
+              </div>
+            {% endfor %}
+            <div class="pt-5">
+              <div class="flex justify-end" x-data>
+                <button
+                    type="button"
+                    class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    x-on:click="window.location='{{ page.get_site.root_url }}';"
+                >Cancel</button>
+                <input
+                    type="submit"
+                    class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue focus:ring-offset-2"
+                    >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

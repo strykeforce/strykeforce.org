@@ -10,9 +10,13 @@ from django.db.models import EmailField
 from django.db.models import PositiveIntegerField
 from django.db.models import URLField
 from django.utils import timezone
+from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import FieldRowPanel
+from wagtail.admin.panels import InlinePanel
 from wagtail.admin.panels import MultiFieldPanel
+from wagtail.contrib.forms.models import AbstractEmailForm
+from wagtail.contrib.forms.models import AbstractFormField
 from wagtail.fields import RichTextField
 from wagtail.models import Page
 from wagtail.search import index
@@ -153,3 +157,30 @@ class Member(index.Indexed, models.Model):
     def student_name(self):
         "First name plus last initial of member."
         return f"{self.first_name} {self.last_name[0]}."
+
+
+class JoinFormField(AbstractFormField):
+    page = ParentalKey("JoinFormPage", on_delete=models.CASCADE, related_name="form_fields")
+
+
+class JoinFormPage(AbstractEmailForm):
+    intro = RichTextField(blank=True)
+    thank_you_text = RichTextField(blank=True)
+
+    content_panels = AbstractEmailForm.content_panels + [
+        FieldPanel("intro"),
+        InlinePanel("form_fields", label="Form fields"),
+        FieldPanel("thank_you_text"),
+        MultiFieldPanel(
+            [
+                FieldRowPanel(
+                    [
+                        FieldPanel("from_address", classname="col6"),
+                        FieldPanel("to_address", classname="col6"),
+                    ],
+                ),
+                FieldPanel("subject"),
+            ],
+            "Email",
+        ),
+    ]

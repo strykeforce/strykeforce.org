@@ -23,3 +23,15 @@
 .responsive-object embed {
     @apply absolute w-full h-full top-0 left-0;
 }
+
+.dj-field-div input, .dj-field-div textarea {
+    @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-blue focus:ring-blue sm:text-sm;
+}
+
+.dj-field-div select {
+    @apply block w-20 rounded-md border-gray-300 shadow-sm focus:border-blue focus:ring-blue sm:text-sm;
+}
+
+.dj-field-div label {
+    @apply block text-sm font-medium text-gray-700;
+}
