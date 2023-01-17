@@ -1921,6 +1921,10 @@ select {
   width: 100%;
 }
 
+.dj-field-div {
+  border-style: none;
+}
+
 .dj-field-div input, .dj-field-div textarea {
   display: block;
   width: 100%;
