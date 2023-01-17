@@ -67,6 +67,9 @@
                 databases = [ "strykeforce" ];
                 pgdumpOptions = "--clean";
               };
+
+              security.acme.acceptTerms = true;
+              security.acme.defaults.email = "jeff@j3ff.io";
             })
           ];
         };

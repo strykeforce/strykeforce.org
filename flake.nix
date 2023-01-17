@@ -142,11 +142,12 @@
               recommendedOptimisation = true;
               recommendedGzipSettings = true;
 
-              virtualHosts."strykeforce.j3ff.io" = {
-                # security.acme is configured for eris globally in nginx.nix
+
+              virtualHosts."www.strykeforce.org" = {
+                # security.acme is configured for mercury globally
                 forceSSL = false;
                 enableACME = false;
-                acmeRoot = null;
+                serverAliases = [ "strykeforce.org" "mercury.strykeforce.org" ];
 
                 locations = {
                   "/" = {
