@@ -145,7 +145,7 @@
 
               virtualHosts."www.strykeforce.org" = {
                 # security.acme is configured for mercury globally
-                forceSSL = false;
+                forceSSL = true;
                 enableACME = true;
                 serverAliases = [ "strykeforce.org" "mercury.strykeforce.org" ];
 
