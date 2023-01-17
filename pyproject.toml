@@ -21,12 +21,12 @@ tba-api-v3client = "^3.8.0"
 django-redis = "^5.2.0"
 hiredis = "^2.1.0"
 sentry-sdk = "^1.13.0"
+opencv-python = "^4.7.0.68"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
 rich = "^12.4.4"
 django-debug-toolbar = "^3.8.1"
-
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
