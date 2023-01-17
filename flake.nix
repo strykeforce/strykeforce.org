@@ -134,6 +134,7 @@
               enable = true;
               save = [ ];
             };
+            systemd.services.redis.partOf = [ "strykeforce-website.service" ];
 
             services.nginx = {
               enable = true;
