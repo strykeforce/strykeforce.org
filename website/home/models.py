@@ -32,10 +32,8 @@ class HomePage(Page):
 
     def get_context(self, request, **kwargs):
         context = super().get_context(request)
-        context["blog_posts"] = (
-            BlogPage.objects.descendant_of(self).live().order_by("-date")[0:LATEST_NEWS]
-        )
         blog_index_page = BlogIndexPage.objects.child_of(self).live().first()
+        context["blog_posts"] = blog_index_page.recent_blogs()[0:LATEST_NEWS]
         context["blog_title"] = blog_index_page.title
         context["blog_intro"] = blog_index_page.body
         event_index_page = EventIndexPage.objects.child_of(self).live().first()
