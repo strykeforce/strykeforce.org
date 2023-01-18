@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load cache static wagtailcore_tags wagtailuserbar %}
 
 <!DOCTYPE html>
 <!--suppress XmlUnboundNsPrefix, CheckEmptyScriptTag -->
@@ -38,7 +38,7 @@
 </head>
 
 <body>
-
+{% cache None menu %}
 <div
     x-data="{
       aboutMenuOpen: false,
@@ -692,6 +692,7 @@
     </div>
   </div>
 </div>
+{% endcache %}
 {% wagtailuserbar %}
 
 <div class="bg-gray-50">
