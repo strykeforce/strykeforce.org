@@ -14,6 +14,11 @@ if [ -n "$USE_TAILWIND_CSS" ]; then
     NODE_ENV=production npx postcss "$APPS_DIR/static/css/base.css" -o "$APPS_DIR/static/css/main.min.css"
 fi
 
+if [ -n "$USE_ALPINE_JS" ]; then
+    _message "==> Updating Alpine.js…"
+    curl --location https://unpkg.com/alpinejs --output "$APPS_DIR/static/js/alpine.js"
+fi
+
 if [ -n "$USE_HTMX" ]; then
     _message "==> Updating HTMX…"
     cp node_modules/htmx.org/dist/htmx.min.js "$APPS_DIR/static/js/"
