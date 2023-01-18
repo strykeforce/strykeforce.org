@@ -145,8 +145,8 @@
 
               virtualHosts."www.strykeforce.org" = {
                 # security.acme is configured for mercury globally
-                forceSSL = false;
-                enableACME = false;
+                forceSSL = true;
+                enableACME = true;
                 serverAliases = [ "strykeforce.org" "mercury.strykeforce.org" ];
 
                 locations = {
@@ -159,6 +159,10 @@
                   };
                 };
               };
+            };
+
+            security.acme.certs = {
+              "www.strykeforce.org".email = "jeff@j3ff.io";
             };
           };
         };
