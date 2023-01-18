@@ -132,7 +132,7 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "http://www.strykeforce.org"
+WAGTAILADMIN_BASE_URL = "https://www.strykeforce.org"
 
 WAGTAILEMBEDS_RESPONSIVE_HTML = True
 WAGTAILIMAGES_FEATURE_DETECTION_ENABLED = True
