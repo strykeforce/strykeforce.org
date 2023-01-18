@@ -543,25 +543,6 @@ Django = "*"
 testing = ["django-modelcluster"]
 
 [[package]]
-name = "django-redis"
-version = "5.2.0"
-description = "Full featured redis cache backend for Django."
-category = "main"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "django-redis-5.2.0.tar.gz", hash = "sha256:8a99e5582c79f894168f5865c52bd921213253b7fd64d16733ae4591564465de"},
-    {file = "django_redis-5.2.0-py3-none-any.whl", hash = "sha256:1d037dc02b11ad7aa11f655d26dac3fb1af32630f61ef4428860a2e29ff92026"},
-]
-
-[package.dependencies]
-Django = ">=2.2"
-redis = ">=3,<4.0.0 || >4.0.0,<4.0.1 || >4.0.1"
-
-[package.extras]
-hiredis = ["redis[hiredis] (>=3,!=4.0.0,!=4.0.1)"]
-
-[[package]]
 name = "django-taggit"
 version = "3.1.0"
 description = "django-taggit is a reusable Django application for simple tagging."
@@ -657,14 +638,14 @@ doc = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
 
 [[package]]
 name = "faker"
-version = "16.4.0"
+version = "16.6.0"
 description = "Faker is a Python package that generates fake data for you."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "Faker-16.4.0-py3-none-any.whl", hash = "sha256:5420467fad3fa582094057754e5e81326cb1f51ab822bf9df96c077cfb35ae49"},
-    {file = "Faker-16.4.0.tar.gz", hash = "sha256:dcffdca8ec9a715982bcd5f53ee688dc4784cd112f9910f8f7183773eb3ec276"},
+    {file = "Faker-16.6.0-py3-none-any.whl", hash = "sha256:0a74514d654db0a3d37b9ca681f2d9182d2ec556f78b4f1a842a2ccc944660cd"},
+    {file = "Faker-16.6.0.tar.gz", hash = "sha256:dc8b2a8bf0d852d26eacf7763afd5e7d6e9e50d80ec648b51b8ecd3c505435fd"},
 ]
 
 [package.dependencies]
@@ -1421,4 +1402,4 @@ testing = ["Pillow (>=6.0.0,<10.0.0)", "Wand (>=0.6,<1.0)", "mock (>=3.0,<4.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "7cccb475f8dd6e27dead80ba5f2d135a15e4ddb0c6492edbdb12d279301a1717"
+content-hash = "074b4671707677d3f16e032dd645c80c6b605d4dc5b8a2079570edc76a035ad4"
