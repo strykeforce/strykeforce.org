@@ -50,10 +50,6 @@ CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
         "LOCATION": "unix:///run/redis/redis.sock?db=0",
-        "OPTIONS": {
-            "PARSER_CLASS": "redis.connection.HiredisParser",
-            "PICKLE_VERSION": -1,
-        },
     },
 }
 
