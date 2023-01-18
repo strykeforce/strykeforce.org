@@ -1,15 +1,5 @@
 # strykeforce.org
 
-## Database
-
-```sh
- sudo -u postgres psql
-```
-
-```sql
-ALTER ROLE strykeforce WITH PASSWORD '<password>';
-```
-
 ## Copy or restore production data
 
 To restore database from backup:
