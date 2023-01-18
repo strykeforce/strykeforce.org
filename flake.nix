@@ -156,8 +156,10 @@
 
                   "/media/" = {
                     alias = "${stateDir}/media/";
-                    expires = "24h";
-                    add_header = "Cache-Control public";
+                    extraConfig = ''
+                      expires 24h;
+                      add_header Cache-Control public;
+                    '';
                   };
                 };
               };
