@@ -1,7 +1,21 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailimages_tags blog_tags %}
+{% load static wagtailcore_tags wagtailimages_tags blog_tags %}
 
 {% block nav_classes %}border-b-2 border-gray-100{% endblock %}
+
+{% block metadata %}
+  {% with page_introduction=page.introduction main_image=page.image %}
+    {% if main_image %}
+      {% image main_image fill-1200x630 as link_image %}
+      <meta property="og:image" content="{{ link_image.full_url }}">
+    {% else %}
+      <meta property="og:image" content="https://www.strykeforce.org{% static 'img/meta-logo.png' %}">
+    {% endif %}
+    <meta property="og:description" content="{{ page_introduction }}">
+    <meta name="description" content="{{ page_introduction }}"/>
+    <meta property="og:type" content="article"/>
+  {% endwith %}
+{% endblock metadata %}
 
 {% block content %}
   <div class="relative overflow-hidden bg-white py-16">
