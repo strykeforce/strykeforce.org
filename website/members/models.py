@@ -157,30 +157,3 @@ class Member(index.Indexed, models.Model):
     def student_name(self):
         "First name plus last initial of member."
         return f"{self.first_name} {self.last_name[0]}."
-
-
-class JoinFormField(AbstractFormField):
-    page = ParentalKey("JoinFormPage", on_delete=models.CASCADE, related_name="form_fields")
-
-
-class JoinFormPage(AbstractEmailForm):
-    intro = RichTextField(blank=True)
-    thank_you_text = RichTextField(blank=True)
-
-    content_panels = AbstractEmailForm.content_panels + [
-        FieldPanel("intro"),
-        InlinePanel("form_fields", label="Form fields"),
-        FieldPanel("thank_you_text"),
-        MultiFieldPanel(
-            [
-                FieldRowPanel(
-                    [
-                        FieldPanel("from_address", classname="col6"),
-                        FieldPanel("to_address", classname="col6"),
-                    ],
-                ),
-                FieldPanel("subject"),
-            ],
-            "Email",
-        ),
-    ]
