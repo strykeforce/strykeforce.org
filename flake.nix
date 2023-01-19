@@ -173,7 +173,7 @@
               };
             };
 
-            security.acme.certs = {
+            security.acme.certs = lib.mkIf cfg.ssl {
               "www.strykeforce.org".email = "jeff@j3ff.io";
             };
           };
