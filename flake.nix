@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, flake-utils, poetry2nix }:
     let
-      version = "4.0.0-pre";
+      version = "4.0.0";
     in
     {
       overlay = nixpkgs.lib.composeManyExtensions [
