@@ -40,11 +40,11 @@ DATABASES = {
     },
 }
 
-MIDDLEWARE = (
-    ["django.middleware.cache.UpdateCacheMiddleware"]
-    + MIDDLEWARE
-    + ["django.middleware.cache.FetchFromCacheMiddleware"]
-)
+# MIDDLEWARE = (
+#     ["django.middleware.cache.UpdateCacheMiddleware"]
+#     + MIDDLEWARE
+#     + ["django.middleware.cache.FetchFromCacheMiddleware"]
+# )
 
 CACHES = {
     "default": {
