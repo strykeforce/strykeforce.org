@@ -382,15 +382,6 @@
               </svg>
             </button>
 
-            {% comment %}
-          Resources Menu
-          - resources page
-          - GitHub
-          - YouTube
-          - SmugMug?
-          - Instagram?
-          - Contact Us
-          {% endcomment %}
             <div
                 x-ref="resourceMenu"
                 x-show="resourceMenuOpen"
@@ -415,7 +406,6 @@
                       href="{% slugurl "resources" %}"
                       class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                   >
-                    <!-- Heroicon name: outline/lifebuoy -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="h-6 w-6 flex-shrink-0 text-blue">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -438,7 +428,6 @@
                       target="_blank"
                       rel="noreferrer noopener"
                   >
-                    <!-- Heroicon name: outline/bookmark-square -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="h-6 w-6 flex-shrink-0 text-blue">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -461,7 +450,6 @@
                       target="_blank"
                       rel="noreferrer noopener"
                   >
-                    <!-- Heroicon name: outline/bookmark-square -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="h-6 w-6 flex-shrink-0 text-blue">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -487,7 +475,6 @@
                       target="_blank"
                       rel="noreferrer noopener"
                   >
-                    <!-- Heroicon name: outline/bookmark-square -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="h-6 w-6 flex-shrink-0 text-blue">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -501,6 +488,29 @@
                       </p>
                       <p class="mt-1 text-sm text-gray-500">
                         This is a private Facebook group for Stryke Force FRC families to communicate with each other.
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
+                      href="{% slugurl 'contact-us' %}"
+                      class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="h-6 w-6 flex-shrink-0 text-blue">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                    </svg>
+
+
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-gray-900">
+                        Contact Us
+                      </p>
+                      <p class="mt-1 text-sm text-gray-500">
+                        Have a question about Stryke Force or a comment for us? Get in touch and we’ll help you out.
                       </p>
                     </div>
                   </a>
