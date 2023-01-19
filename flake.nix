@@ -63,7 +63,7 @@
 
             ssl = lib.mkOption {
               default = true;
-              type = lib.bool;
+              type = lib.types.bool;
               description = lib.mdDoc ''
                 Whether to enable SSL/TLS in Nginx.
               '';
