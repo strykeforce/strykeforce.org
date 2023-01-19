@@ -4,9 +4,13 @@ from django.db import models
 from django.db.models import BooleanField
 from django.db.models import CharField
 from django.db.models import URLField
+from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import FieldRowPanel
+from wagtail.admin.panels import InlinePanel
 from wagtail.admin.panels import MultiFieldPanel
+from wagtail.contrib.forms.models import AbstractEmailForm
+from wagtail.contrib.forms.models import AbstractFormField
 from wagtail.fields import RichTextField
 from wagtail.models import Page
 from wagtail.search import index
@@ -129,3 +133,30 @@ class Sponsor(index.Indexed, models.Model):
         # noinspection PyUnresolvedReferences
         level = LevelType[self.level.__str__()].label
         return f"{self.name} ({level})"
+
+
+class FormField(AbstractFormField):
+    page = ParentalKey("FormPage", on_delete=models.CASCADE, related_name="form_fields")
+
+
+class FormPage(AbstractEmailForm):
+    intro = RichTextField(blank=True)
+    thank_you_text = RichTextField(blank=True)
+
+    content_panels = AbstractEmailForm.content_panels + [
+        FieldPanel("intro"),
+        InlinePanel("form_fields", label="Form fields"),
+        FieldPanel("thank_you_text"),
+        MultiFieldPanel(
+            [
+                FieldRowPanel(
+                    [
+                        FieldPanel("from_address", classname="col6"),
+                        FieldPanel("to_address", classname="col6"),
+                    ],
+                ),
+                FieldPanel("subject"),
+            ],
+            "Email",
+        ),
+    ]
