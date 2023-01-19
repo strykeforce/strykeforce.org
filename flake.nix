@@ -61,6 +61,14 @@
           options.strykeforce.services.website = {
             enable = lib.mkEnableOption "Enable the Stryke Force website service";
 
+            ssl = lib.mkOption {
+              default = true;
+              type = lib.bool;
+              description = lib.mdDoc ''
+                Whether to enable SSL/TLS in Nginx.
+              '';
+            };
+
             settingsModule = lib.mkOption {
               type = lib.types.str;
               default = "website.settings.production";
@@ -145,8 +153,8 @@
 
               virtualHosts."www.strykeforce.org" = {
                 # security.acme is configured for mercury globally
-                forceSSL = true;
-                enableACME = true;
+                forceSSL = cfg.ssl;
+                enableACME = cfg.ssl;
                 serverAliases = [ "strykeforce.org" "mercury.strykeforce.org" ];
 
                 locations = {
