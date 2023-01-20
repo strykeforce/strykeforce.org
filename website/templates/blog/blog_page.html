@@ -9,6 +9,18 @@
       {% image main_image fill-1200x630 as link_image %}
       <meta property="og:image" content="{{ link_image.full_url }}">
       <meta name="twitter:image" content="{{ link_image.full_url }}">
+
+      <script type="application/ld+json">
+{ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "{{ page.title }}",
+ "image": "{{ link_image.full_url }}",
+  "url": "{{ page.full_url }}",
+ "datePublished": "{{ page.date|date:"c" }}",
+ "description": "{{ page_introduction }}"
+ }
+</script>
+
     {% else %}
       <meta property="og:image" content="https://www.strykeforce.org{% static 'img/meta-logo.png' %}">
     {% endif %}
@@ -18,6 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ page.title }}">
     <meta name="twitter:description" content="{{ page_introduction }}">
+
   {% endwith %}
 {% endblock metadata %}
 
