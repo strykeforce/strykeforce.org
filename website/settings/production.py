@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import sentry_sdk
-from sentry.integrations.logging import ignore_logger
 from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.logging import ignore_logger
 
 from .base import *  # noqa
 
