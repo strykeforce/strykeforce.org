@@ -1,4 +1,4 @@
-{% load wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 <li>
   <div class="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
     <div class="aspect-w-3 aspect-h-2 h-0 sm:aspect-w-3 sm:aspect-h-4">
@@ -11,7 +11,7 @@
           <p class="text-blue">{{ student.title }}</p>
         </div>
         <div class="text-lg">
-          <p class="text-gray-500">{{ student.blurb }}</p>
+          <p class="text-gray-500">{{ student.blurb|richtext }}</p>
         </div>
         <div class="text-sm">
           <p>{{ student.grade }} at {{ student.school }}</p>

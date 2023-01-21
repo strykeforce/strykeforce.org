@@ -17,6 +17,7 @@ from wagtail.admin.panels import FieldRowPanel
 from wagtail.admin.panels import MultiFieldPanel
 from wagtail.contrib.forms.models import AbstractEmailForm
 from wagtail.contrib.forms.models import AbstractFormField
+from wagtail.fields import RichTextField
 from wagtail.models import Page
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
@@ -78,7 +79,7 @@ class Member(index.Indexed, models.Model):
         blank=True,
         related_name="+",
     )
-    blurb = TextField(blank=True)
+    blurb = RichTextField(blank=True)
     date_joined = DateField(default=timezone.now)
 
     # Students
