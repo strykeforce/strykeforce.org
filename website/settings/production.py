@@ -21,12 +21,6 @@ sentry_sdk.init(
 
 DEBUG = False
 SECRET_KEY = os.environ["SECRET_KEY"]
-ALLOWED_HOSTS = [
-    "strykeforce.j3ff.io",
-    "strykeforce.org",
-    "www.strykeforce.org",
-    "mercury.strykeforce.org",
-]
 
 DATABASES = {
     "default": {

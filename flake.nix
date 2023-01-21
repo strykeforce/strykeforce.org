@@ -73,6 +73,11 @@
               type = lib.types.str;
               default = "website.settings.production";
             };
+
+            allowedHosts = lib.mkOption {
+              type = lib.types.str;
+              default = "strykeforce.org www.strykeforce.org";
+            };
           };
 
           config = lib.mkIf cfg.enable {
@@ -102,6 +107,7 @@
 
                 environment = {
                   DJANGO_SETTINGS_MODULE = cfg.settingsModule;
+                  ALLOWED_HOSTS = cfg.allowedHosts;
                   STATIC_ROOT = "${static}";
                   MEDIA_ROOT = "${stateDir}/media";
                 };

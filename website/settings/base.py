@@ -6,6 +6,8 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = PROJECT_DIR.parent
 
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "127.0.0.1").split(" ")
+
 INSTALLED_APPS = [
     "website.blog",
     "website.home",
