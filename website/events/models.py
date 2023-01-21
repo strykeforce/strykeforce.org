@@ -58,6 +58,7 @@ class EventIndexPage(RoutablePageMixin, Page):
             template="events/event_page.html",
             context_overrides={
                 "event": event,
+                "week": event.week + 1 if event.week else None,
             },
         )
 

@@ -1,0 +1,2 @@
+GET {{endpoint}} /team/frc302/events/2023
+X-TBA-Auth-Key: {{key}}
