@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sentry_sdk
+from sentry.integrations.logging import ignore_logger
 from sentry_sdk.integrations.django import DjangoIntegration
 
 from .base import *  # noqa
@@ -18,6 +19,7 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True,
 )
+ignore_logger("django.security.DisallowedHost")
 
 DEBUG = False
 SECRET_KEY = os.environ["SECRET_KEY"]
