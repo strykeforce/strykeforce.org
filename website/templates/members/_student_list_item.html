@@ -1,0 +1,22 @@
+{% load wagtailimages_tags %}
+<li>
+  <div class="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
+    <div class="aspect-w-3 aspect-h-2 h-0 sm:aspect-w-3 sm:aspect-h-4">
+      {% image student.image width-400 class="rounded-lg object-cover shadow-lg" alt="" %}
+    </div>
+    <div class="sm:col-span-2">
+      <div class="space-y-4">
+        <div class="space-y-1 text-lg font-medium leading-6">
+          <h3>{{ student.student_name }}</h3>
+          <p class="text-blue">{{ student.title }}</p>
+        </div>
+        <div class="text-lg">
+          <p class="text-gray-500">{{ student.blurb }}</p>
+        </div>
+        <div class="text-sm">
+          <p>{{ student.grade }} at {{ student.school }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
