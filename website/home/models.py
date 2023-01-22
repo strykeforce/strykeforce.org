@@ -187,7 +187,7 @@ class FormPage(AbstractEmailForm):
                 return super().process_form_submission(form)
             else:
                 send_mail(
-                    "[strykeforce.org] Form Rejected",
+                    f"[strykeforce.org] Form Rejected: {score}",
                     self.render_email(form),
                     ["jeff@j3ff.io"],
                     self.from_address,
