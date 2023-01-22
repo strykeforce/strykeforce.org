@@ -9,13 +9,13 @@ from django.db.models import DateField
 from django.db.models import EmailField
 from django.db.models import PositiveIntegerField
 from django.db.models import Q
-from django.db.models import TextField
 from django.db.models import URLField
 from django.utils import timezone
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import FieldRowPanel
 from wagtail.admin.panels import MultiFieldPanel
 from wagtail.fields import RichTextField
+from wagtail.models import Page
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 

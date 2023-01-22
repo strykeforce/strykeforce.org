@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from .base import *  # noqa
+from .base import BASE_DIR
 from .base import INSTALLED_APPS
 from .base import MIDDLEWARE
 
