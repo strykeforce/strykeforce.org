@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from .base import *  # noqa
+from .base import INSTALLED_APPS
+from .base import MIDDLEWARE
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

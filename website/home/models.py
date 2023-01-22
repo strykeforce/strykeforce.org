@@ -17,7 +17,6 @@ from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
 from website.blog.models import BlogIndexPage
-from website.blog.models import BlogPage
 from website.events.models import EventIndexPage
 
 LATEST_NEWS = 2

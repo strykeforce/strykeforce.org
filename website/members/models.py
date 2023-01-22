@@ -15,10 +15,7 @@ from django.utils import timezone
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import FieldRowPanel
 from wagtail.admin.panels import MultiFieldPanel
-from wagtail.contrib.forms.models import AbstractEmailForm
-from wagtail.contrib.forms.models import AbstractFormField
 from wagtail.fields import RichTextField
-from wagtail.models import Page
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
