@@ -50,6 +50,18 @@
             '';
           };
         })
+
+        (final: prev: {
+          strykeforce-manage = prev.writeShellScriptBin "strykeforce-manage" ''
+            export DJANGO_SETTINGS_MODULE=website.settings.production
+            export SECRET_KEY=notsecret
+            export TBA_READ_KEY=
+            export EMAIL_HOST_USER=
+            export EMAIL_HOST_PASSWORD=
+            export STATIC_ROOT=${prev.strykeforce-static}
+            exec ${prev.strykeforce-website}/bin/manage.py
+          '';
+        })
       ];
 
       nixosModules.strykeforce = { config, lib, pkgs, ... }:
@@ -222,6 +234,7 @@
           packages = {
             website = pkgs.strykeforce-website;
             static = pkgs.strykeforce-static;
+            manage = pkgs.strykeforce-manage;
 
             # refresh venv for Pycharm with: nix build .#venv -o venv
             venv = pkgs.strykeforce-website-dev;
