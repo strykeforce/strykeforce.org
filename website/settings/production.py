@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import os
+
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.logging import ignore_logger

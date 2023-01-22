@@ -61,3 +61,7 @@ repos:
           - psycopg2
           - pytest_is_running
           - types-all
+  - repo: https://github.com/pycqa/flake8
+    rev: 5.0.4
+    hooks:
+      - id: flake8

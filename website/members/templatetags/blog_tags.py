@@ -2,8 +2,6 @@ from __future__ import annotations
 
 from django import template
 
-from website.blog.models import BlogPage
-
 register = template.Library()
 
 

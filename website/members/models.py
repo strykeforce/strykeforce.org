@@ -10,15 +10,10 @@ from django.db.models import EmailField
 from django.db.models import PositiveIntegerField
 from django.db.models import URLField
 from django.utils import timezone
-from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import FieldRowPanel
-from wagtail.admin.panels import InlinePanel
 from wagtail.admin.panels import MultiFieldPanel
-from wagtail.contrib.forms.models import AbstractEmailForm
-from wagtail.contrib.forms.models import AbstractFormField
 from wagtail.fields import RichTextField
-from wagtail.models import Page
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
