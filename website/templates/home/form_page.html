@@ -19,6 +19,8 @@
           <form action="{% pageurl page %}" method="POST" class="space-y-8 divide-y divide-gray-200">
             <div class="space-y-8 divide-y divide-gray-200"></div>
             {% csrf_token %}
+            <input type="hidden" name="model_time" id="id_model_time"
+                   tabindex="-1" autocomplete="off" value="{{ time }}">
             {% for hidden in form.hidden_fields %}
               {{ hidden }}
             {% endfor %}
@@ -32,17 +34,24 @@
                 </div>
               </div>
             {% endfor %}
+            <div class="dj-field-div">
+              <label for="id_phone_number">Phone Number</label>
+              <div class="mt-1">
+                <input type="text" name="phone_number" maxlength="25" id="id_phone_number" tabindex="-1" autocomplete="off">
+              </div>
+            </div>
             <div class="pt-5">
               <div class="flex justify-end" x-data>
                 <button
                     type="button"
                     class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     x-on:click="window.location='{{ page.get_site.root_url }}';"
-                >Cancel</button>
+                >Cancel
+                </button>
                 <input
                     type="submit"
                     class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue focus:ring-offset-2"
-                    >
+                >
               </div>
             </div>
           </form>

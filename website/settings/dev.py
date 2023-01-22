@@ -52,6 +52,10 @@ LOGGING = {
             "handlers": [],
             "level": "INFO",
         },
+        "website": {
+            "handlers": [],
+            "level": "DEBUG",
+        },
     },
     "root": {
         "handlers": ["console"],
