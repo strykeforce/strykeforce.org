@@ -14,7 +14,7 @@
       version = "4.0.0";
     in
     {
-      overlay = nixpkgs.lib.composeManyExtensions [
+      overlays.default = nixpkgs.lib.composeManyExtensions [
         poetry2nix.overlay
         (final: prev: {
           strykeforce-website-dev = prev.poetry2nix.mkPoetryEnv {
@@ -185,7 +185,7 @@
           };
         };
 
-      nixosModule = self.nixosModules.strykeforce;
+      nixosModules.default = self.nixosModules.strykeforce;
 
       nixosConfigurations.container =
         let
@@ -215,7 +215,7 @@
           src = ./.;
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ self.overlay ];
+            overlays = [ self.overlays.default ];
           };
         in
         {
