@@ -8,6 +8,7 @@ from django.db.models import BooleanField
 from django.db.models import CharField
 from django.db.models import URLField
 from modelcluster.fields import ParentalKey
+from wagtail.admin.mail import send_mail
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import FieldRowPanel
 from wagtail.admin.panels import InlinePanel
@@ -185,7 +186,12 @@ class FormPage(AbstractEmailForm):
             if len(score) and all(score):
                 return super().process_form_submission(form)
             else:
-                logger.info(f"Form: {form.data} not submitted; score = {score}")
+                send_mail(
+                    "[strykeforce.org] Form Rejected",
+                    self.render_email(form),
+                    ["jeff@j3ff.io"],
+                    self.from_address,
+                )
                 return None
 
     @staticmethod
