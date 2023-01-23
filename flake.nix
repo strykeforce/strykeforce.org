@@ -59,7 +59,7 @@
             export EMAIL_HOST_USER=
             export EMAIL_HOST_PASSWORD=
             export STATIC_ROOT=${prev.strykeforce-static}
-            exec ${prev.strykeforce-website}/bin/manage.py
+            exec ${prev.strykeforce-website}/bin/manage.py "$@"
           '';
         })
       ];
