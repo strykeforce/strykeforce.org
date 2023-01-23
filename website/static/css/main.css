@@ -1231,8 +1231,8 @@ select {
   bottom: 0;
   left: 0;
 }
-.aspect-h-2 {
-  --tw-aspect-h: 2;
+.aspect-h-4 {
+  --tw-aspect-h: 4;
 }
 .sr-only {
   position: absolute;
@@ -2265,26 +2265,6 @@ input#id_phone_number, label[for='id_phone_number'] {
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
-  }
-
-  .sm\:aspect-w-3 {
-    position: relative;
-    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-    --tw-aspect-w: 3;
-  }
-
-  .sm\:aspect-w-3 > * {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  .sm\:aspect-h-4 {
-    --tw-aspect-h: 4;
   }
 }
 
