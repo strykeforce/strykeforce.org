@@ -19,6 +19,13 @@ from wagtail.models import Page
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
+HIGH_SCHOOL_GRADE_NAMES = [
+    "Freshman",
+    "Sophomore",
+    "Junior",
+    "Senior",
+]
+
 
 @register_snippet
 class School(models.Model):
@@ -148,7 +155,7 @@ class Member(index.Indexed, models.Model):
         verbose_name_plural = "members"
 
     def __str__(self):
-        if self.member_type == "STUDENT":
+        if self.member_type == "STUDENT" or self.member_type == "STUDENT_LEADER":
             return f"{self.name} ({self.grade})"
         return f"{self.name} ({self.member_type.lower()})"
 
@@ -159,8 +166,11 @@ class Member(index.Indexed, models.Model):
 
     @property
     def student_name(self):
-        "First name plus last initial of member."
+        """First name plus last initial of member."""
         return f"{self.first_name} {self.last_name[0]}."
+
+    def high_school_label(self):
+        return f"{self.school} {HIGH_SCHOOL_GRADE_NAMES[self.grade - 9]}"
 
 
 class StudentIndexPage(Page):
@@ -172,8 +182,19 @@ class StudentIndexPage(Page):
         help_text="Text to describe the page",
     )
 
-    def students(self):
-        return Member.students.all()
+    @staticmethod
+    def student_leaders():
+        return Member.objects.filter(member_type="STUDENT_LEADER").order_by("-grade", "last_name")
+
+    @staticmethod
+    def students():
+        return Member.objects.filter(member_type="STUDENT").order_by("-grade", "last_name")
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["student_leaders"] = self.student_leaders()
+        context["students"] = self.students()
+        return context
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),

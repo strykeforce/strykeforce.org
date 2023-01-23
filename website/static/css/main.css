@@ -1392,6 +1392,9 @@ select {
 .h-0 {
   height: 0px;
 }
+.h-12 {
+  height: 3rem;
+}
 .h-10 {
   height: 2.5rem;
 }
@@ -1421,6 +1424,9 @@ select {
 }
 .w-\[320\] {
   width: 320;
+}
+.w-12 {
+  width: 3rem;
 }
 .w-10 {
   width: 2.5rem;
@@ -1760,8 +1766,17 @@ select {
 .pt-16 {
   padding-top: 4rem;
 }
+.pl-14 {
+  padding-left: 3.5rem;
+}
+.pt-2 {
+  padding-top: 0.5rem;
+}
 .text-center {
   text-align: center;
+}
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -1799,6 +1814,9 @@ select {
 }
 .font-semibold {
   font-weight: 600;
+}
+.italic {
+  font-style: italic;
 }
 .leading-8 {
   line-height: 2rem;
@@ -1855,6 +1873,9 @@ select {
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+.text-blue\/10 {
+  color: rgb(14 118 188 / 0.1);
 }
 .opacity-0 {
   opacity: 0;
