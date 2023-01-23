@@ -1,10 +1,14 @@
 from __future__ import annotations
 
+import logging
+import time
+
 from django.db import models
 from django.db.models import BooleanField
 from django.db.models import CharField
 from django.db.models import URLField
 from modelcluster.fields import ParentalKey
+from wagtail.admin.mail import send_mail
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import FieldRowPanel
 from wagtail.admin.panels import InlinePanel
@@ -19,7 +23,13 @@ from wagtail.snippets.models import register_snippet
 from website.blog.models import BlogIndexPage
 from website.events.models import EventIndexPage
 
+logger = logging.getLogger(__name__)
+
 LATEST_NEWS = 2
+HONEYPOT_ENABLED = True
+HONEYPOT_NAME = "phone_number"
+HONEYPOT_TIME = "model_time"
+HONEYPOT_INTERVAL = 3  # seconds
 
 
 class HomePage(Page):
@@ -159,3 +169,33 @@ class FormPage(AbstractEmailForm):
             "Email",
         ),
     ]
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request)
+        context["time"] = str(time.time()).split(".")[0]
+        return context
+
+    def process_form_submission(self, form):
+        if not HONEYPOT_ENABLED:
+            return super().process_form_submission(form)
+
+        score = []
+        if HONEYPOT_NAME in form.data and HONEYPOT_TIME in form.data:
+            score.append(form.data[HONEYPOT_NAME] == "")
+            score.append(self.time_diff(form.data[HONEYPOT_TIME], HONEYPOT_INTERVAL))
+            if len(score) and all(score):
+                return super().process_form_submission(form)
+            else:
+                send_mail(
+                    f"[strykeforce.org] Form Rejected: {score}",
+                    self.render_email(form),
+                    ["jeff@j3ff.io"],
+                    self.from_address,
+                )
+                return None
+
+    @staticmethod
+    def time_diff(value, interval):
+        now_time = str(time.time()).split(".")[0]
+        diff = abs(int(now_time) - int(value))
+        return True if diff > interval else False

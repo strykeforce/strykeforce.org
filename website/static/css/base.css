@@ -39,3 +39,10 @@
 .dj-field-div label {
     @apply block text-sm font-medium text-gray-700;
 }
+
+input#id_phone_number, label[for='id_phone_number'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 100vw;
+}

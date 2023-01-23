@@ -14,7 +14,7 @@
       version = "4.0.0";
     in
     {
-      overlay = nixpkgs.lib.composeManyExtensions [
+      overlays.default = nixpkgs.lib.composeManyExtensions [
         poetry2nix.overlay
         (final: prev: {
           strykeforce-website-dev = prev.poetry2nix.mkPoetryEnv {
@@ -49,6 +49,18 @@
               ${prev.strykeforce-website}/bin/manage.py collectstatic --no-input
             '';
           };
+        })
+
+        (final: prev: {
+          strykeforce-manage = prev.writeShellScriptBin "strykeforce-manage" ''
+            export DJANGO_SETTINGS_MODULE=website.settings.production
+            export SECRET_KEY=notsecret
+            export TBA_READ_KEY=
+            export EMAIL_HOST_USER=
+            export EMAIL_HOST_PASSWORD=
+            export STATIC_ROOT=${prev.strykeforce-static}
+            exec ${prev.strykeforce-website}/bin/manage.py "$@"
+          '';
         })
       ];
 
@@ -185,7 +197,7 @@
           };
         };
 
-      nixosModule = self.nixosModules.strykeforce;
+      nixosModules.default = self.nixosModules.strykeforce;
 
       nixosConfigurations.container =
         let
@@ -215,13 +227,14 @@
           src = ./.;
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ self.overlay ];
+            overlays = [ self.overlays.default ];
           };
         in
         {
           packages = {
             website = pkgs.strykeforce-website;
             static = pkgs.strykeforce-static;
+            manage = pkgs.strykeforce-manage;
 
             # refresh venv for Pycharm with: nix build .#venv -o venv
             venv = pkgs.strykeforce-website-dev;

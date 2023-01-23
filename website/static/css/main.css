@@ -2015,6 +2015,13 @@ select {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
+input#id_phone_number, label[for='id_phone_number'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 100vw;
+}
+
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
