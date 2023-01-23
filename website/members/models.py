@@ -8,14 +8,23 @@ from django.db.models import CharField
 from django.db.models import DateField
 from django.db.models import EmailField
 from django.db.models import PositiveIntegerField
+from django.db.models import Q
 from django.db.models import URLField
 from django.utils import timezone
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import FieldRowPanel
 from wagtail.admin.panels import MultiFieldPanel
 from wagtail.fields import RichTextField
+from wagtail.models import Page
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
+
+HIGH_SCHOOL_GRADE_NAMES = [
+    "Freshman",
+    "Sophomore",
+    "Junior",
+    "Senior",
+]
 
 
 @register_snippet
@@ -38,7 +47,11 @@ class School(models.Model):
 
 class StudentsManager(models.Manager):
     def get_queryset(self):
-        return super().get_queryset().filter(member_type="STUDENT")
+        return (
+            super()
+            .get_queryset()
+            .filter(Q(member_type="STUDENT") | Q(member_type="STUDENT_LEADER"))
+        )
 
 
 class MentorsManager(models.Manager):
@@ -52,6 +65,7 @@ class Member(index.Indexed, models.Model):
 
     MEMBER_TYPE = (
         ("STUDENT", "Student"),
+        ("STUDENT_LEADER", "Student Leader"),
         ("MENTOR", "Mentor"),
         ("OTHER", "Other"),
     )
@@ -69,7 +83,7 @@ class Member(index.Indexed, models.Model):
         blank=True,
         related_name="+",
     )
-    blurb = RichTextField(blank=True, features=["bold", "italic", "link", "document-link"])
+    blurb = RichTextField(blank=True)
     date_joined = DateField(default=timezone.now)
 
     # Students
@@ -129,8 +143,10 @@ class Member(index.Indexed, models.Model):
     ]
 
     search_fields = [
-        index.SearchField("first_name"),
-        index.SearchField("last_name"),
+        index.SearchField("first_name", partial_match=True),
+        index.AutocompleteField("first_name"),
+        index.SearchField("last_name", partial_match=True),
+        index.AutocompleteField("last_name"),
     ]
 
     class Meta:
@@ -139,7 +155,7 @@ class Member(index.Indexed, models.Model):
         verbose_name_plural = "members"
 
     def __str__(self):
-        if self.member_type == "STUDENT":
+        if self.member_type == "STUDENT" or self.member_type == "STUDENT_LEADER":
             return f"{self.name} ({self.grade})"
         return f"{self.name} ({self.member_type.lower()})"
 
@@ -150,5 +166,38 @@ class Member(index.Indexed, models.Model):
 
     @property
     def student_name(self):
-        "First name plus last initial of member."
+        """First name plus last initial of member."""
         return f"{self.first_name} {self.last_name[0]}."
+
+    def high_school_label(self):
+        return f"{self.school} {HIGH_SCHOOL_GRADE_NAMES[self.grade - 9]}"
+
+
+class StudentIndexPage(Page):
+    """Page for displaying current season's students."""
+
+    body = models.TextField(
+        blank=True,
+        max_length=1000,
+        help_text="Text to describe the page",
+    )
+
+    @staticmethod
+    def student_leaders():
+        return Member.objects.filter(member_type="STUDENT_LEADER").order_by("-grade", "last_name")
+
+    @staticmethod
+    def students():
+        return Member.objects.filter(member_type="STUDENT").order_by("-grade", "last_name")
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["student_leaders"] = self.student_leaders()
+        context["students"] = self.students()
+        return context
+
+    content_panels = Page.content_panels + [
+        FieldPanel("body"),
+    ]
+
+    subpage_types: list[str] = []

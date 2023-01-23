@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block nav_classes %}border-b-2 border-gray-100{% endblock %}
+
+{% block content %}
+
+  <div class="bg-white">
+    <div class="mx-auto max-w-7xl py-12 px-6 lg:px-8 lg:py-24">
+      <div class="space-y-12">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Student Leaders</h2>
+
+        <ul role="list" class="space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0">
+          {% for student in student_leaders %}
+            {% include "members/_student_list_item.html" %}
+          {% endfor %}
+        </ul>
+
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Students</h2>
+
+        <ul role="list" class="space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0">
+          {% for student in students %}
+            {% include "members/_student_list_item.html" %}
+          {% endfor %}
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
