@@ -18,6 +18,7 @@
           inherit (poetry2nix.legacyPackages.${system}) mkPoetryEnv mkPoetryApplication;
           pkgs = nixpkgs.legacyPackages.${system};
           inherit (pkgs.stdenv) mkDerivation;
+          inherit (pkgs) writeShellApplication;
         in
         {
           packages = {
@@ -49,15 +50,19 @@
               '';
             };
 
-            manage = pkgs.writeShellScriptBin "strykeforce-manage" ''
-              export DJANGO_SETTINGS_MODULE=website.settings.production
-              export SECRET_KEY=notsecret
-              export TBA_READ_KEY=
-              export EMAIL_HOST_USER=
-              export EMAIL_HOST_PASSWORD=
-              export STATIC_ROOT=${self.packages.${system}.static}
-              exec ${self.packages.${system}.website}/bin/manage.py "$@"
-            '';
+            manage = writeShellApplication {
+              name = "strykeforce-manage";
+
+              text = ''
+                export DJANGO_SETTINGS_MODULE=website.settings.production
+                export SECRET_KEY=notsecret
+                export TBA_READ_KEY=
+                export EMAIL_HOST_USER=
+                export EMAIL_HOST_PASSWORD=
+                export STATIC_ROOT=${self.packages.${system}.static}
+                exec ${self.packages.${system}.website}/bin/manage.py "$@"
+              '';
+            };
 
             devEnv = mkPoetryEnv {
               projectDir = self;
