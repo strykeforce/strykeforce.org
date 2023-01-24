@@ -176,7 +176,7 @@ class Member(index.Indexed, models.Model):
 class StudentIndexPage(Page):
     """Page for displaying current season's students."""
 
-    body = models.TextField(
+    introduction = models.TextField(
         blank=True,
         max_length=1000,
         help_text="Text to describe the page",
@@ -197,7 +197,7 @@ class StudentIndexPage(Page):
         return context
 
     content_panels = Page.content_panels + [
-        FieldPanel("body"),
+        FieldPanel("introduction"),
     ]
 
     subpage_types: list[str] = []

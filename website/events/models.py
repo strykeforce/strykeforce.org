@@ -18,6 +18,7 @@ MAX_LENGTH = 1000
 
 
 class EventIndexPage(RoutablePageMixin, Page):
+    introduction = models.CharField(max_length=255, blank=True)
     body = models.TextField(
         blank=True,
         max_length=1000,
@@ -63,6 +64,7 @@ class EventIndexPage(RoutablePageMixin, Page):
         )
 
     content_panels = Page.content_panels + [
+        FieldPanel("introduction"),
         FieldPanel("body"),
     ]
 

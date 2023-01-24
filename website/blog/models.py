@@ -18,7 +18,7 @@ from wagtail.search import index
 
 
 class BlogIndexPage(RoutablePageMixin, Page):
-    body = models.TextField(
+    introduction = models.TextField(
         blank=True,
         max_length=1000,
         help_text="Text to describe the page",
@@ -60,7 +60,7 @@ class BlogIndexPage(RoutablePageMixin, Page):
         )
 
     content_panels = Page.content_panels + [
-        FieldPanel("body"),
+        FieldPanel("introduction"),
     ]
 
     subpage_types = [

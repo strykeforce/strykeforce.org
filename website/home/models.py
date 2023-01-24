@@ -49,7 +49,7 @@ class HomePage(Page):
         blog_index_page = BlogIndexPage.objects.child_of(self).live().first()
         context["blog_posts"] = blog_index_page.recent_blogs()[0:LATEST_NEWS]
         context["blog_title"] = blog_index_page.title
-        context["blog_intro"] = blog_index_page.body
+        context["blog_intro"] = blog_index_page.introduction
         event_index_page = EventIndexPage.objects.child_of(self).live().first()
         context["event_index"] = event_index_page
         sponsors_index = SponsorsPage.objects.child_of(self).live().first()
@@ -61,8 +61,12 @@ class HomePage(Page):
         FieldPanel("body"),
     ]
 
+    def recent_updates(self):
+        return self.get_children().order_by("-last_published_at")[:3]
+
 
 class SponsorsPage(Page):
+    introduction = models.CharField(max_length=255, blank=True)
     body = models.TextField(blank=True)
 
     def sponsors(self):
@@ -72,16 +76,17 @@ class SponsorsPage(Page):
         return self.sponsors().filter(level__exact=LevelType.PLATINUM)
 
     content_panels = Page.content_panels + [
+        FieldPanel("introduction"),
         FieldPanel("body"),
     ]
 
 
 class ContentPage(Page):
-    intro = models.CharField(max_length=250)
+    introduction = models.CharField(max_length=250)
     body = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
-        FieldPanel("intro"),
+        FieldPanel("introduction"),
         FieldPanel("body"),
     ]
 
@@ -150,11 +155,13 @@ class FormField(AbstractFormField):
 
 
 class FormPage(AbstractEmailForm):
-    intro = RichTextField(blank=True)
+    introduction = models.CharField(max_length=255, blank=True)
+    body = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
 
     content_panels = AbstractEmailForm.content_panels + [
-        FieldPanel("intro"),
+        FieldPanel("introduction"),
+        FieldPanel("body"),
         InlinePanel("form_fields", label="Form fields"),
         FieldPanel("thank_you_text"),
         MultiFieldPanel(

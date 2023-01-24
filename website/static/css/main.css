@@ -2153,6 +2153,10 @@ input#id_phone_number, label[for='id_phone_number'] {
     margin-top: 0px;
   }
 
+  .sm\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .sm\:flex {
     display: flex;
   }
