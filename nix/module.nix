@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+self: { config, lib, pkgs, ... }:
 let
   cfg = config.strykeforce.services.website;
   stateDir = "/var/lib/strykeforce";
@@ -43,8 +43,8 @@ in
 
     systemd.services.strykeforce-website =
       let
-        website = pkgs.${pkgs.system}.strykeforce-website.dependencyEnv;
-        static = pkgs.${pkgs.system}.strykeforce-static;
+        website = self.packages.${pkgs.system}.website.dependencyEnv;
+        static = self.packages.${pkgs.system}.static;
       in
       {
         wantedBy = [ "multi-user.target" ];

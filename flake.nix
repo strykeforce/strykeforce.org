@@ -64,7 +64,7 @@
       ];
 
 
-      nixosModules.strykeforce = import ./nix/module.nix;
+      nixosModules.strykeforce = import ./nix/module.nix self;
       nixosModules.default = self.nixosModules.strykeforce;
 
       nixosConfigurations.container =
@@ -112,7 +112,7 @@
           };
 
 
-          devShell = pkgs.mkShell
+          devShells.default = pkgs.mkShell
             {
               buildInputs = with pkgs; [
                 strykeforce-website-dev
