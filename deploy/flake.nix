@@ -39,6 +39,7 @@
       nixosConfigurations.strykeforce =
         let
           enable = true;
+          strykeforce-manage = strykeforce.packages.${pkgs.system}.manage;
         in
         nixpkgs.lib.nixosSystem {
           inherit system;
@@ -51,6 +52,10 @@
               age.secrets.stryker_website_secrets = {
                 file = ./strykeforce_website_secrets.age;
               };
+
+              environment.systemPackages = with pkgs; [
+                strykeforce-manage
+              ];
 
               strykeforce.services.website = {
                 inherit enable;
