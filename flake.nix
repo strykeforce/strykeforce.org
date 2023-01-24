@@ -12,92 +12,69 @@
     let
       version = "4.0.0";
     in
-    {
-      overlays.default = nixpkgs.lib.composeManyExtensions [
-        poetry2nix.overlay
-        (final: prev: {
-          strykeforce-website-dev = prev.poetry2nix.mkPoetryEnv {
-            projectDir = ./.;
-            groups = [ "main" "dev" ];
-          };
-
-          strykeforce-website = prev.poetry2nix.mkPoetryApplication {
-            projectDir = ./.;
-            groups = [ "main" ];
-            postInstall = ''
-              mkdir -p $out/bin/
-              cp -vf manage.py $out/bin/
-            '';
-          };
-        })
-
-        (final: prev: {
-          strykeforce-static = prev.stdenv.mkDerivation {
-            pname = "strykeforce-static";
-            inherit version;
-            src = ./.;
-            phases = "installPhase";
-            installPhase = ''
-              export DJANGO_SETTINGS_MODULE=website.settings.production
-              export SECRET_KEY=
-              export TBA_READ_KEY=
-              export EMAIL_HOST_USER=
-              export EMAIL_HOST_PASSWORD=
-              export STATIC_ROOT=$out
-              mkdir -p $out
-              ${prev.strykeforce-website}/bin/manage.py collectstatic --no-input
-            '';
-          };
-        })
-
-        (final: prev: {
-          strykeforce-manage = prev.writeShellScriptBin "strykeforce-manage" ''
-            export DJANGO_SETTINGS_MODULE=website.settings.production
-            export SECRET_KEY=notsecret
-            export TBA_READ_KEY=
-            export EMAIL_HOST_USER=
-            export EMAIL_HOST_PASSWORD=
-            export STATIC_ROOT=${prev.strykeforce-static}
-            exec ${prev.strykeforce-website}/bin/manage.py "$@"
-          '';
-        })
-      ];
-
-
-      nixosModules.strykeforce = import ./nix/module.nix self;
-      nixosModules.default = self.nixosModules.strykeforce;
-
-      nixosConfigurations.container = import ./nix/container.nix {
-        inherit self nixpkgs;
-      };
-
-    } //
-    (flake-utils.lib.eachDefaultSystem
+    flake-utils.lib.eachDefaultSystem
       (system:
         let
-          src = ./.;
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = [ self.overlays.default ];
-          };
+          inherit (poetry2nix.legacyPackages.${system}) mkPoetryEnv mkPoetryApplication;
+          pkgs = nixpkgs.legacyPackages.${system};
+          inherit (pkgs.stdenv) mkDerivation;
         in
         {
           packages = {
-            website = pkgs.strykeforce-website;
-            static = pkgs.strykeforce-static;
-            manage = pkgs.strykeforce-manage;
+            website = mkPoetryApplication {
+              pname = "strykeforce-website";
+              inherit version;
+              projectDir = self;
+              groups = [ "main" ];
+              postInstall = ''
+                mkdir -p $out/bin/
+                cp -vf manage.py $out/bin/
+              '';
+            };
+
+            static = mkDerivation {
+              pname = "strykeforce-static";
+              inherit version;
+              src = self;
+              phases = "installPhase";
+              installPhase = ''
+                export DJANGO_SETTINGS_MODULE=website.settings.production
+                export SECRET_KEY=
+                export TBA_READ_KEY=
+                export EMAIL_HOST_USER=
+                export EMAIL_HOST_PASSWORD=
+                export STATIC_ROOT=$out
+                mkdir -p $out
+                ${self.packages.${system}.website}/bin/manage.py collectstatic --no-input
+              '';
+            };
+
+            manage = pkgs.writeShellScriptBin "strykeforce-manage" ''
+              export DJANGO_SETTINGS_MODULE=website.settings.production
+              export SECRET_KEY=notsecret
+              export TBA_READ_KEY=
+              export EMAIL_HOST_USER=
+              export EMAIL_HOST_PASSWORD=
+              export STATIC_ROOT=${self.packages.${system}.static}
+              exec ${self.packages.${system}.website}/bin/manage.py "$@"
+            '';
+
+            devEnv = mkPoetryEnv {
+              projectDir = self;
+              groups = [ "main" "dev" ];
+            };
 
             # refresh venv for Pycharm with: nix build .#venv -o venv
-            venv = pkgs.strykeforce-website-dev;
+            venv = self.packages.${system}.devEnv;
 
-            default = pkgs.strykeforce-website;
+            default = self.packages.${system}.website;
           };
 
 
           devShells.default = pkgs.mkShell
             {
               buildInputs = with pkgs; [
-                strykeforce-website-dev
+                self.packages.${system}.devEnv
                 postgresql
                 nodejs
                 poetry
@@ -105,5 +82,12 @@
                 sqlite
               ] ++ lib.optional stdenv.isDarwin openssl;
             };
-        }));
+        }) // {
+      nixosModules.strykeforce = import ./nix/module.nix self;
+      nixosModules.default = self.nixosModules.strykeforce;
+
+      nixosConfigurations.container = import ./nix/container.nix {
+        inherit self nixpkgs;
+      };
+    };
 }
