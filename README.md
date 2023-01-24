@@ -23,3 +23,14 @@ sudo -u strykeforce env \
   TBA_READ_KEY= \
   SECRET_KEY=<something> \
   $NIX_STORE_PATH/bin/manage.py
+```
+
+
+## Testing NixOS module in Container
+
+```
+sudo nixos-container create flake-test --flake .
+sudo nixos-container start flake-test
+sudo nixos-container root-login flake-test
+sudo nixos-container destroy flake-test
+```
