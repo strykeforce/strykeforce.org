@@ -35,7 +35,8 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 CACHES = {
     "default": {
-        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        # "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        "BACKEND": "django.core.cache.backends.dummy.DummyCache",
         "LOCATION": BASE_DIR / "cache",
     },
     "renditions": {
