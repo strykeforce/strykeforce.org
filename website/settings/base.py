@@ -144,3 +144,5 @@ WAGTAILIMAGES_FEATURE_DETECTION_ENABLED = True
 
 # obtain key at TBA account page: https://www.thebluealliance.com/account
 TBA_READ_KEY = os.environ["TBA_READ_KEY"]
+
+SEND_FORM_REJECTED_EMAIL = False

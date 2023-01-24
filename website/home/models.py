@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 import time
 
+from django.conf import settings
 from django.db import models
 from django.db.models import BooleanField
 from django.db.models import CharField
@@ -186,12 +187,13 @@ class FormPage(AbstractEmailForm):
             if len(score) and all(score):
                 return super().process_form_submission(form)
             else:
-                send_mail(
-                    f"[strykeforce.org] Form Rejected: {score}",
-                    self.render_email(form),
-                    ["jeff@j3ff.io"],
-                    self.from_address,
-                )
+                if settings.SEND_FORM_REJECTED_EMAIL:
+                    send_mail(
+                        f"[strykeforce.org] Form Rejected: {score}",
+                        self.render_email(form),
+                        ["jeff@j3ff.io"],
+                        self.from_address,
+                    )
                 return None
 
     @staticmethod
