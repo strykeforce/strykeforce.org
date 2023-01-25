@@ -54,6 +54,8 @@
               };
 
               environment.systemPackages = with pkgs; [
+                goaccess
+                redli
                 strykeforce-manage
               ];
 

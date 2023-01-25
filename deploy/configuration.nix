@@ -7,7 +7,7 @@
 
   systemd.services.amazon-init.enable = false;
 
-  environment.systemPackages = with pkgs; [ bat goaccess htop redli ];
+  environment.systemPackages = with pkgs; [ bat htop vim ];
   programs = {
     git.enable = true;
     vim.defaultEditor = true;
