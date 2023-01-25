@@ -43,6 +43,11 @@ CACHES = {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
         "LOCATION": "unix:///run/redis/redis.sock?db=0",
     },
+    "renditions": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "unix:///run/redis/redis.sock?db=1",
+        "TIMEOUT": 3600,
+    },
 }
 
 CACHE_MIDDLEWARE_ALIAS = "default"
