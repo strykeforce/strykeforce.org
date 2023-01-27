@@ -65,6 +65,23 @@ class HomePage(Page):
         return self.get_children().order_by("-last_published_at")[:3]
 
 
+class ContentPageIndex(Page):
+    introduction = models.CharField(max_length=250)
+    body = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("introduction"),
+        FieldPanel("body"),
+    ]
+
+    parent_page_types = ["home.HomePage"]
+    subpage_types: list[str] = [
+        "home.ContentPage",
+        "home.SponsorsPage",
+        "members.StudentIndexPage",
+    ]
+
+
 class SponsorsPage(Page):
     introduction = models.CharField(max_length=255, blank=True)
     body = models.TextField(blank=True)
