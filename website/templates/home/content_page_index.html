@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+  <div class="px-4 sm:px-6 lg:px-8 pb-20 lg:pb-28 pt-4 lg:pt-6">
+    <div class="relative mx-auto max-w-lg md:max-w-3xl lg:max-w-7xl">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ page.title }}</h2>
+        <div class="mt-3 sm:mt-4 max-w-prose">
+          <p class="text-xl text-gray-500">{{ page.body|richtext }}</p>
+        </div>
+      </div>
+      {% for page in page.get_children %}
+        <div class="max-w-prose ">
+          <div class="p-4">
+            <h2 class="text-2xl">{{ page.title }}</h2>
+            <p class="mt-4 text-gray-500">{{ page.specific.introduction }}</p>
+            <div class="mt-3">
+              <a href="{% pageurl page %}" class="text-base font-semibold text-blue hover:text-blue-400">Read full
+                story</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+
+
+{% endblock content %}
