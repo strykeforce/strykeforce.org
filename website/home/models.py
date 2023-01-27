@@ -62,7 +62,7 @@ class HomePage(Page):
     ]
 
     def recent_updates(self):
-        return self.get_descendants().order_by("-last_published_at")[:3]
+        return self.get_descendants().live().order_by("-last_published_at")[:3]
 
 
 class ContentPageIndex(Page):
