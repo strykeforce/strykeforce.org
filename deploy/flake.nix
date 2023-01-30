@@ -46,7 +46,7 @@
           modules = [
             ./configuration.nix
             ./rclone.nix
-            agenix.nixosModule
+            agenix.nixosModules.default
             strykeforce.nixosModules.default
             ({ config, pkgs, ... }: {
               age.secrets.stryker_website_secrets = {
