@@ -101,14 +101,28 @@
         </div>
 
         <div class="mt-6 sm:mt-10 px-4 sm:px-0">
-          <h2 class="text-3xl font-bold tracking-tight text-gray-900">Recent Updates</h2>
-          {% for recent_page in page.recent_updates %}
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900">Featured</h2>
+          {% if page.featured_page_1 %}
             <div class="mt-4 px-4 sm:px-0">
-              <a href="{% pageurl recent_page %}"
-                 class="text-base font-semibold text-blue hover:text-gray-700">{{ recent_page.title }}</a>
-              <p class="text-base text-gray-500">{{ recent_page.specific.introduction|truncatewords:12 }}</p>
+              <a href="{% pageurl page.featured_page_1 %}"
+                 class="text-base font-semibold text-blue hover:text-gray-700">{{ page.featured_page_1.title }}</a>
+              <p class="text-base text-gray-500">{{ page.featured_page_1.specific.introduction|truncatewords:12 }}</p>
             </div>
-          {% endfor %}
+          {% endif %}
+          {% if page.featured_page_2 %}
+            <div class="mt-4 px-4 sm:px-0">
+              <a href="{% pageurl page.featured_page_2 %}"
+                 class="text-base font-semibold text-blue hover:text-gray-700">{{ page.featured_page_2.title }}</a>
+              <p class="text-base text-gray-500">{{ page.featured_page_2.specific.introduction|truncatewords:12 }}</p>
+            </div>
+          {% endif %}
+          {% if page.featured_page_3 %}
+            <div class="mt-4 px-4 sm:px-0">
+              <a href="{% pageurl page.featured_page_3 %}"
+                 class="text-base font-semibold text-blue hover:text-gray-700">{{ page.featured_page_3.title }}</a>
+              <p class="text-base text-gray-500">{{ page.featured_page_2.specific.introduction|truncatewords:12 }}</p>
+            </div>
+          {% endif %}
         </div>
       </div>
 

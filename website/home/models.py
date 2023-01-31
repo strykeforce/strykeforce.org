@@ -43,6 +43,33 @@ class HomePage(Page):
         on_delete=models.SET_NULL,
         related_name="+",
     )
+    featured_page_1 = models.ForeignKey(
+        "wagtailcore.Page",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        help_text="First featured page for the homepage.",
+        verbose_name="Featured page 1",
+    )
+    featured_page_2 = models.ForeignKey(
+        "wagtailcore.Page",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        help_text="Second featured page for the homepage.",
+        verbose_name="Featured page 2",
+    )
+    featured_page_3 = models.ForeignKey(
+        "wagtailcore.Page",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        help_text="Third featured page for the homepage.",
+        verbose_name="Featured page 3",
+    )
 
     def get_context(self, request, **kwargs):
         context = super().get_context(request)
@@ -59,6 +86,13 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("hero_image"),
         FieldPanel("body"),
+        MultiFieldPanel(
+            [
+                FieldPanel("featured_page_1"),
+                FieldPanel("featured_page_2"),
+                FieldPanel("featured_page_3"),
+            ],
+        ),
     ]
 
     def recent_updates(self):
