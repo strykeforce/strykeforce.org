@@ -2,6 +2,8 @@
   imports = [ "${modulesPath}/virtualisation/amazon-image.nix" ];
   ec2.hvm = true;
 
+  services.getty.autologinUser = packages.lib.mkDefault "root";
+
   networking.hostName = "mercury";
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
