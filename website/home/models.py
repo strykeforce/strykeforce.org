@@ -113,6 +113,7 @@ class ContentPageIndex(Page):
         "home.ContentPage",
         "home.SponsorsPage",
         "members.StudentIndexPage",
+        "members.MentorIndexPage",
     ]
 
 

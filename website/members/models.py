@@ -201,3 +201,28 @@ class StudentIndexPage(Page):
     ]
 
     subpage_types: list[str] = []
+
+
+class MentorIndexPage(Page):
+    """Page for displaying mentors."""
+
+    introduction = models.TextField(
+        blank=True,
+        max_length=1000,
+        help_text="Text to describe the page",
+    )
+
+    @staticmethod
+    def mentors():
+        return Member.objects.filter(member_type="MENTOR").order_by("last_name")
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["mentors"] = self.mentors()
+        return context
+
+    content_panels = Page.content_panels + [
+        FieldPanel("introduction"),
+    ]
+
+    subpage_types: list[str] = []

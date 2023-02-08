@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block nav_classes %}border-b-2 border-gray-100{% endblock %}
+
+{% block content %}
+
+  <div class="">
+    <div class="mx-auto max-w-7xl pt-4 px-6 lg:px-8">
+      <div class="space-y-12">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ page.title }}</h2>
+
+        <ul role="list" class="space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0">
+          {% for mentor in mentors %}
+            {% include "members/_mentor_list_item.html" %}
+          {% endfor %}
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
