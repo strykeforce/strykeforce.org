@@ -24,8 +24,8 @@ opencv-python = "^4.7.0.68"
 redis = "^4.4.2"
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.10.0"
-rich = "^12.4.4"
+black = "^23.0.0"
+rich = "^13.0.0"
 django-debug-toolbar = "^3.8.1"
 
 [build-system]
