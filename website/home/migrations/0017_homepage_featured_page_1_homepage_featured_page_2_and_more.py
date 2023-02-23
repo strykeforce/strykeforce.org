@@ -7,7 +7,6 @@ from django.db import models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("wagtailcore", "0078_referenceindex"),
         ("home", "0016_contentpageindex"),

@@ -10,7 +10,6 @@ from django.db import models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("wagtailcore", "0078_referenceindex"),
         ("members", "0001_initial"),

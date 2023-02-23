@@ -7,7 +7,6 @@ from django.db import models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("wagtailimages", "0024_index_image_file_hash"),
         ("home", "0003_homepage_body"),

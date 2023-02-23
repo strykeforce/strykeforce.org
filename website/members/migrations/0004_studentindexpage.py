@@ -7,7 +7,6 @@ from django.db import models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("wagtailcore", "0078_referenceindex"),
         ("members", "0003_remove_joinformpage_page_ptr_delete_joinformfield_and_more"),

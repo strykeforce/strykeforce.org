@@ -6,7 +6,6 @@ from django.db import models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("home", "0012_sponsor_sponsor_home_sponso_level_ee6564_idx"),
     ]

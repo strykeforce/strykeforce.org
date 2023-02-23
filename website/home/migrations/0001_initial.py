@@ -5,7 +5,6 @@ from django.db import models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("wagtailcore", "0040_page_draft_title"),
     ]

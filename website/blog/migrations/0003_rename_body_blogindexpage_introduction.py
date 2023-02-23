@@ -5,7 +5,6 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("blog", "0002_blogpage_blog_blogpa_date_7f56a0_idx"),
     ]
