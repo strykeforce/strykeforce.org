@@ -29,7 +29,7 @@ class EventIndexPage(RoutablePageMixin, Page):
         return Event.objects.order_by("start_date")
 
     def future_events(self):
-        return self.events().filter(start_date__gt=timezone.now())
+        return self.events().filter(start_date__gte=timezone.now())
 
     @path("")
     @path("year/<int:year>/")
