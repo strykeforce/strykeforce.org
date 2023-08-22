@@ -4,8 +4,8 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.poetry2nix = {
-#    url = "github:nix-community/poetry2nix";
-    url = "github:jhh/poetry2nix/build-systems";
+    url = "github:nix-community/poetry2nix";
+#    url = "github:jhh/poetry2nix/build-systems-merged";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
