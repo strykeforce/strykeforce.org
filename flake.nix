@@ -82,6 +82,7 @@
               buildInputs = with pkgs; [
                 self.packages.${system}.devEnv
                 postgresql
+                ninja
                 nodejs
                 poetry
                 pre-commit
