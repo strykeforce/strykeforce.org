@@ -32,7 +32,15 @@
                 mkdir -p $out/bin/
                 cp -vf manage.py $out/bin/
               '';
-              nativeBuildInputs = [ pkgs.ninja ];
+              overrides = poetry2nix.defaultPoetryOverrides.extend
+                (self: super: {
+                    opencv-python = super.opencv-python.overridePythonAttrs
+                    (
+                       old: {
+                        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ super.ninja ];
+                        }
+                    );
+                });
             };
 
             static = mkDerivation {
