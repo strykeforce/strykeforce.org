@@ -32,6 +32,7 @@
                 mkdir -p $out/bin/
                 cp -vf manage.py $out/bin/
               '';
+              nativeBuildInputs = [ pkgs.ninja ];
             };
 
             static = mkDerivation {
@@ -82,7 +83,6 @@
               buildInputs = with pkgs; [
                 self.packages.${system}.devEnv
                 postgresql
-                ninja
                 nodejs
                 poetry
                 pre-commit
