@@ -5,7 +5,6 @@
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.poetry2nix = {
     url = "github:nix-community/poetry2nix";
-#    url = "github:jhh/poetry2nix/build-systems-merged";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -21,13 +20,13 @@
           inherit (pkgs.stdenv) mkDerivation;
           inherit (pkgs) writeShellApplication;
           opencv-overrides = poetry2nix.legacyPackages.${system}.overrides.withDefaults (self: super: {
-                opencv-python = super.opencv-python.overridePythonAttrs
-                (
-                   old: {
-                    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ super.ninja ];
-                    }
-                );
-              });
+            opencv-python-headless = super.opencv-python-headless.overridePythonAttrs
+              (
+                old: {
+                  nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ super.ninja ];
+                }
+              );
+          });
         in
         {
           packages = {
