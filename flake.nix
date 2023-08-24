@@ -20,6 +20,14 @@
           pkgs = nixpkgs.legacyPackages.${system};
           inherit (pkgs.stdenv) mkDerivation;
           inherit (pkgs) writeShellApplication;
+          opencv-overrides = poetry2nix.legacyPackages.${system}.overrides.withDefaults (self: super: {
+                opencv-python = super.opencv-python.overridePythonAttrs
+                (
+                   old: {
+                    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ super.ninja ];
+                    }
+                );
+              });
         in
         {
           packages = {
@@ -32,15 +40,7 @@
                 mkdir -p $out/bin/
                 cp -vf manage.py $out/bin/
               '';
-              overrides = poetry2nix.defaultPoetryOverrides.extend
-                (self: super: {
-                    opencv-python = super.opencv-python.overridePythonAttrs
-                    (
-                       old: {
-                        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ super.ninja ];
-                        }
-                    );
-                });
+              overrides = opencv-overrides;
             };
 
             static = mkDerivation {
