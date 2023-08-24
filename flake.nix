@@ -39,9 +39,8 @@
                 mkdir -p $out/bin/
                 cp -vf manage.py $out/bin/
               '';
-              overrides = opencv-overrides;
+#              overrides = opencv-overrides;
               preferWheels = true;
-
             };
 
             static = mkDerivation {
