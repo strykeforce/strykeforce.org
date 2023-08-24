@@ -23,6 +23,14 @@
             opencv-python-headless = super.opencv-python-headless.override {
               preferWheel = true;
             };
+
+            # psycopg = super.psycopg.overridePythonAttrs (
+            #   old: {
+            #     buildInputs = (old.buildInputs or [ ])
+            #     ++ pkgs.lib.optional pkgs.stdenv.isDarwin pkgs.openssl;
+            #     propogatedBuildInputs = (old.propogatedBuildInputs or [ ]) ++ [ pkgs.postgresql ];
+            #   }
+            # );
           });
         in
         {
