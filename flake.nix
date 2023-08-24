@@ -40,6 +40,8 @@
                 cp -vf manage.py $out/bin/
               '';
               overrides = opencv-overrides;
+              preferWheels = true;
+
             };
 
             static = mkDerivation {
