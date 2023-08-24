@@ -20,12 +20,9 @@
           inherit (pkgs.stdenv) mkDerivation;
           inherit (pkgs) writeShellApplication;
           opencv-overrides = poetry2nix.legacyPackages.${system}.overrides.withDefaults (self: super: {
-            opencv-python-headless = super.opencv-python-headless.overridePythonAttrs
-              (
-                old: {
-                  nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ super.ninja ];
-                }
-              );
+            opencv-python-headless = super.opencv-python-headless.override {
+              preferWheel = true;
+            };
           });
         in
         {
@@ -39,8 +36,7 @@
                 mkdir -p $out/bin/
                 cp -vf manage.py $out/bin/
               '';
-#              overrides = opencv-overrides;
-              preferWheels = true;
+              overrides = opencv-overrides;
             };
 
             static = mkDerivation {
