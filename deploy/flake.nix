@@ -12,7 +12,6 @@
     };
     strykeforce = {
       url = "path:../";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
