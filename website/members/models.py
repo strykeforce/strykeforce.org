@@ -143,9 +143,9 @@ class Member(index.Indexed, models.Model):
     ]
 
     search_fields = [
-        index.SearchField("first_name", partial_match=True),
+        index.SearchField("first_name"),
         index.AutocompleteField("first_name"),
-        index.SearchField("last_name", partial_match=True),
+        index.SearchField("last_name"),
         index.AutocompleteField("last_name"),
     ]
 
