@@ -16,10 +16,11 @@
       (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          inherit (poetry2nix.lib.mkPoetry2Nix { inherit pkgs; }) mkPoetryEnv mkPoetryApplication;
+          poetry2nixPkgs = poetry2nix.lib.mkPoetry2Nix { inherit pkgs; };
+          inherit (poetry2nixPkgs) mkPoetryEnv mkPoetryApplication;
           inherit (pkgs.stdenv) mkDerivation;
           inherit (pkgs) writeShellApplication;
-          opencv-overrides = poetry2nix.overrides.withDefaults (self: super: {
+          opencv-overrides = poetry2nixPkgs.overrides.withDefaults (self: super: {
             opencv-python-headless = super.opencv-python-headless.override {
               preferWheel = true;
             };
