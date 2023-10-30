@@ -15,11 +15,11 @@
     flake-utils.lib.eachDefaultSystem
       (system:
         let
-          inherit (poetry2nix.legacyPackages.${system}) mkPoetryEnv mkPoetryApplication;
           pkgs = nixpkgs.legacyPackages.${system};
+          inherit (poetry2nix.lib.mkPoetry2Nix { inherit pkgs; }) mkPoetryEnv mkPoetryApplication;
           inherit (pkgs.stdenv) mkDerivation;
           inherit (pkgs) writeShellApplication;
-          opencv-overrides = poetry2nix.legacyPackages.${system}.overrides.withDefaults (self: super: {
+          opencv-overrides = poetry2nix.overrides.withDefaults (self: super: {
             opencv-python-headless = super.opencv-python-headless.override {
               preferWheel = true;
             };
