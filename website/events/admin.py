@@ -16,6 +16,7 @@ class EventAdmin(admin.ModelAdmin):
         "start_date",
         "end_date",
         "year",
+        "week",
         "address",
         "postal_code",
         "gmaps_url",
