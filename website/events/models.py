@@ -25,7 +25,8 @@ class EventIndexPage(RoutablePageMixin, Page):
         help_text="Text to describe the page",
     )
 
-    def events(self):
+    @staticmethod
+    def events():
         return Event.objects.order_by("start_date")
 
     def future_events(self):
