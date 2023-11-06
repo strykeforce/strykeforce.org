@@ -15,6 +15,18 @@
     vim.defaultEditor = true;
   };
 
+  # Notice this also disables --help for some commands such es nixos-rebuild
+  documentation.enable = false;
+  documentation.info.enable = false;
+  documentation.man.enable = false;
+  documentation.nixos.enable = false;
+
+  # No need for fonts on a server
+  fonts.fontconfig.enable = false;
+
+  # Print the URL instead on servers
+  environment.variables.BROWSER = "echo";
+
   nix.extraOptions = ''
     auto-optimise-store = true
     experimental-features = nix-command flakes
