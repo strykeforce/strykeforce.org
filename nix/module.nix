@@ -74,9 +74,7 @@ in
       ensureUsers = [
         {
           name = "strykeforce";
-          ensurePermissions = {
-            "DATABASE strykeforce" = "ALL PRIVILEGES";
-          };
+          ensureDBOwnership = true;
         }
       ];
     };
