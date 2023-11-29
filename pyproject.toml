@@ -11,15 +11,15 @@ version = "4.0.0"
 
 [tool.poetry.group.main.dependencies]
 Django = {extras = ["argon2"], version = "^4.2"}
-python = "^3.10"
+python = "^3.11"
 whitenoise = {extras = ["brotli"], version = "^6.1.0"}
-wagtail = "^5.2.0"
+wagtail = "^5.2.1"
 factory-boy = "^3.2.1"
 gunicorn = "^21.2"
 tba-api-v3client = "^3.8.0"
 hiredis = "^2.1.0"
 sentry-sdk = "^1.33"
-opencv-python-headless = "^4.8.0"
+opencv-python-headless = "^4.8.1"
 psycopg  = {extras = ["binary", "pool"], version = "^3.1"}
 redis = "^5.0"
 
