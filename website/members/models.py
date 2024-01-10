@@ -170,7 +170,8 @@ class Member(index.Indexed, models.Model):
         return f"{self.first_name} {self.last_name[0]}."
 
     def high_school_label(self):
-        return f"{self.school} {HIGH_SCHOOL_GRADE_NAMES[self.grade - 9]}"
+        grade = HIGH_SCHOOL_GRADE_NAMES[self.grade - 9]
+        return f"{self.school} {grade}" if self.school else grade
 
 
 class StudentIndexPage(Page):
