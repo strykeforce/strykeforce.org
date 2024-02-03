@@ -18,7 +18,7 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/result" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (strykeforce.org)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.11 (strykeforce.org)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="inter" level="application" />
     <orderEntry type="library" name="alpinejs" level="application" />
