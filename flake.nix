@@ -95,11 +95,12 @@
           devShells.default = pkgs.mkShell
             {
               buildInputs = with pkgs; [
-                self.packages.${system}.devEnv
-                postgresql
+                just
                 nodejs
                 poetry
+                postgresql
                 pre-commit
+                self.packages.${system}.devEnv
                 sqlite
                 zlib
               ] ++ lib.optional stdenv.isDarwin openssl;
