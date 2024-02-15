@@ -21,19 +21,6 @@
           inherit (poetry2nixPkgs) mkPoetryEnv mkPoetryApplication;
           inherit (pkgs.stdenv) mkDerivation;
           inherit (pkgs) writeShellApplication;
-          # opencv-overrides = poetry2nixPkgs.overrides.withDefaults (self: super: {
-          #   opencv-python-headless = super.opencv-python-headless.override {
-          #     preferWheel = true;
-          #   };
-
-          # psycopg = super.psycopg.overridePythonAttrs (
-          #   old: {
-          #     buildInputs = (old.buildInputs or [ ])
-          #     ++ pkgs.lib.optional pkgs.stdenv.isDarwin pkgs.openssl;
-          #     propogatedBuildInputs = (old.propogatedBuildInputs or [ ]) ++ [ pkgs.postgresql ];
-          #   }
-          # );
-          # });
         in
         {
           packages = {
@@ -46,7 +33,6 @@
                 mkdir -p $out/bin/
                 cp -vf manage.py $out/bin/
               '';
-              # overrides = opencv-overrides;
             };
 
             static = mkDerivation {
@@ -87,7 +73,6 @@
 
             # refresh venv for Pycharm with: nix build .#venv -o venv
             venv = self.packages.${system}.devEnv;
-
             default = self.packages.${system}.website;
           };
 
@@ -98,11 +83,8 @@
                 just
                 nodejs
                 poetry
-                postgresql
                 pre-commit
                 self.packages.${system}.devEnv
-                sqlite
-                zlib
               ] ++ lib.optional stdenv.isDarwin openssl;
             };
         }) // {
