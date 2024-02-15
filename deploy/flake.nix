@@ -2,16 +2,18 @@
   description = "Deploy strykeforce.org";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-    deploy-rs = {
-      url = "github:serokell/deploy-rs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    deploy-rs.url = "github:serokell/deploy-rs";
+    strykeforce.url = "github:strykeforce/strykeforce.org";
+
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    strykeforce = {
-      url = "path:../";
+
+    nixos-configs = {
+      url = "github:jhh/nixos-configs";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.strykeforce.follows = "strykeforce";
     };
   };
 
@@ -19,6 +21,7 @@
     { self
     , agenix
     , deploy-rs
+    , nixos-configs
     , nixpkgs
     , strykeforce
     , ...
@@ -34,6 +37,9 @@
           agenix.packages.${system}.agenix
         ];
       };
+
+      # pallas is staging server
+      nixosConfigurations.pallas = nixos-configs.nixosConfigurations.pallas;
 
       nixosConfigurations.strykeforce =
         let
@@ -81,16 +87,30 @@
         };
 
 
-      deploy.nodes.strykeforce = {
-        hostname = "mercury.strykeforce.org";
-        sshUser = "root";
-        profiles.system = {
-          user = "root";
-          path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.strykeforce;
+      deploy.nodes =
+        let
+          sshUser = "root";
+          fastConnection = true;
+
+          systemFor = host: {
+            user = "root";
+            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.${host};
+          };
+        in
+        {
+          pallas = {
+            hostname = "10.1.0.47";
+            inherit sshUser fastConnection;
+            profiles.system = systemFor "pallas";
+          };
+
+          strykeforce = {
+            hostname = "mercury.strykeforce.org";
+            inherit sshUser;
+            profiles.system = systemFor "strykeforce";
+          };
+
         };
-      };
-
       checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
-
     };
 }
