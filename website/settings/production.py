@@ -30,10 +30,6 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "strykeforce",
-        "USER": os.environ.get("DATABASE_USER", "strykeforce"),
-        "PASSWORD": "",
-        "HOST": "/run/postgresql",
-        "PORT": "5432",
         "CONN_MAX_AGE": 600,
     },
 }
