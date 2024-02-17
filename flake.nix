@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, flake-utils, poetry2nix }:
     let
-      version = "4.0.0";
+      version = "4.1.0"; # also update pyproject.toml
     in
     flake-utils.lib.eachDefaultSystem
       (system:
@@ -26,9 +26,13 @@
           packages = {
             website = mkPoetryApplication {
               pname = "strykeforce-website";
-              inherit version;
               projectDir = self;
               groups = [ "main" ];
+
+              patchPhase = ''
+                ${pkgs.tailwindcss}/bin/tailwindcss -i website/static/css/base.css -o website/static/css/main.css --minify
+              '';
+
               postInstall = ''
                 mkdir -p $out/bin/
                 cp -vf manage.py $out/bin/
@@ -85,6 +89,7 @@
                 poetry
                 pre-commit
                 self.packages.${system}.devEnv
+                tailwindcss
               ] ++ lib.optional stdenv.isDarwin openssl;
             };
         }) // {
