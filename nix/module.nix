@@ -62,7 +62,7 @@ in
 
         serviceConfig = {
           EnvironmentFile = "/run/agenix/stryker_website_secrets";
-          ExecStart = "${website}/bin/gunicorn --bind 127.0.0.1:8000 website.wsgi";
+          ExecStart = "${website}/bin/gunicorn --workers=5 --bind=127.0.0.1:8000 website.wsgi";
           User = "strykeforce";
           Restart = "on-failure";
         };
