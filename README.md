@@ -2,13 +2,21 @@
 
 ## Copy or restore production data
 
-To restore database from backup:
+To restore database from backup, assumes `rclone` and `aws` credential files in place:
+
+```sql
+-- create schema in database strykeforce
+CREATE ROLE "strykeforce";
+CREATE SCHEMA IF NOT EXISTS "strykeforce" AUTHORIZATION "strykeforce";
+```
 
 ```sh
+# data
+aws s3 cp s3://www.strykeforce.org/sql/strykeforce.sql.gz .
 zcat strykeforce.sql.gz | psql -d strykeforce
-cd media
-tar xf ../images.tar
-cd ..
+
+# images and documents
+rclone -v sync s3://www.strykeforce.org/media/ ./media
 ./manage.py wagtail_update_image_renditions
 ```
 ## Server Management

@@ -18,6 +18,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "strykeforce",
+        "OPTIONS": {"options": "-c search_path=strykeforce,public"},
     },
 }
 
