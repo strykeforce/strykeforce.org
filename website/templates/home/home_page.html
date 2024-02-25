@@ -145,11 +145,11 @@
             <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
               <div class="flex-shrink-0">
                 <a aria-labelledby="{{ post.slug }}" href="{% pageurl post %}" class="block">
-                  {% image post.image fill-512x192 as image_1x %}
-                  {% image post.image fill-1024x384 as image_2x %}
+                  {% image post.image min-512x192 as image_1x %}
+                  {% image post.image min-1024x384 as image_2x %}
                   <img
                       class="h-48 w-full object-cover"
-                      src="{{ image_1x.url }}" alt=""
+                      src="{{ image_1x.url }}" alt="{{ post.image.title }}"
                       srcset="{{ image_1x.url }}, {{ image_2x.url }} 2x"
                   >
                 </a>
