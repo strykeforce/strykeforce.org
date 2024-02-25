@@ -145,13 +145,13 @@
             <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
               <div class="flex-shrink-0">
                 <a aria-labelledby="{{ post.slug }}" href="{% pageurl post %}" class="block">
-                {% image post.image fill-512x192 as image_1x %}
-                {% image post.image fill-1024x384 as image_2x %}
-                <img
-                    class="h-48 w-full object-cover"
-                    src="{{ image_1x.url }}" alt=""
-                    srcset="{{ image_1x.url }}, {{ image_2x.url }} 2x"
-                >
+                  {% image post.image fill-512x192 as image_1x %}
+                  {% image post.image fill-1024x384 as image_2x %}
+                  <img
+                      class="h-48 w-full object-cover"
+                      src="{{ image_1x.url }}" alt=""
+                      srcset="{{ image_1x.url }}, {{ image_2x.url }} 2x"
+                  >
                 </a>
               </div>
               <div class="flex flex-1 flex-col justify-between bg-white p-6">
@@ -186,7 +186,8 @@
       <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
         {% for sponsor in sponsors_index.platinum_sponsors %}
           <div class="col-span-1 flex justify-center lg:col-span-1">
-            {% image sponsor.logo max-160x90 class="grayscale contrast-[0.25] w-[160] h-[90] m-auto" alt="{{ sponsor.name }}" %}
+            <a href="{{ sponsor.website }}"
+               target="_blank">{% image sponsor.logo max-160x90 class="grayscale contrast-[0.25] w-[160] h-[90] m-auto" alt=sponsor.name %}</a>
           </div>
         {% endfor %}
       </div>

@@ -6,6 +6,10 @@ _default:
 # bootstrap the development environment
 bootstrap: venv pre-commit
 
+# open the project in Pycharm
+edit:
+  pycharm .
+
 # run the development server
 run check="none":
     python {{ if check != "none" { "-X dev" } else { "" } }} manage.py runserver
@@ -13,9 +17,13 @@ run check="none":
 # update CSS and download all JS dependencies
 update: venv update-css update-alpine
 
-# update CSS
+# update CSS with classes from HTML templates
 update-css:
     tailwindcss -i website/static/css/base.css -o website/static/css/main.css
+
+# watch HTML templates and update CSS
+watch:
+    tailwindcss -i website/static/css/base.css -o website/static/css/main.css --watch
 
 # download all JS dependencies
 update-alpine:
@@ -36,3 +44,13 @@ pre-commit:
 # refresh the python packages in the dev env
 venv: poetry-check
     nix build .#venv -o .venv
+
+# grep for version
+version:
+    @rg "version = " -m 1 pyproject.toml flake.nix
+
+# supply a new project version for pyproject.toml and flake.nix
+set-version version:
+    @sed --in-place 's/^version = ".*"/version = "{{ version }}"/' pyproject.toml
+    @sed --in-place --regexp-extended 's/(\s+version = )".*";/\1"{{ version }}";/' flake.nix
+    @git diff -U0 pyproject.toml flake.nix

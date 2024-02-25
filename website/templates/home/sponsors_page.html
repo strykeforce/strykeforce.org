@@ -16,7 +16,8 @@
         {% for sponsor in page.sponsors %}
           <div class="max-w-md">
             <div class="flex flex-col p-4">
-              {% image sponsor.logo max-320x180 class="w-[320] h-[180] m-auto" alt="{{ sponsor.name }}" %}
+              <a href="{{ sponsor.website }}"
+                 target="_blank">{% image sponsor.logo max-320x180 class="w-[320] h-[180] m-auto" alt=sponsor.name %}</a>
               <p class="mt-4 text-gray-500">{{ sponsor.description }}</p>
             </div>
           </div>
