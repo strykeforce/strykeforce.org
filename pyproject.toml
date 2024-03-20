@@ -7,7 +7,7 @@ packages = [
   {include = "website"},
 ]
 readme = "README.md"
-version = "4.1.4"
+version = "4.1.5"
 
 [tool.poetry.group.main.dependencies]
 Django = {extras = ["argon2"], version = "^5.0"}
