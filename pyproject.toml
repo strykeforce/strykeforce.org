@@ -24,10 +24,10 @@ psycopg  = {extras = ["binary", "pool"], version = "^3.1"}
 redis = "^5.0"
 
 [tool.poetry.group.dev.dependencies]
-black = "^24.2.0"
-rich = "^13.7.0"
+black = "^24.3.0"
+rich = "^13.7.1"
 django-debug-toolbar = "^4.2"
-ipython = "^8.22.1"
+ipython = "^8.22.2"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
