@@ -4,8 +4,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.poetry2nix = {
-    #url = "github:nix-community/poetry2nix";
-    url = "github:jhh/poetry2nix/fix-opencv";
+    url = "github:nix-community/poetry2nix";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -21,6 +20,10 @@
           inherit (poetry2nixPkgs) mkPoetryEnv mkPoetryApplication;
           inherit (pkgs.stdenv) mkDerivation;
           inherit (pkgs) writeShellApplication;
+          overrides = poetry2nixPkgs.defaultPoetryOverrides.extend
+            (self: super: {
+              opencv-python = super.opencv4;
+            });
         in
         {
           packages = {
@@ -28,6 +31,7 @@
               pname = "strykeforce-website";
               projectDir = self;
               groups = [ "main" ];
+              inherit overrides;
 
               patchPhase = ''
                 ${pkgs.tailwindcss}/bin/tailwindcss -i website/static/css/base.css -o website/static/css/main.css --minify
@@ -73,6 +77,7 @@
             devEnv = mkPoetryEnv {
               projectDir = self;
               groups = [ "main" "dev" ];
+              inherit overrides;
             };
 
             # refresh venv for Pycharm with: nix build .#venv -o venv
