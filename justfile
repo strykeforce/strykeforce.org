@@ -15,7 +15,8 @@ run check="none":
     python {{ if check != "none" { "-X dev" } else { "" } }} manage.py runserver
 
 push:
-    nix build --json | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
+    nix build --json .#website | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
+    nix build --json .#static | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
 
 # update CSS and download all JS dependencies
 update: venv update-css update-alpine
