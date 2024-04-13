@@ -9,6 +9,16 @@
 
   systemd.services.amazon-init.enable = false;
 
+  nix.settings = {
+    substituters = [
+      "https://strykeforce.cachix.org"
+    ];
+
+    trusted-public-keys = [
+      "strykeforce.cachix.org-1:+ux184cQfS4lruf/lIzs9WDMtOkJIZI2FQHfz5QEIrE="
+    ];
+  };
+
   environment.systemPackages = with pkgs; [ bat htop vim ];
   programs = {
     git.enable = true;
