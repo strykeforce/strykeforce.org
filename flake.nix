@@ -20,9 +20,16 @@
           inherit (poetry2nixPkgs) mkPoetryEnv mkPoetryApplication;
           inherit (pkgs.stdenv) mkDerivation;
           inherit (pkgs) writeShellApplication;
+          inherit (pkgs.lib) lists;
+
           overrides = poetry2nixPkgs.defaultPoetryOverrides.extend
             (self: super: {
               opencv-python = super.opencv4;
+
+              # keep until https://github.com/nix-community/poetry2nix/pull/1602 merged
+              sqlparse = super.sqlparse.overridePythonAttrs (old: {
+                buildInputs = (lists.remove super.flit-core old.buildInputs) ++ [ super.hatchling ];
+              });
             });
         in
         {
