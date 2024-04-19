@@ -4,8 +4,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.poetry2nix = {
-    # url = "github:nix-community/poetry2nix";
-    url = "github:jhh/poetry2nix/fix-sqlparse";
+    url = "github:nix-community/poetry2nix";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -21,9 +20,16 @@
           inherit (poetry2nixPkgs) mkPoetryEnv mkPoetryApplication;
           inherit (pkgs.stdenv) mkDerivation;
           inherit (pkgs) writeShellApplication;
+          inherit (pkgs.lib) lists;
+
           overrides = poetry2nixPkgs.defaultPoetryOverrides.extend
             (self: super: {
               opencv-python = super.opencv4;
+
+              # keep until https://github.com/nix-community/poetry2nix/pull/1602 merged
+              sqlparse = super.sqlparse.overridePythonAttrs (old: {
+                buildInputs = (lists.remove super.flit-core old.buildInputs) ++ [ super.hatchling ];
+              });
             });
         in
         {
