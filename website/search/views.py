@@ -4,8 +4,8 @@ from django.core.paginator import EmptyPage
 from django.core.paginator import PageNotAnInteger
 from django.core.paginator import Paginator
 from django.template.response import TemplateResponse
+from wagtail.contrib.search_promotions.models import Query
 from wagtail.models import Page
-from wagtail.search.models import Query
 
 
 def search(request):
