@@ -22,6 +22,11 @@
           inherit (pkgs) writeShellApplication;
           inherit (pkgs.lib) lists;
 
+          overrides = poetry2nixPkgs.defaultPoetryOverrides.extend
+            (self: super: {
+              opencv-python = super.opencv4;
+            });
+
         in
         {
           packages = {
@@ -29,6 +34,7 @@
               pname = "strykeforce-website";
               projectDir = self;
               groups = [ "main" ];
+              inherit overrides;
 
               patchPhase = ''
                 ${pkgs.tailwindcss}/bin/tailwindcss -i website/static/css/base.css -o website/static/css/main.css --minify
@@ -74,6 +80,7 @@
             devEnv = mkPoetryEnv {
               projectDir = self;
               groups = [ "main" "dev" ];
+              inherit overrides;
             };
 
             # refresh venv for Pycharm with: nix build .#venv -o venv
