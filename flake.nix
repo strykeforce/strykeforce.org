@@ -10,7 +10,7 @@
 
   outputs = { self, nixpkgs, flake-utils, poetry2nix }:
     let
-      version = "4.1.7"; # also update pyproject.toml
+      version = "4.1.8"; # also update pyproject.toml
     in
     flake-utils.lib.eachDefaultSystem
       (system:
@@ -22,15 +22,6 @@
           inherit (pkgs) writeShellApplication;
           inherit (pkgs.lib) lists;
 
-          overrides = poetry2nixPkgs.defaultPoetryOverrides.extend
-            (self: super: {
-              opencv-python = super.opencv4;
-
-              # keep until https://github.com/nix-community/poetry2nix/pull/1602 merged
-              sqlparse = super.sqlparse.overridePythonAttrs (old: {
-                buildInputs = (lists.remove super.flit-core old.buildInputs) ++ [ super.hatchling ];
-              });
-            });
         in
         {
           packages = {
@@ -38,7 +29,6 @@
               pname = "strykeforce-website";
               projectDir = self;
               groups = [ "main" ];
-              inherit overrides;
 
               patchPhase = ''
                 ${pkgs.tailwindcss}/bin/tailwindcss -i website/static/css/base.css -o website/static/css/main.css --minify
@@ -84,7 +74,6 @@
             devEnv = mkPoetryEnv {
               projectDir = self;
               groups = [ "main" "dev" ];
-              inherit overrides;
             };
 
             # refresh venv for Pycharm with: nix build .#venv -o venv

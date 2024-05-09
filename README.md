@@ -42,3 +42,23 @@ sudo nixos-container start flake-test
 sudo nixos-container root-login flake-test
 sudo nixos-container destroy flake-test
 ```
+
+## Override python build configs temporarily
+
+```nix
+overrides = poetry2nixPkgs.defaultPoetryOverrides.extend
+  (self: super: {
+    opencv-python = super.opencv4;
+
+    # keep until https://github.com/nix-community/poetry2nix/pull/1602 merged
+    sqlparse = super.sqlparse.overridePythonAttrs (old: {
+      buildInputs = (lists.remove super.flit-core old.buildInputs) ++ [ super.hatchling ];
+    });
+  });
+
+# ...
+
+website = mkPoetryApplication {
+  inherit overrides;
+  # ...
+```
