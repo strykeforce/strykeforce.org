@@ -17,7 +17,7 @@ wagtail = "^6.1"
 factory-boy = "^3.2.1"
 gunicorn = "^22.0.0"
 tba-api-v3client = "^3.8.0"
-hiredis = "^2.1.0"
+hiredis = "^2.3.2"
 sentry-sdk = "^1.40.0"
 opencv-python = "^4.0"
 psycopg  = {extras = ["binary", "pool"], version = "^3.1"}
