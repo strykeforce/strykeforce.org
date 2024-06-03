@@ -10,7 +10,7 @@
 
   outputs = { self, nixpkgs, flake-utils, poetry2nix }:
     let
-      version = "4.1.9"; # also update pyproject.toml
+      version = "4.1.10"; # also update pyproject.toml
     in
     flake-utils.lib.eachDefaultSystem
       (system:
