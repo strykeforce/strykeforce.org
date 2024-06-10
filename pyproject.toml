@@ -19,7 +19,7 @@ gunicorn = "^22.0.0"
 tba-api-v3client = "^3.8.0"
 hiredis = "^2.3.2"
 sentry-sdk = "^2.5.1"
-opencv-python = "^4.0"
+opencv-python = "^4.10"
 psycopg  = {extras = ["binary", "pool"], version = "^3.1"}
 redis = "^5.0"
 
