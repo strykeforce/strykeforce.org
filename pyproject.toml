@@ -24,7 +24,7 @@ psycopg  = {extras = ["binary", "pool"], version = "^3.2"}
 redis = "^5.0"
 
 [tool.poetry.group.dev.dependencies]
-black = "^24.4.2"
+black = "^24.8.0"
 rich = "^13.7.1"
 django-debug-toolbar = "^4.4"
 ipython = "^8.26.0"
