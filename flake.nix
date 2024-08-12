@@ -53,7 +53,7 @@
               phases = "installPhase";
               installPhase = ''
                 export DJANGO_SETTINGS_MODULE=website.settings.production
-                export SECRET_KEY=
+                export SECRET_KEY=notsecret
                 export TBA_READ_KEY=
                 export EMAIL_HOST_USER=
                 export EMAIL_HOST_PASSWORD=
