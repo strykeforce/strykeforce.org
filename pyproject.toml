@@ -10,7 +10,7 @@ readme = "README.md"
 version = "4.1.10"
 
 [tool.poetry.group.main.dependencies]
-Django = {extras = ["argon2"], version = "^5.0"}
+Django = {extras = ["argon2"], version = "^5.1"}
 python = "^3.10"
 whitenoise = {extras = ["brotli"], version = "^6.7.0"}
 wagtail = "^6.2"
