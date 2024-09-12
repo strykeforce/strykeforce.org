@@ -25,6 +25,21 @@
           overrides = poetry2nixPkgs.defaultPoetryOverrides.extend
             (self: super: {
               opencv-python = super.opencv4;
+              pillow-heif = super.pillow-heif.overridePythonAttrs
+                (
+                  old: {
+                    # clang-16: error: argument unused during compilation: '-fno-strict-overflow'
+                    NIX_CFLAGS_COMPILE = pkgs.lib.optionalString pkgs.stdenv.cc.isClang "-Wno-unused-command-line-argument";
+                  }
+                );
+
+              psycopg-c = super.psycopg-c.overridePythonAttrs
+                (
+                  old: {
+                    nativeBuildInputs = old.nativeBuildInputs ++ [ self.setuptools self.pkgs.postgresql ];
+                  }
+                );
+
             });
 
         in

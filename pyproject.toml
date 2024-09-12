@@ -20,7 +20,7 @@ tba-api-v3client = "^3.8.0"
 hiredis = "^3.0.0"
 sentry-sdk = "^2.13.0"
 opencv-python = "^4.10"
-psycopg  = {extras = ["binary", "pool"], version = "^3.2"}
+psycopg  = {extras = ["c", "pool"], version = "^3.2"}
 redis = "^5.0"
 
 [tool.poetry.group.dev.dependencies]
