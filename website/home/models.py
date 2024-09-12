@@ -7,6 +7,7 @@ from django.conf import settings
 from django.db import models
 from django.db.models import BooleanField
 from django.db.models import CharField
+from django.db.models import Q
 from django.db.models import URLField
 from modelcluster.fields import ParentalKey
 from wagtail.admin.mail import send_mail
@@ -20,6 +21,7 @@ from wagtail.fields import RichTextField
 from wagtail.models import Page
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
+from wagtail.snippets.views.snippets import SnippetViewSet
 
 from website.blog.models import BlogIndexPage
 from website.events.models import EventIndexPage
@@ -124,8 +126,28 @@ class SponsorsPage(Page):
     def sponsors(self):
         return Sponsor.objects.filter(active=True).order_by("name")
 
+    def diamond_sponsors(self):
+        return self.sponsors().filter(active=True, level__exact=LevelType.DIAMOND).order_by("name")
+
     def platinum_sponsors(self):
-        return self.sponsors().filter(level__exact=LevelType.PLATINUM)
+        return (
+            self.sponsors().filter(active=True, level__exact=LevelType.PLATINUM).order_by("name")
+        )
+
+    def gold_sponsors(self):
+        return self.sponsors().filter(active=True, level__exact=LevelType.GOLD).order_by("name")
+
+    def silver_sponsors(self):
+        return self.sponsors().filter(active=True, level__exact=LevelType.SILVER).order_by("name")
+
+    def bronze_sponsors(self):
+        return self.sponsors().filter(active=True, level__exact=LevelType.BRONZE).order_by("name")
+
+    def diamond_or_platinum_sponsors(self):
+        return self.sponsors().filter(
+            Q(active=True),
+            Q(level__exact=LevelType.DIAMOND) | Q(level__exact=LevelType.PLATINUM),
+        )
 
     content_panels = Page.content_panels + [
         FieldPanel("introduction"),
@@ -145,10 +167,9 @@ class ContentPage(Page):
     subpage_types: list[str] = []
 
 
-LevelType = models.TextChoices("LevelType", "PLATINUM GOLD SILVER BRONZE")  # type: ignore
+LevelType = models.TextChoices("LevelType", "DIAMOND PLATINUM GOLD SILVER BRONZE")  # type: ignore
 
 
-@register_snippet
 class Sponsor(index.Indexed, models.Model):
     """Sponsors type snippet model."""
 
@@ -156,7 +177,7 @@ class Sponsor(index.Indexed, models.Model):
     description = models.TextField(max_length=1000, blank=True)
     website = URLField(blank=True)
     # noinspection PyUnresolvedReferences
-    level = CharField(choices=LevelType.choices, default=LevelType.BRONZE, max_length=20)
+    level = CharField(choices=LevelType.choices, default=LevelType.BRONZE, max_length=20)  # type: ignore
     active = BooleanField(default=True)
     # noinspection PyUnresolvedReferences
     logo = models.ForeignKey(
@@ -200,6 +221,17 @@ class Sponsor(index.Indexed, models.Model):
         # noinspection PyUnresolvedReferences
         level = LevelType[self.level.__str__()].label
         return f"{self.name} ({level})"
+
+
+class SponsorViewSet(SnippetViewSet):
+    model = Sponsor
+    list_display = ["name", "level", "active"]
+    list_filter = ["active", "level"]
+    ordering = ["level", "name"]
+    copy_view_enabled = False
+
+
+register_snippet(SponsorViewSet)
 
 
 class FormField(AbstractFormField):

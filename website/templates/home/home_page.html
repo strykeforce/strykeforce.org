@@ -184,7 +184,7 @@
       </div>
 
       <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
-        {% for sponsor in sponsors_index.platinum_sponsors %}
+        {% for sponsor in sponsors_index.diamond_or_platinum_sponsors %}
           <div class="col-span-1 flex justify-center lg:col-span-1">
             <a href="{{ sponsor.website }}"
                target="_blank">{% image sponsor.logo max-160x90 class="grayscale contrast-[0.25] w-[160] h-[90] m-auto" alt=sponsor.name %}</a>
