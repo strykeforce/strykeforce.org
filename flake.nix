@@ -36,7 +36,7 @@
               psycopg-c = super.psycopg-c.overridePythonAttrs
                 (
                   old: {
-                    nativeBuildInputs = old.nativeBuildInputs ++ [ self.setuptools self.pkgs.postgresql ];
+                    nativeBuildInputs = old.nativeBuildInputs ++ [ self.setuptools self.pkgs.postgresql_15 ];
                   }
                 );
 
