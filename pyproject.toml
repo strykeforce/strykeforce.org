@@ -27,7 +27,7 @@ redis = "^5.1"
 black = "^24.8.0"
 rich = "^13.8.1"
 django-debug-toolbar = "^4.4"
-ipython = "^8.27.0"
+ipython = "^8.28.0"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
