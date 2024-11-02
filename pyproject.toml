@@ -21,7 +21,7 @@ hiredis = "^3.0.0"
 sentry-sdk = "^2.15.0"
 opencv-python = "^4.10"
 psycopg  = {extras = ["c", "pool"], version = "^3.2"}
-redis = "^5.1"
+redis = "^5.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"
