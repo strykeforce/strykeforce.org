@@ -18,7 +18,7 @@ factory-boy = "^3.3.1"
 gunicorn = "^23.0.0"
 tba-api-v3client = "^3.8.0"
 hiredis = "^3.0.0"
-sentry-sdk = "^2.17.0"
+sentry-sdk = "^2.18.0"
 opencv-python = "^4.10"
 psycopg  = {extras = ["c", "pool"], version = "^3.2"}
 redis = "^5.2"
