@@ -731,11 +731,11 @@
         "poetry2nix": "poetry2nix_2"
       },
       "locked": {
-        "lastModified": 1733067066,
-        "narHash": "sha256-ulIXO05txMzFbLOZgNrnoJtLrjJGhDYvxDiGyRzn1e8=",
+        "lastModified": 1733067417,
+        "narHash": "sha256-0Qf06i+U7hDdb+3sJa8dQeSquk2bwe3VRHpq0pNb/W4=",
         "owner": "strykeforce",
         "repo": "strykeforce.org",
-        "rev": "9887e08f440190892fa14337f4ad89e2dcb8a116",
+        "rev": "666824fcbfe29f0e9a2000f317da86adb3b9caad",
         "type": "github"
       },
       "original": {
