@@ -1,7 +1,7 @@
 {
   description = "Deploy strykeforce.org";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     deploy-rs.url = "github:serokell/deploy-rs";
     strykeforce.url = "github:strykeforce/strykeforce.org";
 
