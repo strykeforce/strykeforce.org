@@ -13,7 +13,7 @@ version = "4.2.0"
 Django = {extras = ["argon2"], version = "^5.1"}
 python = "^3.10"
 whitenoise = {extras = ["brotli"], version = "^6.8.2"}
-wagtail = "^6.2"
+wagtail = "^6.3"
 factory-boy = "^3.3.1"
 gunicorn = "^23.0.0"
 tba-api-v3client = "^3.8.0"
