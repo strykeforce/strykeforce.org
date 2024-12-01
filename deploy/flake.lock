@@ -465,11 +465,11 @@
         "vscode-server": "vscode-server"
       },
       "locked": {
-        "lastModified": 1733059974,
-        "narHash": "sha256-S3dUr2KhiItdIkhzkN8sY69BuTa6FjiL4Ulgb3dtgy8=",
+        "lastModified": 1733066870,
+        "narHash": "sha256-vqzn1lulfB68GTBdE1xhxoBwMlT25U00duIsVTi1OdA=",
         "owner": "jhh",
         "repo": "nixos-configs",
-        "rev": "63300f1b424c657957b5acfb40aeababd2bc77e0",
+        "rev": "c7b63f1f3b91c27211c93f0214056adb63bc26b6",
         "type": "github"
       },
       "original": {
@@ -731,11 +731,11 @@
         "poetry2nix": "poetry2nix_2"
       },
       "locked": {
-        "lastModified": 1733059457,
-        "narHash": "sha256-o6SA8P2c+KKojyU93XPFgCV6tVzk7xzdr2W4c+iZOow=",
+        "lastModified": 1733067066,
+        "narHash": "sha256-ulIXO05txMzFbLOZgNrnoJtLrjJGhDYvxDiGyRzn1e8=",
         "owner": "strykeforce",
         "repo": "strykeforce.org",
-        "rev": "ec76285b061a97858303a3e20a383dc72b4babea",
+        "rev": "9887e08f440190892fa14337f4ad89e2dcb8a116",
         "type": "github"
       },
       "original": {
