@@ -22,6 +22,7 @@
   environment.systemPackages = with pkgs; [ bat htop vim ];
   programs = {
     git.enable = true;
+    vim.enable = true;
     vim.defaultEditor = true;
   };
 
