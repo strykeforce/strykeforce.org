@@ -103,7 +103,7 @@
           };
 
           # refresh venv for Pycharm with: nix build .#venv -o venv
-          default = self.packages.${system}.website;
+          default = self.packages.${system}.venv;
         };
 
         formatter = nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
