@@ -1,122 +1,140 @@
 {
-  description = "Stryke Force Website built using poetry2nix";
+  description = "Stryke Force Website built using uv2nix";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.poetry2nix = {
-    url = "github:nix-community/poetry2nix";
-    inputs.nixpkgs.follows = "nixpkgs";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    pyproject-nix = {
+      url = "github:nix-community/pyproject.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    uv2nix = {
+      url = "github:adisbladis/uv2nix";
+      inputs.pyproject-nix.follows = "pyproject-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    pyproject-build-systems = {
+      url = "github:pyproject-nix/build-system-pkgs";
+      inputs.pyproject-nix.follows = "pyproject-nix";
+      inputs.uv2nix.follows = "uv2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils, poetry2nix }:
-    let
-      version = "4.2.0"; # also update pyproject.toml
-    in
-    flake-utils.lib.eachDefaultSystem
-      (system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-          poetry2nixPkgs = poetry2nix.lib.mkPoetry2Nix { inherit pkgs; };
-          inherit (poetry2nixPkgs) mkPoetryEnv mkPoetryApplication;
-          inherit (pkgs.stdenv) mkDerivation;
-          inherit (pkgs) writeShellApplication;
-          inherit (pkgs.lib) lists;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      uv2nix,
+      pyproject-nix,
+      pyproject-build-systems,
+      ...
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+        inherit (nixpkgs) lib;
+        workspace = uv2nix.lib.workspace.loadWorkspace { workspaceRoot = ./.; };
 
-          overrides = poetry2nixPkgs.defaultPoetryOverrides.extend
-            (self: super: {
-              opencv-python = super.opencv4;
-              pillow-heif = super.pillow-heif.overridePythonAttrs
-                (
-                  old: {
-                    # clang-16: error: argument unused during compilation: '-fno-strict-overflow'
-                    NIX_CFLAGS_COMPILE = pkgs.lib.optionalString pkgs.stdenv.cc.isClang "-Wno-unused-command-line-argument";
-                  }
-                );
+        overlay = workspace.mkPyprojectOverlay {
+          sourcePreference = "wheel";
+        };
 
-              psycopg-c = super.psycopg-c.overridePythonAttrs
-                (
-                  old: {
-                    nativeBuildInputs = old.nativeBuildInputs ++ [ self.setuptools self.pkgs.postgresql_15 ];
-                  }
-                );
-
-            });
-
-        in
-        {
-          packages = {
-            website = mkPoetryApplication {
-              pname = "strykeforce-website";
-              projectDir = self;
-              groups = [ "main" ];
-              inherit overrides;
-
-              patchPhase = ''
-                ${pkgs.tailwindcss}/bin/tailwindcss -i website/static/css/base.css -o website/static/css/main.css --minify
-              '';
-
-              postInstall = ''
-                mkdir -p $out/bin/
-                cp -vf manage.py $out/bin/
-              '';
+        pythonSets =
+          let
+            baseSet = pkgs.callPackage pyproject-nix.build.packages {
+              python = pkgs.python312;
             };
 
-            static = mkDerivation {
-              pname = "strykeforce-static";
-              inherit version;
-              src = self;
-              phases = "installPhase";
-              installPhase = ''
-                export DJANGO_SETTINGS_MODULE=website.settings.production
-                export SECRET_KEY=notsecret
-                export TBA_READ_KEY=
-                export EMAIL_HOST_USER=
-                export EMAIL_HOST_PASSWORD=
-                export STATIC_ROOT=$out
-                mkdir -p $out
-                ${self.packages.${system}.website}/bin/manage.py collectstatic --no-input
-              '';
-            };
+            pillowHeifOverrides = import ./lib/overrides-pillow-heif.nix { inherit pkgs; };
+            psycopgOverrides = import ./lib/overrides-psycopg.nix { inherit pkgs; };
+          in
+          baseSet.overrideScope (
+            lib.composeManyExtensions [
+              pyproject-build-systems.overlays.default
+              overlay
+              pillowHeifOverrides
+              psycopgOverrides
+            ]
+          );
 
-            manage = writeShellApplication {
-              name = "strykeforce-manage";
+        inherit (pkgs.stdenv) mkDerivation;
+        inherit (pkgs) writeShellApplication;
 
-              text = ''
-                export DJANGO_SETTINGS_MODULE=website.settings.production
-                export SECRET_KEY=notsecret
-                export TBA_READ_KEY=
-                export EMAIL_HOST_USER=
-                export EMAIL_HOST_PASSWORD=
-                export STATIC_ROOT=${self.packages.${system}.static}
-                exec ${self.packages.${system}.website}/bin/manage.py "$@"
-              '';
-            };
+      in
+      {
+        packages = {
+          venv = pythonSets.mkVirtualEnv "strykeforce-env" workspace.deps.default;
 
-            devEnv = mkPoetryEnv {
-              projectDir = self;
-              groups = [ "main" "dev" ];
-              inherit overrides;
-            };
-
-            # refresh venv for Pycharm with: nix build .#venv -o venv
-            venv = self.packages.${system}.devEnv;
-            default = self.packages.${system}.website;
+          static = mkDerivation {
+            pname = "strykeforce-static";
+            inherit (pythonSets.website) version;
+            src = self;
+            phases = "installPhase";
+            installPhase = ''
+              export DJANGO_SETTINGS_MODULE=website.settings.production
+              export SECRET_KEY=notsecret
+              export TBA_READ_KEY=
+              export EMAIL_HOST_USER=
+              export EMAIL_HOST_PASSWORD=
+              export STATIC_ROOT=$out
+              mkdir -p $out
+              ${self.packages.${system}.venv}/bin/strykeforce-manage collectstatic --no-input
+            '';
           };
 
+          manage = writeShellApplication {
+            name = "strykeforce-manage";
 
-          devShells.default = pkgs.mkShell
-            {
-              buildInputs = with pkgs; [
-                cachix
-                just
-                nodejs
-                poetry
-                pre-commit
-                self.packages.${system}.devEnv
-                tailwindcss
-              ] ++ lib.optional stdenv.isDarwin openssl;
-            };
-        }) // {
+            text = ''
+              export DJANGO_SETTINGS_MODULE=website.settings.production
+              export SECRET_KEY=notsecret
+              export TBA_READ_KEY=
+              export EMAIL_HOST_USER=
+              export EMAIL_HOST_PASSWORD=
+              export STATIC_ROOT=${self.packages.${system}.static}
+              exec ${self.packages.${system}.venv}/bin/strykeforce-manage "$@"
+            '';
+          };
+
+          # refresh venv for Pycharm with: nix build .#venv -o venv
+          default = self.packages.${system}.website;
+        };
+
+        formatter = nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
+
+        devShells.default =
+          let
+            pkgs = nixpkgs.legacyPackages.${system};
+            packages = with pkgs; [
+              cachix
+              just
+              nil
+              nix-output-monitor
+              nixfmt-rfc-style
+              nodejs
+              pre-commit
+              python312
+              tailwindcss
+              uv2nix.packages.${system}.uv-bin
+              watchman
+            ];
+          in
+          pkgs.mkShell {
+            inherit packages;
+            shellHook = ''
+              unset PYTHONPATH
+              export UV_PYTHON_DOWNLOADS=never
+            '';
+          };
+      }
+    )
+    // {
       nixosModules.strykeforce = import ./nix/module.nix self;
       nixosModules.default = self.nixosModules.strykeforce;
 
