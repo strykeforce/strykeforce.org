@@ -135,10 +135,10 @@
       }
     )
     // {
-      nixosModules.strykeforce = import ./nix/module.nix self;
+      nixosModules.strykeforce = import ./lib/module.nix self;
       nixosModules.default = self.nixosModules.strykeforce;
 
-      nixosConfigurations.container = import ./nix/container.nix {
+      nixosConfigurations.container = import ./lib/container.nix {
         inherit self nixpkgs;
       };
     };
