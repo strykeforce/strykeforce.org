@@ -1,4 +1,10 @@
-self: { config, lib, pkgs, ... }:
+self:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.strykeforce.services.website;
   stateDir = "/var/lib/strykeforce";
@@ -43,7 +49,7 @@ in
 
     systemd.services.strykeforce-website =
       let
-        website = self.packages.${pkgs.system}.website.dependencyEnv;
+        website = self.packages.${pkgs.system}.venv;
         static = self.packages.${pkgs.system}.static;
       in
       {
@@ -58,7 +64,7 @@ in
           MEDIA_ROOT = "${stateDir}/media";
         };
 
-        preStart = "${website}/bin/manage.py migrate --no-input";
+        preStart = "${website}/bin/strykeforce-manage migrate --no-input";
 
         serviceConfig = {
           EnvironmentFile = "/run/agenix/stryker_website_secrets";
@@ -67,7 +73,6 @@ in
           Restart = "on-failure";
         };
       };
-
 
     services.postgresql = {
       ensureDatabases = [ "strykeforce" ];
@@ -100,12 +105,14 @@ in
       recommendedOptimisation = true;
       recommendedGzipSettings = true;
 
-
       virtualHosts."www.strykeforce.org" = {
         # security.acme is configured for mercury globally
         forceSSL = cfg.ssl;
         enableACME = cfg.ssl;
-        serverAliases = [ "strykeforce.org" "mercury.strykeforce.org" ];
+        serverAliases = [
+          "strykeforce.org"
+          "mercury.strykeforce.org"
+        ];
 
         locations = {
           "/" = {

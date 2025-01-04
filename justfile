@@ -12,7 +12,7 @@ edit:
 
 # run the development server
 run check="none":
-    python {{ if check != "none" { "-X dev" } else { "" } }} manage.py runserver
+    uv run python {{ if check != "none" { "-X dev" } else { "" } }} website/manage.py runserver
 
 push:
     nix build --json .#website | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
