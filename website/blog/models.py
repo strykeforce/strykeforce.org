@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import datetime
 
+from django.core.paginator import Paginator
 from django.db import models
 from django.db.models import ForeignKey
 from django.utils import timezone
@@ -32,11 +33,16 @@ class BlogIndexPage(RoutablePageMixin, Page):
     def recent_blogs_view(self, request):
         """View function for recent blog posts."""
 
+        query_set = BlogPage.objects.live().order_by("-date")
+        paginator = Paginator(query_set, 10)
+        page = request.GET.get("page")
+        blogs = paginator.get_page(page)
+
         return self.render(
             request,
             context_overrides={
                 "title": "Latest News",
-                "blogs": self.recent_blogs(),
+                "blogs": blogs,
             },
         )
 
@@ -98,7 +104,6 @@ class BlogPage(Page):
         help_text="Text to describe the page",
     )
     body = RichTextField(blank=True)
-    # noinspection PyUnresolvedReferences
     image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,

@@ -116,6 +116,7 @@
               nix-output-monitor
               nixfmt-rfc-style
               nodejs
+              postgresql.dev
               pre-commit
               pythonSets.python
               tailwindcss
