@@ -99,7 +99,10 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("sort_order", models.IntegerField(blank=True, editable=False, null=True)),
+                (
+                    "sort_order",
+                    models.IntegerField(blank=True, editable=False, null=True),
+                ),
                 (
                     "member",
                     models.ForeignKey(

@@ -90,7 +90,9 @@ class Command(BaseCommand):
             obj.first_event_id = event.first_event_id
             obj.first_event_code = event.first_event_code
             obj.webcasts = self.parse_webcasts(event.webcasts)
-            obj.division_keys = events.division_keys if hasattr(events, "division_keys") else None
+            obj.division_keys = (
+                events.division_keys if hasattr(events, "division_keys") else None
+            )
             obj.parent_event_key = event.parent_event_key
             obj.playoff_type = event.playoff_type
             obj.playoff_type_string = event.playoff_type_string
