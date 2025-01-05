@@ -106,8 +106,6 @@
           default = self.packages.${system}.venv;
         };
 
-        formatter = nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
-
         devShells.default =
           let
             pkgs = nixpkgs.legacyPackages.${system};
@@ -119,7 +117,7 @@
               nixfmt-rfc-style
               nodejs
               pre-commit
-              python312
+              pythonSets.python
               tailwindcss
               uv2nix.packages.${system}.uv-bin
               watchman
