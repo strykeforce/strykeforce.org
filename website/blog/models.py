@@ -2,18 +2,15 @@ from __future__ import annotations
 
 import datetime
 
+from django.core.paginator import Paginator
 from django.db import models
 from django.db.models import ForeignKey
 from django.utils import timezone
 from modelcluster.fields import ParentalKey
-from wagtail.admin.panels import FieldPanel
-from wagtail.admin.panels import InlinePanel
-from wagtail.admin.panels import MultiFieldPanel
-from wagtail.contrib.routable_page.models import path
-from wagtail.contrib.routable_page.models import RoutablePageMixin
+from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.contrib.routable_page.models import RoutablePageMixin, path
 from wagtail.fields import RichTextField
-from wagtail.models import Orderable
-from wagtail.models import Page
+from wagtail.models import Orderable, Page
 from wagtail.search import index
 
 
@@ -28,17 +25,24 @@ class BlogIndexPage(RoutablePageMixin, Page):
         return BlogPage.objects.live().order_by("-date")
 
     def recent_blogs(self):
-        return self.blogs().filter(date__gt=datetime.datetime.now() - datetime.timedelta(days=365))
+        return self.blogs().filter(
+            date__gt=datetime.datetime.now() - datetime.timedelta(days=365)
+        )
 
     @path("")
     def recent_blogs_view(self, request):
         """View function for recent blog posts."""
 
+        query_set = BlogPage.objects.live().order_by("-date")
+        paginator = Paginator(query_set, 10)
+        page = request.GET.get("page")
+        blogs = paginator.get_page(page)
+
         return self.render(
             request,
             context_overrides={
                 "title": "Latest News",
-                "blogs": self.recent_blogs(),
+                "blogs": blogs,
             },
         )
 
@@ -75,7 +79,9 @@ class BlogIndexPage(RoutablePageMixin, Page):
 
 
 class BlogMemberAuthorRelation(Orderable, models.Model):
-    page = ParentalKey("blog.BlogPage", on_delete=models.CASCADE, related_name="authors")
+    page = ParentalKey(
+        "blog.BlogPage", on_delete=models.CASCADE, related_name="authors"
+    )
     member = ForeignKey("members.Member", on_delete=models.CASCADE, related_name="+")
 
     class Meta(Orderable.Meta):
@@ -98,7 +104,6 @@ class BlogPage(Page):
         help_text="Text to describe the page",
     )
     body = RichTextField(blank=True)
-    # noinspection PyUnresolvedReferences
     image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,

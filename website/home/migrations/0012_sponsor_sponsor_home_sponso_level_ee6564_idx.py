@@ -61,6 +61,8 @@ class Migration(migrations.Migration):
         ),
         migrations.AddIndex(
             model_name="sponsor",
-            index=models.Index(fields=["level", "name"], name="home_sponso_level_ee6564_idx"),
+            index=models.Index(
+                fields=["level", "name"], name="home_sponso_level_ee6564_idx"
+            ),
         ),
     ]

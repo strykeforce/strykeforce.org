@@ -23,14 +23,25 @@ class Command(BaseCommand):
             ("Galesburg Jr. Sr. High School", "https://ghs.galesburg205.org"),
             ("Gull Lake High School", "https://www.gulllakecs.org/glhs"),
             ("Hackett Catholic Prep", "https://csgk.org/hackett-welcome"),
-            ("Kalamazoo Central High School", "https://www.kalamazoopublicschools.com/Domain/8"),
+            (
+                "Kalamazoo Central High School",
+                "https://www.kalamazoopublicschools.com/Domain/8",
+            ),
             ("Loy Norrix High School", "https://www.kalamazoopublicschools.com/LNHS"),
             ("Mattawan High School", "https://www.mattawanschools.org/hs"),
             ("Parchment High School", "https://www.parchmentschools.org/o/phs"),
             ("Portage Central High School", "https://portageps.org/chs/"),
             ("Portage Northern High School", "https://portageps.org/nhs/"),
-            ("Schoolcraft Jr. Sr. High School", "https://www.schoolcraftschools.org/o/shs"),
-            ("Vicksburg High School", "https://www.vicksburgschools.org/schools/high-school/"),
+            (
+                "Schoolcraft Jr. Sr. High School",
+                "https://www.schoolcraftschools.org/o/shs",
+            ),
+            (
+                "Vicksburg High School",
+                "https://www.vicksburgschools.org/schools/high-school/",
+            ),
         ]
-        School.objects.bulk_create([School(name=school[0], url=school[1]) for school in schools])
+        School.objects.bulk_create(
+            [School(name=school[0], url=school[1]) for school in schools]
+        )
         self.stdout.write("Done.")

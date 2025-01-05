@@ -42,16 +42,27 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "from_address",
-                    models.EmailField(blank=True, max_length=255, verbose_name="from address"),
+                    models.EmailField(
+                        blank=True, max_length=255, verbose_name="from address"
+                    ),
                 ),
-                ("subject", models.CharField(blank=True, max_length=255, verbose_name="subject")),
+                (
+                    "subject",
+                    models.CharField(
+                        blank=True, max_length=255, verbose_name="subject"
+                    ),
+                ),
                 ("intro", wagtail.fields.RichTextField(blank=True)),
                 ("thank_you_text", wagtail.fields.RichTextField(blank=True)),
             ],
             options={
                 "abstract": False,
             },
-            bases=(wagtail.contrib.forms.models.FormMixin, "wagtailcore.page", models.Model),
+            bases=(
+                wagtail.contrib.forms.models.FormMixin,
+                "wagtailcore.page",
+                models.Model,
+            ),
         ),
         migrations.CreateModel(
             name="JoinFormField",
@@ -65,7 +76,10 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("sort_order", models.IntegerField(blank=True, editable=False, null=True)),
+                (
+                    "sort_order",
+                    models.IntegerField(blank=True, editable=False, null=True),
+                ),
                 (
                     "clean_name",
                     models.CharField(
@@ -106,7 +120,10 @@ class Migration(migrations.Migration):
                         verbose_name="field type",
                     ),
                 ),
-                ("required", models.BooleanField(default=True, verbose_name="required")),
+                (
+                    "required",
+                    models.BooleanField(default=True, verbose_name="required"),
+                ),
                 (
                     "choices",
                     models.TextField(
@@ -125,7 +142,9 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "help_text",
-                    models.CharField(blank=True, max_length=255, verbose_name="help text"),
+                    models.CharField(
+                        blank=True, max_length=255, verbose_name="help text"
+                    ),
                 ),
                 (
                     "page",

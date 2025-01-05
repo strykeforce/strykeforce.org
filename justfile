@@ -10,12 +10,25 @@ bootstrap: venv pre-commit
 edit:
   pycharm .
 
+# run manage.py with command
+manage command:
+    uv run --no-sync website/manage.py {{ command }}
+
+# create database migrations if needed
+makemigrations: (manage "makemigrations")
+
+# migrate the database
+migrate: (manage "migrate")
+
+# run the ipython repl
+shell: (manage "shell")
+
 # run the development server
 run check="none":
     uv run python {{ if check != "none" { "-X dev" } else { "" } }} website/manage.py runserver
 
 push:
-    nix build --json .#website | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
+    nix build --json .#venv | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
     nix build --json .#static | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
 
 # update CSS and download all JS dependencies

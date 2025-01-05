@@ -34,7 +34,11 @@ class Migration(migrations.Migration):
                 (
                     "member_type",
                     models.CharField(
-                        choices=[("STUDENT", "Student"), ("MENTOR", "Mentor"), ("OTHER", "Other")],
+                        choices=[
+                            ("STUDENT", "Student"),
+                            ("MENTOR", "Mentor"),
+                            ("OTHER", "Other"),
+                        ],
                         default="STUDENT",
                         max_length=50,
                     ),

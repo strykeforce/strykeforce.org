@@ -127,21 +127,39 @@ class SponsorsPage(Page):
         return Sponsor.objects.filter(active=True).order_by("name")
 
     def diamond_sponsors(self):
-        return self.sponsors().filter(active=True, level__exact=LevelType.DIAMOND).order_by("name")
+        return (
+            self.sponsors()
+            .filter(active=True, level__exact=LevelType.DIAMOND)
+            .order_by("name")
+        )
 
     def platinum_sponsors(self):
         return (
-            self.sponsors().filter(active=True, level__exact=LevelType.PLATINUM).order_by("name")
+            self.sponsors()
+            .filter(active=True, level__exact=LevelType.PLATINUM)
+            .order_by("name")
         )
 
     def gold_sponsors(self):
-        return self.sponsors().filter(active=True, level__exact=LevelType.GOLD).order_by("name")
+        return (
+            self.sponsors()
+            .filter(active=True, level__exact=LevelType.GOLD)
+            .order_by("name")
+        )
 
     def silver_sponsors(self):
-        return self.sponsors().filter(active=True, level__exact=LevelType.SILVER).order_by("name")
+        return (
+            self.sponsors()
+            .filter(active=True, level__exact=LevelType.SILVER)
+            .order_by("name")
+        )
 
     def bronze_sponsors(self):
-        return self.sponsors().filter(active=True, level__exact=LevelType.BRONZE).order_by("name")
+        return (
+            self.sponsors()
+            .filter(active=True, level__exact=LevelType.BRONZE)
+            .order_by("name")
+        )
 
     def diamond_or_platinum_sponsors(self):
         return self.sponsors().filter(
@@ -177,7 +195,9 @@ class Sponsor(index.Indexed, models.Model):
     description = models.TextField(max_length=1000, blank=True)
     website = URLField(blank=True)
     # noinspection PyUnresolvedReferences
-    level = CharField(choices=LevelType.choices, default=LevelType.BRONZE, max_length=20)  # type: ignore
+    level = CharField(
+        choices=LevelType.choices, default=LevelType.BRONZE, max_length=20
+    )  # type: ignore
     active = BooleanField(default=True)
     # noinspection PyUnresolvedReferences
     logo = models.ForeignKey(
