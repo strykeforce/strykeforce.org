@@ -37,3 +37,8 @@ target-version = ['py312']
 
 [tool.isort]
 profile = "black"
+
+[tool.djlint]
+profile = "django"
+max_blank_lines = 1
+indent = 2
