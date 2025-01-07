@@ -96,6 +96,9 @@ in
     services.redis.servers."" = {
       enable = true;
       save = [ ];
+      settings = {
+        maxmemory = "100mb";
+      };
     };
     systemd.services.redis.partOf = [ "strykeforce-website.service" ];
 
