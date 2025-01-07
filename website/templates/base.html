@@ -114,7 +114,7 @@
             <button x-ref="mobileMenuOpenButton"
                     x-on:click="toggleMobileMenu()"
                     :aria-expanded="mobileMenuOpen"
-                    :aria-controls="$id('dropdown-button')"
+                    :aria-controls="id_mobile_menu"
                     type="button"
                     class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
                     aria-expanded="false">
@@ -485,7 +485,7 @@
            x-transition:leave-start="opacity-100 scale-100"
            x-transition:leave-end="opacity-0 scale-95"
            x-on:click.outside="closeMobileMenu($refs.mobileMenuOpenButton)"
-           :id="$id('dropdown-button')"
+           id="id_mobile_menu"
            style="display: none"
            class="absolute z-20 inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
         <div class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
@@ -502,7 +502,7 @@
                 <button x-ref="mobileMenuCloseButton"
                         x-on:click="toggleMobileMenu()"
                         :aria-expanded="mobileMenuOpen"
-                        :aria-controls="$id('dropdown-button')"
+                        :aria-controls="id_mobile_menu"
                         type="button"
                         class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
                   <span class="sr-only">Close menu</span>
