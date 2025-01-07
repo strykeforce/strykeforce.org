@@ -1,9 +1,7 @@
 from __future__ import annotations
 
 from .base import *  # noqa
-from .base import BASE_DIR
-from .base import INSTALLED_APPS
-from .base import MIDDLEWARE
+from .base import BASE_DIR, INSTALLED_APPS, MIDDLEWARE
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,15 +34,12 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 CACHES = {
     "default": {
-        # "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
         "BACKEND": "django.core.cache.backends.dummy.DummyCache",
         "LOCATION": BASE_DIR / "cache",
     },
     "renditions": {
         "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
         "LOCATION": BASE_DIR / "image_renditions",
-        # "TIMEOUT": 600,
-        # "OPTIONS": {"MAX_ENTRIES": 1000},
     },
 }
 
