@@ -535,18 +535,30 @@
                   <span class="ml-3 text-base font-medium text-gray-900">About Stryke Force</span>
                 </a>
 
-                <a href="https://www.firstinspires.org"
+                <a href="{% slugurl 'blog' %}"
                    class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
                   <svg xmlns="http://www.w3.org/2000/svg"
                        fill="none"
                        viewBox="0 0 24 24"
                        stroke-width="1.5"
                        stroke="currentColor"
-                       class="w-6 h-6 flex-shrink-0  text-blue"
-                       aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                       class="h-6 w-6 flex-shrink-0 text-blue">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
                   </svg>
-                  <span class="ml-3 text-base font-medium text-gray-900">FIRST Homepage</span>
+                  <span class="ml-3 text-base font-medium text-gray-900">Latest News</span>
+                </a>
+
+                <a href="{% slugurl 'events' %}"
+                   class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor"
+                       class="h-6 w-6 flex-shrink-0 text-blue">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                  </svg>
+                  <span class="ml-3 text-base font-medium text-gray-900">Events</span>
                 </a>
 
                 <a href="{% slugurl "frc-students" %}"
@@ -616,6 +628,74 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 01-1.383-2.46l.007-.042a2.25 2.25 0 01.29-.787l.09-.15a2.25 2.25 0 012.37-1.048l1.178.236a1.125 1.125 0 001.302-.795l.208-.73a1.125 1.125 0 00-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 01-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 01-1.458-1.137l1.411-2.353a2.25 2.25 0 00.286-.76m11.928 9.869A9 9 0 008.965 3.525m11.928 9.868A9 9 0 118.965 3.525" />
                   </svg>
                   <span class="ml-3 text-base font-medium text-gray-900">Community Outreach</span>
+                </a>
+
+                <a href="{% slugurl 'resources' %}"
+                   class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor"
+                       class="h-6 w-6 flex-shrink-0 text-blue">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+                  </svg>
+                  <span class="ml-3 text-base font-medium text-gray-900">Technical Resources</span>
+                </a>
+
+                <a href="{% slugurl 'contact-us' %}"
+                   class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor"
+                       class="h-6 w-6 flex-shrink-0 text-blue">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                  <span class="ml-3 text-base font-medium text-gray-900">Contact Us</span>
+                </a>
+
+                <a href="https://www.youtube.com/@strykeforce4-hfirstrobotic376"
+                   target="_blank"
+                   class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor"
+                       class="h-6 w-6 flex-shrink-0 text-blue">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                  <span class="ml-3 text-base font-medium text-gray-900">Stryke Force YouTube Channel</span>
+                </a>
+
+                <a href="https://strykeforce.smugmug.com"
+                   target="_blank"
+                   class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor"
+                       class="h-6 w-6 flex-shrink-0 text-blue">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                  <span class="ml-3 text-base font-medium text-gray-900">Stryke Force Photos</span>
+                </a>
+
+                <a href="https://www.facebook.com/groups/1163182671256751/"
+                   target="_blank"
+                   class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor"
+                       class="h-6 w-6 flex-shrink-0 text-blue">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                  <span class="ml-3 text-base font-medium text-gray-900">Family Facebook Group</span>
                 </a>
               </nav>
             </div>
