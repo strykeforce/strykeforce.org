@@ -30,7 +30,9 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "strykeforce",
-        "CONN_MAX_AGE": 600,
+        "OPTIONS": {
+            "pool": True,
+        },
     },
 }
 
