@@ -19,6 +19,8 @@ pkgs.writeShellApplication {
       DJANGO_DATABASE_URL=postgres:///strykeforce \
       SECRET_KEY=not-secret \
       STATIC_ROOT=${static} \
+      EMAIL_HOST_USER="$EMAIL_HOST_USER" \
+      EMAIL_HOST_PASSWORD="$EMAIL_HOST_PASSWORD" \
       TBA_READ_KEY="$TBA_READ_KEY" \
       ${venv}/bin/strykeforce-manage "$@"
   '';
