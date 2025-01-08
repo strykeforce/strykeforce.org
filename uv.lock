@@ -820,6 +820,18 @@ wheels = [
 ]
 
 [[package]]
+name = "python-dateutil"
+version = "2.9.0.post0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "six" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz", hash = "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3", size = 342432 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hash = "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427", size = 229892 },
+]
+
+[[package]]
 name = "pytz"
 version = "2024.2"
 source = { registry = "https://pypi.org/simple" }
@@ -920,6 +932,18 @@ wheels = [
 ]
 
 [[package]]
+name = "tba-api-v3client"
+version = "3.8.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "certifi" },
+    { name = "python-dateutil" },
+    { name = "six" },
+    { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/45/0a/b3811bb17c7b229f3ab45a73675b3c28ea35cf9e088afdfa4ac2fddd1a35/tba-api-v3client-3.8.0.tar.gz", hash = "sha256:2192150f41fdadb295e11e1a935d47fc9157f65274571dbad9b5c25caed93386", size = 114048 }
+
+[[package]]
 name = "telepath"
 version = "0.3.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1013,6 +1037,7 @@ dependencies = [
     { name = "psycopg", extra = ["c", "pool"] },
     { name = "redis" },
     { name = "sentry-sdk" },
+    { name = "tba-api-v3client" },
     { name = "wagtail" },
     { name = "whitenoise", extra = ["brotli"] },
 ]
@@ -1034,6 +1059,7 @@ requires-dist = [
     { name = "psycopg", extras = ["c", "pool"], specifier = ">=3.2.3" },
     { name = "redis", specifier = ">=5.2.1" },
     { name = "sentry-sdk", specifier = ">=2.19.2" },
+    { name = "tba-api-v3client", specifier = ">=3.8.0" },
     { name = "wagtail", specifier = ">=6.3.2" },
     { name = "whitenoise", extras = ["brotli"], specifier = ">=6.8.2" },
 ]

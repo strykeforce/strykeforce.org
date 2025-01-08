@@ -53,6 +53,7 @@
 
             pillowHeifOverrides = import ./lib/overrides-pillow-heif.nix { inherit pkgs; };
             psycopgOverrides = import ./lib/overrides-psycopg.nix { inherit pkgs; };
+            tbaApiOverrides = import ./lib/overrides-tba-api-v3client.nix { inherit pkgs; };
           in
           baseSet.overrideScope (
             lib.composeManyExtensions [
@@ -60,6 +61,7 @@
               overlay
               pillowHeifOverrides
               psycopgOverrides
+              tbaApiOverrides
             ]
           );
 
@@ -88,7 +90,13 @@
             '';
           };
 
-          manage = writeShellApplication {
+          manage = import ./lib/manage.nix {
+            inherit pkgs;
+            inherit (self.packages.${system}) venv;
+            inherit (self.packages.${system}) static;
+          };
+
+          manage-old = writeShellApplication {
             name = "strykeforce-manage";
 
             text = ''

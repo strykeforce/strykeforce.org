@@ -2,10 +2,9 @@ from __future__ import annotations
 
 import tbaapiv3client
 from django.conf import settings
-from django.core.management import BaseCommand
-from django.core.management import CommandError
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.management import BaseCommand, CommandError
 from django.db import transaction
-from django.db.models import Model
 from tbaapiv3client import ApiException
 
 from website.events.models import Event
@@ -62,7 +61,7 @@ class Command(BaseCommand):
         for event in events:
             try:
                 obj = Event.objects.get(key=event.key)
-            except Model.DoesNotExist:
+            except ObjectDoesNotExist:
                 obj = Event()
 
             obj.key = event.key

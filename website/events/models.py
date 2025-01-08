@@ -1,18 +1,20 @@
 from __future__ import annotations
 
 from django.db import models
-from django.db.models import CharField
-from django.db.models import DateField
-from django.db.models import FloatField
-from django.db.models import IntegerField
-from django.db.models import JSONField
-from django.db.models import URLField
+from django.db.models import (
+    CharField,
+    DateField,
+    FloatField,
+    IntegerField,
+    JSONField,
+    URLField,
+)
 from django.utils import timezone
 from wagtail.admin.panels import FieldPanel
-from wagtail.contrib.routable_page.models import path
-from wagtail.contrib.routable_page.models import RoutablePageMixin
+from wagtail.contrib.routable_page.models import RoutablePageMixin, path
 from wagtail.fields import RichTextField
 from wagtail.models import Page
+from wagtail.snippets.models import register_snippet
 
 MAX_LENGTH = 1000
 
@@ -70,6 +72,7 @@ class EventIndexPage(RoutablePageMixin, Page):
     ]
 
 
+@register_snippet
 class Event(models.Model):
     key = CharField(unique=True, default="", max_length=MAX_LENGTH)
     name = CharField(default="", max_length=MAX_LENGTH)
