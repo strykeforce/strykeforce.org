@@ -21,16 +21,10 @@ rclone -v sync s3://www.strykeforce.org/media/ ./media
 ```
 ## Server Management
 
-In production, look up the deployed derivation using `systemctl cat
-strykeforce-website` and run `manage.py` as user `strykeforce` with required
-environment variable set:
-
-```
-sudo -u strykeforce env \
-  DJANGO_SETTINGS_MODULE=website.settings.production \
-  TBA_READ_KEY= \
-  SECRET_KEY=<something> \
-  $NIX_STORE_PATH/bin/manage.py
+```sh
+# as root
+$ nix registry add strykeforce-manage "github:strykeforce/strykeforce.org"
+$ nix run strykeforce-manage
 ```
 
 

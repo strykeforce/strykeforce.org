@@ -18,13 +18,14 @@
   };
 
   outputs =
-    { self
-    , agenix
-    , deploy-rs
-    , nixos-configs
-    , nixpkgs
-    , strykeforce
-    , ...
+    {
+      self,
+      agenix,
+      deploy-rs,
+      nixos-configs,
+      nixpkgs,
+      strykeforce,
+      ...
     }:
     let
       system = "x86_64-linux";
@@ -53,39 +54,42 @@
             ./rclone.nix
             agenix.nixosModules.default
             strykeforce.nixosModules.default
-            ({ config, pkgs, ... }: {
-              age.secrets.stryker_website_secrets = {
-                file = ./strykeforce_website_secrets.age;
-              };
+            (
+              { config, pkgs, ... }:
+              {
+                age.secrets.stryker_website_secrets = {
+                  file = ./strykeforce_website_secrets.age;
+                };
 
-              environment.systemPackages = with pkgs; [
-                goaccess
-                redli
-                strykeforce-manage
-              ];
+                environment.systemPackages = with pkgs; [
+                  goaccess
+                  redli
+                  strykeforce-manage
+                ];
 
-              strykeforce.services.website = {
-                inherit enable;
-                settingsModule = "website.settings.production";
-              };
+                strykeforce.services.website = {
+                  inherit enable;
+                  settingsModule = "website.settings.production";
+                  secrets = [ config.age.secrets.stryker_website_secrets.path ];
+                };
 
-              services.postgresql = {
-                inherit enable;
-                package = pkgs.postgresql_15;
-              };
+                services.postgresql = {
+                  inherit enable;
+                  package = pkgs.postgresql_15;
+                };
 
-              services.postgresqlBackup = {
-                inherit enable;
-                databases = [ "strykeforce" ];
-                pgdumpOptions = "--clean";
-              };
+                services.postgresqlBackup = {
+                  inherit enable;
+                  databases = [ "strykeforce" ];
+                  pgdumpOptions = "--clean";
+                };
 
-              security.acme.acceptTerms = true;
-              security.acme.defaults.email = "jeff@j3ff.io";
-            })
+                security.acme.acceptTerms = true;
+                security.acme.defaults.email = "jeff@j3ff.io";
+              }
+            )
           ];
         };
-
 
       deploy.nodes =
         let

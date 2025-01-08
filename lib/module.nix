@@ -26,6 +26,15 @@ in
       default = "website.settings.production";
     };
 
+    secrets = lib.mkOption {
+      type = with lib.types; listOf path;
+      description = ''
+        A list of files containing the various secrets. Should be in the format
+        expected by systemd's `EnvironmentFile` directory.
+      '';
+      default = [ ];
+    };
+
     allowedHosts = lib.mkOption {
       type = lib.types.str;
       default = "strykeforce.org www.strykeforce.org";
@@ -67,7 +76,7 @@ in
         preStart = "${website}/bin/strykeforce-manage migrate --no-input";
 
         serviceConfig = {
-          EnvironmentFile = "/run/agenix/stryker_website_secrets";
+          EnvironmentFile = cfg.secrets;
           ExecStart = "${website}/bin/gunicorn --workers=5 --bind=127.0.0.1:8000 website.wsgi";
           User = "strykeforce";
           Restart = "on-failure";
