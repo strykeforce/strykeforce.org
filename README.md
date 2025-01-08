@@ -23,8 +23,12 @@ rclone -v sync s3://www.strykeforce.org/media/ ./media
 
 ```sh
 # as root
+# strykeforce-manage is installed on the production server
+$ strykeforce-manage help
+
+# otherwise
 $ nix registry add strykeforce-manage "github:strykeforce/strykeforce.org"
-$ nix run strykeforce-manage
+$ nix run strykeforce-manage -- help
 ```
 
 
