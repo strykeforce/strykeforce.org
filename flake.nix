@@ -114,6 +114,13 @@
           default = self.packages.${system}.venv;
         };
 
+        apps = {
+          default = {
+            type = "app";
+            program = "${self.packages.${system}.manage}/bin/strykeforce-manage";
+          };
+        };
+
         devShells.default =
           let
             pkgs = nixpkgs.legacyPackages.${system};
