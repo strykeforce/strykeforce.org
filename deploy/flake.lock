@@ -370,11 +370,11 @@
         "vscode-server": "vscode-server"
       },
       "locked": {
-        "lastModified": 1736341440,
-        "narHash": "sha256-T4lVBelPU/9vmyhxf/fxUFckIBDVBsdiOpur3r3pSx0=",
+        "lastModified": 1736343319,
+        "narHash": "sha256-B9afpNbObwM1X6lqlns8awZea6qbHieb60xUnJ3he5M=",
         "owner": "jhh",
         "repo": "nixos-configs",
-        "rev": "d8fe1210edae6466e862cffe33742c230f992c78",
+        "rev": "15dadb5ceafdcce8b1d6747eb16b542c8065b0ff",
         "type": "github"
       },
       "original": {
