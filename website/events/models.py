@@ -150,10 +150,10 @@ class Event(models.Model):
     ]
 
     def save(self, *args, **kwargs):
-        if self.website.startswith("http://www.firstinmichigan.org"):
+        if self.website and self.website.startswith("http://www.firstinmichigan.org"):
             self.website = f"https://www.firstinmichigan.org/FRC/{self.event_code}"
 
-        if self.key is not None:
+        if self.key:
             super().save(*args, **kwargs)
             return
 
