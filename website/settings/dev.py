@@ -12,12 +12,19 @@ SECRET_KEY = "django-insecure-nazl^__i55zgwj+9a*pf2_td+*3&3aa!)517v((0bhqras0w2%
 # SECURITY WARNING: define the correct hosts in production!
 ALLOWED_HOSTS = ["*"]
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "strykeforce",
+#         "OPTIONS": {"options": "-c search_path=strykeforce,public"},
+#     },
+# }
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "strykeforce",
-        "OPTIONS": {"options": "-c search_path=strykeforce,public"},
-    },
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
 
 INSTALLED_APPS += [
