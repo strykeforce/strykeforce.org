@@ -10,11 +10,13 @@ from django.db.models import (
     URLField,
 )
 from django.utils import timezone
-from wagtail.admin.panels import FieldPanel
+from django.utils.text import slugify
+from wagtail.admin.panels import FieldPanel, FieldRowPanel
 from wagtail.contrib.routable_page.models import RoutablePageMixin, path
 from wagtail.fields import RichTextField
 from wagtail.models import Page
 from wagtail.snippets.models import register_snippet
+from wagtail.snippets.views.snippets import SnippetViewSet
 
 MAX_LENGTH = 1000
 
@@ -26,6 +28,11 @@ class EventIndexPage(RoutablePageMixin, Page):
         max_length=1000,
         help_text="Text to describe the page",
     )
+
+    content_panels = Page.content_panels + [
+        FieldPanel("introduction"),
+        FieldPanel("body"),
+    ]
 
     @staticmethod
     def events():
@@ -66,44 +73,95 @@ class EventIndexPage(RoutablePageMixin, Page):
             },
         )
 
-    content_panels = Page.content_panels + [
-        FieldPanel("introduction"),
-        FieldPanel("body"),
+
+class Event(models.Model):
+    key = CharField(unique=True, default="", max_length=25, editable=False)  # slug
+    name = CharField(
+        "Event Name",
+        default="",
+        max_length=200,
+        help_text="If this is blank, it is recommended to copy an earlier version of this event and edit as neccessary.",
+    )  # used
+    event_code = CharField(
+        "Event Code",
+        default="",
+        max_length=25,
+        help_text="Short and unique (i.e. misjo, openhouse, etc.)",
+    )
+    event_type = IntegerField(default=-1, editable=False)
+    district = JSONField(blank=True, null=True, editable=False)
+    city = CharField(max_length=MAX_LENGTH, blank=True, null=True)  # used
+    state_prov = CharField(
+        "State", max_length=MAX_LENGTH, blank=True, null=True, default="MI"
+    )  # used
+    country = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
+    start_date = DateField(default=timezone.now)  # used
+    end_date = DateField(default=timezone.now)  # used
+    year = IntegerField(default=timezone.now, help_text="Year of event")
+    short_name = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
+    event_type_string = CharField(
+        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+    )
+    week = IntegerField(blank=True, null=True)  # used, conditionally
+    address = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
+    postal_code = CharField(
+        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+    )
+    gmaps_place_id = CharField(
+        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+    )
+    gmaps_url = URLField(max_length=MAX_LENGTH, blank=True, null=True)  # used
+    lat = FloatField(blank=True, null=True, editable=False)
+    lng = FloatField(blank=True, null=True, editable=False)
+    location_name = CharField(
+        max_length=MAX_LENGTH,
+        blank=True,
+        null=True,
+        help_text="Familiar location name (i.e. Fieldhouse Arena) or street address.",
+    )  # used
+    website = URLField(max_length=MAX_LENGTH, blank=True, null=True)  # used
+    first_event_id = CharField(
+        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+    )
+    first_event_code = CharField(
+        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+    )
+    webcasts = JSONField(blank=True, null=True, editable=False)
+    division_keys = JSONField(blank=True, null=True, editable=False)
+    parent_event_key = CharField(
+        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+    )
+    playoff_type = IntegerField(blank=True, null=True, editable=False)
+    playoff_type_string = CharField(
+        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+    )
+    body = RichTextField(blank=True, editable=False)
+
+    panels = [
+        FieldPanel("name"),
+        FieldRowPanel([FieldPanel("event_code"), FieldPanel("year")]),
+        FieldRowPanel([FieldPanel("city"), FieldPanel("state_prov")]),
+        FieldRowPanel(
+            [FieldPanel("start_date"), FieldPanel("end_date"), FieldPanel("week")]
+        ),
+        FieldPanel("location_name"),
+        FieldPanel("gmaps_url"),
+        FieldPanel("website"),
     ]
 
+    def save(self, *args, **kwargs):
+        # Generate the initial slug for the `key` field
+        base_slug = slugify(f"{self.event_code}-{self.year}")
+        unique_slug = base_slug
+        num = 1
 
-@register_snippet
-class Event(models.Model):
-    key = CharField(unique=True, default="", max_length=MAX_LENGTH)
-    name = CharField(default="", max_length=MAX_LENGTH)
-    event_code = CharField(default="", max_length=MAX_LENGTH)
-    event_type = IntegerField(default=-1)
-    district = JSONField(blank=True, null=True)
-    city = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    state_prov = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    country = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    start_date = DateField(default=timezone.now)
-    end_date = DateField(default=timezone.now)
-    year = IntegerField(default=timezone.now)
-    short_name = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    event_type_string = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    week = IntegerField(blank=True, null=True)
-    address = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    postal_code = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    gmaps_place_id = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    gmaps_url = URLField(max_length=MAX_LENGTH, blank=True, null=True)
-    lat = FloatField(blank=True, null=True)
-    lng = FloatField(blank=True, null=True)
-    location_name = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    website = URLField(max_length=MAX_LENGTH, blank=True, null=True)
-    first_event_id = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    first_event_code = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    webcasts = JSONField(blank=True, null=True)
-    division_keys = JSONField(blank=True, null=True)
-    parent_event_key = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    playoff_type = IntegerField(blank=True, null=True)
-    playoff_type_string = CharField(max_length=MAX_LENGTH, blank=True, null=True)
-    body = RichTextField(blank=True)
+        # Check for uniqueness and append a counter if necessary
+        while Event.objects.filter(key=unique_slug).exists():
+            unique_slug = f"{base_slug}-{num}"
+            num += 1
+
+        self.key = unique_slug
+        super().save(*args, **kwargs)
 
     class Meta:
         ordering = ["-start_date"]
@@ -114,3 +172,12 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+
+@register_snippet
+class EventViewSet(SnippetViewSet):
+    model = Event
+    icon = "calendar"
+    list_display = ["name", "year"]
+    list_filter = ["name", "year"]
+    ordering = ["-start_date"]
