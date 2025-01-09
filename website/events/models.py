@@ -150,6 +150,13 @@ class Event(models.Model):
     ]
 
     def save(self, *args, **kwargs):
+        if self.website.startswith("http://www.firstinmichigan.org"):
+            self.website = f"https://www.firstinmichigan.org/FRC/{self.event_code}"
+
+        if self.key is not None:
+            super().save(*args, **kwargs)
+            return
+
         # Generate the initial slug for the `key` field
         base_slug = slugify(f"{self.event_code}-{self.year}")
         unique_slug = base_slug
