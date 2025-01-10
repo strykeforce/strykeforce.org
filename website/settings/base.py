@@ -55,7 +55,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
-    }
+    },
 }
 
 TEMPLATES = [
@@ -121,7 +121,6 @@ STATICFILES_DIRS = [
     PROJECT_DIR / "static",
 ]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_ROOT = os.environ.get("STATIC_ROOT", BASE_DIR / "static")
 STATIC_URL = "static/"
