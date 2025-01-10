@@ -128,7 +128,8 @@ class Migration(migrations.Migration):
         migrations.AddIndex(
             model_name="event",
             index=models.Index(
-                fields=["start_date"], name="events_even_start_d_d4b514_idx"
+                fields=["start_date"],
+                name="events_even_start_d_d4b514_idx",
             ),
         ),
     ]

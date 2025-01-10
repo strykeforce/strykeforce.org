@@ -196,7 +196,9 @@ class Sponsor(index.Indexed, models.Model):
     website = URLField(blank=True)
     # noinspection PyUnresolvedReferences
     level = CharField(
-        choices=LevelType.choices, default=LevelType.BRONZE, max_length=20
+        choices=LevelType.choices,
+        default=LevelType.BRONZE,
+        max_length=20,
     )  # type: ignore
     active = BooleanField(default=True)
     # noinspection PyUnresolvedReferences

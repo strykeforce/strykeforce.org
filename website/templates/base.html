@@ -1,4 +1,4 @@
-{% load cache static wagtailcore_tags wagtailuserbar navigation_tags %}
+{% load cache navigation_tags static wagtailcore_tags wagtailuserbar %}
 
 <!DOCTYPE html>
 <!--suppress XmlUnboundNsPrefix, CheckEmptyScriptTag -->
@@ -13,10 +13,10 @@
         {% else %}
           {{ page.title }}
         {% endif %}
-      {% endblock %}
+      {% endblock title %}
       {% block title_suffix %}
         {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
-      {% endblock %}
+      {% endblock title_suffix %}
     </title>
     <meta property="og:site_name" content="Stryke Force 2767">
     <meta property="og:url" content="{{ page.full_url }}" />
@@ -701,9 +701,9 @@
     <main>
       {% block breadcrumbs %}
         {% breadcrumbs %}
-      {% endblock %}
+      {% endblock breadcrumbs %}
       {% block content %}
-      {% endblock %}
+      {% endblock content %}
     </main>
 
     <footer>

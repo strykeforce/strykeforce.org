@@ -43,13 +43,17 @@ class Migration(migrations.Migration):
                 (
                     "from_address",
                     models.EmailField(
-                        blank=True, max_length=255, verbose_name="from address"
+                        blank=True,
+                        max_length=255,
+                        verbose_name="from address",
                     ),
                 ),
                 (
                     "subject",
                     models.CharField(
-                        blank=True, max_length=255, verbose_name="subject"
+                        blank=True,
+                        max_length=255,
+                        verbose_name="subject",
                     ),
                 ),
                 ("intro", wagtail.fields.RichTextField(blank=True)),
@@ -143,7 +147,9 @@ class Migration(migrations.Migration):
                 (
                     "help_text",
                     models.CharField(
-                        blank=True, max_length=255, verbose_name="help text"
+                        blank=True,
+                        max_length=255,
+                        verbose_name="help text",
                     ),
                 ),
                 (

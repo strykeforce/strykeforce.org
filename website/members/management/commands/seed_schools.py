@@ -42,6 +42,6 @@ class Command(BaseCommand):
             ),
         ]
         School.objects.bulk_create(
-            [School(name=school[0], url=school[1]) for school in schools]
+            [School(name=school[0], url=school[1]) for school in schools],
         )
         self.stdout.write("Done.")

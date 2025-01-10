@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("home", "0017_homepage_featured_page_1_homepage_featured_page_2_and_more"),
     ]

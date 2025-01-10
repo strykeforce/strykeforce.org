@@ -1,7 +1,7 @@
-{% load  wagtailimages_tags %}
+{% load wagtailimages_tags %}
 
 {% for author in authors %}
-  {% with author.member as member %}
+  {% with member=author.member %}
     <div class="mt-6 flex items-center">
       <div class="flex-shrink-0">
         <span>

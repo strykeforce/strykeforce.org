@@ -26,7 +26,7 @@ class BlogIndexPage(RoutablePageMixin, Page):
 
     def recent_blogs(self):
         return self.blogs().filter(
-            date__gt=datetime.datetime.now() - datetime.timedelta(days=365)
+            date__gt=datetime.datetime.now() - datetime.timedelta(days=365),
         )
 
     @path("")
@@ -80,7 +80,9 @@ class BlogIndexPage(RoutablePageMixin, Page):
 
 class BlogMemberAuthorRelation(Orderable, models.Model):
     page = ParentalKey(
-        "blog.BlogPage", on_delete=models.CASCADE, related_name="authors"
+        "blog.BlogPage",
+        on_delete=models.CASCADE,
+        related_name="authors",
     )
     member = ForeignKey("members.Member", on_delete=models.CASCADE, related_name="+")
 

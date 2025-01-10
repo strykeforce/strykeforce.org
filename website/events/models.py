@@ -92,7 +92,11 @@ class Event(models.Model):
     district = JSONField(blank=True, null=True, editable=False)
     city = CharField(max_length=MAX_LENGTH, blank=True, null=True)  # used
     state_prov = CharField(
-        "State", max_length=MAX_LENGTH, blank=True, null=True, default="MI"
+        "State",
+        max_length=MAX_LENGTH,
+        blank=True,
+        null=True,
+        default="MI",
     )  # used
     country = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
     start_date = DateField(default=timezone.now)  # used
@@ -100,15 +104,24 @@ class Event(models.Model):
     year = IntegerField(default=timezone.now, help_text="Year of event")
     short_name = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
     event_type_string = CharField(
-        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+        max_length=MAX_LENGTH,
+        blank=True,
+        null=True,
+        editable=False,
     )
     week = IntegerField(blank=True, null=True)  # used, conditionally
     address = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
     postal_code = CharField(
-        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+        max_length=MAX_LENGTH,
+        blank=True,
+        null=True,
+        editable=False,
     )
     gmaps_place_id = CharField(
-        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+        max_length=MAX_LENGTH,
+        blank=True,
+        null=True,
+        editable=False,
     )
     gmaps_url = URLField(max_length=MAX_LENGTH, blank=True, null=True)  # used
     lat = FloatField(blank=True, null=True, editable=False)
@@ -121,19 +134,31 @@ class Event(models.Model):
     )  # used
     website = URLField(max_length=MAX_LENGTH, blank=True, null=True)  # used
     first_event_id = CharField(
-        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+        max_length=MAX_LENGTH,
+        blank=True,
+        null=True,
+        editable=False,
     )
     first_event_code = CharField(
-        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+        max_length=MAX_LENGTH,
+        blank=True,
+        null=True,
+        editable=False,
     )
     webcasts = JSONField(blank=True, null=True, editable=False)
     division_keys = JSONField(blank=True, null=True, editable=False)
     parent_event_key = CharField(
-        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+        max_length=MAX_LENGTH,
+        blank=True,
+        null=True,
+        editable=False,
     )
     playoff_type = IntegerField(blank=True, null=True, editable=False)
     playoff_type_string = CharField(
-        max_length=MAX_LENGTH, blank=True, null=True, editable=False
+        max_length=MAX_LENGTH,
+        blank=True,
+        null=True,
+        editable=False,
     )
     body = RichTextField(blank=True, editable=False)
 
@@ -142,7 +167,7 @@ class Event(models.Model):
         FieldRowPanel([FieldPanel("event_code"), FieldPanel("year")]),
         FieldRowPanel([FieldPanel("city"), FieldPanel("state_prov")]),
         FieldRowPanel(
-            [FieldPanel("start_date"), FieldPanel("end_date"), FieldPanel("week")]
+            [FieldPanel("start_date"), FieldPanel("end_date"), FieldPanel("week")],
         ),
         FieldPanel("location_name"),
         FieldPanel("gmaps_url"),

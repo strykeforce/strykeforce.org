@@ -186,13 +186,15 @@ class StudentIndexPage(Page):
     @staticmethod
     def student_leaders():
         return Member.objects.filter(member_type="STUDENT_LEADER").order_by(
-            "-grade", "last_name"
+            "-grade",
+            "last_name",
         )
 
     @staticmethod
     def students():
         return Member.objects.filter(member_type="STUDENT").order_by(
-            "-grade", "last_name"
+            "-grade",
+            "last_name",
         )
 
     def get_context(self, request, *args, **kwargs):
