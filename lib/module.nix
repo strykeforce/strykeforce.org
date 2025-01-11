@@ -90,7 +90,6 @@ in
       in
       {
         startAt = "hourly";
-        script = "${venv}/bin/strykeforce-manage publish_scheduled";
         environment = {
           DJANGO_SETTINGS_MODULE = cfg.settingsModule;
           ALLOWED_HOSTS = cfg.allowedHosts;
@@ -100,6 +99,7 @@ in
         serviceConfig = {
           EnvironmentFile = cfg.secrets;
           User = "strykeforce";
+          ExecStart = "${venv}/bin/strykeforce-manage publish_scheduled";
         };
       };
 
