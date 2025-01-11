@@ -86,6 +86,7 @@ in
     systemd.services.strykeforce-website-publish-scheduled =
       let
         venv = self.packages.${pkgs.system}.venv;
+        static = self.packages.${pkgs.system}.static;
       in
       {
         startAt = "hourly";
