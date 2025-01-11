@@ -58,7 +58,7 @@ in
 
     systemd.services.strykeforce-website =
       let
-        website = self.packages.${pkgs.system}.venv;
+        venv = self.packages.${pkgs.system}.venv;
         static = self.packages.${pkgs.system}.static;
       in
       {
@@ -73,13 +73,32 @@ in
           MEDIA_ROOT = "${stateDir}/media";
         };
 
-        preStart = "${website}/bin/strykeforce-manage migrate --no-input";
+        preStart = "${venv}/bin/strykeforce-manage migrate --no-input";
 
         serviceConfig = {
           EnvironmentFile = cfg.secrets;
-          ExecStart = "${website}/bin/gunicorn --workers=5 --bind=127.0.0.1:8000 website.wsgi";
+          ExecStart = "${venv}/bin/gunicorn --workers=5 --bind=127.0.0.1:8000 website.wsgi";
           User = "strykeforce";
           Restart = "on-failure";
+        };
+      };
+
+    systemd.services.strykeforce-website-publish-scheduled =
+      let
+        venv = self.packages.${pkgs.system}.venv;
+      in
+      {
+        startAt = "hourly";
+        script = "${venv}/bin/strykeforce-manage publish_scheduled --no-input";
+        environment = {
+          DJANGO_SETTINGS_MODULE = cfg.settingsModule;
+          ALLOWED_HOSTS = cfg.allowedHosts;
+          STATIC_ROOT = "${static}";
+          MEDIA_ROOT = "${stateDir}/media";
+        };
+        serviceConfig = {
+          EnvironmentFile = cfg.secrets;
+          User = "strykeforce";
         };
       };
 
