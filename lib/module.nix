@@ -90,7 +90,7 @@ in
       in
       {
         startAt = "hourly";
-        script = "${venv}/bin/strykeforce-manage publish_scheduled --no-input";
+        script = "${venv}/bin/strykeforce-manage publish_scheduled";
         environment = {
           DJANGO_SETTINGS_MODULE = cfg.settingsModule;
           ALLOWED_HOSTS = cfg.allowedHosts;
