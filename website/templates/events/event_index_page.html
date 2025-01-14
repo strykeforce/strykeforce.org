@@ -37,20 +37,20 @@
           {% endfor %}
         </ul>
 
-        <div class="flex items-center justify-between mt-4">
-          {% if next_year %}
-            <a href="{% routablepageurl page 'events_for_year' next_year %}"
-               class="text-base font-semibold text-blue hover:text-gray-700">
-              <span aria-hidden="true">←</span> {{ next_year }} Events
-            </a>
-          {% endif %}
-
+        <div class="flex items-center justify-between mt-4 border-t border-gray-200 pt-2">
           {% if prev_year %}
             <a href="{% routablepageurl page 'events_for_year' prev_year %}"
                class="text-base font-semibold text-blue hover:text-gray-700">
-              {{ prev_year }} Events <span aria-hidden="true">→</span>
+              <span aria-hidden="true">←</span> {{ prev_year }} Events
             </a>
           {% endif %}
+          {% if next_year %}
+            <a href="{% routablepageurl page 'events_for_year' next_year %}"
+               class="text-base font-semibold text-blue hover:text-gray-700">
+              {{ next_year }} Events <span aria-hidden="true">→</span>
+            </a>
+          {% endif %}
+
         </div>
 
       </div>
