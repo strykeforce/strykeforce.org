@@ -7,6 +7,8 @@ from django.db.models import (
     FloatField,
     IntegerField,
     JSONField,
+    Max,
+    Min,
     URLField,
 )
 from django.utils import timezone
@@ -50,11 +52,16 @@ class EventIndexPage(RoutablePageMixin, Page):
 
         events = self.events().filter(start_date__year=year)
 
+        # Get min and max years from database
+        year_range = Event.objects.aggregate(min_year=Min("year"), max_year=Max("year"))
+
         return self.render(
             request,
             context_overrides={
                 "title": f"{year} Events",
                 "events": events,
+                "prev_year": year - 1 if year > year_range["min_year"] else None,
+                "next_year": year + 1 if year < year_range["max_year"] else None,
             },
         )
 
