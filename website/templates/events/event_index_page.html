@@ -16,17 +16,17 @@
       </div>
 
       <ul>
-        <ul role="list" class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        <ul role="list"
+            class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {% for event in events %}
             <li class="">
-              <a class="block col-span-1 flex rounded-md shadow-sm" href="/events/key/{{ event.key }}/">
-                <div
-                    class="flex flex-col flex-shrink-0 items-center justify-center w-16 bg-yellow text-black text-md font-medium rounded-l-md">
+              <a class="block col-span-1 flex rounded-md shadow-sm"
+                 href="/events/key/{{ event.key }}/">
+                <div class="flex flex-col flex-shrink-0 items-center justify-center w-16 bg-yellow text-black text-md font-medium rounded-l-md">
                   <div>{{ event.start_date|date:"M"|upper }}</div>
                   <div>{{ event.start_date|date:"j" }}</div>
                 </div>
-                <div
-                    class="flex flex-1 items-center justify-between truncate rounded-r-md border-t border-r border-b border-gray-200 bg-white">
+                <div class="flex flex-1 items-center justify-between truncate rounded-r-md border-t border-r border-b border-gray-200 bg-white">
                   <div class="flex-1 truncate px-4 py-2 text-sm">
                     <p class="font-medium truncate text-gray-900 hover:text-gray-600">{{ event.name }}</p>
                     <p class="text-gray-500">{{ event.city }}, {{ event.state_prov }}</p>
@@ -37,8 +37,7 @@
           {% endfor %}
         </ul>
 
-
+      </div>
     </div>
-  </div>
 
-{% endblock content %}
+  {% endblock content %}
