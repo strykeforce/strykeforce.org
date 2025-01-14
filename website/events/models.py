@@ -42,7 +42,7 @@ class EventIndexPage(RoutablePageMixin, Page):
         return self.events().filter(end_date__gte=timezone.now())
 
     @path("")
-    @path("year/<int:year>/")
+    @path("<int:year>/")
     def events_for_year(self, request, year=None):
         """View function for current season's events."""
         if year is None:
