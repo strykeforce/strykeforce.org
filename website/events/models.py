@@ -108,7 +108,7 @@ class Event(models.Model):
     country = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
     start_date = DateField(default=timezone.now)  # used
     end_date = DateField(default=timezone.now)  # used
-    year = IntegerField(default=timezone.now, help_text="Year of event")
+    year = IntegerField(default=timezone.now().year, help_text="Year of event")
     short_name = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
     event_type_string = CharField(
         max_length=MAX_LENGTH,
