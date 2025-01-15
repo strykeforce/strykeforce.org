@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import tbaapiv3client
 from django.conf import settings
-from django.core.exceptions import ObjectDoesNotExist
 from django.core.management import BaseCommand, CommandError
 from django.db import transaction
 from tbaapiv3client import ApiException
@@ -55,45 +54,23 @@ class Command(BaseCommand):
             for w in webcasts
         ]
 
+    def copy_tba_event(self, tba_event, event):
+        for attr in vars(event):
+            match attr:
+                case "district":
+                    event.district = self.parse_district(tba_event.district)
+                case "webcasts":
+                    event.webcasts = self.parse_webcasts(tba_event.webcasts)
+                case "division_keys" if hasattr(tba_event, "division_keys"):
+                    event.division_keys = tba_event.division_keys
+                case _ if not attr.startswith("_") and hasattr(tba_event, attr):
+                    setattr(event, attr, getattr(tba_event, attr))
+                case _:
+                    pass
+
     @transaction.atomic
     def handle(self, *args, **options):
-        events = self.download_events(options["year"])
-        for event in events:
-            try:
-                obj = Event.objects.get(key=event.key)
-            except ObjectDoesNotExist:
-                obj = Event()
-
-            obj.key = event.key
-            obj.name = event.name
-            obj.event_code = event.event_code
-            obj.event_type = event.event_type
-            obj.district = self.parse_district(event.district)
-            obj.city = event.city
-            obj.state_prov = event.state_prov
-            obj.country = event.country
-            obj.start_date = event.start_date
-            obj.end_date = event.end_date
-            obj.year = event.year
-            obj.short_name = event.short_name
-            obj.event_type_string = event.event_type_string
-            obj.week = event.week
-            obj.address = event.address
-            obj.postal_code = event.postal_code
-            obj.gmaps_place_id = event.gmaps_place_id
-            obj.gmaps_url = event.gmaps_url
-            obj.lat = event.lat
-            obj.lng = event.lng
-            obj.location_name = event.location_name
-            obj.website = event.website
-            obj.first_event_id = event.first_event_id
-            obj.first_event_code = event.first_event_code
-            obj.webcasts = self.parse_webcasts(event.webcasts)
-            obj.division_keys = (
-                events.division_keys if hasattr(events, "division_keys") else None
-            )
-            obj.parent_event_key = event.parent_event_key
-            obj.playoff_type = event.playoff_type
-            obj.playoff_type_string = event.playoff_type_string
-
-            obj.save()
+        for tba_event in self.download_events(options["year"]):
+            event, created = Event.objects.get_or_create(key=tba_event.key)
+            self.copy_tba_event(tba_event, event)
+            event.save()
