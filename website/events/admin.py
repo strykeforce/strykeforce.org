@@ -7,19 +7,4 @@ from website.events.models import Event
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    fields = [
-        "key",
-        "name",
-        "event_code",
-        "city",
-        "state_prov",
-        "start_date",
-        "end_date",
-        "year",
-        "week",
-        "address",
-        "postal_code",
-        "gmaps_url",
-        "location_name",
-        "website",
-    ]
+    pass

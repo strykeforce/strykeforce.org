@@ -27,6 +27,8 @@ shell: (manage "shell")
 run check="none":
     uv run python {{ if check != "none" { "-X dev" } else { "" } }} website/manage.py runserver
 
+test: (manage "test --keepdb")
+
 push:
     nix build --json .#venv | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
     nix build --json .#static | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce

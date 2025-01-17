@@ -20,7 +20,7 @@ from wagtail.models import Page
 from wagtail.snippets.models import register_snippet
 from wagtail.snippets.views.snippets import SnippetViewSet
 
-MAX_LENGTH = 1000
+MAX_LENGTH = 255
 
 
 class EventIndexPage(RoutablePageMixin, Page):
@@ -82,91 +82,73 @@ class EventIndexPage(RoutablePageMixin, Page):
 
 
 class Event(models.Model):
-    key = CharField(unique=True, default="", max_length=25, editable=False)  # slug
+    key = CharField(unique=True, blank=True, max_length=25, editable=False)  # slug
     name = CharField(
         "Event Name",
-        default="",
-        max_length=200,
+        blank=True,
+        max_length=MAX_LENGTH,
         help_text="If this is blank, it is recommended to copy an earlier version of this event and edit as neccessary.",
     )  # used
     event_code = CharField(
         "Event Code",
-        default="",
+        blank=True,
         max_length=25,
         help_text="Short and unique (i.e. misjo, openhouse, etc.)",
     )
     event_type = IntegerField(default=-1, editable=False)
-    district = JSONField(blank=True, null=True, editable=False)
-    city = CharField(max_length=MAX_LENGTH, blank=True, null=True)  # used
+    district = JSONField(default=dict, editable=False)
+    city = CharField(max_length=MAX_LENGTH, blank=True)  # used
     state_prov = CharField(
         "State",
         max_length=MAX_LENGTH,
         blank=True,
-        null=True,
         default="MI",
     )  # used
-    country = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
+    country = CharField(max_length=MAX_LENGTH, blank=True, editable=False)
     start_date = DateField(default=timezone.now)  # used
     end_date = DateField(default=timezone.now)  # used
     year = IntegerField(default=timezone.now().year, help_text="Year of event")
-    short_name = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
+    short_name = CharField(max_length=MAX_LENGTH, blank=True, editable=False)
     event_type_string = CharField(
         max_length=MAX_LENGTH,
         blank=True,
-        null=True,
         editable=False,
     )
     week = IntegerField(blank=True, null=True)  # used, conditionally
-    address = CharField(max_length=MAX_LENGTH, blank=True, null=True, editable=False)
+    address = CharField(max_length=MAX_LENGTH, blank=True, editable=False)
     postal_code = CharField(
         max_length=MAX_LENGTH,
         blank=True,
-        null=True,
         editable=False,
     )
     gmaps_place_id = CharField(
         max_length=MAX_LENGTH,
         blank=True,
-        null=True,
         editable=False,
     )
-    gmaps_url = URLField(max_length=MAX_LENGTH, blank=True, null=True)  # used
+    gmaps_url = URLField(max_length=MAX_LENGTH, blank=True)  # used
     lat = FloatField(blank=True, null=True, editable=False)
     lng = FloatField(blank=True, null=True, editable=False)
     location_name = CharField(
         max_length=MAX_LENGTH,
         blank=True,
-        null=True,
         help_text="Familiar location name (i.e. Fieldhouse Arena) or street address.",
     )  # used
-    website = URLField(max_length=MAX_LENGTH, blank=True, null=True)  # used
-    first_event_id = CharField(
-        max_length=MAX_LENGTH,
-        blank=True,
-        null=True,
-        editable=False,
-    )
+    website = URLField(max_length=MAX_LENGTH, blank=True)  # used
     first_event_code = CharField(
         max_length=MAX_LENGTH,
         blank=True,
-        null=True,
         editable=False,
     )
-    webcasts = JSONField(blank=True, null=True, editable=False)
-    division_keys = JSONField(blank=True, null=True, editable=False)
+    webcasts = JSONField(default=list, editable=False)
     parent_event_key = CharField(
         max_length=MAX_LENGTH,
         blank=True,
-        null=True,
         editable=False,
     )
-    playoff_type = IntegerField(blank=True, null=True, editable=False)
-    playoff_type_string = CharField(
-        max_length=MAX_LENGTH,
-        blank=True,
-        null=True,
-        editable=False,
-    )
+    edited_on = DateField(null=True, editable=False)
+    status = CharField(max_length=25, default="default", editable=False)
+    awards = JSONField(default=list, editable=False)
     body = RichTextField(blank=True, editable=False)
 
     panels = [
