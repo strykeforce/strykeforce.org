@@ -1687,6 +1687,10 @@ select {
   margin-right: 0.75rem;
 }
 
+.mr-8 {
+  margin-right: 2rem;
+}
+
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1713,14 +1717,6 @@ select {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mr-8 {
-  margin-right: 2rem;
-}
-
-.mr-4 {
-  margin-right: 1rem;
 }
 
 .block {
@@ -2290,6 +2286,10 @@ select {
   padding-right: 0.25rem;
 }
 
+.pr-4 {
+  padding-right: 1rem;
+}
+
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -2304,14 +2304,6 @@ select {
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
 }
 
 .text-center {
@@ -2923,10 +2915,6 @@ input#id_phone_number, label[for='id_phone_number'] {
     margin-top: 0px;
   }
 
-  .md\:mt-10 {
-    margin-top: 2.5rem;
-  }
-
   .md\:block {
     display: block;
   }
@@ -3002,10 +2990,6 @@ input#id_phone_number, label[for='id_phone_number'] {
 
   .lg\:ml-0 {
     margin-left: 0px;
-  }
-
-  .lg\:mt-10 {
-    margin-top: 2.5rem;
   }
 
   .lg\:block {
