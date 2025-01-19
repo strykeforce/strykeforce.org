@@ -369,11 +369,11 @@
         "vscode-server": "vscode-server"
       },
       "locked": {
-        "lastModified": 1737047853,
-        "narHash": "sha256-Xod6jLMX/xevFLwVG96hwpL6LcBcpbaVS1OXF4BFP8s=",
+        "lastModified": 1737121661,
+        "narHash": "sha256-snYNJq2lnGiuCvluwjGhktcedQNJSr1J+fJx3R8OadQ=",
         "owner": "jhh",
         "repo": "nixos-configs",
-        "rev": "d5956d619782cc056a74a24710ccd3f5c35b2765",
+        "rev": "d4d500f70775dbdfc2e5b4d007a93f30b56f37a8",
         "type": "github"
       },
       "original": {
@@ -448,11 +448,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1736916166,
-        "narHash": "sha256-puPDoVKxkuNmYIGMpMQiK8bEjaACcCksolsG36gdaNQ=",
+        "lastModified": 1737165118,
+        "narHash": "sha256-s40Kk/OulP3J/1JvC3VT16U4r/Xw6Qdi7SRw3LYkPWs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e24b4c09e963677b1beea49d411cd315a024ad3a",
+        "rev": "6a3ae7a5a12fb8cac2d59d7df7cbd95f9b2f0566",
         "type": "github"
       },
       "original": {
@@ -732,11 +732,11 @@
         "uv2nix": "uv2nix_4"
       },
       "locked": {
-        "lastModified": 1737118623,
-        "narHash": "sha256-OgRavTvvIv9FOzeClCy/WbFTLlK5hBZi1eJiPmgpYvw=",
+        "lastModified": 1737255897,
+        "narHash": "sha256-uz/qeNQr0SRAR0Vbr6MOL/RVX5q9xB2UCMltJWgz+Ok=",
         "owner": "strykeforce",
         "repo": "strykeforce.org",
-        "rev": "80ec9e29ef9f566717e89724495426225d63b557",
+        "rev": "7fcf9d18592558570848e4b02647665657342256",
         "type": "github"
       },
       "original": {
