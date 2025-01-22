@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import logging
+
 from django.db import models
 from django.db.models import (
     CharField,
@@ -7,20 +9,22 @@ from django.db.models import (
     FloatField,
     IntegerField,
     JSONField,
-    Max,
-    Min,
     URLField,
 )
 from django.utils import timezone
 from django.utils.text import slugify
+from wagtail.admin.forms import WagtailAdminModelForm
 from wagtail.admin.panels import FieldPanel, FieldRowPanel
 from wagtail.contrib.routable_page.models import RoutablePageMixin, path
 from wagtail.fields import RichTextField
 from wagtail.models import Page
 from wagtail.snippets.models import register_snippet
+from wagtail.snippets.views.snippets import EditView as SnippetEditView
 from wagtail.snippets.views.snippets import SnippetViewSet
 
 MAX_LENGTH = 255
+
+logger = logging.getLogger(__name__)
 
 
 class EventIndexPage(RoutablePageMixin, Page):
@@ -52,16 +56,17 @@ class EventIndexPage(RoutablePageMixin, Page):
 
         events = self.events().filter(start_date__year=year)
 
-        # Get min and max years from database
-        year_range = Event.objects.aggregate(min_year=Min("year"), max_year=Max("year"))
+        years = (
+            Event.objects.values_list("year", flat=True).distinct().order_by("-year")
+        )
 
         return self.render(
             request,
             context_overrides={
                 "title": f"{year} Events",
                 "events": events,
-                "prev_year": year - 1 if year > year_range["min_year"] else None,
-                "next_year": year + 1 if year < year_range["max_year"] else None,
+                "current_year": year,
+                "years": years,
             },
         )
 
@@ -70,6 +75,9 @@ class EventIndexPage(RoutablePageMixin, Page):
         """View function for event looked up by event key."""
 
         event = Event.objects.get(key=key)
+        years = (
+            Event.objects.values_list("year", flat=True).distinct().order_by("-year")
+        )
 
         return self.render(
             request,
@@ -77,6 +85,8 @@ class EventIndexPage(RoutablePageMixin, Page):
             context_overrides={
                 "event": event,
                 "week": event.week + 1 if event.week else None,
+                "current_year": event.year,
+                "years": years,
             },
         )
 
@@ -185,7 +195,6 @@ class Event(models.Model):
         super().save(*args, **kwargs)
 
     class Meta:
-        ordering = ["-start_date"]
         indexes = [
             models.Index(fields=["year"]),
             models.Index(fields=["start_date"]),
@@ -195,9 +204,28 @@ class Event(models.Model):
         return self.name
 
 
+class EventSnippetForm(WagtailAdminModelForm):
+    def save(self, commit=True):
+        logger.info(f"Saving {self.instance}")
+        instance = super().save(commit=False)
+        instance.edited_on = timezone.now().date()
+        if commit:
+            instance.save()
+        return instance
+
+
+class EventEditView(SnippetEditView):
+    def save_instance(self):
+        instance = super().save_instance()
+        instance.edited_on = timezone.now().date()
+        instance.save()
+        return instance
+
+
 @register_snippet
 class EventViewSet(SnippetViewSet):
     model = Event
+    edit_view_class = EventEditView
     icon = "calendar"
     list_display = ["name", "year"]
     list_filter = ["name", "year"]

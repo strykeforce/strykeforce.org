@@ -1,0 +1,62 @@
+{% if event.event_type > 0 %}
+<a href="https://www.thebluealliance.com/event/{{ event.year }}{{ event.event_code }}" target="_blank"
+  rel="noreferrer noopener" class="flex items-start hover:bg-gray-50">
+  <svg version="1.1" stroke="currentColor" fill="currentColor" class="w-6 h-6 text-blue"
+    xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="72px" height="112px" viewBox="0 0 72 112">
+    <g>
+      <g>
+        <rect x="8" y="20" width="6" height="64" />
+      </g>
+      <g>
+        <rect x="58" y="20" width="6" height="64" />
+      </g>
+      <g>
+        <path d="M36,112C20.561,112,8,99.439,8,84h6c0,12.131,9.869,22,22,22V112z" />
+      </g>
+      <g>
+        <path d="M36,112v-6c12.131,0,22-9.869,22-22h6C64,99.439,51.439,112,36,112z" />
+      </g>
+      <g>
+        <rect x="33" y="20" width="6" height="89" />
+      </g>
+      <g>
+        <rect x="11" y="78" width="50" height="6" />
+      </g>
+      <g>
+        <rect x="11" y="50" width="50" height="6" />
+      </g>
+      <g id="Lamp_Rectangle_4_">
+        <path d="M72,24c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V4c0-2.2,1.8-4,4-4h64c2.2,0,4,1.8,4,4V24z" />
+      </g>
+    </g>
+  </svg>
+
+  <p class="ml-1">
+    <span class="text-blue">{{ event.name }}</span>
+  </p>
+</a>
+{% endif %}
+
+<a href="{{ event.gmaps_url }}" target="_blank" rel="noreferrer noopener"
+  class="flex items-start mt-4 hover:bg-gray-50">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+    class="w-6 h-6 text-blue">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+  </svg>
+  <p class="ml-1">
+    <span class="text-blue">{{ event.location_name }}</span> in {{ event.city }}, {{ event.state_prov }}
+  </p>
+</a>
+
+<a href="{{ event.website }}" target="_blank" rel="noreferrer noopener" class="flex items-start mt-4 hover:bg-gray-50">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+    class="w-6 h-6 text-blue">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+  </svg>
+  <p class="ml-1">
+    <span class="text-blue">{{ event.website }}</span>
+  </p>
+</a>
