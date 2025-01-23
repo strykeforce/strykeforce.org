@@ -5,6 +5,7 @@ final: prev: {
       old.nativeBuildInputs or [ ]
       ++ (final.resolveBuildSystem {
         cmake = [ ];
+        numpy = [ ];
         setuptools = [ ];
         scikit-build = [ ];
       });
