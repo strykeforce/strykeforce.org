@@ -66,6 +66,7 @@ class EventIndexPage(RoutablePageMixin, Page):
                 "title": f"{year} Events",
                 "events": events,
                 "current_year": year,
+                "is_active_season": year == timezone.now().year,
                 "years": years,
             },
         )
