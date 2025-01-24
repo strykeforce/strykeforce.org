@@ -85,6 +85,8 @@ class EventIndexPage(RoutablePageMixin, Page):
             template="events/event_page.html",
             context_overrides={
                 "event": event,
+                "next_event": event.get_next(),
+                "previous_event": event.get_previous(),
                 "week": event.week + 1 if event.week else None,
                 "current_year": event.year,
                 "years": years,
@@ -173,6 +175,22 @@ class Event(models.Model):
         FieldPanel("gmaps_url"),
         FieldPanel("website"),
     ]
+
+    def get_next(self):
+        return (
+            type(self)
+            .objects.filter(start_date__gt=self.start_date)
+            .order_by("start_date")
+            .first()
+        )
+
+    def get_previous(self):
+        return (
+            type(self)
+            .objects.filter(start_date__lt=self.start_date)
+            .order_by("-start_date")
+            .first()
+        )
 
     def save(self, *args, **kwargs):
         if self.website and self.website.startswith("http://www.firstinmichigan.org"):
