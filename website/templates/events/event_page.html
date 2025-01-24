@@ -4,30 +4,33 @@
 {% block nav_classes %}border-b-2 border-gray-100{% endblock %}
 
 {% block content %}
-  <div class="relative pt-4 lg:pt-6 px-6 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-7xl">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ event.name }}</h2>
-    </div>
-    <div class="grid md:grid-cols-2 items-center mx-auto max-w-7xl">
-      <div class="mr-8">
-        <div>
-          <div class="mt-3 sm:mt-4 max-w-prose">
-            <p class="text-xl text-gray-500">
-              {{ event.start_date }} to {{ event.end_date }}
-              {% if week %}
-              <a href="https://www.thebluealliance.com/events/{{ event.year }}#week-{{ week }}"
-                 target="_blank"><span class="inline-flex items-center rounded-full bg-yellow px-3 py-0.5 text-lg font-medium text-gray-900">week {{ week }}</span>
-            </a>
-          {% endif %}
-        </p>
-      </div>
-    </div>
+  <div class="px-4 md:px-6 lg:px-8 mx-auto grid grid-cols-1 md:grid-cols-5 md:grid-rows-3 grid-flow-row gap-4">
 
+    <div class="pt-4 lg:pt-6 md:col-span-4">
+      <span class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ event.name }}</span>
+      <div class="mt-3 sm:mt-4 max-w-prose">
+        <p class="text-xl text-gray-500">
+          {{ event.start_date }} to {{ event.end_date }}
+          {% if week %}
+            <a href="https://www.thebluealliance.com/events/{{ event.year }}#week-{{ week }}"
+               target="_blank"><span class="inline-flex items-center rounded-full bg-yellow sm:ml-4 px-3 py-0.5 text-lg font-medium text-gray-900">week
+            {{ week }}</span>
+          </a>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+
+  <div class="order-last md:order-none mx-auto md:ml-auto md:col-span-1 md:row-span-3">
+    {% include 'events/_years.html' %}
+  </div>
+
+  <div class="md:col-span-4">
     {% if event.event_type > 0 %}
       <a href="https://www.thebluealliance.com/event/{{ event.year }}{{ event.event_code }}"
          target="_blank"
          rel="noreferrer noopener"
-         class="flex items-start mt-4 hover:bg-gray-50">
+         class="flex items-start hover:bg-gray-50">
         <svg version="1.1"
              stroke="currentColor"
              fill="currentColor"
@@ -65,13 +68,11 @@
           </g>
           </g>
         </svg>
-
         <p class="ml-1">
           <span class="text-blue">{{ event.name }}</span>
         </p>
       </a>
     {% endif %}
-
     <a href="{{ event.gmaps_url }}"
        target="_blank"
        rel="noreferrer noopener"
@@ -107,8 +108,6 @@
       </p>
     </a>
   </div>
-  <div class="pr-4 mt-4 text-l text-gray-600 max-w-prose">{{ event.body|richtext }}</div>
+  <div class="md:col-span-4 pt-4 max-w-prose">{{ event.body|richtext }}</div>
 </div>
-</div>
-
 {% endblock content %}

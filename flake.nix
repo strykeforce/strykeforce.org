@@ -53,6 +53,7 @@
 
             pillowHeifOverrides = import ./lib/overrides-pillow-heif.nix { inherit pkgs; };
             psycopgOverrides = import ./lib/overrides-psycopg.nix { inherit pkgs; };
+            opencvOverrides = import ./lib/overrides-opencv.nix { inherit pkgs; };
             tbaApiOverrides = import ./lib/overrides-tba-api-v3client.nix { inherit pkgs; };
           in
           baseSet.overrideScope (
@@ -61,6 +62,7 @@
               overlay
               pillowHeifOverrides
               psycopgOverrides
+              opencvOverrides
               tbaApiOverrides
             ]
           );
