@@ -39,8 +39,10 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         inherit (nixpkgs) lib;
-        workspace = uv2nix.lib.workspace.loadWorkspace { workspaceRoot = ./.; };
 
+        python = pkgs.python312;
+
+        workspace = uv2nix.lib.workspace.loadWorkspace { workspaceRoot = ./.; };
         overlay = workspace.mkPyprojectOverlay {
           sourcePreference = "wheel";
         };
@@ -48,7 +50,13 @@
         pythonSets =
           let
             baseSet = pkgs.callPackage pyproject-nix.build.packages {
-              python = pkgs.python312;
+              inherit python;
+              stdenv = pkgs.stdenv.override {
+                targetPlatform = pkgs.stdenv.targetPlatform // {
+                  # allow downloading of opencv-python wheel
+                  darwinSdkVersion = "15.2";
+                };
+              };
             };
 
             pillowHeifOverrides = import ./lib/overrides-pillow-heif.nix { inherit pkgs; };
@@ -135,7 +143,7 @@
               nodejs
               postgresql.dev
               pre-commit
-              pythonSets.python
+              python
               tailwindcss
               uv2nix.packages.${system}.uv-bin
               watchman
