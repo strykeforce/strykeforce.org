@@ -24,6 +24,7 @@ strykeforce-manage = "website.manage:main"
 dev = [
     "black>=24.10.0",
     "django-debug-toolbar>=4.4.6",
+    "django-types>=0.20.0",
     "ipython>=8.31.0",
     "rich>=13.9.4",
 ]
@@ -43,3 +44,7 @@ profile = "black"
 profile = "django"
 max_blank_lines = 1
 indent = 2
+
+[tool.pyright]
+pythonVersion = "3.12"
+typeCheckingMode = "basic"

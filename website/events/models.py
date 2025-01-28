@@ -12,6 +12,7 @@ from django.db.models import (
     URLField,
 )
 from django.utils import timezone
+from django.utils.functional import cached_property
 from django.utils.text import slugify
 from wagtail.admin.forms import WagtailAdminModelForm
 from wagtail.admin.panels import FieldPanel, FieldRowPanel
@@ -245,7 +246,19 @@ class EventEditView(SnippetEditView):
 class EventViewSet(SnippetViewSet):
     model = Event
     edit_view_class = EventEditView
-    icon = "calendar"
-    list_display = ["name", "year"]
-    list_filter = ["name", "year"]
-    ordering = ["-start_date"]
+
+    @cached_property
+    def icon(self) -> str:
+        return "calendar"
+
+    @cached_property
+    def list_display(self) -> list[str]:
+        return ["name", "year"]
+
+    @cached_property
+    def list_filter(self) -> list[str]:
+        return ["name", "year"]
+
+    @cached_property
+    def ordering(self) -> list[str]:
+        return ["-start_date"]
