@@ -3,10 +3,10 @@
 {% for author in authors %}
   {% with member=author.member %}
     <div class="mt-6 flex items-center">
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <span>
           <span class="sr-only">{{ member.student_name }}</span>
-          {% image member.image fill-72x72-c50 class="inline-block h-10 w-10 rounded-full" alt="" %}
+          {% image member.image fill-72x72-c50 class="blog-author-image" alt="picture of blog author" %}
         </span>
       </div>
       <div class="ml-3">

@@ -1,6 +1,82 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/aspect-ratio';
+
+@theme {
+    --color-*: initial;
+    --color-transparent: transparent;
+    --color-current: currentColor;
+    --color-black: #000;
+
+    --color-red-50: #fef2f2;
+    --color-red-100: #fee2e2;
+    --color-red-200: #fecaca;
+    --color-red-300: #fca5a5;
+    --color-red-400: #f87171;
+    --color-red-500: #ef4444;
+    --color-red-600: #dc2626;
+    --color-red-700: #b91c1c;
+    --color-red-800: #991b1b;
+    --color-red-900: #7f1d1d;
+    --color-red-950: #450a0a;
+
+    --color-white: #fff;
+
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+    --color-gray-950: #030712;
+
+    --color-yellow-200: #ffe8a4;
+    --color-yellow-300: #ffd047;
+    --color-yellow-400: #ffd047;
+    --color-yellow-500: #f3bb17;
+    --color-yellow-600: #d8a716;
+    --color-yellow-700: #bd9213;
+    --color-yellow: #f3bb17;
+
+    --color-blue-100: #bbe4ff;
+    --color-blue-200: #91d3ff;
+    --color-blue-300: #5eb1e9;
+    --color-blue-400: #3292d2;
+    --color-blue-500: #0e76bc;
+    --color-blue-600: #0d619a;
+    --color-blue-700: #0b4c77;
+    --color-blue-800: #093755;
+    --color-blue-900: #062133;
+    --color-blue: #0e76bc;
+
+    --font-sans: Inter var, ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
 
 .richtext-image.full-width {
     @apply w-full;
@@ -28,21 +104,35 @@
     @apply border-none;
 }
 
-.dj-field-div input, .dj-field-div textarea {
-    @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-blue focus:ring-blue sm:text-sm;
+.dj-field-div input,
+.dj-field-div textarea {
+    @apply block w-full rounded-md border-gray-300 shadow-xs focus:border-blue focus:ring-blue sm:text-sm;
 }
 
 .dj-field-div select {
-    @apply block w-20 rounded-md border-gray-300 shadow-sm focus:border-blue focus:ring-blue sm:text-sm;
+    @apply block w-20 rounded-md border-gray-300 shadow-xs focus:border-blue focus:ring-blue sm:text-sm;
 }
 
 .dj-field-div label {
     @apply block text-sm font-medium text-gray-700;
 }
 
-input#id_phone_number, label[for='id_phone_number'] {
+input#id_phone_number,
+label[for="id_phone_number"] {
     position: absolute;
     top: 0;
     left: 0;
     margin-left: 100vw;
+}
+
+.blog-author-image {
+    @apply inline-block h-10 w-10 rounded-full;
+}
+
+.sponsor-gray-logo {
+    @apply grayscale contrast-25 m-auto;
+}
+
+.sponsor-logo {
+    @apply m-auto;
 }
