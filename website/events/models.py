@@ -122,12 +122,8 @@ class Event(models.Model):
     start_date = DateField(default=timezone.now)  # used
     end_date = DateField(default=timezone.now)  # used
     year = IntegerField(default=timezone.now().year, help_text="Year of event")
-    short_name = CharField(max_length=MAX_LENGTH, blank=True, editable=False)
-    event_type_string = CharField(
-        max_length=MAX_LENGTH,
-        blank=True,
-        editable=False,
-    )
+    short_name = CharField(max_length=MAX_LENGTH, blank=True)
+    event_type_string = CharField(max_length=MAX_LENGTH, blank=True)
     week = IntegerField(blank=True, null=True)  # used, conditionally
     address = CharField(max_length=MAX_LENGTH, blank=True, editable=False)
     postal_code = CharField(
@@ -167,6 +163,7 @@ class Event(models.Model):
 
     panels = [
         FieldPanel("name"),
+        FieldRowPanel([FieldPanel("short_name"), FieldPanel("event_type_string")]),
         FieldRowPanel([FieldPanel("event_code"), FieldPanel("year")]),
         FieldRowPanel([FieldPanel("city"), FieldPanel("state_prov")]),
         FieldRowPanel(
