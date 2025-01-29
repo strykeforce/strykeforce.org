@@ -56,10 +56,8 @@ class EventIndexPage(RoutablePageMixin, Page):
             year = timezone.now().year
 
         events = self.events().filter(start_date__year=year)
-
-        years = (
-            Event.objects.values_list("year", flat=True).distinct().order_by("-year")
-        )
+        years = Event.objects.years().order_by("-year")
+        won_events = Event.objects.won_events_for_year(year)
 
         return self.render(
             request,
@@ -69,6 +67,7 @@ class EventIndexPage(RoutablePageMixin, Page):
                 "current_year": year,
                 "is_active_season": year == timezone.now().year,
                 "years": years,
+                "won_events": won_events,
             },
         )
 
@@ -77,9 +76,7 @@ class EventIndexPage(RoutablePageMixin, Page):
         """View function for event looked up by event key."""
 
         event = Event.objects.get(key=key)
-        years = (
-            Event.objects.values_list("year", flat=True).distinct().order_by("-year")
-        )
+        years = Event.objects.years().order_by("-year")
 
         return self.render(
             request,
@@ -95,7 +92,17 @@ class EventIndexPage(RoutablePageMixin, Page):
         )
 
 
+class EventManager(models.Manager):
+    def won_events_for_year(self, year):
+        return self.filter(year=year, status="won").order_by("start_date")
+
+    def years(self):
+        return self.values_list("year", flat=True).distinct()
+
+
 class Event(models.Model):
+    objects: EventManager = EventManager()
+
     key = CharField(unique=True, blank=True, max_length=25, editable=False)  # slug
     name = CharField(
         "Event Name",

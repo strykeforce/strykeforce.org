@@ -1,0 +1,80 @@
+{% load static %}
+<!-- Outer container -->
+  <!-- Banner -->
+  <a href="/events/key/{{ event.key }}/"
+    class="
+      relative
+      inline-block
+      text-center
+      h-[170px]
+      w-[140px]
+      bg-[#0f4bcb]
+      text-white
+      leading-[1.2]
+      mb-10
+      mx-2
+      md:mx-0
+      p-2
+      align-top
+      whitespace-normal
+      drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)]
+      after:content-['']
+      after:block
+      after:absolute
+      after:top-full
+      after:left-0
+      after:border-solid
+      after:border-t-[5px]
+      after:border-x-[70px]
+      after:border-b-[20px]
+      after:border-t-[#0f4bcb]
+      after:border-x-[#0f4bcb]
+      after:border-b-transparent
+      after:drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)]
+    "
+  >
+    <!-- Image -->
+    <img
+      src="{% static 'img/first_icon.svg' %}"
+      alt="FIRST icon"
+      class="mx-auto my-2 max-h-[45px] w-[75px]"
+    />
+
+    <!-- Award Name -->
+    <div
+      class="
+        flex
+        items-center
+        justify-center
+        h-[35px]
+        my-[3px]
+        w-full
+        font-bold
+      "
+    >
+      <span class="italic uppercase">Winner</span>
+    </div>
+
+    <!-- Award Event -->
+    <div
+      class="
+        flex
+        items-center
+        justify-center
+        h-[50px]
+        w-full
+        uppercase
+        text-[85%]
+        leading-[1.3]
+      "
+    >
+      <span
+        class="
+          overflow-hidden
+          text-ellipsis
+        "
+      >
+        {{ event.year }} {{ event.short_name }} {{ event.event_type_string }}
+      </span>
+    </div>
+  </a>

@@ -70,24 +70,7 @@
 
         <ul role="list" class="mt-4 grid grid-cols-1 gap-5 sm:gap-6">
           {% for event in event_index.future_events %}
-            <li class="col-span-1 flex rounded-md shadow-sm">
-              <div
-                  class="flex w-16 flex-col items-center justify-center rounded-l-md bg-yellow font-medium text-black"
-              >
-                <div>{{ event.start_date|date:"M"|upper }}</div>
-                <div>{{ event.start_date|date:"j" }}</div>
-              </div>
-              <div
-                  class="flex flex-1 items-center justify-between truncate rounded-r-md border-t border-r border-b border-gray-200 bg-white"
-              >
-                <div class="flex-1 truncate px-4 py-2 text-sm">
-                  <a href="/events/key/{{ event.key }}/" class="truncate font-medium text-blue hover:text-gray-700"
-                  >{{ event.name }}
-                  </a>
-                  <p class="text-gray-500">{{ event.city }}, {{ event.state_prov }}</p>
-                </div>
-              </div>
-            </li>
+            {% include 'events/_event.html' with event=event %}
           {% endfor %}
         </ul>
         <div class="mt-4 px-4 sm:px-0">
