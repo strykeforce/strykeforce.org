@@ -4,7 +4,7 @@
 {% block nav_classes %}border-b-2 border-gray-100{% endblock %}
 
 {% block content %}
-  <div class="px-4 md:px-6 lg:px-8 mx-auto grid grid-cols-1 md:grid-cols-5 md:grid-rows-3 grid-flow-row gap-4">
+  <div class="px-4 md:px-6 lg:px-8 mx-auto grid grid-cols-1 md:grid-cols-5 md:grid-rows-5 grid-flow-row gap-4">
 
     <div class="pt-4 lg:pt-6 md:col-span-4">
       <span class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ event.name }}</span>
@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <div class="order-last md:order-none mx-auto md:ml-auto md:col-span-1 md:row-span-3">
+  <div class="order-last md:order-none mx-auto md:ml-auto md:col-span-1 md:row-span-5">
     {% include 'events/_years.html' %}
   </div>
 

@@ -1692,6 +1692,11 @@ select {
   margin-bottom: -0.5rem;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1705,16 +1710,6 @@ select {
 .my-\[3px\] {
   margin-top: 3px;
   margin-bottom: 3px;
-}
-
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 .-ml-4 {
@@ -2092,10 +2087,6 @@ select {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
 }
 
 .justify-evenly {
@@ -3226,13 +3217,12 @@ input#id_phone_number, label[for='id_phone_number'] {
     grid-column: span 5 / span 5;
   }
 
-  .md\:row-span-3 {
-    grid-row: span 3 / span 3;
+  .md\:row-span-4 {
+    grid-row: span 4 / span 4;
   }
 
-  .md\:mx-2 {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+  .md\:row-span-5 {
+    grid-row: span 5 / span 5;
   }
 
   .md\:mx-0 {
@@ -3288,8 +3278,12 @@ input#id_phone_number, label[for='id_phone_number'] {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
-  .md\:grid-rows-3 {
-    grid-template-rows: repeat(3, minmax(0, 1fr));
+  .md\:grid-rows-4 {
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-rows-5 {
+    grid-template-rows: repeat(5, minmax(0, 1fr));
   }
 
   .md\:place-items-center {
@@ -3314,10 +3308,6 @@ input#id_phone_number, label[for='id_phone_number'] {
     margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
-  .md\:p-2 {
-    padding: 0.5rem;
-  }
-
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -3340,11 +3330,6 @@ input#id_phone_number, label[for='id_phone_number'] {
 
   .lg\:col-span-1 {
     grid-column: span 1 / span 1;
-  }
-
-  .lg\:mx-2 {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
   }
 
   .lg\:ml-0 {
