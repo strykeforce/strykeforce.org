@@ -35,15 +35,15 @@ push:
 #
 # update CSS
 update-css:
-    npx @tailwindcss/cli --input=website/static/css/base.css --output=website/static/css/main.css
+    npx @tailwindcss/cli --input=website/static/2767/base.css --output=website/static/2767/main.css
 
 # update JS
 update-js:
-    npx esbuild --bundle --outfile=website/static/js/main.js website/static/js/base.js
+    npx esbuild --bundle --outfile=website/static/2767/main.js website/static/2767/base.js
 
 # Watch CSS and JS for changes
 watch: update-css
-    npx @tailwindcss/cli --watch --input=website/static/css/base.css --output=website/static/css/main.css
+    npx @tailwindcss/cli --watch --input=website/static/2767/base.css --output=website/static/2767/main.css
 
 # install pre-commit hooks
 pre-commit:
