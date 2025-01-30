@@ -47,7 +47,7 @@
           sourcePreference = "wheel";
         };
 
-        pythonSets =
+        pythonSet =
           let
             baseSet = pkgs.callPackage pyproject-nix.build.packages {
               inherit python;
@@ -75,29 +75,16 @@
             ]
           );
 
-        inherit (pkgs.stdenv) mkDerivation;
         inherit (pkgs) writeShellApplication;
 
       in
       {
         packages = {
-          venv = pythonSets.mkVirtualEnv "strykeforce-env" workspace.deps.default;
+          venv = pythonSet.mkVirtualEnv "strykeforce-env" workspace.deps.default;
 
-          static = mkDerivation {
-            pname = "strykeforce-static";
-            inherit (pythonSets.website) version;
-            src = self;
-            phases = "installPhase";
-            installPhase = ''
-              export DJANGO_SETTINGS_MODULE=website.settings.production
-              export SECRET_KEY=notsecret
-              export TBA_READ_KEY=
-              export EMAIL_HOST_USER=
-              export EMAIL_HOST_PASSWORD=
-              export STATIC_ROOT=$out
-              mkdir -p $out
-              ${self.packages.${system}.venv}/bin/strykeforce-manage collectstatic --no-input
-            '';
+          static = import ./lib/static.nix {
+            inherit pkgs pythonSet;
+            inherit (self.packages.${system}) venv;
           };
 
           manage = import ./lib/manage.nix {

@@ -2,12 +2,18 @@
 .tmp
 /result
 /venv
+.direnv/
 
 # project
+/website/static/css/main.css
+/website/static/js/main.js
 node_modules/
 *.tar
 *.json
+!package.json
+!package-lock.json
 /*.pickle
+.ruff_cache/
 
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django

@@ -40,12 +40,12 @@
             <div class="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
               <a
                   href="{% slugurl 'join-stryke-force' %}"
-                  class="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-blue shadow-sm hover:bg-gray-50 sm:px-8"
+                  class="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-blue shadow-xs hover:bg-gray-50 sm:px-8"
               >Join the team</a
               >
               <a
                   href="https://www.paypal.com/donate/?hosted_button_id=U7Q873GF4XMFC"
-                  class="flex items-center justify-center rounded-md border border-transparent bg-blue-400 bg-opacity-70 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-80 sm:px-8"
+                  class="flex items-center justify-center rounded-md border border-transparent bg-blue-400 bg-opacity-70 px-4 py-3 text-base font-medium text-white shadow-xs hover:bg-opacity-80 sm:px-8"
               >Support the team</a
               >
             </div>
@@ -125,7 +125,7 @@
         <div class="mx-auto mt-6 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-2">
           {% for post in blog_posts %}
             <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
-              <div class="flex-shrink-0">
+              <div class="shrink-0">
                 <a aria-labelledby="{{ post.slug }}" href="{% pageurl post %}" class="block">
                   {% image post.image min-512x192 as image_1x %}
                   {% image post.image min-1024x384 as image_2x %}
@@ -169,7 +169,7 @@
         {% for sponsor in sponsors_index.diamond_or_platinum_sponsors %}
           <div class="col-span-1 flex justify-center lg:col-span-1">
             <a href="{{ sponsor.website }}"
-               target="_blank">{% image sponsor.logo max-160x90 class="grayscale contrast-[0.25] w-[160] h-[90] m-auto" alt=sponsor.name %}</a>
+               target="_blank">{% image sponsor.logo max-160x90 class="sponsor-gray-logo" alt=sponsor.name %}</a>
           </div>
         {% endfor %}
       </div>

@@ -4,7 +4,7 @@ _default:
   @just --list
 
 # bootstrap the development environment
-bootstrap: venv pre-commit
+bootstrap: pre-commit
 
 # open the project in Pycharm
 edit:
@@ -32,51 +32,19 @@ test: (manage "test --keepdb")
 push:
     nix build --json .#venv | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
     nix build --json .#static | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
-
-# update CSS and download all JS dependencies
-update: venv update-css update-alpine
-
-# update CSS with classes from HTML templates
+#
+# update CSS
 update-css:
-    tailwindcss -i website/static/css/base.css -o website/static/css/main.css
+    npx @tailwindcss/cli --input=website/static/css/base.css --output=website/static/css/main.css
 
-# watch HTML templates and update CSS
-watch:
-    tailwindcss -i website/static/css/base.css -o website/static/css/main.css --watch
+# update JS
+update-js:
+    npx esbuild --bundle --outfile=website/static/js/main.js website/static/js/base.js
 
-# download all JS dependencies
-update-alpine:
-    curl --no-progress-meter --location https://unpkg.com/alpinejs --output website/static/js/alpine.js
-
-# update dev dependencies to latest version
-update-dev: && poetry-check
-    poetry add --group=dev --lock black@latest
-    # poetry add --group=dev --lock django-debug-toolbar@latest
-    poetry add --group=dev --lock ipython@latest
-    poetry add --group=dev --lock rich@latest
-
-# checks poetry.lock against the version of pyproject.toml and locks if neccessary
-poetry-check:
-    poetry check --lock --quiet || (just poetry-lock)
-
-# locks the python packages in pyproject.toml without updating the poetry env
-poetry-lock:
-    poetry lock --no-update
+# Watch CSS and JS for changes
+watch: update-css
+    npx @tailwindcss/cli --watch --input=website/static/css/base.css --output=website/static/css/main.css
 
 # install pre-commit hooks
 pre-commit:
     pre-commit install --install-hooks
-
-# refresh the python packages in the dev env
-venv: poetry-check
-    nix build .#venv -o .venv
-
-# grep for version
-version:
-    @rg "version = " -m 1 pyproject.toml flake.nix
-
-# supply a new project version for pyproject.toml and flake.nix
-set-version version:
-    @sed --in-place 's/^version = ".*"/version = "{{ version }}"/' pyproject.toml
-    @sed --in-place --regexp-extended 's/(\s+version = )".*";/\1"{{ version }}";/' flake.nix
-    @git diff -U0 pyproject.toml flake.nix
