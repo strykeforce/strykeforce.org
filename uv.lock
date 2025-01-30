@@ -1048,7 +1048,7 @@ wheels = [
 
 [[package]]
 name = "website"
-version = "4.6.0"
+version = "4.6.1"
 source = { editable = "." }
 dependencies = [
     { name = "django", extra = ["argon2"] },
