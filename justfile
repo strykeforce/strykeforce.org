@@ -39,7 +39,7 @@ update-css:
 
 # update JS
 update-js:
-    npx esbuild --bundle --outfile=puka/static/puka/main.js puka/static/puka/base.js
+    npx esbuild --bundle --outfile=website/static/js/main.js website/static/js/base.js
 
 # Watch CSS and JS for changes
 watch: update-css

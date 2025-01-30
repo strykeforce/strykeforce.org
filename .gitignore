@@ -5,6 +5,8 @@
 .direnv/
 
 # project
+/website/static/css/main.css
+/website/static/js/main.js
 node_modules/
 *.tar
 *.json

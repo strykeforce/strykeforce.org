@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -51,6 +52,9 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+if os.environ.get("DJANGO_STATICFILES_DIR"):
+    STATICFILES_DIRS.append(Path(os.environ["DJANGO_STATICFILES_DIR"]))  # noqa
 
 CACHE_MIDDLEWARE_ALIAS = "default"
 CACHE_MIDDLEWARE_SECONDS = 604800
