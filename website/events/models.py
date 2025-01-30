@@ -12,8 +12,10 @@ from django.db.models import (
     URLField,
 )
 from django.utils import timezone
+from django.utils.decorators import method_decorator
 from django.utils.functional import cached_property
 from django.utils.text import slugify
+from django.views.decorators.cache import cache_page
 from wagtail.admin.forms import WagtailAdminModelForm
 from wagtail.admin.panels import FieldPanel, FieldRowPanel
 from wagtail.contrib.routable_page.models import RoutablePageMixin, path
@@ -50,6 +52,7 @@ class EventIndexPage(RoutablePageMixin, Page):
 
     @path("")
     @path("<int:year>/")
+    @method_decorator(cache_page(60 * 60))
     def events_for_year(self, request, year=None):
         """View function for current season's events."""
         if year is None:
@@ -72,6 +75,7 @@ class EventIndexPage(RoutablePageMixin, Page):
         )
 
     @path("key/<slug:key>/")
+    @method_decorator(cache_page(60 * 60))
     def event_for_key(self, request, key):
         """View function for event looked up by event key."""
 
