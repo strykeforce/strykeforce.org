@@ -4,7 +4,7 @@
   venv,
 }:
 let
-  baseCss = "website/static/css/base.css";
+  baseCss = "website/static/2767/base.css";
 
   djangoStaticDeps = pkgs.buildNpmPackage {
     name = "django-static-deps";
@@ -19,8 +19,8 @@ let
 
     buildPhase = ''
       runHook preBuild
-      npx @tailwindcss/cli --minify --input=${baseCss} --output=$out/css/main.css
-      npx esbuild --bundle --minify --outfile=$out/js/main.js website/static/js/base.js
+      npx @tailwindcss/cli --minify --input=${baseCss} --output=$out/2767/main.css
+      npx esbuild --bundle --minify --outfile=$out/2767/main.js website/static/2767/base.js
       runHook postBuild
     '';
 
@@ -48,7 +48,7 @@ mkDerivation {
     export EMAIL_HOST_USER=
     export EMAIL_HOST_PASSWORD=
     mkdir -p $out
-    ${venv}/bin/strykeforce-manage collectstatic --no-input --ignore="css/base.css" --ignore="js/base.js"
+    ${venv}/bin/strykeforce-manage collectstatic --no-input --ignore="2767/base.*"
   '';
 
 }

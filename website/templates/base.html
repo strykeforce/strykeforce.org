@@ -24,7 +24,7 @@
     {% block metadata %}
       {# TODO: make this a custom tag, use her and in blog page #}
       <meta property="og:image"
-            content="https://www.strykeforce.org{% static 'img/meta-logo.png' %}">
+            content="https://www.strykeforce.org{% static '2767/img/meta-logo.png' %}">
       <meta property="og:description"
             content="Stryke Force 4-H FIRST Robotics Team 2767 is a community robotics team based in Kalamazoo, Michigan.">
       <meta name="description"
@@ -37,15 +37,15 @@
     {# Force all links in the live preview panel to be opened in a new tab #}
     {% if request.in_preview_panel %}<base target="_blank">{% endif %}
 
-    <link rel="icon" href="{% static 'root/favicon.ico' %}" sizes="any">
-    <link rel="icon" href="{% static 'root/icon.svg' %}" type="image/svg+xml">
+    <link rel="icon" href="{% static '2767/root/favicon.ico' %}" sizes="any">
+    <link rel="icon" href="{% static '2767/root/icon.svg' %}" type="image/svg+xml">
     <link rel="apple-touch-icon"
-          href="{% static 'root/apple-touch-icon.png' %}">
+          href="{% static '2767/root/apple-touch-icon.png' %}">
 
     {# Global stylesheets #}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'font/inter-3/inter.css' %}" />
-    <script src="{% static 'js/main.js' %}" defer></script>
+    <link rel="stylesheet" type="text/css" href="{% static '2767/main.css' %}">
+    <link rel="stylesheet" href="{% static '2767/font/inter-3/inter.css' %}" />
+    <script src="{% static '2767/main.js' %}" defer></script>
   </head>
 
   <body>
@@ -105,7 +105,7 @@
           <div class="flex justify-start lg:w-0 lg:flex-1">
             <a href="/">
               <span class="sr-only">Stryke Force</span>
-              <img class="h-8 w-auto sm:h-10" src="{% static 'img/logo.svg' %}" alt="" />
+              <img class="h-8 w-auto sm:h-10" src="{% static '2767/img/logo.svg' %}" alt="" />
             </a>
           </div>
 
@@ -473,7 +473,7 @@
               <div>
                 <a href="/">
                   <img class="h-8 w-auto"
-                       src="{% static 'img/logo.svg' %}"
+                       src="{% static '2767/img/logo.svg' %}"
                        alt="Stryke Force" />
                 </a>
               </div>
