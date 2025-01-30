@@ -732,11 +732,11 @@
         "uv2nix": "uv2nix_4"
       },
       "locked": {
-        "lastModified": 1738249011,
-        "narHash": "sha256-McqITqw0hjKdKUQNePrHrgIN55b+2yG7yh2AR6eAufk=",
+        "lastModified": 1738253996,
+        "narHash": "sha256-7RXEej1KJK6+vZLaM6mKtflgM8CMpHX7rYiNKf/07Ok=",
         "owner": "strykeforce",
         "repo": "strykeforce.org",
-        "rev": "fe0f0aed9ec169d44a0298eba935649d517d1e99",
+        "rev": "947d344e1fe2f0a14fab1e3475cf6c5ff4216d10",
         "type": "github"
       },
       "original": {
