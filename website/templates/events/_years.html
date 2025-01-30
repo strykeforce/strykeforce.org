@@ -3,7 +3,7 @@
   <h2 class="text-lg font-semibold py-4 border-b bg-blue text-white">Season</h2>
   <ul class="flex flex-col p-2">
     {% for year in years %}
-      <li class="py-2 hover:bg-gray-100 cursor-pointer {% if year == current_year %}bg-gray-100{% endif %}">
+      <li class="pb-2 hover:bg-gray-100 cursor-pointer {% if year == current_year %}bg-gray-100{% endif %}">
         <a href="{% routablepageurl page 'events_for_year' year %}"
            class="text-base font-semibold text-blue hover:text-gray-700">{{ year }}</a>
       </li>
