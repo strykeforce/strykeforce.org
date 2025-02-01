@@ -1,5 +1,5 @@
 {% load wagtailroutablepage_tags %}
-<div class="hidden sm:block min-w-32 bg-white shadow-xs rounded-lg overflow-hidden text-center">
+<div class="hidden md:block min-w-32 bg-white shadow-xs rounded-lg overflow-hidden text-center">
   <h2 class="text-lg font-semibold py-4 border-b bg-blue text-white">Season</h2>
   <ul class="flex flex-col p-2">
     {% for year in years %}
@@ -11,7 +11,7 @@
   </ul>
 </div>
 
-<div x-data="{ seasonMenuOpen: false }" class="block sm:hidden relative">
+<div x-data="{ seasonMenuOpen: false }" class="block md:hidden relative">
   <button @click="seasonMenuOpen = !seasonMenuOpen"
           type="button"
           class="inline-flex items-center gap-x-1 text-lg font-semibold text-blue"
