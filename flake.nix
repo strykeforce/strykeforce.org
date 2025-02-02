@@ -62,7 +62,10 @@
             pillowHeifOverrides = import ./lib/overrides-pillow-heif.nix { inherit pkgs; };
             psycopgOverrides = import ./lib/overrides-psycopg.nix { inherit pkgs; };
             opencvOverrides = import ./lib/overrides-opencv.nix { inherit pkgs; };
-            strykeforceOverrides = import ./lib/overrides-strykeforce.nix { inherit pkgs workspace; };
+            strykeforceOverrides = import ./lib/overrides-strykeforce.nix {
+              inherit lib pkgs workspace;
+              nixosModule = self.nixosModules.default;
+            };
             tbaApiOverrides = import ./lib/overrides-tba-api-v3client.nix { inherit pkgs; };
           in
           baseSet.overrideScope (

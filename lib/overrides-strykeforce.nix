@@ -1,6 +1,6 @@
 {
-  # lib,
-  # nixosModule,
+  lib,
+  nixosModule,
   pkgs,
   workspace,
 }:
@@ -32,6 +32,57 @@ final: prev: {
               ${venv}/bin/python ./website/manage.py test website.events.tests > $out 2>&1
               runHook postBuild
             '';
+          };
+        }
+        // lib.optionalAttrs isLinux {
+          nixos =
+          let
+            secrets = pkgs.writeText "strykeforce-test-secrets" ''
+              SECRET_KEY="not-a-secret"
+              TBA_READ_KEY=
+              SENTRY_DSN=
+              EMAIL_HOST_USER=
+              EMAIL_HOST_PASSWORD=
+            '';
+          in
+          pkgs.nixosTest {
+            name = "strykeforce-nixos-test";
+
+            nodes.machine =
+              { ... }:
+              {
+                imports = [
+                  nixosModule
+                ];
+
+                strykeforce.services.website = {
+                  enable = true;
+                  ssl = false;
+                  secrets = [ secrets ];
+                };
+
+                services.postgresql = {
+                  enable = true;
+                  package = pkgs.postgresql_16;
+                  ensureDatabases = [ "strykeforce" ];
+                  ensureUsers = [
+                    {
+                      name = "strykeforce";
+                      ensureDBOwnership = true;
+                    }
+                  ];
+                };
+
+                system.stateVersion = "24.11";
+              };
+
+            testScript =
+              { nodes, ... }:
+              ''
+                # wait for service
+                machine.wait_for_unit("strykeforce-website.service")
+                machine.wait_until_succeeds("curl -sLf http://localhost:8000/static/2767/main.css")
+              '';
           };
         };
     };
