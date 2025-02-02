@@ -62,6 +62,7 @@
             pillowHeifOverrides = import ./lib/overrides-pillow-heif.nix { inherit pkgs; };
             psycopgOverrides = import ./lib/overrides-psycopg.nix { inherit pkgs; };
             opencvOverrides = import ./lib/overrides-opencv.nix { inherit pkgs; };
+            strykeforceOverrides = import ./lib/overrides-strykeforce.nix { inherit pkgs workspace; };
             tbaApiOverrides = import ./lib/overrides-tba-api-v3client.nix { inherit pkgs; };
           in
           baseSet.overrideScope (
@@ -71,6 +72,7 @@
               pillowHeifOverrides
               psycopgOverrides
               opencvOverrides
+              strykeforceOverrides
               tbaApiOverrides
             ]
           );
@@ -79,6 +81,8 @@
 
       in
       {
+        checks = pythonSet.website.passthru.tests;
+
         packages = {
           venv = pythonSet.mkVirtualEnv "strykeforce-env" workspace.deps.default;
 

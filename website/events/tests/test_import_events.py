@@ -112,7 +112,7 @@ class TestImportEvents(TestCase):
         command.awards = data["awards"]
         command.results = data["results"]
 
-        command.handle(year=2024)
+        command.handle_events()
         event = Event.objects.get(key="2024misjo")
         self.assertIsNone(event.edited_on)
         self.assertEqual(event.status, "won")
@@ -121,6 +121,6 @@ class TestImportEvents(TestCase):
         event.edited_on = datetime.datetime.now()
         event.save()
 
-        command.handle(year=2024)
+        command.handle_events()
         event = Event.objects.get(key="2024misjo")
         self.assertEqual(event.status, "edited")

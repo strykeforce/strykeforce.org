@@ -116,12 +116,14 @@ class Command(BaseCommand):
                 case _:
                     pass
 
-    def handle(self, *args, **options):
-        self.download_events(options["year"])
-
+    def handle_events(self):
         for tba_event in self.events:
             with transaction.atomic():
                 event, created = Event.objects.get_or_create(key=tba_event.key)
                 if not event.edited_on:
                     self.copy_tba_event(tba_event, event)
                     event.save()
+
+    def handle(self, *args, **options):
+        self.download_events(options["year"])
+        self.handle_events()

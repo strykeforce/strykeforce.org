@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from .dev import *  # noqa
+from .base import *  # noqa
+
 
 DEBUG = False
 
@@ -10,5 +11,3 @@ DATABASES = {
         "NAME": ":memory:",
     },
 }
-
-MIGRATION_MODULES = {app: None for app in INSTALLED_APPS}  # noqa
