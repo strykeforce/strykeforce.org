@@ -1,6 +1,5 @@
 {
-  lib,
-  nixosModule,
+  flake,
   pkgs,
   workspace,
 }:
@@ -34,7 +33,7 @@ final: prev: {
             '';
           };
         }
-        // lib.optionalAttrs isLinux {
+        // pkgs.lib.optionalAttrs isLinux {
           nixos =
             let
               secrets = pkgs.writeText "strykeforce-test-secrets" ''
@@ -52,7 +51,7 @@ final: prev: {
                 { ... }:
                 {
                   imports = [
-                    nixosModule
+                    flake.nixosModules.default
                   ];
 
                   strykeforce.services.website = {

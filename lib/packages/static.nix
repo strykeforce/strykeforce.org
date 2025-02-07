@@ -1,14 +1,17 @@
 {
   pkgs,
-  pythonSet,
-  venv,
+  flake,
+  system,
+  ...
 }:
 let
   baseCss = "website/static/2767/base.css";
+  pythonSet = flake.lib.pythonSets pkgs;
+  inherit (flake.packages.${system}) venv;
 
   djangoStaticDeps = pkgs.buildNpmPackage {
     name = "django-static-deps";
-    src = ../.;
+    src = ../../.;
     npmDepsHash = "sha256-K7GLUG25KdvTT5gqounSi3U0UJonw9gPEuHUF4pP8os=";
     dontNpmBuild = true;
 

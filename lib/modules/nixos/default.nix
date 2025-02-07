@@ -1,4 +1,4 @@
-self:
+flake:
 {
   config,
   lib,
@@ -56,10 +56,14 @@ in
       "d ${stateDir} 0775 strykeforce strykeforce -"
     ];
 
+    environment.systemPackages = [
+      flake.packages.${pkgs.system}.strykeforce-manage
+    ];
+
     systemd.services.strykeforce-website =
       let
-        venv = self.packages.${pkgs.system}.venv;
-        static = self.packages.${pkgs.system}.static;
+        venv = flake.packages.${pkgs.system}.venv;
+        static = flake.packages.${pkgs.system}.static;
       in
       {
         wantedBy = [ "multi-user.target" ];
@@ -85,8 +89,8 @@ in
 
     systemd.services.strykeforce-website-publish-scheduled =
       let
-        venv = self.packages.${pkgs.system}.venv;
-        static = self.packages.${pkgs.system}.static;
+        venv = flake.packages.${pkgs.system}.venv;
+        static = flake.packages.${pkgs.system}.static;
       in
       {
         startAt = "hourly";
