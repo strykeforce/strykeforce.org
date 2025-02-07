@@ -1,160 +1,31 @@
 {
-  description = "Stryke Force Website built using uv2nix";
+  description = "Simple flake with a devshell";
 
+  # Add all your dependencies here
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-24.11";
 
-    pyproject-nix = {
-      url = "github:nix-community/pyproject.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    blueprint.url = "github:numtide/blueprint";
+    blueprint.inputs.nixpkgs.follows = "nixpkgs";
 
-    uv2nix = {
-      url = "github:adisbladis/uv2nix";
-      inputs.pyproject-nix.follows = "pyproject-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    pyproject-nix.url = "github:nix-community/pyproject.nix";
+    pyproject-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    pyproject-build-systems = {
-      url = "github:pyproject-nix/build-system-pkgs";
-      inputs.pyproject-nix.follows = "pyproject-nix";
-      inputs.uv2nix.follows = "uv2nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    flake-utils.url = "github:numtide/flake-utils";
+    uv2nix.url = "github:adisbladis/uv2nix";
+    uv2nix.inputs.pyproject-nix.follows = "pyproject-nix";
+    uv2nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    pyproject-build-systems.url = "github:pyproject-nix/build-system-pkgs";
+    pyproject-build-systems.inputs.pyproject-nix.follows = "pyproject-nix";
+    pyproject-build-systems.inputs.uv2nix.follows = "uv2nix";
+    pyproject-build-systems.inputs.nixpkgs.follows = "nixpkgs";
   };
 
+  # Load the blueprint
   outputs =
-    {
-      self,
-      nixpkgs,
-      flake-utils,
-      uv2nix,
-      pyproject-nix,
-      pyproject-build-systems,
-      ...
-    }:
-    flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        inherit (nixpkgs) lib;
-
-        python = pkgs.python312;
-
-        workspace = uv2nix.lib.workspace.loadWorkspace { workspaceRoot = ./.; };
-        overlay = workspace.mkPyprojectOverlay {
-          sourcePreference = "wheel";
-        };
-
-        pythonSet =
-          let
-            baseSet = pkgs.callPackage pyproject-nix.build.packages {
-              inherit python;
-              stdenv = pkgs.stdenv.override {
-                targetPlatform = pkgs.stdenv.targetPlatform // {
-                  # allow downloading of opencv-python wheel
-                  darwinSdkVersion = "15.2";
-                };
-              };
-            };
-
-            pillowHeifOverrides = import ./lib/overrides-pillow-heif.nix { inherit pkgs; };
-            psycopgOverrides = import ./lib/overrides-psycopg.nix { inherit pkgs; };
-            opencvOverrides = import ./lib/overrides-opencv.nix { inherit pkgs; };
-            strykeforceOverrides = import ./lib/overrides-strykeforce.nix { inherit pkgs workspace; };
-            tbaApiOverrides = import ./lib/overrides-tba-api-v3client.nix { inherit pkgs; };
-          in
-          baseSet.overrideScope (
-            lib.composeManyExtensions [
-              pyproject-build-systems.overlays.default
-              overlay
-              pillowHeifOverrides
-              psycopgOverrides
-              opencvOverrides
-              strykeforceOverrides
-              tbaApiOverrides
-            ]
-          );
-
-        inherit (pkgs) writeShellApplication;
-
-      in
-      {
-        checks = pythonSet.website.passthru.tests;
-
-        packages = {
-          venv = pythonSet.mkVirtualEnv "strykeforce-env" workspace.deps.default;
-
-          static = import ./lib/static.nix {
-            inherit pkgs pythonSet;
-            inherit (self.packages.${system}) venv;
-          };
-
-          manage = import ./lib/manage.nix {
-            inherit pkgs;
-            inherit (self.packages.${system}) venv;
-            inherit (self.packages.${system}) static;
-          };
-
-          manage-old = writeShellApplication {
-            name = "strykeforce-manage";
-
-            text = ''
-              export DJANGO_SETTINGS_MODULE=website.settings.production
-              export SECRET_KEY=notsecret
-              export TBA_READ_KEY=
-              export EMAIL_HOST_USER=
-              export EMAIL_HOST_PASSWORD=
-              export STATIC_ROOT=${self.packages.${system}.static}
-              exec ${self.packages.${system}.venv}/bin/strykeforce-manage "$@"
-            '';
-          };
-
-          # refresh venv for Pycharm with: nix build .#venv -o venv
-          default = self.packages.${system}.venv;
-        };
-
-        apps = {
-          default = {
-            type = "app";
-            program = "${self.packages.${system}.manage}/bin/strykeforce-manage";
-          };
-        };
-
-        devShells.default =
-          let
-            pkgs = nixpkgs.legacyPackages.${system};
-            packages = with pkgs; [
-              cachix
-              just
-              nil
-              nix-output-monitor
-              nixfmt-rfc-style
-              nodejs
-              postgresql.dev
-              pre-commit
-              python
-              tailwindcss
-              uv2nix.packages.${system}.uv-bin
-              watchman
-            ];
-          in
-          pkgs.mkShell {
-            inherit packages;
-            shellHook = ''
-              unset PYTHONPATH
-              export UV_PYTHON_DOWNLOADS=never
-            '';
-          };
-      }
-    )
-    // {
-      nixosModules.strykeforce = import ./lib/module.nix self;
-      nixosModules.default = self.nixosModules.strykeforce;
-
-      nixosConfigurations.container = import ./lib/container.nix {
-        inherit self nixpkgs;
-      };
+    inputs:
+    inputs.blueprint {
+      inherit inputs;
+      prefix = "lib";
     };
 }

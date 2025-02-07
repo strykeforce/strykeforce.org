@@ -1,9 +1,14 @@
 {
   pkgs,
-  static,
-  venv,
+  flake,
+  system,
+  ...
 }:
-pkgs.writeShellApplication {
+let
+  inherit (flake.packages.${system}) static venv;
+  inherit (pkgs) writeShellApplication;
+in
+writeShellApplication {
   name = "strykeforce-manage";
   text = ''
     if [ "$UID" -ne 0 ]; then
