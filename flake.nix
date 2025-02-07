@@ -26,6 +26,6 @@
     inputs:
     inputs.blueprint {
       inherit inputs;
-      prefix = "lib";
+      prefix = "nix";
     };
 }
