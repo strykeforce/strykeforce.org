@@ -11,6 +11,9 @@
     pyproject-nix.url = "github:nix-community/pyproject.nix";
     pyproject-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     uv2nix.url = "github:adisbladis/uv2nix";
     uv2nix.inputs.pyproject-nix.follows = "pyproject-nix";
     uv2nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +29,6 @@
     inputs:
     inputs.blueprint {
       inherit inputs;
-      prefix = "nix";
+      prefix = "nix/";
     };
 }
