@@ -126,6 +126,9 @@ in
 
     services.nginx = {
       enable = true;
+      recommendedBrotliSettings = true;
+      recommendedTlsSettings = true;
+      recommendedZstdSettings = true;
       recommendedProxySettings = true;
       recommendedOptimisation = true;
       recommendedGzipSettings = true;
@@ -154,6 +157,11 @@ in
         };
       };
     };
+
+    networking.firewall.allowedTCPPorts = [
+      443
+      80
+    ];
 
     security.acme.certs = lib.mkIf cfg.ssl {
       "www.strykeforce.org".email = "jeff@j3ff.io";

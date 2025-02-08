@@ -1,5 +1,13 @@
 # strykeforce.org
 
+## Installation
+
+Find a recent [NixOS AMI](https://nixos.org). Use a x86_64 (t3, not t2) instance type to enable serial console. Install SSH public key during installation and log in using public IP.
+
+```sh
+nixos-rebuild --flake .#venus --target-host root@venus boot
+```
+
 ## Copy or restore production data
 
 To restore database from backup, assumes `rclone` and `aws` credential files in place:
