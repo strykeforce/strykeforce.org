@@ -1,4 +1,4 @@
-flake:
+{ flake, ... }:
 {
   config,
   lib,
@@ -8,6 +8,7 @@ flake:
 let
   cfg = config.strykeforce.services.website;
   stateDir = "/var/lib/strykeforce";
+  inherit (flake.packages.${pkgs.system}) manage static venv;
 in
 {
   options.strykeforce.services.website = {
@@ -56,56 +57,44 @@ in
       "d ${stateDir} 0775 strykeforce strykeforce -"
     ];
 
-    environment.systemPackages = [
-      flake.packages.${pkgs.system}.strykeforce-manage
-    ];
+    environment.systemPackages = [ manage ];
 
-    systemd.services.strykeforce-website =
-      let
-        venv = flake.packages.${pkgs.system}.venv;
-        static = flake.packages.${pkgs.system}.static;
-      in
-      {
-        wantedBy = [ "multi-user.target" ];
-        requires = [ "postgresql.service" ];
-        after = [ "postgresql.service" ];
+    systemd.services.strykeforce-website = {
+      wantedBy = [ "multi-user.target" ];
+      requires = [ "postgresql.service" ];
+      after = [ "postgresql.service" ];
 
-        environment = {
-          DJANGO_SETTINGS_MODULE = cfg.settingsModule;
-          ALLOWED_HOSTS = cfg.allowedHosts;
-          STATIC_ROOT = "${static}";
-          MEDIA_ROOT = "${stateDir}/media";
-        };
-
-        preStart = "${venv}/bin/strykeforce-manage migrate --no-input";
-
-        serviceConfig = {
-          EnvironmentFile = cfg.secrets;
-          ExecStart = "${venv}/bin/gunicorn --workers=5 --bind=127.0.0.1:8000 website.wsgi";
-          User = "strykeforce";
-          Restart = "on-failure";
-        };
+      environment = {
+        DJANGO_SETTINGS_MODULE = cfg.settingsModule;
+        ALLOWED_HOSTS = cfg.allowedHosts;
+        STATIC_ROOT = "${static}";
+        MEDIA_ROOT = "${stateDir}/media";
       };
 
-    systemd.services.strykeforce-website-publish-scheduled =
-      let
-        venv = flake.packages.${pkgs.system}.venv;
-        static = flake.packages.${pkgs.system}.static;
-      in
-      {
-        startAt = "hourly";
-        environment = {
-          DJANGO_SETTINGS_MODULE = cfg.settingsModule;
-          ALLOWED_HOSTS = cfg.allowedHosts;
-          STATIC_ROOT = "${static}";
-          MEDIA_ROOT = "${stateDir}/media";
-        };
-        serviceConfig = {
-          EnvironmentFile = cfg.secrets;
-          User = "strykeforce";
-          ExecStart = "${venv}/bin/strykeforce-manage publish_scheduled";
-        };
+      preStart = "${venv}/bin/strykeforce-manage migrate --no-input";
+
+      serviceConfig = {
+        EnvironmentFile = cfg.secrets;
+        ExecStart = "${venv}/bin/gunicorn --workers=5 --bind=127.0.0.1:8000 website.wsgi";
+        User = "strykeforce";
+        Restart = "on-failure";
       };
+    };
+
+    systemd.services.strykeforce-website-publish-scheduled = {
+      startAt = "hourly";
+      environment = {
+        DJANGO_SETTINGS_MODULE = cfg.settingsModule;
+        ALLOWED_HOSTS = cfg.allowedHosts;
+        STATIC_ROOT = "${static}";
+        MEDIA_ROOT = "${stateDir}/media";
+      };
+      serviceConfig = {
+        EnvironmentFile = cfg.secrets;
+        User = "strykeforce";
+        ExecStart = "${venv}/bin/strykeforce-manage publish_scheduled";
+      };
+    };
 
     services.postgresql = {
       ensureDatabases = [ "strykeforce" ];
