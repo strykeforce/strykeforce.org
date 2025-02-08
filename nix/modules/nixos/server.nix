@@ -10,12 +10,13 @@ let
 in
 {
   imports = [
-    inputs.srvos.nixosModules.hardware-amazon
+    "${modulesPath}/virtualisation/amazon-image.nix"
     inputs.srvos.nixosModules.server
   ];
   services.getty.autologinUser = "root";
   security.sudo.execWheelOnly = mkForce false;
   services.cloud-init.enable = false;
+  virtualisation.amazon-init.enable = true;
 
   environment.systemPackages = with pkgs; [
     file
