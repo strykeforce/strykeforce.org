@@ -9,7 +9,6 @@
 /website/static/2767/main.js
 node_modules/
 *.tar
-*.json
 !package.json
 !package-lock.json
 /*.pickle

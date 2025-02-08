@@ -1,0 +1,8 @@
+{
+  "Description": "Nixos 24.11",
+  "Format": "VHD",
+  "UserBucket": {
+    "S3Bucket": "strykeforce-ami-import-us-east-2",
+    "S3Key": "nixos-amazon-image-24.11.20250206.f5a32fa-x86_64-linux.vhd"
+  }
+}
