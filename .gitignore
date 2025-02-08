@@ -195,3 +195,4 @@ strykeforce.sql.gz
 /cache
 /image_renditions
 .nixos-test-history
+.envrc.local
