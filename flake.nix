@@ -27,6 +27,9 @@
     uv2nix.inputs.pyproject-nix.follows = "pyproject-nix";
     uv2nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    staging.url = "github:jhh/nixos-configs";
+    staging.inputs.nixpkgs.follows = "nixpkgs";
+
     pyproject-build-systems.url = "github:pyproject-nix/build-system-pkgs";
     pyproject-build-systems.inputs.pyproject-nix.follows = "pyproject-nix";
     pyproject-build-systems.inputs.uv2nix.follows = "uv2nix";
