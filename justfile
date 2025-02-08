@@ -1,14 +1,14 @@
 # just manual: https://just.systems/man/en/
 
 _default:
-  @just --list
+    @just --list
 
 # bootstrap the development environment
 bootstrap: pre-commit
 
 # open the project in Pycharm
 edit:
-  pycharm .
+    pycharm .
 
 # run manage.py with command
 manage command:
@@ -32,7 +32,9 @@ test: (manage "test --keepdb")
 push:
     nix build --json .#venv | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
     nix build --json .#static | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
+
 #
+
 # update CSS
 update-css:
     npx @tailwindcss/cli --input=website/static/2767/base.css --output=website/static/2767/main.css

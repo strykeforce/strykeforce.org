@@ -19,6 +19,7 @@ zcat strykeforce.sql.gz | psql -d strykeforce
 rclone -v sync s3://www.strykeforce.org/media/ ./media
 ./manage.py wagtail_update_image_renditions
 ```
+
 ## Server Management
 
 ```sh
@@ -30,7 +31,6 @@ $ strykeforce-manage help
 $ nix registry add strykeforce-manage "github:strykeforce/strykeforce.org"
 $ nix run strykeforce-manage -- help
 ```
-
 
 ## Testing NixOS module in Container
 
