@@ -14,6 +14,7 @@
   ];
 
   networking.hostName = "mercury";
+  nixpkgs.hostPlatform = "x86_64-linux";
 
   age.secrets.stryker_website_secrets = {
     file = ./strykeforce_website_secrets.age;

@@ -1,14 +1,27 @@
 {
   flake,
   inputs,
+  modulesPath,
+  pkgs,
   ...
 }:
+let
+  inherit (inputs.nixpkgs.lib) mkForce;
+in
 {
   imports = [
-    flake.modules.nixos.hardware-amazon-ec2
+    inputs.srvos.nixosModules.hardware-amazon
     inputs.srvos.nixosModules.server
   ];
   services.getty.autologinUser = "root";
+  security.sudo.execWheelOnly = mkForce false;
+  services.cloud-init.enable = false;
+
+  environment.systemPackages = with pkgs; [
+    file
+    ghostty.terminfo
+    mailutils
+  ];
 
   nix.settings = {
     substituters = [
