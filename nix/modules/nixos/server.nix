@@ -16,7 +16,7 @@ in
   services.getty.autologinUser = "root";
   security.sudo.execWheelOnly = mkForce false;
   services.cloud-init.enable = false;
-  virtualisation.amazon-init.enable = true;
+  virtualisation.amazon-init.enable = false;
 
   environment.systemPackages = with pkgs; [
     file
