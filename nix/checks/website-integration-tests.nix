@@ -18,7 +18,7 @@ pkgs.nixosTest {
     { ... }:
     {
       imports = [
-        flake.nixosModules.default
+        flake.nixosModules.strykeforce-website
       ];
 
       strykeforce.services.website = {
