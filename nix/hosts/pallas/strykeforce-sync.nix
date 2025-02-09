@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   age.secrets.aws_credentials = {
-    file = ../../secrets/aws_secret.age;
+    file = ./aws_secret.age;
     path = "/root/.aws/credentials";
   };
 

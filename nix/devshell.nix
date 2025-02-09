@@ -16,6 +16,7 @@ pkgs.mkShell {
     pre-commit
     tailwindcss
     perSystem.uv2nix.uv-bin
+    perSystem.agenix.agenix
     watchman
   ];
 
