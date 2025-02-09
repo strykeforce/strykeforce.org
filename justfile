@@ -28,7 +28,7 @@ test: (manage "test --keepdb")
 
 _check_nixos:
     @if ! command -v nixos-rebuild &> /dev/null; then \
-        echo "Not on NixOS, skipping deploy to staging"; \
+        echo "Not on NixOS, skipping deploy..."; \
         exit 1; \
     fi
 
@@ -40,8 +40,6 @@ stage how="switch": (_deploy_to "pallas" "" how)
 
 # deploy to production server
 deploy how="dry-activate": (_deploy_to "mercury" "--use-substitutes" how)
-
-
 
 # push packages to cachix
 push:
