@@ -1,32 +1,20 @@
 # strykeforce.org
 
-## Installation
+## Installation on EC2 server
 
 Find a recent [NixOS AMI](https://nixos.org). Use a x86_64 (t3, not t2) instance type to enable serial console. Install SSH public key during installation and log in using public IP.
 
+Examine `justfile` for staging and production deployment recipes.
+
 ```sh
-nixos-rebuild --flake .#venus --target-host root@venus boot
+just stage <how>
 ```
+
+Where `<how>` is one of (switch | boot | test | build | dry-build | dry-activate | edit | repl |  build-vm  |  build-vm-with-bootloader) arguments to `nixos-rebuild` command.
 
 ## Copy or restore production data
 
-To restore database from backup, assumes `rclone` and `aws` credential files in place:
-
-```sql
--- create schema in database strykeforce
-CREATE ROLE "strykeforce";
-CREATE SCHEMA IF NOT EXISTS "strykeforce" AUTHORIZATION "strykeforce";
-```
-
-```sh
-# data
-aws s3 cp s3://www.strykeforce.org/sql/strykeforce.sql.gz .
-zcat strykeforce.sql.gz | psql -d strykeforce
-
-# images and documents
-rclone -v sync s3://www.strykeforce.org/media/ ./media
-./manage.py wagtail_update_image_renditions
-```
+See script in `nix/hosts/pallas/strykeforce-sync.nix`.
 
 ## Server Management
 
