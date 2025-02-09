@@ -7,6 +7,7 @@
 }:
 {
   imports = [
+    flake.modules.nixos.hardware-amazon-ec2
     flake.modules.nixos.server
     flake.modules.nixos.strykeforce-website
     inputs.agenix.nixosModules.default

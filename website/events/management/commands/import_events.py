@@ -35,9 +35,7 @@ class Command(BaseCommand):
                 self.results = team_api.get_team_events_statuses_by_year(TEAM_KEY, year)
                 if False:
                     with open(
-                        settings.BASE_DIR
-                        / "website/events/tests"
-                        / f"{year}_data.pickle",
+                        settings.BASE_DIR / "website/events/tests" / f"{year}_data.pickle",
                         "rb",
                     ) as f:
                         data = pickle.load(f)

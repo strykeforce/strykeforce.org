@@ -1,4 +1,9 @@
-{ flake, pkgs, ... }:
+{
+  inputs,
+  flake,
+  pkgs,
+  ...
+}:
 let
   inherit (pkgs) lib;
 
@@ -11,37 +16,36 @@ let
   '';
 in
 pkgs.nixosTest {
-  name = "strykeforce-nixos-test";
+  name = "strykeforce-integration-tests";
   meta.platforms = lib.platforms.linux;
 
-  nodes.machine =
-    { ... }:
-    {
-      imports = [
-        flake.nixosModules.strykeforce-website
-      ];
+  nodes.machine = {
+    imports = [
+      inputs.srvos.nixosModules.server
+      flake.modules.nixos.strykeforce-website
+    ];
 
-      strykeforce.services.website = {
-        enable = true;
-        allowedHosts = "localhost";
-        ssl = false;
-        secrets = [ secrets ];
-      };
-
-      services.postgresql = {
-        enable = true;
-        package = pkgs.postgresql_16;
-        ensureDatabases = [ "strykeforce" ];
-        ensureUsers = [
-          {
-            name = "strykeforce";
-            ensureDBOwnership = true;
-          }
-        ];
-      };
-
-      system.stateVersion = "24.11";
+    strykeforce.services.website = {
+      enable = true;
+      allowedHosts = "localhost";
+      ssl = false;
+      secrets = [ secrets ];
     };
+
+    services.postgresql = {
+      enable = true;
+      package = pkgs.postgresql_16;
+      ensureDatabases = [ "strykeforce" ];
+      ensureUsers = [
+        {
+          name = "strykeforce";
+          ensureDBOwnership = true;
+        }
+      ];
+    };
+
+    system.stateVersion = "24.11";
+  };
 
   testScript =
     { nodes, ... }:

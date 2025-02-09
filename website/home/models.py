@@ -127,39 +127,21 @@ class SponsorsPage(Page):
         return Sponsor.objects.filter(active=True).order_by("name")
 
     def diamond_sponsors(self):
-        return (
-            self.sponsors()
-            .filter(active=True, level__exact=LevelType.DIAMOND)
-            .order_by("name")
-        )
+        return self.sponsors().filter(active=True, level__exact=LevelType.DIAMOND).order_by("name")
 
     def platinum_sponsors(self):
         return (
-            self.sponsors()
-            .filter(active=True, level__exact=LevelType.PLATINUM)
-            .order_by("name")
+            self.sponsors().filter(active=True, level__exact=LevelType.PLATINUM).order_by("name")
         )
 
     def gold_sponsors(self):
-        return (
-            self.sponsors()
-            .filter(active=True, level__exact=LevelType.GOLD)
-            .order_by("name")
-        )
+        return self.sponsors().filter(active=True, level__exact=LevelType.GOLD).order_by("name")
 
     def silver_sponsors(self):
-        return (
-            self.sponsors()
-            .filter(active=True, level__exact=LevelType.SILVER)
-            .order_by("name")
-        )
+        return self.sponsors().filter(active=True, level__exact=LevelType.SILVER).order_by("name")
 
     def bronze_sponsors(self):
-        return (
-            self.sponsors()
-            .filter(active=True, level__exact=LevelType.BRONZE)
-            .order_by("name")
-        )
+        return self.sponsors().filter(active=True, level__exact=LevelType.BRONZE).order_by("name")
 
     def diamond_or_platinum_sponsors(self):
         return self.sponsors().filter(

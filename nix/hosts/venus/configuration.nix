@@ -1,12 +1,7 @@
-{
-  config,
-  flake,
-  inputs,
-  pkgs,
-  ...
-}:
+{ flake, ... }:
 {
   imports = [
+    flake.modules.nixos.hardware-amazon-ec2
     flake.modules.nixos.server
   ];
 
