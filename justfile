@@ -6,10 +6,6 @@ _default:
 # bootstrap the development environment
 bootstrap: pre-commit
 
-# open the project in Pycharm
-edit:
-    pycharm .
-
 # run manage.py with command
 manage command:
     uv run --no-sync website/manage.py {{ command }}
@@ -27,8 +23,27 @@ shell: (manage "shell")
 run check="none":
     uv run python {{ if check != "none" { "-X dev" } else { "" } }} website/manage.py runserver
 
+# run django unit tests
 test: (manage "test --keepdb")
 
+_check_nixos:
+    @if ! command -v nixos-rebuild &> /dev/null; then \
+        echo "Not on NixOS, skipping deploy to staging"; \
+        exit 1; \
+    fi
+
+_deploy_to host opts how: _check_nixos
+    nixos-rebuild {{ opts }} --flake . --target-host root@{{ host }} {{ how }}
+
+# deploy to staging server
+stage how="switch": (_deploy_to "pallas" "" how)
+
+# deploy to production server
+deploy how="dry-activate": (_deploy_to "mercury" "--use-substitutes" how)
+
+
+
+# push packages to cachix
 push:
     nix build --json .#venv | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
     nix build --json .#static | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
