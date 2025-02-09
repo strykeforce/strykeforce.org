@@ -9,7 +9,6 @@
   imports = [
     inputs.staging.nixosModules.hardware-proxmox-lxc
     inputs.staging.nixosModules.server-j3ff
-    inputs.srvos.nixosModules.mixins-nginx
     flake.nixosModules.strykeforce-website
     ./postgresql.nix
     ./strykeforce-sync.nix
