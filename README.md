@@ -34,37 +34,4 @@ rclone -v sync s3://www.strykeforce.org/media/ ./media
 # as root
 # strykeforce-manage is installed on the production server
 $ strykeforce-manage help
-
-# otherwise
-$ nix registry add strykeforce-manage "github:strykeforce/strykeforce.org"
-$ nix run strykeforce-manage -- help
-```
-
-## Testing NixOS module in Container
-
-```
-sudo nixos-container create flake-test --flake .
-sudo nixos-container start flake-test
-sudo nixos-container root-login flake-test
-sudo nixos-container destroy flake-test
-```
-
-## Override python build configs temporarily
-
-```nix
-overrides = poetry2nixPkgs.defaultPoetryOverrides.extend
-  (self: super: {
-    opencv-python = super.opencv4;
-
-    # keep until https://github.com/nix-community/poetry2nix/pull/1602 merged
-    sqlparse = super.sqlparse.overridePythonAttrs (old: {
-      buildInputs = (lists.remove super.flit-core old.buildInputs) ++ [ super.hatchling ];
-    });
-  });
-
-# ...
-
-website = mkPoetryApplication {
-  inherit overrides;
-  # ...
 ```
