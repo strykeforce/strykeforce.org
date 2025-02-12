@@ -6,13 +6,11 @@ let
     sourcePreference = "wheel";
   };
 
-  python = pkgs: pkgs.python312;
-
   pythonSets =
     pkgs:
     let
       baseSet = pkgs.callPackage inputs.pyproject-nix.build.packages {
-        python = python pkgs;
+        python = pkgs.python312;
         stdenv = pkgs.stdenv.override {
           targetPlatform = pkgs.stdenv.targetPlatform // {
             # allow downloading of opencv-python wheel
@@ -24,9 +22,6 @@ let
       pillowHeifOverrides = import ./overrides/overrides-pillow-heif.nix { inherit pkgs; };
       psycopgOverrides = import ./overrides/overrides-psycopg.nix { inherit pkgs; };
       opencvOverrides = import ./overrides/overrides-opencv.nix { inherit pkgs; };
-      strykeforceOverrides = import ./overrides/overrides-strykeforce.nix {
-        inherit flake pkgs workspace;
-      };
       tbaApiOverrides = import ./overrides/overrides-tba-api-v3client.nix { inherit pkgs; };
     in
     baseSet.overrideScope (
@@ -36,7 +31,6 @@ let
         pillowHeifOverrides
         psycopgOverrides
         opencvOverrides
-        strykeforceOverrides
         tbaApiOverrides
       ]
     );
@@ -45,7 +39,6 @@ in
 
   inherit
     overlay
-    python
     pythonSets
     workspace
     ;

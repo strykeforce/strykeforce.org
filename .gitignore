@@ -196,3 +196,4 @@ strykeforce.sql.gz
 /image_renditions
 .nixos-test-history
 .envrc.local
+.pre-commit-config.yaml
