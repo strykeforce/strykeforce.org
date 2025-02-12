@@ -46,7 +46,10 @@ push:
     nix build --json .#venv | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
     nix build --json .#static | jq -r '.[].outputs | to_entries[].value' | cachix push strykeforce
 
-#
+# update npm dependencies to latest versions
+npm-update:
+    npm install tailwindcss@latest @tailwindcss/cli@latest @tailwindcss/forms@latest \
+    @tailwindcss/aspect-ratio @tailwindcss/typography alpinejs@latest  esbuild@latest
 
 # update CSS
 update-css:
