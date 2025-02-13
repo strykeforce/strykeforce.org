@@ -44,6 +44,28 @@
         "type": "github"
       }
     },
+    "blueprint_2": {
+      "inputs": {
+        "nixpkgs": [
+          "wmra",
+          "nixpkgs"
+        ],
+        "systems": "systems_3"
+      },
+      "locked": {
+        "lastModified": 1738791180,
+        "narHash": "sha256-LVMXVDclRvcC16z08F/slIZikbycYPlLhXmXODfhl44=",
+        "owner": "numtide",
+        "repo": "blueprint",
+        "rev": "6044c5c664f3d5c67c8ee7b1f9d9f0539d878b96",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "blueprint",
+        "type": "github"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -255,7 +277,8 @@
         "pyproject-nix": "pyproject-nix",
         "srvos": "srvos",
         "treefmt-nix": "treefmt-nix",
-        "uv2nix": "uv2nix"
+        "uv2nix": "uv2nix",
+        "wmra": "wmra"
       }
     },
     "srvos": {
@@ -265,11 +288,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1739149457,
-        "narHash": "sha256-777RrYhdblwYBDruc5xaRdheTGyBMOdjcJmc67d98es=",
+        "lastModified": 1739408661,
+        "narHash": "sha256-piGA3oWqqJ1O0nh7pr0h4aZRyWBc87UvjpabFZGchRI=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "8e257cc0810b5aa0f1a8841d8bdbb10eda07ae16",
+        "rev": "02f6ebf3421677bd8e810814ec6026631136792b",
         "type": "github"
       },
       "original": {
@@ -308,9 +331,45 @@
         "type": "github"
       }
     },
+    "systems_3": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1738953846,
+        "narHash": "sha256-yrK3Hjcr8F7qS/j2F+r7C7o010eVWWlm4T1PrbKBOxQ=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "4f09b473c936d41582dd744e19f34ec27592c5fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "treefmt-nix_2": {
+      "inputs": {
+        "nixpkgs": [
+          "wmra",
           "nixpkgs"
         ]
       },
@@ -348,6 +407,28 @@
       "original": {
         "owner": "adisbladis",
         "repo": "uv2nix",
+        "type": "github"
+      }
+    },
+    "wmra": {
+      "inputs": {
+        "blueprint": "blueprint_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": "treefmt-nix_2"
+      },
+      "locked": {
+        "lastModified": 1739415026,
+        "narHash": "sha256-Xd4CoqsIyQl/Q2BmGzUaVKRP2+T9OrrXAUazBAeFQnw=",
+        "owner": "strykeforce",
+        "repo": "wmralliance.com",
+        "rev": "0ab43e9270de3db715afc07e47a92c67149023f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "strykeforce",
+        "repo": "wmralliance.com",
         "type": "github"
       }
     }
