@@ -419,11 +419,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1739549024,
-        "narHash": "sha256-bi9Ymow5yRwGqFCAyjrGHYRJCaSJMWb47f9cX1BMJ3c=",
+        "lastModified": 1739549728,
+        "narHash": "sha256-DH2PsWnI7n5bJEJqR5ydEMDmaAxc6IXuiiAM5AL7LGM=",
         "owner": "strykeforce",
         "repo": "wmralliance.com",
-        "rev": "74b7c6bdedb1ae4bb190c3e66a7415b145fc4c00",
+        "rev": "9b52cb6e89925c1aec31094a0a3c9ae74a009897",
         "type": "github"
       },
       "original": {
