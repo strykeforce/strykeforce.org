@@ -128,7 +128,6 @@ in
       enable = true;
       recommendedBrotliSettings = true;
       recommendedTlsSettings = true;
-      recommendedZstdSettings = true;
       recommendedProxySettings = true;
       recommendedOptimisation = true;
       recommendedGzipSettings = true;
