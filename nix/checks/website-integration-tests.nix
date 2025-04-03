@@ -53,9 +53,12 @@ pkgs.nixosTest {
     ''
       # wait for service
       machine.wait_for_unit("strykeforce-website.service")
-      machine.wait_until_succeeds("curl -sLf http://localhost:8000/static/2767/main.css")
-      machine.succeed("curl -sLf http://localhost:8000/static/2767/main.js")
-      html = machine.succeed("curl -sLf http://localhost:8000/admin/")
-      assert "<title>Sign in - Wagtail</title>" in html
+      with subtest("check static files"):
+        machine.wait_until_succeeds("curl -sLf http://localhost:8000/static/2767/main.css")
+        machine.succeed("curl -sLf http://localhost:8000/static/2767/main.js")
+
+      with subtest("check for login page"):
+        html = machine.succeed("curl -sLf http://localhost:8000/admin/")
+        assert "<title>Sign in - Wagtail</title>" in html
     '';
 }
