@@ -18,6 +18,7 @@ from django.utils.text import slugify
 from django.views.decorators.cache import cache_page
 from wagtail.admin.forms import WagtailAdminModelForm
 from wagtail.admin.panels import FieldPanel, FieldRowPanel
+from wagtail.admin.views.generic.models import get_object_or_404
 from wagtail.contrib.routable_page.models import RoutablePageMixin, path
 from wagtail.fields import RichTextField
 from wagtail.models import Page
@@ -79,7 +80,7 @@ class EventIndexPage(RoutablePageMixin, Page):
     def event_for_key(self, request, key):
         """View function for event looked up by event key."""
 
-        event = Event.objects.get(key=key)
+        event = get_object_or_404(Event, key=key)
         years = Event.objects.years().order_by("-year")
 
         return self.render(
