@@ -1120,7 +1120,7 @@ wheels = [
 
 [[package]]
 name = "website"
-version = "4.6.6"
+version = "4.6.7"
 source = { editable = "." }
 dependencies = [
     { name = "django", extra = ["argon2"] },
