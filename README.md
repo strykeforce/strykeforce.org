@@ -10,7 +10,7 @@ Examine `justfile` for staging and production deployment recipes.
 just stage <how>
 ```
 
-Where `<how>` is one of (switch | boot | test | build | dry-build | dry-activate | edit | repl |  build-vm  |  build-vm-with-bootloader) arguments to `nixos-rebuild` command.
+Where `<how>` is one of (switch | boot | test | build | dry-build | dry-activate | edit | repl | build-vm | build-vm-with-bootloader) arguments to `nixos-rebuild` command.
 
 ## Copy or restore production data
 
