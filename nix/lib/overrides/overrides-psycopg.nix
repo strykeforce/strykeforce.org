@@ -7,7 +7,7 @@ final: prev: {
         setuptools = [ ];
       });
     postPatch = ''
-      substituteInPlace setup.py \
+      substituteInPlace build_backend/psycopg_build_ext.py \
         --replace-fail 'pg_config = "pg_config"' 'pg_config = "${pkgs.postgresql.pg_config}/bin/pg_config"'
     '';
   });
