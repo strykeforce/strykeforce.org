@@ -3,7 +3,7 @@
 
   # Add all your dependencies here
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-25.11";
 
     wmra.url = "github:strykeforce/wmralliance.com";
     wmra.inputs.nixpkgs.follows = "nixpkgs";

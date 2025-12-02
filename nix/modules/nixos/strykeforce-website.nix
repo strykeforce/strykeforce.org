@@ -71,7 +71,16 @@ in
         MEDIA_ROOT = "${stateDir}/media";
       };
 
-      preStart = "${venv}/bin/strykeforce-manage migrate --no-input";
+      preStart = ''
+        ${config.services.postgresql.package}/bin/psql -d strykeforce -tA << END_INPUT
+          CREATE SCHEMA IF NOT EXISTS strykeforce AUTHORIZATION "strykeforce";
+          ALTER ROLE strykeforce SET client_encoding TO 'utf8';
+          ALTER ROLE strykeforce SET default_transaction_isolation TO 'read committed';
+          ALTER ROLE strykeforce SET timezone TO 'UTC';
+        END_INPUT
+
+        ${venv}/bin/strykeforce-manage migrate --no-input
+      '';
 
       serviceConfig = {
         EnvironmentFile = cfg.secrets;
@@ -105,15 +114,6 @@ in
         }
       ];
     };
-
-    systemd.services.postgresql.postStart = ''
-      $PSQL -d strykeforce -tA << END_INPUT
-        CREATE SCHEMA IF NOT EXISTS strykeforce AUTHORIZATION "strykeforce";
-        ALTER ROLE strykeforce SET client_encoding TO 'utf8';
-        ALTER ROLE strykeforce SET default_transaction_isolation TO 'read committed';
-        ALTER ROLE strykeforce SET timezone TO 'UTC';
-      END_INPUT
-    '';
 
     services.redis.servers."" = {
       enable = true;

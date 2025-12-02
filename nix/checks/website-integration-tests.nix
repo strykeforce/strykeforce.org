@@ -15,7 +15,7 @@ let
     EMAIL_HOST_PASSWORD=
   '';
 in
-pkgs.nixosTest {
+pkgs.testers.nixosTest {
   name = "strykeforce-integration-tests";
 
   nodes.machine =
