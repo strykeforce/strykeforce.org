@@ -10,12 +10,12 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.DeleteModel(
+            name="JoinFormField",
+        ),
         migrations.RemoveField(
             model_name="joinformpage",
             name="page_ptr",
-        ),
-        migrations.DeleteModel(
-            name="JoinFormField",
         ),
         migrations.DeleteModel(
             name="JoinFormPage",
