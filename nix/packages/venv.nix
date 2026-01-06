@@ -8,7 +8,7 @@ let
   pythonSet = flake.lib.pythonSets pkgs;
   workspace = flake.lib.workspace;
 in
-pythonSet.mkVirtualEnv "styrkeforce-env" workspace.deps.default
+pythonSet.mkVirtualEnv "strykeforce-env" workspace.deps.default
 // {
   passthru.tests = {
     unit-tests =
