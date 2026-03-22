@@ -10,7 +10,7 @@ jobs:
       - uses: cachix/install-nix-action@v31
         with:
           nix_path: nixpkgs=channel:nixos-25.05
-      - uses: cachix/cachix-action@v16
+      - uses: cachix/cachix-action@v17
         with:
           name: strykeforce
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
