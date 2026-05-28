@@ -15,6 +15,8 @@
     ./rclone.nix
   ];
 
+  boot.initrd.systemd.enable = true;
+
   networking.hostName = "mercury";
   nixpkgs.hostPlatform = "x86_64-linux";
 
