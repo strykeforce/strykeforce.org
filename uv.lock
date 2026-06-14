@@ -1399,7 +1399,7 @@ requires-dist = [
     { name = "gunicorn", specifier = ">=23.0.0" },
     { name = "hiredis", specifier = ">=3.1.0" },
     { name = "opencv-python", specifier = ">=4.10.0.84" },
-    { name = "psycopg", extras = ["c", "pool"], specifier = ">=3.2.3" },
+    { name = "psycopg", extras = ["c", "pool"], specifier = ">=3.3.4" },
     { name = "redis", specifier = ">=5.2.1" },
     { name = "sentry-sdk", specifier = ">=2.19.2" },
     { name = "tba-api-v3client", specifier = ">=3.8.0" },
