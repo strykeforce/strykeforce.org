@@ -68,7 +68,6 @@
 
   services.postfix = {
     enable = true;
-    inherit (config.networking) domain;
     rootAlias = "jeff@j3ff.io";
     settings.main = {
       mydomain = config.networking.domain;

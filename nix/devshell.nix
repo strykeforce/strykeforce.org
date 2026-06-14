@@ -18,7 +18,7 @@ pkgs.mkShell {
       just
       nil
       nix-output-monitor
-      nixfmt-rfc-style
+      nixfmt
       nodejs
       postgresql.pg_config
       pre-commit

@@ -8,7 +8,7 @@
 let
   cfg = config.strykeforce.services.website;
   stateDir = "/var/lib/strykeforce";
-  inherit (flake.packages.${pkgs.system}) manage static venv;
+  inherit (flake.packages.${pkgs.stdenv.hostPlatform.system}) manage static venv;
 in
 {
   options.strykeforce.services.website = {
