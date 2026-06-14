@@ -1409,7 +1409,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "black", specifier = ">=24.10.0" },
+    { name = "black", specifier = ">=26.5.1" },
     { name = "django-debug-toolbar", specifier = ">=4.4.6" },
     { name = "django-types", specifier = ">=0.20.0" },
     { name = "ipython", specifier = ">=8.31.0" },
