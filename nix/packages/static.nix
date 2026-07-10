@@ -12,7 +12,7 @@ let
   djangoStaticDeps = pkgs.buildNpmPackage {
     name = "django-static-deps";
     src = ../../.;
-    npmDepsHash = "sha256-1Nbu+2G6U+ZkHtMy/+FUgWjw/lJjU84ASdNJ+ofkGrI=";
+    npmDepsHash = "sha256-FxDfNTnZlVzuoUxs6JzsTr05kueFWJV0JwxeuO6MZcA=";
     dontNpmBuild = true;
 
     patchPhase = ''
