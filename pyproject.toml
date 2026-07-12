@@ -14,7 +14,7 @@ dependencies = [
   "sentry-sdk>=2.19.2",
   "tba-api-v3client>=3.8.0",
   "wagtail>=6.4",
-  "whitenoise[brotli]>=6.8.2",
+  "whitenoise[brotli]>=6.12.0",
 ]
 
 [project.scripts]
