@@ -1413,7 +1413,7 @@ requires-dist = [
     { name = "sentry-sdk", specifier = ">=2.19.2" },
     { name = "tba-api-v3client", specifier = ">=3.8.0" },
     { name = "wagtail", specifier = ">=6.4" },
-    { name = "whitenoise", extras = ["brotli"], specifier = ">=6.8.2" },
+    { name = "whitenoise", extras = ["brotli"], specifier = ">=6.12.0" },
 ]
 
 [package.metadata.requires-dev]
