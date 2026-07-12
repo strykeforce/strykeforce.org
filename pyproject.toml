@@ -5,7 +5,7 @@ description = "Stryke Force Website"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-  "django[argon2]>=5.1.4",
+  "django[argon2]>=6.0.7",
   "gunicorn>=23.0.0",
   "hiredis>=3.1.0",
   "opencv-python>=4.10.0.84",

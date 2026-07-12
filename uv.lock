@@ -1404,7 +1404,7 @@ pre-commit = [
 
 [package.metadata]
 requires-dist = [
-    { name = "django", extras = ["argon2"], specifier = ">=5.1.4" },
+    { name = "django", extras = ["argon2"], specifier = ">=6.0.7" },
     { name = "gunicorn", specifier = ">=23.0.0" },
     { name = "hiredis", specifier = ">=3.1.0" },
     { name = "opencv-python", specifier = ">=4.10.0.84" },
