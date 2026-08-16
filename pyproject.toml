@@ -23,7 +23,7 @@ strykeforce-manage = "website.manage:main"
 [dependency-groups]
 dev = [
   "black>=24.10.0",
-  "django-debug-toolbar>=4.4.6",
+  "django-debug-toolbar>=7.1.0",
   "django-types>=0.20.0",
   "ipython>=8.31.0",
   "rich>=13.9.4",
