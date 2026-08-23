@@ -1516,7 +1516,7 @@ dev = [
     { name = "black", specifier = ">=24.10.0" },
     { name = "django-debug-toolbar", specifier = ">=4.4.6" },
     { name = "django-types", specifier = ">=0.20.0" },
-    { name = "ipython", specifier = ">=8.31.0" },
+    { name = "ipython", specifier = ">=9.16.1" },
     { name = "rich", specifier = ">=13.9.4" },
 ]
 pre-commit = [
