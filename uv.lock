@@ -1507,7 +1507,7 @@ requires-dist = [
     { name = "redis", specifier = ">=5.2.1" },
     { name = "sentry-sdk", specifier = ">=2.66.1" },
     { name = "tba-api-v3client", specifier = ">=3.8.0" },
-    { name = "wagtail", specifier = ">=6.4" },
+    { name = "wagtail", specifier = ">=7.4.3" },
     { name = "whitenoise", extras = ["brotli"], specifier = ">=6.12.0" },
 ]
 
