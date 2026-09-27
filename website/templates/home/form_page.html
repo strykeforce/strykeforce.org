@@ -29,6 +29,9 @@
               <div class="dj-field-div">
                 {{ field.errors }}
                 {{ field.label_tag }}
+                {% if field.help_text %}
+                  <p class="mt-2 text-sm text-gray-500">{{ field.help_text }}</p>
+                {% endif %}
                 <div class="mt-1">
                   {{ field }}
                 </div>
