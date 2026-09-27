@@ -104,7 +104,7 @@
     @apply border-none;
 }
 
-.dj-field-div input,
+.dj-field-div input:not([type="radio"]):not([type="checkbox"]),
 .dj-field-div textarea {
     @apply block w-full rounded-md border-gray-300 shadow-xs focus:border-blue focus:ring-blue sm:text-sm;
 }
