@@ -1672,7 +1672,7 @@ requires-dist = [
     { name = "hiredis", specifier = ">=3.1.0" },
     { name = "opencv-python", specifier = ">=4,<5" },
     { name = "psycopg", extras = ["c", "pool"], specifier = ">=3.3.4" },
-    { name = "redis", specifier = ">=5.2.1" },
+    { name = "redis", specifier = ">=8.1.0" },
     { name = "sentry-sdk", specifier = ">=2.66.1" },
     { name = "tba-api-v3client", specifier = ">=3.8.0" },
     { name = "wagtail", specifier = ">=6.4" },
