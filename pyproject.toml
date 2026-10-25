@@ -5,12 +5,12 @@ description = "Stryke Force Website"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-  "django[argon2]>=6.0.7",
+  "django[argon2]>=6.1",
   "gunicorn>=23.0.0",
   "hiredis>=3.1.0",
   "opencv-python>=4,<5",
   "psycopg[c,pool]>=3.3.4",
-  "redis>=5.2.1",
+  "redis>=8.1.0",
   "sentry-sdk>=2.66.1",
   "tba-api-v3client>=3.8.0",
   "wagtail>=6.4",
@@ -22,10 +22,10 @@ strykeforce-manage = "website.manage:main"
 
 [dependency-groups]
 dev = [
-  "black>=24.10.0",
+  "black>=26.10.1",
   "django-debug-toolbar>=4.4.6",
   "django-types>=0.20.0",
-  "ipython>=8.31.0",
+  "ipython>=9.16.1",
   "rich>=13.9.4",
 ]
 pre-commit = [
